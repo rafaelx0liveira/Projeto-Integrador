@@ -1,0 +1,153 @@
+/****************************
+          COMPONENTs
+****************************/
+.container{
+  max-width: 1200px;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/****************************
+        SHOP BOTTOMS
+****************************/
+
+.button{
+  display: inline-block;
+  padding: 16px 32px;
+  background: linear-gradient(#FFBF00, #F2A60C);
+  border-radius: 4px;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  color: var(--cor-p5);
+  font: 600 1.125rem/1.35 var(--font-poppins);
+  max-width: max-content;
+  border: none;
+  cursor: pointer;
+}
+
+.button:hover{
+  background: linear-gradient(#FFB60D, #E59317);
+}
+
+.secondary.button{
+  background: var(--cor-10);
+  color: var(--cor-2);
+}
+
+.secondary.button:hover{
+  background: var(--cor-9);
+}
+
+.arrow.button{
+  display: flex;
+  align-items: center;
+}
+
+.arrow.button::after{
+  content: "";
+  display: inline-block;
+  width: 18px;
+  height: 10px;
+  margin-left: 12px;
+  background: url("../../img/icones/seta.svg");
+  transition: transform 0.3s;
+}
+
+.arrow.button:hover::after{
+  transform: translateX(4px);
+}
+
+@media (max-width: 600px){
+  .button{
+    padding: 12px 16px;
+    font-size: 1rem;
+  }
+}
+
+/****************************
+        LOGIN BUTTON
+****************************/
+
+.signIn_button{
+  padding: 10px 30px 10px 30px;
+  border-radius: 8px;
+  background-color: var(--color-0);
+  cursor: pointer;
+  transition: 0.5s;
+  font-family: var(--font-roboto);
+
+}
+
+.signUp_button{
+  padding: 10px 30px 10px 30px;
+  border-radius: 8px;
+  background-color: var(--color-12);
+  border: 1px solid var(--color-0);
+  cursor: pointer;
+  transition: 0.5s;
+  font-family: var(--font-roboto);
+}
+
+
+.signIn_button:hover,
+.signUp_button:hover{
+  transform: scale(1.08);
+}
+
+
+/****************************
+          LINKS
+****************************/
+
+.link{
+  display: inline-block;
+  color: var(--cor-p1);
+  font: 500 1.5rem/1.5 var(--font-poppins);
+  text-transform: uppercase;
+}
+
+.link::after{
+  content: "";
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: currentColor;
+}
+
+.link:hover{
+  color: var(--cor-0);
+}
+
+/**********************************
+          TÍTULOS INTERNOS
+**********************************/
+
+.title-bg{
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: var(--cor-11);
+}
+
+.title{
+  background: url("../../img/dec/top-right.svg") no-repeat top right 20px;
+}
+
+.title p{
+  margin-bottom: 4px;
+}
+
+@media (max-width: 800px){
+  .title{
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .title p{
+    font-size: 1rem;
+    text-transform: lowercase;
+    font-weight: 400;
+  }
+}

@@ -1,0 +1,12 @@
+/****************************
+          STYLE CSS
+****************************/
+
+/****************************
+          IMPORTS
+****************************/
+@import "./global/global.css";
+@import "./global/header.css";
+@import "./utils/components.css";
+@import "./utils/colors.css";
+@import "./utils/typography.css";
