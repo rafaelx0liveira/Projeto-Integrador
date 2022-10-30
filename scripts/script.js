@@ -1,36 +1,28 @@
-const controls = document.querySelectorAll('.control');
-let currentItem = 0;
-const items = document.querySelectorAll('.item');
-const maxItems = items.length;
+let slideIndex = 1;
+showSlides(slideIndex);
 
-controls.forEach(control => {
-  control.addEventListener('click', () =>{
-    const isLeft = control.classList.contains('arrow-left');
-    
-    if(isLeft){
-      currentItem -= 1;
-    }
-    else{
-      currentItem +=1;
-    }
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
 
-    if(currentItem >= maxItems){
-      currentItem = 0
-    }
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
 
-    if(currentItem < 0){
-      currentItem = maxItems - 1;
-    }
-
-    items.forEach(item => item.classList.remove('current-item'));
-
-    items[currentItem].scrollIntoView({
-      inline:"center",
-      behavior:"smooth"
-    });
-
-    items[currentItem].classList.add('current-item')
-
-    console.log("control", isLeft, currentItem);
-  })
-})
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
