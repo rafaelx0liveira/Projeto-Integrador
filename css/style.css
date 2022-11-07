@@ -8,7 +8,8 @@
 @import "./global/global.css";
 @import "./global/footer.css";
 @import "./global/header.css";
-@import "./global/banners.css";
 @import "./utils/components.css";
 @import "./utils/colors.css";
 @import "./utils/typography.css";
+@import "./home/banners.css";
+@import "./home/products_list.css";
