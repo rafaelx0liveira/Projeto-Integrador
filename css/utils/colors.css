@@ -39,6 +39,11 @@ Usar :root pode ser útil para declarar uma variável CSS global:
   --color-p3: #a66f00;
   --color-p4: #664400;
   --color-p5: #332200;
+  --color-body: #121212;
+}
+
+.color-body{
+  color: var(--color-body);
 }
 
 .color-0 {
