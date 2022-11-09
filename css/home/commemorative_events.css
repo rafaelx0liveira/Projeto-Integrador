@@ -1,0 +1,40 @@
+.commemorative_events-bg{
+  background-color: var(--color-p1);
+  box-shadow: inset 0 80px var(--color-body), inset 0 -80px var(--color-body);
+}
+
+.events{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.events_picture img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left;
+  border-radius: 4px;
+}
+
+.events_contents{
+  padding-top: 160px;
+  padding-bottom: 160px;
+}
+
+.events_contents > span{
+  display: block;
+  margin-bottom: 10px;
+}
+
+.events_contents > h2{
+  margin-bottom: 40px;
+}
+
+.events_contents > p{
+  margin-bottom: 40px;
+}
+
+.events_contents a{
+  margin-bottom: 80px;
+}
