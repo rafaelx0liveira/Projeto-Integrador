@@ -1,0 +1,119 @@
+* {
+    margin: 0px;
+    padding: 0px;
+  }
+@import "./global/global.css";
+@import "./global/footer.css";
+@import "./global/header.css";
+@import "./global/banners.css";
+@import "./utils/components.css";
+@import "./utils/colors.css";
+@import "./utils/typography.css";
+  
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+/* HEADER CONFIG*/
+.header-bg{
+    background-color: var(--color-11);
+  }
+  
+  .header{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-family: var(--font-roboto);
+  }
+  
+  .header a{
+    color: var(--color-1);
+  }
+  
+  .header-menu,
+  .header-login{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+  
+  .header-menu a{
+    display: inline-block;
+    padding: 16px 0px;
+    position: relative;
+  }
+  
+  .header-login button{
+    position: relative;
+    display: inline-block;
+  }
+  
+  /*
+    A propriedade CSS content é usada com os pseudoelementos ::before e ::after para gerar conteúdo em um elemento
+  */
+  .header-menu a::after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 0;
+    background: var(--color-1);
+    margin-top: 4px;
+    transition: 0.3s;
+    position: absolute;
+  }
+  
+  .header-menu a:hover::after,
+  .header-menu a.ativo::after
+  {
+    width: 100%;
+  }
+  /*HEADER CONFIG*/
+  
+  
+  
+  .carrinho-de-prudutos {
+    border: 1px black solid;
+    height: 40vh;
+  }
+
+  .frete-e-pagamento {
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    
+  }
+  .input-wrapper {
+    display:flex;
+    flex-direction: column;
+    width:100%;
+    margin-top: 5px
+    }
+    .cep {
+        display:flex;
+        flex-direction: column;
+        width:20%;
+        margin-top: 5px
+    }
+
+  .calcular-frete {
+    width:45%;
+    gap: 15px
+  }
+  .pagamento {
+    width: 45%
+  }
+
+  .frete-escolhido {
+    display:flex;
+    flex-direction: column;
+    margin-top: 20px;
+    width:100%
+
+  }
+  .frete-escolhido h3{
+    margin-bottom: 5px;
+  }
