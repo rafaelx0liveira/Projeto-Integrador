@@ -1,120 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <link href="./css/checkout-page.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link href="./css/checkout-page.css" rel="stylesheet">
+  <link href="./css/style.css" rel="stylesheet">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <!-- Definindo que o css deve ser a primeira coisa a ser carregada-->
-    <link rel="preload" href="./css/style.css" as="style">
-    <!-- Roboto -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700;900&display=swap" rel="stylesheet">
-    <!-- PlayFair Display -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <title>Projeto Integrador</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <!-- Definindo que o css deve ser a primeira coisa a ser carregada-->
+  <link rel="preload" href="./css/style.css" as="style">
+  <!-- Roboto -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700;900&display=swap" rel="stylesheet">
+  <!-- PlayFair Display -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <title>Projeto Integrador</title>
 
 </head>
+
 <body>
-    <header class="header-bg">
-        <div class="header container">
-          <a href="">
-            LOGO
-          </a>
-    
-          <nav aria-label="primary">
-            <ul class="header-menu font-1-s">
-              <li>
-                <a href="">Loja</a>
-              </li>
-              <li>
-                <a href="">Delivery</a>
-              </li>
-              <li>
-                <a href="">Produtos</a>
-              </li>
-              <li>
-                <a href="">Contato</a>
-              </li>
-            </ul>
-          </nav>
-    
-          <nav class="secondary">
-            <ul class="header-login">
-              <li>
-                <button class="signIn_button font-2-xs" href="">Login</button>
-              </li>
-              <li>
-                <button class="signUp_button font-2-xs color-0">Cadastro</button>
-              </li>
-            </ul>
-          </nav>
+  <header class="header-bg">
+    <div class="header container">
+      <a href="">
+        LOGO
+      </a>
+
+      <nav aria-label="primary">
+        <ul class="header-menu font-1-s">
+          <li>
+            <a href="">Loja</a>
+          </li>
+          <li>
+            <a href="">Delivery</a>
+          </li>
+          <li>
+            <a href="">Produtos</a>
+          </li>
+          <li>
+            <a href="">Contato</a>
+          </li>
+        </ul>
+      </nav>
+
+      <nav class="secondary">
+        <ul class="header-login">
+          <li>
+            <button class="signIn_button font-2-xs" href="">Login</button>
+          </li>
+          <li>
+            <button class="signUp_button font-2-xs color-0">Cadastro</button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="carrinho-de-prudutos">
+      <p>LISTA DE PRODUTOS</p>
+    </section>
+    <section class="frete-e-pagamento">
+      <form class="calcular-frete">
+        <h3>Entrega</h3>
+        <div class="cep">
+          <label for="cep">Cep</label>
+          <input type="text" name="cep" id="cep">
         </div>
-      </header>
-    <main>
-        <section class="carrinho-de-prudutos">
-            <p>LISTA DE PRODUTOS</p>
-        </section>
-        <section class="frete-e-pagamento">
-            <form class="calcular-frete">
-                <h3>Entrega</h3>
-                <div class="cep">
-                    <label for="cep">Cep</label>
-                    <input type="text" name="cep" id="cep">
-                </div>
-                    <div class="input-wrapper">
-                        <label for="endereco"> Endereco</label>
-                        <input type="text" name="edereco" id="endereco">
-                    </div>
-                    <div class="input-wrapper">
-                        <label for="numero"> Numero</label>
-                        <input type="number" name="numero" id="numero">
-                    </div>
-                    <div class="input-wrapper">
-                        <label for="bairro"> Bairro</label>
-                        <input type="text" name="bairro" id="bairro">
-                    </div>
-                    <div class="input-wrapper">
-                        <label for="cidade-estado"> Cidade/Estado</label>
-                        <input type="text" name="cidade-estado" id="cidade-estado">
-                    </div>
-                    <div class="input-wrapper">
-                        <label for="destinatario"> Destinatario</label>
-                        <input type="text" name="edereco" id="endereco">
-                    </div>
-                    <div class="frete-escolhido">
-                        <h3>Escolha seu frete</h3>
-                       
-                        <label for="">Entrega Economica R$20,00</label>
-                        <input type="radio" name="tipo-frete" id="frete-economico">
+        <div class="input-wrapper">
+          <label for="endereco"> Endereco</label>
+          <input type="text" name="edereco" id="endereco">
+        </div>
+        <div class="input-wrapper">
+          <label for="numero"> Numero</label>
+          <input type="number" name="numero" id="numero">
+        </div>
+        <div class="input-wrapper">
+          <label for="bairro"> Bairro</label>
+          <input type="text" name="bairro" id="bairro">
+        </div>
+        <div class="input-wrapper">
+          <label for="cidade-estado"> Cidade/Estado</label>
+          <input type="text" name="cidade-estado" id="cidade-estado">
+        </div>
+        <div class="input-wrapper">
+          <label for="destinatario"> Destinatario</label>
+          <input type="text" name="edereco" id="endereco">
+        </div>
+        <div class="frete-escolhido">
+          <h3>Escolha seu frete</h3>
+          <div class="radio-wrapper">
+            <label for="tipo-frete">Entrega Economica R$20,00</label>
+            <input type="radio" name="tipo-frete" id="frete-economico">
+          </div>
+          <div class="radio-wrapper">
+            <label for="tipo-frete">Entrega rápida R$40,00 </label>
+            <input type="radio" name="tipo-frete" id="frete-rapido">
+          </div>
+          <div class="radio-wrapper">
+            <label for="tipo-frete">Frete Grátis </label>
+            <input type="radio" name="tipo-frete" id="frete-gratis">
+          </div>
+        </div>
 
-                        <label for="">Entrega rápida R$40,00 </label>
-                        <input type="radio" name="tipo-frete" id="frete-rapido">
-
-                        <label for="">Frete Grátis </label>
-                        <input type="radio" name="tipo-frete" id="frete-gratis">
-
-                    </div>
-
-            </form>
-            <div class="pagamento">
-                <h3>Pagamento</h3>  
-                <h4> <br><br>Subtotal R$:<br> <br>Frete R$ <br> <br> Total R$: 
-                </h4>
-                
-                
-
+        <button class="ir-para-pagamento">
+          Ir Para Pagamento
+        </button>
+      </form>
+      <div class="pagamento">
+        <div class="calculo-pagamento">
+          <h3>Pagamento</h3>
+          <h4>Frete R$</h4>
+          <h4>Subtotal R$ </h4>
+        </div>
+        <article class="cupom-de-desconto">
+          <input type="text" name="cupom" id="input-cupom" placeholder="Insira Seu Cupom">
+          <button> Inserir Cupom </button>
+        </article>
+        <article>
+          <form class="forma-de-pagamento">
+            <h3>Forma de Pagamento</h3>
+            <div class="checkbox-wrapper">
+              <label for="pix"> Pix 2%OFF</label>
+              <input type="checkbox" name="pix" id="pix">
             </div>
-        </section>
-    </main>
+            <div class="checkbox-wrapper">
+              <label for="cartao"> Até 4x s/juros</label>
+              <input type="checkbox" name="cartao" id="cartao">
+            </div>
+            <div class="checkbox-wrapper">
+              <label for="boleto"> Boleto 5%off </label>
+              <input type="checkbox" name="boleto" id="boleto">
+            </div>
 
-    
+          </form>
+        </article>
+      </div>
+    </section>
+  </main>
+
+
 </body>
+
 </html>
