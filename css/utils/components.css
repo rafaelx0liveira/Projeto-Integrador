@@ -91,12 +91,20 @@
   font-family: var(--font-roboto);
 }
 
-
 .signIn_button:hover,
 .signUp_button:hover{
-  transform: scale(1.08);
+  transform: scale(1.1);
 }
 
+.signIn_button:hover{
+  border: 2px solid var(--color-p4);
+  background-color: var(--color-p1);
+}
+
+.signUp_button:hover{
+  border: 2px solid var(--color-p1);
+  color: var(--color-p1);
+}
 
 /****************************
           LINKS
