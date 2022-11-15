@@ -8,6 +8,7 @@
   /*********/
   --font-playfair: 'Playfair Display', serif;
   --font-roboto: 'Roboto', sans-serif;
+  --font-londrina-outline: 'Londrina Outline', cursive;
 }
 
 .font-1-xs {
@@ -43,6 +44,10 @@
   font: 400 1.5rem/1.5 var(--font-roboto);
 }
 
+.font-1-l-b {
+  font: 700 1.5rem/1.5 var(--font-roboto);
+}
+
 .font-2-l,
 .font-2-l-b {
   font: 400 1.5rem/1.5 var(--font-roboto);
@@ -69,6 +74,10 @@
   font-weight: 600; */
 
   font: 600 4rem/1.125 var(--font-roboto); /* Maneira curta de escrever o código acima*/
+}
+
+.font-2-xxl{
+  font-size: 10rem;
 }
 
 @media (max-width: 1200px) {
