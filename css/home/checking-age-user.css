@@ -1,9 +1,14 @@
-body{
+/* body{
+  
+} */
+
+.principal{
   background-color: var(--color-12);
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 50px;
 }
 
 .checking-content{
