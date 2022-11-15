@@ -21,7 +21,8 @@
   
   <title>Página do usuário</title>
 </head>
-<body>
+
+<body id="userpage">
   <header class="header-bg">
     <div class="header container">
       <a href="">
@@ -46,19 +47,19 @@
       </nav>
 
       <nav class="secondary">
-        <ul class="header-user-page">
+        <ul class="header-logged_user">
           <li>
-            <a href="" class="userpage_user-icon icons-size">
+            <a href="" class="logged_user_user-icon icons-size">
               <i class="fa fa-user"></i>
             </a>
           </li>
           <li>
-            <a href="" class="userpage_favorite-icon icons-size">
+            <a href="" class="logged_user_favorite-icon icons-size">
               <i class="fa-solid fa-heart"></i>
             </a>
           </li>
           <li>
-            <a href="" class="userpage_order-icon icons-size">
+            <a href="" class="logged_user_order-icon icons-size">
               <i class="fa-solid fa-cart-shopping"></i>
             </a>
           </li>
@@ -70,5 +71,159 @@
       </nav>
     </div>
   </header>
+
+
+  <main class="userpage_main">
+    <div class="title-bg">
+      <div class="container">
+        <p class="font-2-l-b color-5" data-anime="200">Página de Usuário</p>
+        <h1 class="font-1-xxl color-0" data-anime="400">Nome do usuário</h1>
+      </div>
+    </div>
+
+    <div class="userpage_content container">
+      <section class="userpage_menu">
+        <div class="userpage_picture">
+          <img src="./images/usuario/foto de perfil.svg" alt="Foto de perfil">
+        </div>
+        <div class="userpage_options font-2-s color-4">
+          <ul>
+            <li>
+              <a href="">Perfil</a>
+            </li>
+            <li>
+              <a href="">Pedidos</a>
+            </li>
+            <li>
+              <a href="">Endereço</a>
+            </li>
+            <li>
+              <a href="">Pagamentos</a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="userpage_personal-data" data-anime="400" aria-label="Dados Pessoais">
+        <form class="userpage_form" action="./contato.html">
+          <div>
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" placeholder="Seu nome">
+          </div>
+
+          <div>
+            <label for="sobrenome">Sobrenome</label>
+            <input type="text" id="sobrenome" name="sobrenome" placeholder="Seu sobrenome">
+          </div>
+
+          <div class="col-2">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="contato@email.com">
+          </div>
+
+          <div>
+            <label for="cpf">CPF</label>
+            <input type="text" id="cpf" name="cpf" placeholder="xxx.xxx.xxx-xx">
+          </div>
+
+          <div>
+            <label for="genero">Gênero</label>
+            <input type="text" id="genero" name="genero" placeholder="Seu gênero">
+          </div>
+
+          <div>
+            <label for="nascimento">Data de Nascimento</label>
+            <input type="text" id="nascimento" name="nascimento" placeholder="dd/mm/aa">
+          </div>
+
+          <div>
+            <label for="telefone">Telefone</label>
+            <input type="text" id="telefone" name="telefone" placeholder="(99) 99999-9999">
+          </div>
+
+
+          
+          <button class="botao col-2">Enviar Mensagem</button>
+        </form>
+      </section>
+
+    </div>
+
+  </main>
+
+  <footer class="footer-bg">
+    <div class="footer container">
+      <a href="" class="font-2-l-b color-12">
+        LOGO
+      </a>
+      <div class="footer-contact">
+        <h3 class="font-2-l-b color-12">Contato</h3>
+        <ul class="font-2-m color-10">
+          <li><a href="tel:+5511999999999">+55 11999999999</a></li>
+          <li><a href="mailto:emailcontato@gmail.com">emailcontato@gmail.com</a></li>
+          <li>Rua Ali Perto, 42 - Paulista</li>
+          <li>São Paulo - SP</li>
+        </ul>
+        <div class="footer-socia_media">
+          <a href="./">
+            <img src="./images/redes/instagram-p.svg" width="32" height="32" alt="Instagram">
+          </a>
+          <a href="./">
+            <img src="./images/redes/facebook-p.svg" width="32" height="32" alt="Facebook">
+          </a>
+          <a href="./">
+            <img src="./images/redes/youtube-p.svg" width="32" height="32" alt="Youtube">
+          </a>
+        </div>
+      </div>
+      <div class="footer-info">
+        <h3 class="font-2-l-b color-12">Informações</h3>
+        <nav>
+          <ul class="font-1-m color-10">
+            <li><a href="">Bebidas</a></li>
+            <li><a href="">Sobre a empresa</a></li>
+            <li><a href=" ">Termos e condições</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-payment">
+        <h3 class="font-2-l-b color-12">Pagamento</h3>
+
+        <ul>
+          <li>
+            <a href="./">
+              <img src="./images/forma-de-pagamento/mastercard.svg" width="64" height="64" alt="Instagram">
+            </a>
+          </li>
+          <li>
+            <a href="./">
+              <img src="./images/forma-de-pagamento/visa.svg" width="64" height="64" alt="Facebook">
+            </a>
+          </li>
+          <li>
+            <a href="./">
+              <img src="./images/forma-de-pagamento/discover.svg" width="64" height="64" alt="Youtube">
+            </a>
+          </li>
+          <li>
+            <a href="./">
+              <img src="./images/forma-de-pagamento/pix.svg" width="64" height="64" alt="Instagram">
+            </a>
+          </li>
+          <li>
+            <a href="./">
+              <img src="./images/forma-de-pagamento/elo.svg" width="64" height="64" alt="Facebook">
+            </a>
+          </li>
+          <li>
+            <a href="./">
+              <img src="./images/forma-de-pagamento/boleto.svg" width="64" height="64" alt="Youtube">
+            </a>
+          </li>
+        </ul>
+      </div>
+      <p class="footer-copy font-2-m color-12">Bebidas © Alguns direitos reservados.</p>
+    </div>
+  </footer>
 </body>
 </html>
