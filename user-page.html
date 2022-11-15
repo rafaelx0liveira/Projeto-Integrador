@@ -4,9 +4,71 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <!-- Definindo que o css deve ser a primeira coisa a ser carregada-->
+  <link rel="preload" href="./css/style.css" as="style">
+  <!-- Roboto -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700;900&display=swap" rel="stylesheet">
+  <!-- PlayFair Display -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"> 
+  
+  <link rel="stylesheet" href="./images/fontawesome-free-6.2.0-web/css/all.min.css">
+
+  
   <title>Página do usuário</title>
 </head>
 <body>
-  
+  <header class="header-bg">
+    <div class="header container">
+      <a href="">
+        LOGO
+      </a>
+
+      <nav aria-label="primary">
+        <ul class="header-menu font-1-s">
+          <li>
+            <a href="">Loja</a>
+          </li>
+          <li>
+            <a href="">Delivery</a>
+          </li>
+          <li>
+            <a href="">Produtos</a>
+          </li>
+          <li>
+            <a href="">Contato</a>
+          </li>
+        </ul>
+      </nav>
+
+      <nav class="secondary">
+        <ul class="header-user-page">
+          <li>
+            <a href="" class="userpage_user-icon icons-size">
+              <i class="fa fa-user"></i>
+            </a>
+          </li>
+          <li>
+            <a href="" class="userpage_favorite-icon icons-size">
+              <i class="fa-solid fa-heart"></i>
+            </a>
+          </li>
+          <li>
+            <a href="" class="userpage_order-icon icons-size">
+              <i class="fa-solid fa-cart-shopping"></i>
+            </a>
+          </li>
+          <li class="search-box">
+            <input class="search-txt" type="text" name="" placeholder="Pesquisar">
+            <a class="search-btn" href=""><i class="fa fa-search"></i></a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 </body>
 </html>
