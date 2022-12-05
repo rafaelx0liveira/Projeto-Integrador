@@ -80,4 +80,10 @@
   .footer-copy{
     margin-top: 0px;
   }
+
+  .footer-payment a{
+    margin: auto;
+
+  }
+  
 }

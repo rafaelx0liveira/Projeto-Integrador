@@ -1,52 +1,55 @@
 /****************************
-        CARROSSEL 
+        ATIVAR LINKS
 ****************************/
 
-let slideIndex = 1;
-showSlides(slideIndex);
+const links = document.querySelectorAll(".userpage_options a");
 
-// Next/previous controls
-function plusSlides(n) {
-  showSlides(slideIndex += n);
+function ativarLink(link) {
+  const url = location.href;
+  const href = link.href;
+
+  if (url.includes(href)) {
+    link.classList.add("ativo");
+  }
 }
 
-// Thumbnail image controls
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
+links.forEach(ativarLink);
+
+/****************************
+        CARROSSEL 
+****************************/
 
 function showSlides(n) {
   let i;
   let slides = document.getElementsByClassName("mySlides");
   let dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
+  
+  if (n > slides.length) {
+    slideIndex = 1;
+  }
+  if (n < 1) {
+    slideIndex = slides.length;
+  }
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
   for (i = 0; i < dots.length; i++) {
     dots[i].className = dots[i].className.replace(" active", "");
   }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].className += " active";
 }
 
-/****************************
-        ATIVAR LINKS
-****************************/
+let slideIndex = 1;
+showSlides(slideIndex);
 
-// const links = document.querySelectorAll(".userpage_options a");
+// Next/previous controls
+function plusSlides(n) {
+  showSlides((slideIndex += n));
+}
 
-// function ativarLink(link) {
-//   const url = location.href;
-//   const href = link.href;
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides((slideIndex = n));
+}
 
-//   if (url.includes(href)) {
-//     link.classList.add("ativo");
-//   }
-
-//   console.log(url);
-//   console.log(href);
-// }
-
-// links.forEach(ativarLink);
