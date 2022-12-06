@@ -11,10 +11,11 @@
 @import "./utils/components.css";
 @import "./utils/colors.css";
 @import "./utils/typography.css";
+@import "./utils/user_page.css";
 @import "./home/banners.css";
 @import "./home/products_list.css";
 @import "./home/commemorative_events.css";
 @import "./home/partners.css";
-@import "./registration-page.css";
+@import "./registration-page.css"
 
 

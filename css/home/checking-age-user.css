@@ -1,0 +1,87 @@
+/* body{
+  
+} */
+
+.principal{
+  background-color: var(--color-12);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+}
+
+.checking-content{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border: 10px solid white;
+  border-radius: 20px;
+  width: 100%;
+  padding: 0px 100px;
+}
+
+.checking-text{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.checking-text h2{
+  font-family: var(--font-londrina-outline);
+  color: var(--color-0);
+}
+
+.checking-text p{
+  max-width: 30ch;
+  color: var(--color-0);
+  margin-bottom: 50px;
+}
+
+.checking-image img{
+  object-fit: cover;
+  object-position: right;
+}
+
+.buttons{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.adult-button{
+  padding: 10px 30px 10px 30px;
+  border-radius: 8px;
+  background-color: var(--color-0);
+  cursor: pointer;
+  transition: 0.5s;
+  font-weight: 700;
+  color: var(--color-12);
+}
+
+.kid-button{
+  padding: 10px 30px 10px 30px;
+  border: 2px solid var(--color-0);
+  border-radius: 8px;
+  background-color: var(--color-12);
+  cursor: pointer;
+  transition: 0.5s;
+  font-weight: 700;
+  color: var(--color-0);
+}
+
+.adult-button:hover{
+  color: var(--color-0);
+  border: 2px solid var(--color-0);
+  background-color: var(--color-12);
+  transform: scale(1.1);
+}
+
+.kid-button:hover{
+  color: var(--color-12);
+  background-color: var(--color-0);
+  transform: scale(1.1);
+}
+
+

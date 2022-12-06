@@ -7,7 +7,7 @@
 
 .footer{
   display: grid;
-  grid-template-columns: 3fr 5fr 4fr;
+  grid-template-columns: 3fr 3fr 3fr 3fr;
   gap: 40px;
   padding-top: 60px;
   padding-bottom: 60px;
@@ -17,11 +17,11 @@
   margin-bottom: 32px;
 }
 
-.footer-contato ul{
+.footer-contact ul{
   margin-bottom: 32px;
 }
 
-.footer-contato li:nth-child(even):after{
+.footer-contact li:nth-child(even):after{
   content: "";
   display: block;
   max-width: 360px;
@@ -34,7 +34,7 @@
   margin-bottom: 16px;
 }
 
-.footer-redes{
+.footer-socia_media{
   display: flex;
   gap: 32px;
 }
@@ -42,6 +42,17 @@
 .footer a:hover{
   color: var(--cor-0);
 }
+
+.footer-payment ul{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 4 colunas de 1 fr */
+  margin: 0 auto;
+}
+
+.footer-payment a{
+  margin: auto;
+}
+
 
 .footer-copy{
   grid-column: 1/-1;
@@ -69,4 +80,10 @@
   .footer-copy{
     margin-top: 0px;
   }
+
+  .footer-payment a{
+    margin: auto;
+
+  }
+  
 }
