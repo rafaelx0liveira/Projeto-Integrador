@@ -16,11 +16,11 @@
 @import "./home/products_list.css";
 @import "./home/commemorative_events.css";
 @import "./home/partners.css";
+@import "./registration-page.css"
 @import "./home/checking-age-user.css";
 @import "./user-page/user-page.css";
 @import "./global/logged_user_header.css";
 @import "./utils/form.css";
-
 
 
 
