@@ -3,6 +3,9 @@
     height: 40vh;
   }
 
+
+
+  
   .frete-e-pagamento {
     padding: 30px;
     display: flex;
@@ -127,6 +130,8 @@
 .checkbox-wrapper input:checked::before{
   opacity:1
 }
+ 
+
 
   
 
