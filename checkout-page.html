@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <script src="./scripts/cep-api.js" defer></script> 
   <link href="./css/style.css" rel="stylesheet">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -60,22 +61,41 @@
     </div>
   </header>
   <main>
-    <section class="carrinho-de-prudutos">
-      <p>LISTA DE PRODUTOS</p>
+    <section class="carrinho-de-produtos">
+      <article class="produto-no-carrinho">
+        <img class="img-do-produto" src="./images/bebidas/Whisky-Jack-Daniels-Old-no7-1L.png" alt="Jack Daniels">
+        <h3 class="titulo-do-produto">Whiskey JackDaniels 1 Litro N7</h2>
+          <div class="input-wrapper-quant">
+            <label for="quantidade">Quantidade</label>
+            <input class="quantidade-input" type="number" name="quantidade" id="quantidade">
+          </div>
+          <h4 class="valor-produtos-avulso"> R$ </h4>
+        </article>
+        <article class="produto-no-carrinho">
+          <img class="img-do-produto" src="./images/bebidas/Whisky-Jack-Daniels-Old-no7-1L.png" alt="Jack Daniels">
+          <h3 class="titulo-do-produto">Whiskey JackDaniels 1 Litro N7</h2>
+            <div class="input-wrapper-quant">
+              <label for="quantidade">Quantidade</label>
+              <input class="quantidade-input" type="number" name="quantidade" id="quantidade">
+            </div>
+            <h4 class="valor-produtos-avulso"> R$ </h4>
+          </article>
+        <h4 class="soma-produtos">Subtotal: R$ </h4>
     </section>
+  
     <section class="frete-e-pagamento">
       <form class="calcular-frete">
         <h3>Entrega</h3>
         <div class="cep">
           <label for="cep">Cep</label>
-          <input type="text" name="cep" id="cep">
+          <input type="text" name="cep" id="cep" placeholder="Digite o Cep">
         </div>
         <div class="input-wrapper">
-          <label for="endereco"> Endereco</label>
-          <input type="text" name="edereco" id="endereco">
+          <label for="rua"> Rua </label>
+          <input type="text" name="rua" id="rua">
         </div>
         <div class="input-wrapper">
-          <label for="numero"> Numero</label>
+          <label for="numero"> Número</label>
           <input type="number" name="numero" id="numero">
         </div>
         <div class="input-wrapper">
@@ -83,12 +103,16 @@
           <input type="text" name="bairro" id="bairro">
         </div>
         <div class="input-wrapper">
-          <label for="cidade-estado"> Cidade/Estado</label>
-          <input type="text" name="cidade-estado" id="cidade-estado">
+          <label for="estado">Estado</label>
+          <input type="text" name="estado" id="estado">
+        </div>
+        <div class="input-wrapper">
+          <label for="cidade"> Cidade</label>
+          <input type="text" name="cidade" id="cidade">
         </div>
         <div class="input-wrapper">
           <label for="destinatario"> Destinatario</label>
-          <input type="text" name="edereco" id="endereco">
+          <input type="text" name="destinatario" id="destinatario">
         </div>
         <div class="frete-escolhido">
           <h3>Escolha seu frete</h3>
@@ -136,7 +160,7 @@
               <label for="boleto"> Boleto 5%off </label>
               <input type="checkbox" name="boleto" id="boleto">
             </div>
-
+            <button> Finalizar Pagamento</button>
           </form>
         </article>
       </div>

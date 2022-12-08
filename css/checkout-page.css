@@ -1,7 +1,4 @@
-  .carrinho-de-prudutos {
-    border: 1px black solid;
-    height: 40vh;
-  }
+
 
   .frete-e-pagamento {
     padding: 30px;
@@ -126,6 +123,41 @@
 }
 .checkbox-wrapper input:checked::before{
   opacity:1
+}
+
+/* Carrinho de Compras */
+.img-do-produto {
+  width: 135px;
+  height: 135px
+}
+
+.produto-no-carrinho {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 15px;
+}
+
+.soma-produtos {
+  align-self: flex-end;
+  position: relative;
+  right: 40px;
+}
+.carrinho-de-produtos {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: stretch;
+    align-items: stretch;
+}
+.input-wrapper-quant {
+  display: flex;
+  flex-direction: column;
+}
+.quantidade-input {
+  width: 35px;
+  align-self: center;
+  padding: 2px;
 }
 
   
