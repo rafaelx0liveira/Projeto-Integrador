@@ -12,7 +12,8 @@ const CONFIG = {
     headers: {
     'Content-Type': 'application/json'}
     }
-
+const loadingSpinner = document.querySelector ('.loading')
+let loading = false 
 
 inputCep.addEventListener ('keypress', verificarTamanhoCep)
 inputCep.addEventListener ('blur', fetchData)
@@ -24,6 +25,8 @@ function verificarTamanhoCep (event) {
 }
 
 async function fetchData (){
+    loading = true
+    handleLoading()
     const numero = inputCep.value
     const response = await fetch(`${URL_API_CEP}${numero}`, CONFIG)
     
@@ -35,5 +38,16 @@ async function fetchData (){
     inputCidade.value = cidade
     inputEstado.value = estado
     inputRua.value = rua
+    loading = false 
+    handleLoading()
     
+}
+
+function handleLoading() {
+    if (loading){
+        loadingSpinner.classList.add ('active')
+    }else{
+        loadingSpinner.classList.remove ('active')
+    }
+
 }
