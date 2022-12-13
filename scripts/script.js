@@ -16,6 +16,29 @@ function ativarLink(link) {
 links.forEach(ativarLink);
 
 /****************************
+        MENU HAMBURGUER
+****************************/
+
+const btnMobile = document.getElementById("btn-mobile");
+
+function toggleMenu(event) {
+  if (event.type === "touchstart") event.preventDefault();
+
+  const nav = document.getElementById("navigation");
+  nav.classList.toggle("active");
+  const active = nav.classList.contains("active");
+  event.currentTarget.setAttribute("aria-expanded", active);
+  if (active) {
+    event.currentTarget.setAttribute("aria-label", "Fechar menu");
+  } else {
+    event.currentTarget.setAttribute("aria-label", "Abrir menu");
+  }
+}
+
+btnMobile.addEventListener("click", toggleMenu);
+btnMobile.addEventListener("touchstart", toggleMenu);
+
+/****************************
         CARROSSEL 
 ****************************/
 
@@ -23,7 +46,7 @@ function showSlides(n) {
   let i;
   let slides = document.getElementsByClassName("mySlides");
   let dots = document.getElementsByClassName("dot");
-  
+
   if (n > slides.length) {
     slideIndex = 1;
   }
@@ -52,4 +75,3 @@ function plusSlides(n) {
 function currentSlide(n) {
   showSlides((slideIndex = n));
 }
-
