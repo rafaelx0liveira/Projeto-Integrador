@@ -16,6 +16,40 @@ function ativarLink(link) {
 links.forEach(ativarLink);
 
 /****************************
+        MENU HAMBURGUER
+****************************/
+
+// const btnMobile = document.getElementById("btn-mobile");
+
+// function toggleMenu(event) {
+//   if (event.type === "touchstart") event.preventDefault();
+
+//   const nav = document.getElementById("nav");
+//   nav.classList.toggle("active");
+//   const active = nav.classList.contains("active");
+//   event.currentTarget.setAttribute("aria-expanded", active);
+//   if (active) {
+//     event.currentTarget.setAttribute("aria-label", "Fechar menu");
+//   } else {
+//     event.currentTarget.setAttribute("aria-label", "Abrir menu");
+//   }
+// }
+
+// btnMobile.addEventListener("click", toggleMenu);
+// btnMobile.addEventListener("touchstart", toggleMenu);
+
+function menuShow() {
+  let menuMobile = document.querySelector('.mobile-menu');
+  if (menuMobile.classList.contains('open')) {
+      menuMobile.classList.remove('open');
+      document.querySelector('.icon').src = "./images/menu-hamburguer/menu_white_36dp.svg";
+  } else {
+      menuMobile.classList.add('open');
+      document.querySelector('.icon').src = "./images/menu-hamburguer/close_white_36dp.svg";
+  }
+}
+
+/****************************
         CARROSSEL 
 ****************************/
 
@@ -23,7 +57,7 @@ function showSlides(n) {
   let i;
   let slides = document.getElementsByClassName("mySlides");
   let dots = document.getElementsByClassName("dot");
-  
+
   if (n > slides.length) {
     slideIndex = 1;
   }
@@ -52,4 +86,3 @@ function plusSlides(n) {
 function currentSlide(n) {
   showSlides((slideIndex = n));
 }
-

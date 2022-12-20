@@ -1,9 +1,12 @@
+.mobile-menu-icon{
+  display:none;
+}
+
 .header-logged_user{
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   align-items: center;
-
 }
 
 .search-btn {
@@ -22,7 +25,7 @@
   color: var(--color-p1);
   font-size: 1.20rem;
   transition: 0.4s;
-  line-height: 20px;
+  line-height: 10px;
   width: 0px;
   font-family: var(--font-roboto);
   transition: 1s;
@@ -41,7 +44,7 @@
 
 .search-box:hover > .search-txt {
   width: 200px;
-  padding: 0 6px;
+  
 }
 
 .fa-search {
@@ -52,8 +55,31 @@
   font-size: 25px;
 }
 
+.icon:hover{
+  color: var(--color-p1);
+}
+
+.logged_user_user-icon,
+.logged_user_favorite-icon,
+.logged_user_order-icon{
+  color: var(--color-0);
+}
+
 .logged_user_user-icon:hover,
 .logged_user_favorite-icon:hover,
 .logged_user_order-icon:hover{
   color: var(--color-p1);
+}
+
+@media screen and (max-width: 900px){
+  .mobile-menu-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .icons-size{
+    font-size: 20px;
+  }
 }
