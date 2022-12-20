@@ -23,30 +23,20 @@
 </head>
 
 <body id="userpage">
-  <header class="header-bg">
-    <div class="header container">
-      <a href="">
-        LOGO
-      </a>
-
-      <nav aria-label="primary">
-        <ul class="header-menu font-1-s">
-          <li>
-            <a href="">Loja</a>
-          </li>
-          <li>
-            <a href="">Delivery</a>
-          </li>
-          <li>
-            <a href="">Produtos</a>
-          </li>
-          <li>
-            <a href="">Contato</a>
-          </li>
+  <header>
+    <nav class="nav-bar">
+      <div class="logo">
+        <h1>Logo</h1>
+      </div>
+      <div class="nav-list">
+        <ul role="menu">
+          <li class="nav-item"><a href="#" class="nav-link">Loja</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Delivery</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Produtos</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Contato</a></li>
         </ul>
-      </nav>
-
-      <nav class="secondary">
+      </div>
+      <div class="login-button">
         <ul class="header-logged_user">
           <li>
             <a href="" class="logged_user_user-icon icons-size">
@@ -68,7 +58,32 @@
             <a class="search-btn" href=""><i class="fa fa-search"></i></a>
           </li>
         </ul>
-      </nav>
+      </div>
+
+      <div class="mobile-menu-icon">
+        <a href="" class="logged_user_user-icon icons-size">
+          <i class="fa fa-user"></i>
+        </a>
+        <a href="" class="logged_user_favorite-icon icons-size">
+          <i class="fa-solid fa-heart"></i>
+        </a>
+        <a href="" class="logged_user_order-icon icons-size">
+          <i class="fa-solid fa-cart-shopping"></i>
+        </a>
+        <button onclick="menuShow()"><img class="icon" src="./images/menu-hamburguer/menu_white_36dp.svg" alt=""></button>
+      </div>
+    </nav>
+    <div class="mobile-menu">
+      <ul>
+        <li class="nav-item"><a href="#" class="nav-link">Loja</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Delivery</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Produtos</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Contato</a></li>
+      </ul>
+
+      <div class="login-button">
+
+      </div>
     </div>
   </header>
 

@@ -1,7 +1,7 @@
 /****************************
           COMPONENTs
 ****************************/
-.container{
+.container {
   max-width: 1200px;
   padding-left: 20px;
   padding-right: 20px;
@@ -14,10 +14,10 @@
         SHOP BOTTOMS
 ****************************/
 
-.button{
+.button {
   display: inline-block;
   padding: 16px 32px;
-  background: linear-gradient(#FFBF00, #F2A60C);
+  background: linear-gradient(#ffbf00, #f2a60c);
   border-radius: 4px;
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
   text-transform: uppercase;
@@ -28,15 +28,15 @@
   cursor: pointer;
 }
 
-.button:hover{
-  background: linear-gradient(#FFB60D, #E59317);
+.button:hover {
+  background: linear-gradient(#ffb60d, #e59317);
 }
 
-.update_userpage_button{
+.update_userpage_button {
   margin-top: 20px;
   display: inline-block;
   padding: 16px 32px;
-  background: linear-gradient(#FFBF00, #F2A60C);
+  background: linear-gradient(#ffbf00, #f2a60c);
   border-radius: 4px;
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
   text-transform: uppercase;
@@ -46,13 +46,12 @@
   cursor: pointer;
 }
 
-.update_userpage_button:hover{
-  background: linear-gradient(#FFB60D, #E59317);
+.update_userpage_button:hover {
+  background: linear-gradient(#ffb60d, #e59317);
 }
 
-
-@media (max-width: 600px){
-  .button{
+@media (max-width: 600px) {
+  .button {
     padding: 12px 16px;
     font-size: 1rem;
   }
@@ -62,17 +61,16 @@
         LOGIN BUTTON
 ****************************/
 
-.signIn_button{
+.signIn_button {
   padding: 10px 30px 10px 30px;
   border-radius: 8px;
   background-color: var(--color-0);
   cursor: pointer;
   transition: 0.5s;
   font-family: var(--font-roboto);
-
 }
 
-.signUp_button{
+.signUp_button {
   padding: 10px 20px 10px 20px;
   border-radius: 8px;
   background-color: var(--color-12);
@@ -83,32 +81,39 @@
 }
 
 .signIn_button:hover,
-.signUp_button:hover{
+.signUp_button:hover {
   transform: scale(1.1);
 }
 
-.signIn_button:hover{
+.signIn_button:hover {
   border: 2px solid var(--color-p4);
   background-color: var(--color-p1);
 }
 
-.signUp_button:hover{
+.signUp_button:hover {
   border: 1px solid var(--color-p1);
   color: var(--color-p1);
+}
+
+@media screen and (max-width: 900px) {
+  .signIn_button:hover,
+  .signUp_button:hover {
+    transform: none;
+  }
 }
 
 /****************************
           LINKS
 ****************************/
 
-.link{
+.link {
   display: inline-block;
   color: var(--color-12);
   font: 500 1.5rem/1.5 var(--font-roboto);
   text-transform: uppercase;
 }
 
-.link::after{
+.link::after {
   content: "";
   display: block;
   width: 100%;
@@ -116,7 +121,7 @@
   background-color: currentColor;
 }
 
-.link:hover{
+.link:hover {
   color: var(--color-0);
 }
 
@@ -124,27 +129,27 @@
           TÍTULOS INTERNOS
 **********************************/
 
-.title-bg{
+.title-bg {
   padding-top: 60px;
   padding-bottom: 60px;
   background-color: var(--cor-11);
 }
 
-.title{
+.title {
   background: url("../../img/dec/top-right.svg") no-repeat top right 20px;
 }
 
-.title p{
+.title p {
   margin-bottom: 4px;
 }
 
-@media (max-width: 800px){
-  .title{
+@media (max-width: 800px) {
+  .title {
     padding-top: 40px;
     padding-bottom: 40px;
   }
 
-  .title p{
+  .title p {
     font-size: 1rem;
     text-transform: lowercase;
     font-weight: 400;

@@ -19,24 +19,35 @@ links.forEach(ativarLink);
         MENU HAMBURGUER
 ****************************/
 
-const btnMobile = document.getElementById("btn-mobile");
+// const btnMobile = document.getElementById("btn-mobile");
 
-function toggleMenu(event) {
-  if (event.type === "touchstart") event.preventDefault();
+// function toggleMenu(event) {
+//   if (event.type === "touchstart") event.preventDefault();
 
-  const nav = document.getElementById("nav");
-  nav.classList.toggle("active");
-  const active = nav.classList.contains("active");
-  event.currentTarget.setAttribute("aria-expanded", active);
-  if (active) {
-    event.currentTarget.setAttribute("aria-label", "Fechar menu");
+//   const nav = document.getElementById("nav");
+//   nav.classList.toggle("active");
+//   const active = nav.classList.contains("active");
+//   event.currentTarget.setAttribute("aria-expanded", active);
+//   if (active) {
+//     event.currentTarget.setAttribute("aria-label", "Fechar menu");
+//   } else {
+//     event.currentTarget.setAttribute("aria-label", "Abrir menu");
+//   }
+// }
+
+// btnMobile.addEventListener("click", toggleMenu);
+// btnMobile.addEventListener("touchstart", toggleMenu);
+
+function menuShow() {
+  let menuMobile = document.querySelector('.mobile-menu');
+  if (menuMobile.classList.contains('open')) {
+      menuMobile.classList.remove('open');
+      document.querySelector('.icon').src = "./images/menu-hamburguer/menu_white_36dp.svg";
   } else {
-    event.currentTarget.setAttribute("aria-label", "Abrir menu");
+      menuMobile.classList.add('open');
+      document.querySelector('.icon').src = "./images/menu-hamburguer/close_white_36dp.svg";
   }
 }
-
-btnMobile.addEventListener("click", toggleMenu);
-btnMobile.addEventListener("touchstart", toggleMenu);
 
 /****************************
         CARROSSEL 

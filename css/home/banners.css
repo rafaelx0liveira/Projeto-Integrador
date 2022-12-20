@@ -5,7 +5,7 @@
   max-width: auto;
   position: relative;
   margin: auto;
-  display: none;
+  /* display: none; */
 }
 
 /* Hide the images by default */

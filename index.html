@@ -17,71 +17,48 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+  
   <title>Projeto Integrador</title>
 </head>
 
 <body>
-  <!--<header class="header-bg">
-    <div class="header container">
-      <a href="">
-        LOGO
-      </a>
-  
-      <nav id="navigation" aria-label="primary">
-        <button id="btn-mobile" aria-label="Abrir menu" aria-haspopup="true" aria-controls="menu" aria-expanded="false"> <span id="btn-mobile-menu">Menu</span>
-          <span id="hamburguer"></span>
-        </button>
-        <ul class="header-menu font-1-s" role="menu">
-          <li>
-            <a href="">Loja</a>
-          </li>
-          <li>
-            <a href="">Delivery</a>
-          </li>
-          <li>
-            <a href="">Produtos</a>
-          </li>
-          <li>
-            <a href="">Contato</a>
-          </li>
-          <li>
-            <button class="signIn_button font-2-xs" href="">Entrar</button>
-          </li>
-          <li>
-            <button class="signUp_button font-2-xs color-0">Cadastrar</button>
-          </li>
-        </ul>
-      </nav> 
-    </div>
-  </header> -->
-  <header id="header">
-    <a id="logo" href="">Logo</a>
-    <nav id="nav">
-      <button aria-label="Abrir Menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu" aria-expanded="false">Menu
-        <span id="hamburger"></span>
-      </button>
-      <ul id="menu" role="menu">
-        <li>
-          <a href="">Loja</a>
-        </li>
-        <li>
-          <a href="">Delivery</a>
-        </li>
-        <li>
-          <a href="">Produtos</a>
-        </li>
-        <li>
-          <a href="">Contato</a>
-        </li>
-        <li>
+  <header>
+    <nav class="nav-bar">
+        <div class="logo">
+            <h1>Logo</h1>
+        </div>
+        <div class="nav-list">
+            <ul role="menu">
+                <li class="nav-item"><a href="#" class="nav-link">Loja</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Delivery</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Produtos</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Contato</a></li>
+
+            </ul>
+        </div>
+        <div class="login-button">
           <button class="signIn_button font-2-xs" href="">Entrar</button>
-        </li>
-        <li>
           <button class="signUp_button font-2-xs color-0">Cadastrar</button>
-        </li>
-      </ul>
+        </div>
+
+        <div class="mobile-menu-icon">
+            <button onclick="menuShow()"><img class="icon" src="./images/menu-hamburguer/menu_white_36dp.svg" alt=""></button>
+        </div>
     </nav>
-  </header>
+    <div class="mobile-menu">
+        <ul>
+          <li class="nav-item"><a href="#" class="nav-link">Loja</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Delivery</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Produtos</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Contato</a></li>
+        </ul>
+
+        <div class="login-button">
+          <button class="signIn_button font-2-xs" href="">Entrar</button>
+          <button class="signUp_button font-2-xs color-0">Cadastrar</button>
+        </div>
+    </div>
+</header>
 
 <main class="main">
   <section class="banner">
@@ -320,4 +297,5 @@
 </footer>
 </body>
 <script src="./scripts/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </html>
