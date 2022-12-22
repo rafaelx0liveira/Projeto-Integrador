@@ -1,91 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <!-- Definindo que o css deve ser a primeira coisa a ser carregada-->
+  <link rel="preload" href="./css/style.css" as="style">
+  <!-- Roboto -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700;900&display=swap" rel="stylesheet">
+  <!-- PlayFair Display -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="./css/style.css">
 
-    <title>Login</title>
+  <title>Projeto Integrador</title>
 </head>
+
 <body>
   <header>
     <nav class="nav-bar">
-        <div class="logo">
-            <h1>Logo</h1>
-        </div>
-        <div class="nav-list">
-            <ul role="menu">
-                <li class="nav-item"><a href="#" class="nav-link">Loja</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Delivery</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Produtos</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Contato</a></li>
-            </ul>
-        </div>
-        <div class="login-button">
-          <button class="signIn_button font-2-xs" href="">Entrar</button>
-          <button class="signUp_button font-2-xs color-0">Cadastrar</button>
-        </div>
-
-        <div class="mobile-menu-icon">
-            <button onclick="menuShow()"><img class="icon" src="./images/menu-hamburguer/menu_white_36dp.svg" alt=""></button>
-        </div>
-    </nav>
-    <div class="mobile-menu">
-        <ul>
+      <div class="logo">
+        <h1>Logo</h1>
+      </div>
+      <div class="nav-list">
+        <ul role="menu">
           <li class="nav-item"><a href="#" class="nav-link">Loja</a></li>
           <li class="nav-item"><a href="#" class="nav-link">Delivery</a></li>
           <li class="nav-item"><a href="#" class="nav-link">Produtos</a></li>
           <li class="nav-item"><a href="#" class="nav-link">Contato</a></li>
         </ul>
+      </div>
+      <div class="login-button">
+        <button class="signIn_button font-2-xs" href="">Entrar</button>
+        <button class="signUp_button font-2-xs color-0">Cadastrar</button>
+      </div>
 
-        <div class="login-button">
-          <button class="signIn_button font-2-xs" href="">Entrar</button>
-          <button class="signUp_button font-2-xs color-0">Cadastrar</button>
-        </div>
+      <div class="mobile-menu-icon">
+        <button onclick="menuShow()"><img class="icon" src="./images/menu-hamburguer/menu_white_36dp.svg" alt=""></button>
+      </div>
+    </nav>
+    <div class="mobile-menu">
+      <ul>
+        <li class="nav-item"><a href="#" class="nav-link">Loja</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Delivery</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Produtos</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Contato</a></li>
+      </ul>
+
+      <div class="login-button">
+        <button class="signIn_button font-2-xs" href="">Entrar</button>
+        <button class="signUp_button font-2-xs color-0">Cadastrar</button>
+      </div>
     </div>
-</header>
-      <main class="login-page main">        
-        <form>
-            <div class="content-title">
-                <h2 class="title-login">
-                    Bem-vindo!
-                </h2>
-                <h4 class="subtitle-login">
-                    Faça seu login ou cadastre-se para continuar
-                </h4>
-            </div>
-            <div class="content-form">
-                <div class="row">
-                    <div class="input-group">
-                        <label for="email">E-mail*</label>
-                        <input type="email" id="email" name="email" placeholder="E-mail">
-                    </div>
-                    <div class="input-group">
-                        <label for="senha">Senha*</label>
-                        <input type="password" id="senha" name="senha" placeholder="Senha">
-                    </div>
-                    <div class="input-group">
-                        <input type="submit" value="Entrar">
-                    </div>
-                </div>                
-            </div>
-            <div class="content-help">
-                <div class="facebook-login">
-                    <span><img src="./images/redes/facebook-blue.svg" alt="Facebook"></span><a href="register-page.html">Entrar com Facebook</a>
-                </div> 
-                <div class="register-here">
-                    <a href="register-page.html">Cadastre-se aqui</a>
-                </div> 
-                <div class="forget-pass">
-                    <p>
-                        Esqueceu sua senha? <a href="register-page.html">Clique aqui</a>
-                    </p>                    
-                </div>    
-            </div>                                    
-        </form>
-      </main>
+  </header>
+
+  <main class="main">
+    <div>
+      <div class="title-bg container">
+        <p class="font-2-xl color-5">R$ xx,xx</p>
+        <h1 class="font-1-xxl color-0">Nome do produto<span class="cor-p1">.</span></h1>
+      </div>
+    </div>
+
+    <div class="product-info container">
+      <div class="product-img">
+        <img src="./images/bebidas/bebidas-para-demonstracao.jpg" alt="Nome do produto">
+      </div>
+    </div>
+
+
       <footer class="footer-bg">
         <div class="footer container">
           <a href="" class="font-2-l-b color-12">
