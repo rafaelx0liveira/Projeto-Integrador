@@ -1,6 +1,7 @@
 .products_list{
   padding-top: 60px;
   padding-bottom: 120px;
+  background-color: var(--color-body);
 }
 
 .products_list h2{
