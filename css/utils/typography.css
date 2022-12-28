@@ -15,6 +15,10 @@
   font: 400 0.75rem/1.35 var(--font-roboto);
 }
 
+.font-1-xs-b {
+  font: 500 0.75rem/1.35 var(--font-roboto);
+}
+
 .font-2-xs {
   font: 400 0.875rem/1.43 var(--font-roboto);
 }

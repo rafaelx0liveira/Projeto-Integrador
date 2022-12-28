@@ -19,25 +19,6 @@ links.forEach(ativarLink);
         MENU HAMBURGUER
 ****************************/
 
-// const btnMobile = document.getElementById("btn-mobile");
-
-// function toggleMenu(event) {
-//   if (event.type === "touchstart") event.preventDefault();
-
-//   const nav = document.getElementById("nav");
-//   nav.classList.toggle("active");
-//   const active = nav.classList.contains("active");
-//   event.currentTarget.setAttribute("aria-expanded", active);
-//   if (active) {
-//     event.currentTarget.setAttribute("aria-label", "Fechar menu");
-//   } else {
-//     event.currentTarget.setAttribute("aria-label", "Abrir menu");
-//   }
-// }
-
-// btnMobile.addEventListener("click", toggleMenu);
-// btnMobile.addEventListener("touchstart", toggleMenu);
-
 function menuShow() {
   let menuMobile = document.querySelector('.mobile-menu');
   if (menuMobile.classList.contains('open')) {
@@ -48,6 +29,26 @@ function menuShow() {
       document.querySelector('.icon').src = "./images/menu-hamburguer/close_white_36dp.svg";
   }
 }
+
+/***********************************
+        GALERIA DE BEBIDAS
+************************************/
+const galeria = document.querySelectorAll(".product-images img");
+const galeriaContainer = document.querySelector(".product-images");
+
+function trocarImagem(event) {
+  const img = event.currentTarget;
+  const media = matchMedia("(min-width: 1000px)").matches;
+  if (media) {
+    galeriaContainer.prepend(img);
+  }
+}
+
+function eventosGaleria(img) {
+  img.addEventListener("click", trocarImagem);
+}
+
+galeria.forEach(eventosGaleria);
 
 /****************************
         CARROSSEL 

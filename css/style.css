@@ -20,6 +20,11 @@
 @import "./user-page/user-page.css";
 @import "./global/logged_user_header.css";
 @import "./utils/form.css";
+@import "./registration-page/registration-page.css";
+@import "./login/login.css";
+@import "./product-page/product-page.css";
+@import "./home/home.css";
+
 
 
 

@@ -1,5 +1,5 @@
 /****************************
-          COMPONENTs
+          COMPONENTS
 ****************************/
 .container {
   max-width: 1200px;
@@ -22,14 +22,14 @@
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
   text-transform: uppercase;
   color: var(--cor-p5);
-  font: 600 1.125rem/1.35 var(--font-poppins);
+  font: 600 1.125rem/1.35 var(--font-roboto);
   max-width: max-content;
   border: none;
   cursor: pointer;
 }
 
 .button:hover {
-  background: linear-gradient(#ffb60d, #e59317);
+  background: linear-gradient(#ffb60d, #b16c04);
 }
 
 .update_userpage_button {
@@ -126,17 +126,13 @@
 }
 
 /**********************************
-          TÍTULOS INTERNOS
+          INTERNAL TITLES
 **********************************/
 
 .title-bg {
   padding-top: 60px;
   padding-bottom: 60px;
-  background-color: var(--cor-11);
-}
-
-.title {
-  background: url("../../img/dec/top-right.svg") no-repeat top right 20px;
+  background-color: var(--color-11);
 }
 
 .title p {
