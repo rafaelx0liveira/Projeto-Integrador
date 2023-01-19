@@ -21,7 +21,7 @@
   <title>Projeto Integrador</title>
 </head>
 
-<body>
+<body id="catalogo">
   <header>
     <nav class="nav-bar">
       <div class="logo">
@@ -31,7 +31,7 @@
         <ul role="menu">
           <li class="nav-item"><a href="./lojas.html" class="nav-link">Loja</a></li>
 
-          <li class="nav-item"><a href="#" class="nav-link">Produtos</a></li>
+          <li class="nav-item"><a href="./catalogo_produtos.html" class="nav-link">Produtos</a></li>
           <li class="nav-item"><a href="./contato.html" class="nav-link">Contato</a></li>
         </ul>
       </div>
@@ -47,8 +47,7 @@
     <div class="mobile-menu">
       <ul>
         <li class="nav-item"><a href="./lojas.html" class="nav-link">Loja</a></li>
-
-        <li class="nav-item"><a href="#" class="nav-link">Produtos</a></li>
+        <li class="nav-item"><a href="./catalogo_produtos.html" class="nav-link">Produtos</a></li>
         <li class="nav-item"><a href="./contato.html" class="nav-link">Contato</a></li>
       </ul>
 
@@ -59,62 +58,83 @@
     </div>
   </header>
 
-  <main class="main">
-    <div>
-      <div class="title-bg container">
-        <h1 class="font-1-xxl color-0">Licor 43<span class="color-p1">.</span></h1>
-        <p class="font-2-xl color-5">R$ 119,99</p>
+  <main class="catalog_products_main">
+    <div class="title-bg">
+      <div class="title container">
+        <p class="font-2-l-b color-5 fadeInLeft" data-anime="200">Escolha a melhor para você</p>
+        <h1 class="font-1-xxl color-0 fadeInLeft" data-anime="400">nossas bebidas<span class="color-p1">.</span></h1>
       </div>
     </div>
 
-    <div class="product container">
-      <div class="product-images">
-        <img src="./images/bebidas/bebidas-para-demonstracao.jpg" alt="Nome do produto 1">
-        <img src="./images/bebidas/bebidas-para-demonstracao_2.jpg" alt="Nome do produto 2">
-        <img src="./images/bebidas/bebidas-para-demonstracao_3.jpeg" alt="Nome do produto 3">
+    <div class="catalog_products container">
+      <div class="catalog_products-image fadeInUp" data-anime="600">
+        <img src="./images/bebidas/bebidas-para-demonstracao.jpg" width="1120" height="680" alt="Bebida Alcoólica">
+        <span class="font-2-m color-0">R$ 119,99</span>
       </div>
-      <div class="product-content">
-        <h2 class="font-1-l color-0">Descrição<span class="color-p1">:</span></h2>
-        <p class="font-2-l color-5">
-          O que faz deste licor uma bebida tão especial é a combinação de 43 ingredientes, entre especiarias e frutas cítricas, e o fato de poder ser saboreado tanto puro como em drinks.
-        </p>
-        <div class="buy-product">
-          <a class="button" href="">Comprar Agora</a>
-          <span class="font-1-xs-b color-11"><img src="./images/icones/entrega.svg" alt="">entrega em 5 dias</span>
-          <span class="font-1-xs-b color-11"><img src="./images/icones/estoque.svg" alt="">18 em estoque</span>
-        </div>
+      <div class="catalog_products-content fadeInDown" data-anime="800">
+        <h2 class="font-1-xl">Licor 43</h2>
+        <p class="font-2-s color-8">O que faz deste licor uma bebida tão especial é a combinação de 43 ingredientes, entre especiarias e frutas cítricas, e o fato de poder ser saboreado tanto puro como em drinks.</p>
 
-        <h2 class="font-1-xs color-0">Informações</h2>
-        <ul class="product-info">
-          <li>
-            <img src="./images/icones/ingredientes.svg" alt="">
-            <h3 class="font-1-m color-0">Ingredientes</h3>
-            <p class="font-2-xs color-5">50 ml de Smirnoff Infusion Passion Fruit & Jasmin (o mesmo que 5 tampinhas); Água tônica; Gelo</p>
-          </li>
+        <ul class="font-1-m color-8">
+          <li><img src="./images/icones/ingredientes.svg" width="32" height="32" alt="">50 ml de Smirnoff Infusion Passion Fruit & Jasmin</li>
 
-          <li>
-            <img src="./images/icones/preparo.svg" alt="">
-            <h3 class="font-1-m color-0">Modo de Preparo</h3>
-            <p class="font-2-xs color-5">Encha uma taça com gelo; Adicione 50 ml de Smirnoff Infusion Passion Fruit & Jasmin; Complete com água tônica e sirva. Graduação alcoólica: 6,25% considerando um drink de 200 ml</p>
-          </li>
+          <li><img src="./images/icones/preparo.svg" width="32" height="32" alt="">Gelo + Smirnoff + Água tônica</li>
 
-          <li>
-            <img src="./images/icones/graduacao_alcoolica.svg" alt="">
-            <h3 class="font-1-m color-0">Graduação Alcoólica</h3>
-            <p class="font-2-xs color-5">Contém 37,5% de teor alcoólico.</p>
-          </li>
+          <li><img src="./images/icones/graduacao_alcoolica.svg" width="32" height="32" alt="">Contém 37,5% de teor alcoólico.</li>
 
-          <li>
-            <img src="./images/icones/volume.svg" alt="">
-            <h3 class="font-1-m color-0">Volume</h3>
-            <p class="font-2-xs color-5">Contém 1,75 Litros.</p>
-          </li>
+          <li><img src="./images/icones/volume.svg" width="32" height="32" alt="">Contém 1,75 Litros.</li>
         </ul>
+        <a class="button arrow" href="">Mais Sobre</a>
+      </div>
+    </div>
+
+    <div class="catalog_products-bg">
+      <div class="catalog_products container">
+        <div class="catalog_products-image fadeInUp" data-anime="600">
+          <img src="./images/bebidas/bebidas-para-demonstracao_3.jpeg" width="1120" height="680" alt="Bebida Alcoólica">
+          <span class="font-2-m color-0">R$ 119,99</span>
+        </div>
+        <div class="catalog_products-content fadeInDown" data-anime="800">
+          <h2 class="font-1-xl color-0">Licor 43</h2>
+          <p class="font-2-s color-5">O que faz deste licor uma bebida tão especial é a combinação de 43 ingredientes, entre especiarias e frutas cítricas, e o fato de poder ser saboreado tanto puro como em drinks.</p>
+
+          <ul class="font-1-m color-5">
+            <li><img src="./images/icones/ingredientes.svg" width="32" height="32" alt="">50 ml de Smirnoff Infusion Passion Fruit & Jasmin</li>
+
+            <li><img src="./images/icones/preparo.svg" width="32" height="32" alt="">Gelo + Smirnoff + Água tônica</li>
+
+            <li><img src="./images/icones/graduacao_alcoolica.svg" width="32" height="32" alt="">Contém 37,5% de teor alcoólico.</li>
+
+            <li><img src="./images/icones/volume.svg" width="32" height="32" alt="">Contém 1,75 Litros.</li>
+          </ul>
+          <a class="button arrow" href="">Mais Sobre</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="catalog_products container">
+      <div class="catalog_products-image fadeInUp" data-anime="600">
+        <img src="./images/bebidas/bebidas-para-demonstracao.jpg" width="1120" height="680" alt="Bebida Alcoólica">
+        <span class="font-2-m color-0">R$ 119,99</span>
+      </div>
+      <div class="catalog_products-content fadeInDown" data-anime="800">
+        <h2 class="font-1-xl">Licor 43</h2>
+        <p class="font-2-s color-8">O que faz deste licor uma bebida tão especial é a combinação de 43 ingredientes, entre especiarias e frutas cítricas, e o fato de poder ser saboreado tanto puro como em drinks.</p>
+
+        <ul class="font-1-m color-8">
+          <li><img src="./images/icones/ingredientes.svg" width="32" height="32" alt="">50 ml de Smirnoff Infusion Passion Fruit & Jasmin</li>
+
+          <li><img src="./images/icones/preparo.svg" width="32" height="32" alt="">Gelo + Smirnoff + Água tônica</li>
+
+          <li><img src="./images/icones/graduacao_alcoolica.svg" width="32" height="32" alt="">Contém 37,5% de teor alcoólico.</li>
+
+          <li><img src="./images/icones/volume.svg" width="32" height="32" alt="">Contém 1,75 Litros.</li>
+        </ul>
+        <a class="button arrow" href="">Mais Sobre</a>
       </div>
     </div>
 
     <section class="products_list">
-      <h2 class="font-1-xxl color-0 container">escolha a sua bebida<span class="color-p1">.</span></h2>
       <ul>
         <li>
           <a href="">
@@ -165,7 +185,6 @@
             <span class="font-2-m color-5">R$ 10</span>
           </a>
         </li>
-
         <li>
           <a href="">
             <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
@@ -185,42 +204,7 @@
             <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
             <h3 class="font-1-xl color-5">Gin Tônica</h3>
             <span class="font-2-m color-5">R$ 10</span>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
-            <h3 class="font-1-xl color-5">Gin Tônica</h3>
-            <span class="font-2-m color-5">R$ 10</span>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
-            <h3 class="font-1-xl color-5">Gin Tônica</h3>
-            <span class="font-2-m color-5">R$ 10</span>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
-            <h3 class="font-1-xl color-5">Gin Tônica</h3>
-            <span class="font-2-m color-5">R$ 10</span>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
-            <h3 class="font-1-xl color-5">Gin Tônica</h3>
-            <span class="font-2-m color-5">R$ 10</span>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
-            <h3 class="font-1-xl color-5">Gin Tônica</h3>
-            <span class="font-2-m color-5">R$ 10</span>
-          </a>
+          </a>s
         </li>
         <li>
           <a href="">
@@ -237,29 +221,12 @@
           </a>
         </li>
       </ul>
+
+
+
     </section>
 
-    <section id="commemorative_events_prodPage" class="commemorative_events-bg">
-      <div class="events container">
-        <div class="events_picture">
-          <img src="./images/eventos/eventos_2.svg" alt="Eventos Comemorativos">
-        </div>
 
-        <div class="events_contents">
-          <span class="font-2-l-b color-8">
-            Eventos Comemorativos
-          </span>
-          <h2 class="font-1-xxl color-10">
-            você escolhe a quantidade e o teor
-          </h2>
-          <p class="font-2-l color-12">
-            Confraternizações, palestras ou lançamentos. Transforme seu evento de negócios com as nossas bebidas. Ganhe um diferencial incrível para seus convidados com nossas degustações guiadas e harmonizações.
-            Quer saber mais?
-          </p>
-          <a href="./" class="link">Reserve seu evento</a>
-        </div>
-      </div>
-    </section>
   </main>
 
   <footer class="footer-bg">
