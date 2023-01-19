@@ -1,5 +1,5 @@
-body#cadastro{
-    background-color: #f7f7f7;
+#cadastro{
+    background-color: var(--color-11);
 }
 
 main.registration-page{
