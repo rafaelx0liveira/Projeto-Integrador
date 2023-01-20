@@ -1,3 +1,12 @@
+
+/***********************
+        ANIMAÇÃO
+***********************/
+
+if (window.SimpleAnime) {
+  new SimpleAnime();
+}
+
 /****************************
         ATIVAR LINKS
 ****************************/
@@ -20,13 +29,15 @@ links.forEach(ativarLink);
 ****************************/
 
 function menuShow() {
-  let menuMobile = document.querySelector('.mobile-menu');
-  if (menuMobile.classList.contains('open')) {
-      menuMobile.classList.remove('open');
-      document.querySelector('.icon').src = "./images/menu-hamburguer/menu_white_36dp.svg";
+  let menuMobile = document.querySelector(".mobile-menu");
+  if (menuMobile.classList.contains("open")) {
+    menuMobile.classList.remove("open");
+    document.querySelector(".icon").src =
+      "./images/menu-hamburguer/menu_white_36dp.svg";
   } else {
-      menuMobile.classList.add('open');
-      document.querySelector('.icon').src = "./images/menu-hamburguer/close_white_36dp.svg";
+    menuMobile.classList.add("open");
+    document.querySelector(".icon").src =
+      "./images/menu-hamburguer/close_white_36dp.svg";
   }
 }
 
