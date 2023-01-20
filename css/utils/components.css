@@ -32,6 +32,25 @@
   background: linear-gradient(#ffb60d, #b16c04);
 }
 
+.button.arrow{
+  display: flex;
+  align-items: center;
+}
+
+.button.arrow::after{
+  content: "";
+  display: inline-block;
+  width: 18px;
+  height: 10px;
+  margin-left: 12px;
+  background: url("../../images/icones/seta.svg");
+  transition: transform 0.3s;
+}
+
+.button.arrow:hover::after{
+  transform: translateX(4px);
+}
+
 .update_userpage_button {
   margin-top: 20px;
   display: inline-block;

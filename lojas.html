@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
+  <script> document.documentElement.classList.add('js');</script>
 
   <title>Projeto Integrador</title>
 </head>
@@ -31,7 +31,7 @@
         <ul role="menu">
           <li class="nav-item"><a href="./lojas.html" class="nav-link">Loja</a></li>
 
-          <li class="nav-item"><a href="#" class="nav-link">Produtos</a></li>
+          <li class="nav-item"><a href="./catalogo_produtos.html" class="nav-link">Produtos</a></li>
           <li class="nav-item"><a href="./contato.html" class="nav-link">Contato</a></li>
         </ul>
       </div>
@@ -48,7 +48,7 @@
       <ul>
         <li class="nav-item"><a href="./lojas.html" class="nav-link">Loja</a></li>
 
-        <li class="nav-item"><a href="#" class="nav-link">Produtos</a></li>
+        <li class="nav-item"><a href="./catalogo_produtos.html" class="nav-link">Produtos</a></li>
         <li class="nav-item"><a href="./contato.html" class="nav-link">Contato</a></li>
       </ul>
 
@@ -69,10 +69,10 @@
 
     <article class="lojas container">
       <!-- <h2 class="font-1-xxl"><span class="color-p1">.</span></h2> -->
-      <div class="lojas-item">
-        <img src="./images/lojas/sp.jpg" width="1120" height="520" alt="Mapa do marcando o endereço Rua Ali Perto, 25 São Paulo - SP">
+      <div class="lojas-item fadeInLeft" data-anime="200">
+        <img src="./images/lojas/sp.jpg" class="fadeInLeft" data-anime="300" width="1120" height="520" alt="Mapa do marcando o endereço Rua Ali Perto, 25 São Paulo - SP">
         <div class="lojas-conteudo">
-          <h3 class="font-1-xl">São Paulo</h3>
+          <h3 class="font-1-xl fadeInDown" data-anime="400">São Paulo</h3>
           <div class="lojas-dados font-2-s color-8">
             <p>Rua Ali Perto, 25</p>
             <p>São Paulo - SP</p>
@@ -180,8 +180,8 @@
       <p class="footer-copy font-2-m color-12">Bebidas © Alguns direitos reservados.</p>
     </div>
   </footer>
-  <script src="./js/plugins/simple-anime.js"></script>
-  <script src="./js/script.js"></script>
+  <script src="./scripts/plugins/simple-anime.js"></script>
+  <script src="./scripts/script.js"></script>
 </body>
 
 </html>
