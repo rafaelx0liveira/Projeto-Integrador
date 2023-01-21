@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="./css/style.css">
-
+  <script> document.documentElement.classList.add('js');</script>
   <title>Cadastro</title>
 </head>
 
@@ -56,7 +56,7 @@
       </div>
     </div>
     <form class="container">
-      <fieldset class="personal-data">
+      <fieldset class="personal-data fadeInLeft" data-anime="600">
         <legend>Dados pessoais</legend>
         <div class="row">
           <div class="input-group w-47">
@@ -95,7 +95,7 @@
           </div>
         </div>
       </fieldset>
-      <fieldset class="address-data">
+      <fieldset class="address-data fadeInRight" data-anime="800">
         <legend>Endereço</legend>
         <div class="row">
           <div class="input-group w-100">
@@ -130,13 +130,13 @@
           </div>
         </div>
         <div class="row">
-          <div class="check-group w-100">
+          <div class="check-group w-100 fadeInDown" data-anime="800">
             <input type="checkbox" id="checkNews" name="checkNews" value="s">
             <label for="checkNews"> Quero receber novidades</label>
           </div>
         </div>
         <div class="row">
-          <div class="input-group w-100">
+          <div class="input-group w-100 fadeInUp" data-anime="800">
             <input type="submit" value="Cadastrar">
           </div>
         </div>
@@ -218,6 +218,7 @@
       <p class="footer-copy font-2-m color-12">Bebidas © Alguns direitos reservados.</p>
     </div>
   </footer>
+  <script src="./scripts/plugins/simple-anime.js"></script>
+  <script src="./scripts/script.js"></script>
 </body>
-
 </html>
