@@ -32,6 +32,11 @@ header {
   margin: 0 15px;
 }
 
+.nav-item:nth-child(4),
+.nav-item:nth-child(5) {
+  margin-top: 10px;
+}
+
 .nav-link {
   font-family: var(--font-roboto);
   font-size: 1.15rem;

@@ -1,8 +1,9 @@
-body{
-    background-color: #f7f7f7;
+.login-page{
+    background-color: var(--color-p1);
 }
 
 main.login-page{
+    background-color: var(--color-body);
     width: 50%;
     height: 100vh;
     margin: 0 auto;   
@@ -16,7 +17,7 @@ main.login-page{
     text-transform: uppercase;
     font-size: 1.2rem;
     letter-spacing: .1rem;
-    color: #111111
+    color: #111111;
 }
 
 .login-page .subtitle-login{
@@ -28,7 +29,7 @@ main.login-page{
 .login-page form
 ,
 .login-page form .row .content-help{
-    background-color: #ffffff;
+    background-color: var(--color-0);
     box-shadow: 0px 0px 8px 0px rgba(112,112,112,1);
     border-radius: 16px;
     display: flex;

@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
+  <script> document.documentElement.classList.add('js');</script>
 
   <title>Projeto Integrador</title>
 </head>
@@ -30,14 +30,13 @@
       <div class="nav-list">
         <ul role="menu">
           <li class="nav-item"><a href="./lojas.html" class="nav-link">Loja</a></li>
-
           <li class="nav-item"><a href="./catalogo_produtos.html" class="nav-link">Produtos</a></li>
           <li class="nav-item"><a href="./contato.html" class="nav-link">Contato</a></li>
         </ul>
       </div>
       <div class="login-button">
-        <button class="signIn_button font-2-xs" href="">Entrar</button>
-        <button class="signUp_button font-2-xs color-0">Cadastrar</button>
+        <a class="signIn_button font-2-xs" href="./login.html">Entrar</a>
+        <a class="signUp_button font-2-xs color-0" href="./pagina_registro.html">Cadastrar</a>
       </div>
 
       <div class="mobile-menu-icon">
@@ -46,15 +45,22 @@
     </nav>
     <div class="mobile-menu">
       <ul>
-        <li class="nav-item"><a href="./lojas.html" class="nav-link">Loja</a></li>
-        <li class="nav-item"><a href="./catalogo_produtos.html" class="nav-link">Produtos</a></li>
-        <li class="nav-item"><a href="./contato.html" class="nav-link">Contato</a></li>
+        <li class="nav-item">
+          <a href="./lojas.html" class="nav-link">Loja</a>
+        </li>
+        <li class="nav-item">
+          <a href="./catalogo_produtos.html" class="nav-link">Produtos</a>
+        </li>
+        <li class="nav-item">
+          <a href="./contato.html" class="nav-link">Contato</a>
+        </li>
+        <li class="nav-item">
+          <a class="signIn_button font-2-xs" href="./login.html">Entrar</a>
+        </li>
+        <li class="nav-item">
+          <a class="signUp_button font-2-xs color-0" href="./pagina_registro.html">Cadastrar</a>
+        </li>
       </ul>
-
-      <div class="login-button">
-        <button class="signIn_button font-2-xs" href="">Entrar</button>
-        <button class="signUp_button font-2-xs color-0">Cadastrar</button>
-      </div>
     </div>
   </header>
 
@@ -67,28 +73,28 @@
     </div>
 
     <div class="catalog_products container">
-      <div class="catalog_products-image fadeInUp" data-anime="600">
+      <div class="catalog_products-image fadeInLeft" data-anime="600">
         <img src="./images/bebidas/bebidas-para-demonstracao.jpg" width="1120" height="680" alt="Bebida Alcoólica">
         <span class="font-2-m color-0">R$ 119,99</span>
       </div>
       <div class="catalog_products-content fadeInDown" data-anime="800">
-        <h2 class="font-1-xl">Licor 43</h2>
-        <p class="font-2-s color-8">O que faz deste licor uma bebida tão especial é a combinação de 43 ingredientes, entre especiarias e frutas cítricas, e o fato de poder ser saboreado tanto puro como em drinks.</p>
+        <h2 class="font-1-xl fadeInDown" data-anime="800">Licor 43</h2>
+        <p class="font-2-s color-8 fadeInDown" data-anime="800">O que faz deste licor uma bebida tão especial é a combinação de 43 ingredientes, entre especiarias e frutas cítricas, e o fato de poder ser saboreado tanto puro como em drinks.</p>
 
         <ul class="font-1-m color-8">
-          <li><img src="./images/icones/ingredientes.svg" width="32" height="32" alt="">50 ml de Smirnoff Infusion Passion Fruit & Jasmin</li>
+          <li class="fadeInLeft" data-anime="800"><img src="./images/icones/ingredientes.svg" width="32" height="32" alt="">50 ml de Smirnoff Infusion Passion Fruit & Jasmin</li>
 
-          <li><img src="./images/icones/preparo.svg" width="32" height="32" alt="">Gelo + Smirnoff + Água tônica</li>
+          <li class="fadeInRight" data-anime="1000"><img src="./images/icones/preparo.svg" width="32" height="32" alt="">Gelo + Smirnoff + Água tônica</li>
 
-          <li><img src="./images/icones/graduacao_alcoolica.svg" width="32" height="32" alt="">Contém 37,5% de teor alcoólico.</li>
+          <li class="fadeInLeft" data-anime="1100"><img src="./images/icones/graduacao_alcoolica.svg" width="32" height="32" alt="">Contém 37,5% de teor alcoólico.</li>
 
-          <li><img src="./images/icones/volume.svg" width="32" height="32" alt="">Contém 1,75 Litros.</li>
+          <li class="fadeInRight" data-anime="1200"><img src="./images/icones/volume.svg" width="32" height="32" alt="">Contém 1,75 Litros.</li>
         </ul>
-        <a class="button arrow" href="">Mais Sobre</a>
+        <a class="button arrow fadeInUp" data-anime="1200" href="">Mais Sobre</a>
       </div>
     </div>
 
-    <div class="catalog_products-bg">
+    <div class="catalog_products-bg fadeInUp" data-anime="850">
       <div class="catalog_products container">
         <div class="catalog_products-image fadeInUp" data-anime="600">
           <img src="./images/bebidas/bebidas-para-demonstracao_3.jpeg" width="1120" height="680" alt="Bebida Alcoólica">
@@ -221,12 +227,7 @@
           </a>
         </li>
       </ul>
-
-
-
     </section>
-
-
   </main>
 
   <footer class="footer-bg">
@@ -304,6 +305,6 @@
     </div>
   </footer>
 </body>
+<script src="./scripts/plugins/simple-anime.js"></script>
 <script src="./scripts/script.js"></script>
-
 </html>

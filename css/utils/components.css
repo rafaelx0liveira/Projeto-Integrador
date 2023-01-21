@@ -101,11 +101,11 @@
 
 .signIn_button:hover,
 .signUp_button:hover {
-  transform: scale(1.1);
+  transform: scale(1.0);
 }
 
 .signIn_button:hover {
-  border: 2px solid var(--color-p4);
+  border: 0px solid var(--color-p4);
   background-color: var(--color-p1);
 }
 

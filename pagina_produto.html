@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
+  <script> document.documentElement.classList.add('js');</script>
 
   <title>Projeto Integrador</title>
 </head>
@@ -30,14 +30,13 @@
       <div class="nav-list">
         <ul role="menu">
           <li class="nav-item"><a href="./lojas.html" class="nav-link">Loja</a></li>
-
           <li class="nav-item"><a href="./catalogo_produtos.html" class="nav-link">Produtos</a></li>
           <li class="nav-item"><a href="./contato.html" class="nav-link">Contato</a></li>
         </ul>
       </div>
       <div class="login-button">
-        <button class="signIn_button font-2-xs" href="">Entrar</button>
-        <button class="signUp_button font-2-xs color-0">Cadastrar</button>
+        <a class="signIn_button font-2-xs" href="./login.html">Entrar</a>
+        <a class="signUp_button font-2-xs color-0" href="./pagina_registro.html">Cadastrar</a>
       </div>
 
       <div class="mobile-menu-icon">
@@ -46,16 +45,22 @@
     </nav>
     <div class="mobile-menu">
       <ul>
-        <li class="nav-item"><a href="./lojas.html" class="nav-link">Loja</a></li>
-
-        <li class="nav-item"><a href="./catalogo_produtos.html" class="nav-link">Produtos</a></li>
-        <li class="nav-item"><a href="./contato.html" class="nav-link">Contato</a></li>
+        <li class="nav-item">
+          <a href="./lojas.html" class="nav-link">Loja</a>
+        </li>
+        <li class="nav-item">
+          <a href="./catalogo_produtos.html" class="nav-link">Produtos</a>
+        </li>
+        <li class="nav-item">
+          <a href="./contato.html" class="nav-link">Contato</a>
+        </li>
+        <li class="nav-item">
+          <a class="signIn_button font-2-xs" href="./login.html">Entrar</a>
+        </li>
+        <li class="nav-item">
+          <a class="signUp_button font-2-xs color-0" href="./pagina_registro.html">Cadastrar</a>
+        </li>
       </ul>
-
-      <div class="login-button">
-        <button class="signIn_button font-2-xs" href="">Entrar</button>
-        <button class="signUp_button font-2-xs color-0">Cadastrar</button>
-      </div>
     </div>
   </header>
 
@@ -337,6 +342,7 @@
     </div>
   </footer>
 </body>
+<script src="./scripts/plugins/simple-anime.js"></script>
 <script src="./scripts/script.js"></script>
 
 </html>
