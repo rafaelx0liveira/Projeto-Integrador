@@ -17,7 +17,15 @@
 @import "./home/products_list.css";
 @import "./home/commemorative_events.css";
 @import "./home/partners.css";
+
+
+@import "./checkout-page.css"
+
 @import "./home/checking-age-user.css";
+
+
+
+
 @import "./user-page/user-page.css";
 @import "./global/logged_user_header.css";
 @import "./utils/userpage_form.css";
@@ -30,3 +38,4 @@
 @import "./catalogo-produtos/catalogo-produtos.css";
 @import "./utils/animacao.css";
 @import "./login/pagina_login.css";
+
