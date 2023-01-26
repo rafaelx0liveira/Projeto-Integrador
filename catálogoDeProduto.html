@@ -16,143 +16,145 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script> document.documentElement.classList.add('js');</script>
 
-  
+
   <title>Projeto Integrador</title>
 </head>
 
 <body>
-  <header class="header-bg">
-    <div class="header container">
-      <a href="">
-        LOGO
-      </a>
+  <header>
+    <nav class="nav-bar">
+      <div class="logo">
+        <h1>Logo</h1>
+      </div>
+      <div class="nav-list">
+        <ul role="menu">
+          <li class="nav-item"><a href="./lojas.html" class="nav-link">Loja</a></li>
 
-      <nav aria-label="primary">
-        <ul class="header-menu font-1-s">
-          <li>
-            <a href="">Loja</a>
-          </li>
-          <li>
-            <a href="">Delivery</a>
-          </li>
-          <li>
-            <a href="">Produtos</a>
-          </li>
-          <li>
-            <a href="">Contato</a>
-          </li>
+          <li class="nav-item"><a href="./catalogo_produtos.html" class="nav-link">Produtos</a></li>
+          <li class="nav-item"><a href="./contato.html" class="nav-link">Contato</a></li>
         </ul>
-      </nav>
+      </div>
+      <div class="login-button">
+        <button class="signIn_button font-2-xs" href="">Entrar</button>
+        <button class="signUp_button font-2-xs color-0">Cadastrar</button>
+      </div>
 
-      <nav class="secondary">
-        <ul class="header-login">
-          <li>
-            <button class="signIn_button font-2-xs" href="">Login</button>
-          </li>
-          <li>
-            <button class="signUp_button font-2-xs color-0">Cadastro</button>
-          </li>
-        </ul>
-      </nav>
+      <div class="mobile-menu-icon">
+        <button onclick="menuShow()"><img class="icon" src="./images/menu-hamburguer/menu_white_36dp.svg" alt=""></button>
+      </div>
+    </nav>
+    <div class="mobile-menu">
+      <ul>
+        <li class="nav-item"><a href="./lojas.html" class="nav-link">Loja</a></li>
+
+        <li class="nav-item"><a href="./catalogo_produtos.html" class="nav-link">Produtos</a></li>
+        <li class="nav-item"><a href="./contato.html" class="nav-link">Contato</a></li>
+      </ul>
+
+      <div class="login-button">
+        <button class="signIn_button font-2-xs" href="">Entrar</button>
+        <button class="signUp_button font-2-xs color-0">Cadastrar</button>
+      </div>
     </div>
   </header>
 
   <main class="main">
     <section class="products_list">
       <h2 class="font-1-xxl color-0 container">escolha a sua bebida<span class="color-p1">.</span></h2>
-        <ul>
-          <li>
-            <a href="">
-              <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
-              <h3 class="font-1-xl color-5">Gin Tônica</h3>
-              <span class="font-2-m color-5">R$ 10</span>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
-              <h3 class="font-1-xl color-5">Gin Tônica</h3>
-              <span class="font-2-m color-5">R$ 10</span>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
-              <h3 class="font-1-xl color-5">Gin Tônica</h3>
-              <span class="font-2-m color-5">R$ 10</span>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
-              <h3 class="font-1-xl color-5">Gin Tônica</h3>
-              <span class="font-2-m color-5">R$ 10</span>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
-              <h3 class="font-1-xl color-5">Gin Tônica</h3>
-              <span class="font-2-m color-5">R$ 10</span>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
-              <h3 class="font-1-xl color-5">Gin Tônica</h3>
-              <span class="font-2-m color-5">R$ 10</span>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
-              <h3 class="font-1-xl color-5">Gin Tônica</h3>
-              <span class="font-2-m color-5">R$ 10</span>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
-              <h3 class="font-1-xl color-5">Gin Tônica</h3>
-              <span class="font-2-m color-5">R$ 10</span>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
-              <h3 class="font-1-xl color-5">Gin Tônica</h3>
-              <span class="font-2-m color-5">R$ 10</span>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
-              <h3 class="font-1-xl color-5">Gin Tônica</h3>
-              <span class="font-2-m color-5">R$ 10</span>
-            </a>s
-          </li>
-          <li>
-            <a href="">
-              <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
-              <h3 class="font-1-xl color-5">Gin Tônica</h3>
-              <span class="font-2-m color-5">R$ 10</span>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
-              <h3 class="font-1-xl color-5">Gin Tônica</h3>
-              <span class="font-2-m color-5">R$ 10</span>
-            </a>
-          </li>
-        </ul>
+      <ul>
+        <li>
+          <a href="">
+            <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
+            <h3 class="font-1-xl color-5">Gin Tônica</h3>
+            <span class="font-2-m color-5">R$ 10</span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
+            <h3 class="font-1-xl color-5">Gin Tônica</h3>
+            <span class="font-2-m color-5">R$ 10</span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
+            <h3 class="font-1-xl color-5">Gin Tônica</h3>
+            <span class="font-2-m color-5">R$ 10</span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
+            <h3 class="font-1-xl color-5">Gin Tônica</h3>
+            <span class="font-2-m color-5">R$ 10</span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
+            <h3 class="font-1-xl color-5">Gin Tônica</h3>
+            <span class="font-2-m color-5">R$ 10</span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
+            <h3 class="font-1-xl color-5">Gin Tônica</h3>
+            <span class="font-2-m color-5">R$ 10</span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
+            <h3 class="font-1-xl color-5">Gin Tônica</h3>
+            <span class="font-2-m color-5">R$ 10</span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
+            <h3 class="font-1-xl color-5">Gin Tônica</h3>
+            <span class="font-2-m color-5">R$ 10</span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
+            <h3 class="font-1-xl color-5">Gin Tônica</h3>
+            <span class="font-2-m color-5">R$ 10</span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
+            <h3 class="font-1-xl color-5">Gin Tônica</h3>
+            <span class="font-2-m color-5">R$ 10</span>
+          </a>s
+        </li>
+        <li>
+          <a href="">
+            <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
+            <h3 class="font-1-xl color-5">Gin Tônica</h3>
+            <span class="font-2-m color-5">R$ 10</span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
+            <h3 class="font-1-xl color-5">Gin Tônica</h3>
+            <span class="font-2-m color-5">R$ 10</span>
+          </a>
+        </li>
+      </ul>
 
 
 
     </section>
 
-    
+
   </main>
 
   <footer class="footer-bg">
@@ -195,5 +197,6 @@
   </footer>
 </body>
 <script src="./scripts/script.js"></script>
-</html>
+<script src="./scripts/plugins/simple-anime.js"></script>
 
+</html>

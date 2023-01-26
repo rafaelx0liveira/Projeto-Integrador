@@ -3,6 +3,11 @@
   box-shadow: inset 0 80px var(--color-body), inset 0 -80px var(--color-body);
 }
 
+#commemorative_events_prodPage.commemorative_events-bg{
+  background-color: var(--color-p1);
+  box-shadow: inset 0 80px var(--color-body), inset 0 -80px var(--color-p1);
+}
+
 .events{
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -37,4 +42,28 @@
 
 .events_contents a{
   margin-bottom: 80px;
+}
+
+@media (max-width: 800px){
+
+  .commemorative_events-bg{
+    box-shadow: initial;
+  }
+
+  .events{
+    grid-template-columns: 1fr;
+  }
+
+  .events_contents{
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .events_picture{
+    display: none;
+  }
+
+  .events_contents a{
+    margin-bottom: 60px;
+  }
 }

@@ -2,6 +2,15 @@
   
 } */
 
+.body-age_user{
+  background-color: var(--color-12);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+}
+
 .principal{
   background-color: var(--color-12);
   height: 100vh;
@@ -72,15 +81,16 @@
 }
 
 .adult-button:hover{
-  color: var(--color-0);
-  border: 2px solid var(--color-0);
-  background-color: var(--color-12);
+  color: var(--color-p4);
+  border: 2px solid var(--color-p4);
+  background-color: var(--color-p1);
   transform: scale(1.1);
 }
 
 .kid-button:hover{
-  color: var(--color-12);
-  background-color: var(--color-0);
+  border: 2px solid #911313;
+  color: #700000;
+  background-color: #ff4040;
   transform: scale(1.1);
 }
 

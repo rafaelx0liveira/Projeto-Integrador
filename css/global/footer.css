@@ -40,7 +40,8 @@
 }
 
 .footer a:hover{
-  color: var(--cor-0);
+  color: var(--color-11);
+  font-weight: 700;
 }
 
 .footer-payment ul{
@@ -80,4 +81,10 @@
   .footer-copy{
     margin-top: 0px;
   }
+
+  .footer-payment a{
+    margin: auto;
+
+  }
+  
 }

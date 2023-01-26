@@ -1,0 +1,55 @@
+#userpage{
+  background: linear-gradient(var(--color-11) 400px, var(--color-1) 0);
+}
+
+.userpage_content{
+  display: grid;
+  grid-template-columns: 2fr 7fr;
+  margin-bottom: 40px;
+}
+
+.userpage_menu{
+  padding: 50px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.userpage_menu{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  border-radius: 5px 0 0 5px;
+  background-color: var(--color-0);
+}
+
+.userpage_options ul{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.userpage_options a{
+  display: inline-block;
+  padding: 16px 0px;
+  position: relative;
+}
+
+.userpage_options a::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0;
+  background: var(--color-12);
+  margin-top: 4px;
+  transition: 0.3s;
+  position: absolute;
+}
+
+.userpage_options a:hover::after,
+.userpage_options a.ativo::after
+{
+  width: 100%;
+}
+

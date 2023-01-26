@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <!-- Definindo que o css deve ser a primeira coisa a ser carregada-->
+  <link rel="preload" href="./css/style.css" as="style">
+  <!-- Roboto -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700;900&display=swap" rel="stylesheet">
+  <!-- PlayFair Display -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script> document.documentElement.classList.add('js');</script>
+
+  <link rel="stylesheet" href="./images/fontawesome-free-6.2.0-web/css/all.min.css">
+
+
+  <title>Página do usuário</title>
+</head>
+
+<body id="userpage">
+  <header>
+    <nav class="nav-bar">
+      <div class="logo">
+        <h1>Logo</h1>
+      </div>
+      <div class="nav-list">
+        <ul role="menu">
+          <li class="nav-item"><a href="./lojas.html" class="nav-link">Loja</a></li>
+
+          <li class="nav-item"><a href="./catalogo_produtos.html" class="nav-link">Produtos</a></li>
+          <li class="nav-item"><a href="./contato.html" class="nav-link">Contato</a></li>
+        </ul>
+      </div>
+      <div class="login-button">
+        <ul class="header-logged_user">
+          <li>
+            <a href="" class="logged_user_user-icon icons-size">
+              <i class="fa fa-user"></i>
+            </a>
+          </li>
+          <li>
+            <a href="" class="logged_user_favorite-icon icons-size">
+              <i class="fa-solid fa-heart"></i>
+            </a>
+          </li>
+          <li>
+            <a href="" class="logged_user_order-icon icons-size">
+              <i class="fa-solid fa-cart-shopping"></i>
+            </a>
+          </li>
+          <li class="search-box">
+            <input class="search-txt" type="text" name="" placeholder="Pesquisar">
+            <a class="search-btn" href=""><i class="fa fa-search"></i></a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="mobile-menu-icon">
+        <a href="" class="logged_user_user-icon icons-size">
+          <i class="fa fa-user"></i>
+        </a>
+        <a href="" class="logged_user_favorite-icon icons-size">
+          <i class="fa-solid fa-heart"></i>
+        </a>
+        <a href="" class="logged_user_order-icon icons-size">
+          <i class="fa-solid fa-cart-shopping"></i>
+        </a>
+        <button onclick="menuShow()"><img class="icon" src="./images/menu-hamburguer/menu_white_36dp.svg" alt=""></button>
+      </div>
+    </nav>
+    <div class="mobile-menu">
+      <ul>
+        <li class="nav-item"><a href="./lojas.html" class="nav-link">Loja</a></li>
+
+        <li class="nav-item"><a href="./catalogo_produtos.html" class="nav-link">Produtos</a></li>
+        <li class="nav-item"><a href="./contato.html" class="nav-link">Contato</a></li>
+      </ul>
+
+      <div class="login-button">
+
+      </div>
+    </div>
+  </header>
+
+
+  <main class="userpage_main">
+    <div class="title-bg">
+      <div class="container">
+        <p class="font-2-l-b color-5 fadeInLeft" data-anime="200">Página de Usuário</p>
+        <h1 class="font-1-xxl color-0 fadeInLeft" data-anime="400">Nome do usuário</h1>
+      </div>
+    </div>
+
+    <div class="userpage_content container fadeInDown" data-anime="400">
+      <section class="userpage_menu">
+        <div class="userpage_picture">
+          <img src="./images/usuario/foto de perfil.svg" alt="Foto de perfil">
+        </div>
+        <div class="userpage_options font-1-l color-12">
+          <ul>
+            <li>
+              <a href="./usuario_perfil.html">Perfil</a>
+            </li>
+            <li>
+              <a href="./usuario_pedidos.html">Pedidos</a>
+            </li>
+            <li>
+              <a href="./usuario_endereço.html">Endereço</a>
+            </li>
+            <li>
+              <a href="./usuario_pagamentos.html">Pagamentos</a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="userpage_info fadeInUp" data-anime="800" aria-label="Dados Pessoais">
+        <h2 class="color-0">Pedidos</h2>
+        <div class="orders">
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <footer class="footer-bg">
+    <div class="footer container">
+      <a href="" class="font-2-l-b color-12">
+        LOGO
+      </a>
+      <div class="footer-contact">
+        <h3 class="font-2-l-b color-12">Contato</h3>
+        <ul class="font-2-m color-10">
+          <li><a href="tel:+5511999999999">+55 11999999999</a></li>
+          <li><a href="mailto:emailcontato@gmail.com">emailcontato@gmail.com</a></li>
+          <li>Rua Ali Perto, 42 - Paulista</li>
+          <li>São Paulo - SP</li>
+        </ul>
+        <div class="footer-socia_media">
+          <a href="./">
+            <img src="./images/redes/instagram-p.svg" width="32" height="32" alt="Instagram">
+          </a>
+          <a href="./">
+            <img src="./images/redes/facebook-p.svg" width="32" height="32" alt="Facebook">
+          </a>
+          <a href="./">
+            <img src="./images/redes/youtube-p.svg" width="32" height="32" alt="Youtube">
+          </a>
+        </div>
+      </div>
+      <div class="footer-info">
+        <h3 class="font-2-l-b color-12">Informações</h3>
+        <nav>
+          <ul class="font-1-m color-10">
+            <li><a href="">Bebidas</a></li>
+            <li><a href="">Sobre a empresa</a></li>
+            <li><a href=" ">Termos e condições</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-payment">
+        <h3 class="font-2-l-b color-12">Pagamento</h3>
+
+        <ul>
+          <li>
+            <a href="./">
+              <img src="./images/forma-de-pagamento/mastercard.svg" width="64" height="64" alt="Instagram">
+            </a>
+          </li>
+          <li>
+            <a href="./">
+              <img src="./images/forma-de-pagamento/visa.svg" width="64" height="64" alt="Facebook">
+            </a>
+          </li>
+          <li>
+            <a href="./">
+              <img src="./images/forma-de-pagamento/discover.svg" width="64" height="64" alt="Youtube">
+            </a>
+          </li>
+          <li>
+            <a href="./">
+              <img src="./images/forma-de-pagamento/pix.svg" width="64" height="64" alt="Instagram">
+            </a>
+          </li>
+          <li>
+            <a href="./">
+              <img src="./images/forma-de-pagamento/elo.svg" width="64" height="64" alt="Facebook">
+            </a>
+          </li>
+          <li>
+            <a href="./">
+              <img src="./images/forma-de-pagamento/boleto.svg" width="64" height="64" alt="Youtube">
+            </a>
+          </li>
+        </ul>
+      </div>
+      <p class="footer-copy font-2-m color-12">Bebidas © Alguns direitos reservados.</p>
+    </div>
+  </footer>
+  <script src="./scripts/plugins/simple-anime.js"></script>
+  <script src="./scripts/script.js"></script>
+</body>
+
+</html>

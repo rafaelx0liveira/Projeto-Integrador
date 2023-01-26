@@ -1,0 +1,10 @@
+.login_page{
+  justify-content: center;
+  margin-bottom: 25px;
+  background-color: var(--color-11);
+}
+
+.login_page .input-group{
+  margin-bottom: 20px;
+}
+

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <!-- Definindo que o css deve ser a primeira coisa a ser carregada-->
+  <link rel="preload" href="./css/style.css" as="style">
+  <!-- Roboto -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700;900&display=swap" rel="stylesheet">
+  <!-- PlayFair Display -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script> document.documentElement.classList.add('js');</script>
+
+  <title>Projeto Integrador</title>
+</head>
+
+<body id="catalogo">
+  <header>
+    <nav class="nav-bar">
+      <div class="logo">
+        <h1>Logo</h1>
+      </div>
+      <div class="nav-list">
+        <ul role="menu">
+          <li class="nav-item"><a href="./lojas.html" class="nav-link">Loja</a></li>
+          <li class="nav-item"><a href="./catalogo_produtos.html" class="nav-link">Produtos</a></li>
+          <li class="nav-item"><a href="./contato.html" class="nav-link">Contato</a></li>
+        </ul>
+      </div>
+      <div class="login-button">
+        <a class="signIn_button font-2-xs" href="./login.html">Entrar</a>
+        <a class="signUp_button font-2-xs color-0" href="./pagina_registro.html">Cadastrar</a>
+      </div>
+
+      <div class="mobile-menu-icon">
+        <button onclick="menuShow()"><img class="icon" src="./images/menu-hamburguer/menu_white_36dp.svg" alt=""></button>
+      </div>
+    </nav>
+    <div class="mobile-menu">
+      <ul>
+        <li class="nav-item">
+          <a href="./lojas.html" class="nav-link">Loja</a>
+        </li>
+        <li class="nav-item">
+          <a href="./catalogo_produtos.html" class="nav-link">Produtos</a>
+        </li>
+        <li class="nav-item">
+          <a href="./contato.html" class="nav-link">Contato</a>
+        </li>
+        <li class="nav-item">
+          <a class="signIn_button font-2-xs" href="./login.html">Entrar</a>
+        </li>
+        <li class="nav-item">
+          <a class="signUp_button font-2-xs color-0" href="./pagina_registro.html">Cadastrar</a>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="catalog_products_main">
+    <div class="title-bg">
+      <div class="title container">
+        <p class="font-2-l-b color-5 fadeInLeft" data-anime="200">Escolha a melhor para você</p>
+        <h1 class="font-1-xxl color-0 fadeInLeft" data-anime="400">nossas bebidas<span class="color-p1">.</span></h1>
+      </div>
+    </div>
+
+    <div class="catalog_products container">
+      <div class="catalog_products-image fadeInLeft" data-anime="600">
+        <img src="./images/bebidas/bebidas-para-demonstracao.jpg" width="1120" height="680" alt="Bebida Alcoólica">
+        <span class="font-2-m color-0">R$ 119,99</span>
+      </div>
+      <div class="catalog_products-content fadeInDown" data-anime="800">
+        <h2 class="font-1-xl fadeInDown" data-anime="800">Licor 43</h2>
+        <p class="font-2-s color-8 fadeInDown" data-anime="800">O que faz deste licor uma bebida tão especial é a combinação de 43 ingredientes, entre especiarias e frutas cítricas, e o fato de poder ser saboreado tanto puro como em drinks.</p>
+
+        <ul class="font-1-m color-8">
+          <li class="fadeInLeft" data-anime="800"><img src="./images/icones/ingredientes.svg" width="32" height="32" alt="">50 ml de Smirnoff Infusion Passion Fruit & Jasmin</li>
+
+          <li class="fadeInRight" data-anime="1000"><img src="./images/icones/preparo.svg" width="32" height="32" alt="">Gelo + Smirnoff + Água tônica</li>
+
+          <li class="fadeInLeft" data-anime="1100"><img src="./images/icones/graduacao_alcoolica.svg" width="32" height="32" alt="">Contém 37,5% de teor alcoólico.</li>
+
+          <li class="fadeInRight" data-anime="1200"><img src="./images/icones/volume.svg" width="32" height="32" alt="">Contém 1,75 Litros.</li>
+        </ul>
+        <a class="button arrow fadeInUp" data-anime="1200" href="">Mais Sobre</a>
+      </div>
+    </div>
+
+    <div class="catalog_products-bg fadeInUp" data-anime="850">
+      <div class="catalog_products container">
+        <div class="catalog_products-image fadeInUp" data-anime="600">
+          <img src="./images/bebidas/bebidas-para-demonstracao_3.jpeg" width="1120" height="680" alt="Bebida Alcoólica">
+          <span class="font-2-m color-0">R$ 119,99</span>
+        </div>
+        <div class="catalog_products-content fadeInDown" data-anime="800">
+          <h2 class="font-1-xl color-0">Licor 43</h2>
+          <p class="font-2-s color-5">O que faz deste licor uma bebida tão especial é a combinação de 43 ingredientes, entre especiarias e frutas cítricas, e o fato de poder ser saboreado tanto puro como em drinks.</p>
+
+          <ul class="font-1-m color-5">
+            <li><img src="./images/icones/ingredientes.svg" width="32" height="32" alt="">50 ml de Smirnoff Infusion Passion Fruit & Jasmin</li>
+
+            <li><img src="./images/icones/preparo.svg" width="32" height="32" alt="">Gelo + Smirnoff + Água tônica</li>
+
+            <li><img src="./images/icones/graduacao_alcoolica.svg" width="32" height="32" alt="">Contém 37,5% de teor alcoólico.</li>
+
+            <li><img src="./images/icones/volume.svg" width="32" height="32" alt="">Contém 1,75 Litros.</li>
+          </ul>
+          <a class="button arrow" href="">Mais Sobre</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="catalog_products container">
+      <div class="catalog_products-image fadeInUp" data-anime="600">
+        <img src="./images/bebidas/bebidas-para-demonstracao.jpg" width="1120" height="680" alt="Bebida Alcoólica">
+        <span class="font-2-m color-0">R$ 119,99</span>
+      </div>
+      <div class="catalog_products-content fadeInDown" data-anime="800">
+        <h2 class="font-1-xl">Licor 43</h2>
+        <p class="font-2-s color-8">O que faz deste licor uma bebida tão especial é a combinação de 43 ingredientes, entre especiarias e frutas cítricas, e o fato de poder ser saboreado tanto puro como em drinks.</p>
+
+        <ul class="font-1-m color-8">
+          <li><img src="./images/icones/ingredientes.svg" width="32" height="32" alt="">50 ml de Smirnoff Infusion Passion Fruit & Jasmin</li>
+
+          <li><img src="./images/icones/preparo.svg" width="32" height="32" alt="">Gelo + Smirnoff + Água tônica</li>
+
+          <li><img src="./images/icones/graduacao_alcoolica.svg" width="32" height="32" alt="">Contém 37,5% de teor alcoólico.</li>
+
+          <li><img src="./images/icones/volume.svg" width="32" height="32" alt="">Contém 1,75 Litros.</li>
+        </ul>
+        <a class="button arrow" href="">Mais Sobre</a>
+      </div>
+    </div>
+
+    <section class="products_list">
+      <ul>
+        <li>
+          <a href="">
+            <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
+            <h3 class="font-1-xl color-5">Gin Tônica</h3>
+            <span class="font-2-m color-5">R$ 10</span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
+            <h3 class="font-1-xl color-5">Gin Tônica</h3>
+            <span class="font-2-m color-5">R$ 10</span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
+            <h3 class="font-1-xl color-5">Gin Tônica</h3>
+            <span class="font-2-m color-5">R$ 10</span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
+            <h3 class="font-1-xl color-5">Gin Tônica</h3>
+            <span class="font-2-m color-5">R$ 10</span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
+            <h3 class="font-1-xl color-5">Gin Tônica</h3>
+            <span class="font-2-m color-5">R$ 10</span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
+            <h3 class="font-1-xl color-5">Gin Tônica</h3>
+            <span class="font-2-m color-5">R$ 10</span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
+            <h3 class="font-1-xl color-5">Gin Tônica</h3>
+            <span class="font-2-m color-5">R$ 10</span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
+            <h3 class="font-1-xl color-5">Gin Tônica</h3>
+            <span class="font-2-m color-5">R$ 10</span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
+            <h3 class="font-1-xl color-5">Gin Tônica</h3>
+            <span class="font-2-m color-5">R$ 10</span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
+            <h3 class="font-1-xl color-5">Gin Tônica</h3>
+            <span class="font-2-m color-5">R$ 10</span>
+          </a>s
+        </li>
+        <li>
+          <a href="">
+            <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
+            <h3 class="font-1-xl color-5">Gin Tônica</h3>
+            <span class="font-2-m color-5">R$ 10</span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
+            <h3 class="font-1-xl color-5">Gin Tônica</h3>
+            <span class="font-2-m color-5">R$ 10</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer-bg">
+    <div class="footer container">
+      <a href="" class="font-2-l-b color-12">
+        LOGO
+      </a>
+      <div class="footer-contact">
+        <h3 class="font-2-l-b color-12">Contato</h3>
+        <ul class="font-2-m color-10">
+          <li><a href="tel:+5511999999999">+55 11999999999</a></li>
+          <li><a href="mailto:emailcontato@gmail.com">emailcontato@gmail.com</a></li>
+          <li>Rua Ali Perto, 42 - Paulista</li>
+          <li>São Paulo - SP</li>
+        </ul>
+        <div class="footer-socia_media">
+          <a href="./">
+            <img src="./images/redes/instagram-p.svg" width="32" height="32" alt="Instagram">
+          </a>
+          <a href="./">
+            <img src="./images/redes/facebook-p.svg" width="32" height="32" alt="Facebook">
+          </a>
+          <a href="./">
+            <img src="./images/redes/youtube-p.svg" width="32" height="32" alt="Youtube">
+          </a>
+        </div>
+      </div>
+      <div class="footer-info">
+        <h3 class="font-2-l-b color-12">Informações</h3>
+        <nav>
+          <ul class="font-1-m color-10">
+            <li><a href="">Bebidas</a></li>
+            <li><a href="">Sobre a empresa</a></li>
+            <li><a href=" ">Termos e condições</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-payment">
+        <h3 class="font-2-l-b color-12">Pagamento</h3>
+
+        <ul>
+          <li>
+            <a href="./">
+              <img src="./images/forma-de-pagamento/mastercard.svg" width="64" height="64" alt="Instagram">
+            </a>
+          </li>
+          <li>
+            <a href="./">
+              <img src="./images/forma-de-pagamento/visa.svg" width="64" height="64" alt="Facebook">
+            </a>
+          </li>
+          <li>
+            <a href="./">
+              <img src="./images/forma-de-pagamento/discover.svg" width="64" height="64" alt="Youtube">
+            </a>
+          </li>
+          <li>
+            <a href="./">
+              <img src="./images/forma-de-pagamento/pix.svg" width="64" height="64" alt="Instagram">
+            </a>
+          </li>
+          <li>
+            <a href="./">
+              <img src="./images/forma-de-pagamento/elo.svg" width="64" height="64" alt="Facebook">
+            </a>
+          </li>
+          <li>
+            <a href="./">
+              <img src="./images/forma-de-pagamento/boleto.svg" width="64" height="64" alt="Youtube">
+            </a>
+          </li>
+        </ul>
+      </div>
+      <p class="footer-copy font-2-m color-12">Bebidas © Alguns direitos reservados.</p>
+    </div>
+  </footer>
+</body>
+<script src="./scripts/plugins/simple-anime.js"></script>
+<script src="./scripts/script.js"></script>
+</html>
