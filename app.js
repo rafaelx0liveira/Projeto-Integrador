@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
-const homeRouter = require('./routes/home');
-const AdminRouter = require('./routes/admin');
+const homeRouter = require('./src/routes/HomeRoutes');
+//const AdminRouter = require('./routes/admin');
 
 
 // Variáveis
@@ -21,7 +21,7 @@ app.use(express.static(path.resolve("src", "public")));
 
 // Rotas
 app.use(homeRouter);
-app.use("/admin", AdminRouter);
+//app.use("/admin", AdminRouter);
 
 
 app.listen(port, () => {
