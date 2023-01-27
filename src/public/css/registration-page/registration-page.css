@@ -28,7 +28,7 @@ form fieldset legend{
     color: #111111
     
 }
-
+/* utilizar para form */
 form{
     display: flex;
     justify-content:left;
@@ -40,12 +40,12 @@ form{
 
 form fieldset{
     border: none;
-}
+} 
 
 form fieldset legend{
     font-weight: bold;
 }
-
+/* fim utilizar para form */
 form .personal-data{
     width: 50%;
 }
