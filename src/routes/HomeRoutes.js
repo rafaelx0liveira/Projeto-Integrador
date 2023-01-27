@@ -1,10 +1,19 @@
+const express = require('express');
+const HomeController = require('../controllers/HomeController');
+const router = express.Router();
 
+// GET /
+router.get('/', HomeController.showHome);
 
-const express = require('express')
-const HomeController = require('../controllers/HomeController')
-const router = express.Router()
+// GET /loja
+router.get('/lojas', HomeController.showLojas);
 
-router.get('/', HomeController.showHome)
+// GET /catalogo
+router.get('/catalogo', HomeController.showCatalogo);
+
+// GET /contato
+router.get('/contato', HomeController.showContato);
+
 
 module.exports = router
 

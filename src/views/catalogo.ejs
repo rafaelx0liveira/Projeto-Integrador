@@ -2,67 +2,14 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./css/style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <!-- Definindo que o css deve ser a primeira coisa a ser carregada-->
-  <link rel="preload" href="./css/style.css" as="style">
-  <!-- Roboto -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700;900&display=swap" rel="stylesheet">
-  <!-- PlayFair Display -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <script> document.documentElement.classList.add('js');</script>
+  <%- include("components/head.ejs") %>
 
   <title>Projeto Integrador</title>
 </head>
 
-<body id="catalogo">
-  <header>
-    <nav class="nav-bar">
-      <div class="logo">
-        <h1>Logo</h1>
-      </div>
-      <div class="nav-list">
-        <ul role="menu">
-          <li class="nav-item"><a href="./lojas.html" class="nav-link">Loja</a></li>
-          <li class="nav-item"><a href="./catalogo_produtos.html" class="nav-link">Produtos</a></li>
-          <li class="nav-item"><a href="./contato.html" class="nav-link">Contato</a></li>
-        </ul>
-      </div>
-      <div class="login-button">
-        <a class="signIn_button font-2-xs" href="./login.html">Entrar</a>
-        <a class="signUp_button font-2-xs color-0" href="./pagina_registro.html">Cadastrar</a>
-      </div>
+<body>
 
-      <div class="mobile-menu-icon">
-        <button onclick="menuShow()"><img class="icon" src="./images/menu-hamburguer/menu_white_36dp.svg" alt=""></button>
-      </div>
-    </nav>
-    <div class="mobile-menu">
-      <ul>
-        <li class="nav-item">
-          <a href="./lojas.html" class="nav-link">Loja</a>
-        </li>
-        <li class="nav-item">
-          <a href="./catalogo_produtos.html" class="nav-link">Produtos</a>
-        </li>
-        <li class="nav-item">
-          <a href="./contato.html" class="nav-link">Contato</a>
-        </li>
-        <li class="nav-item">
-          <a class="signIn_button font-2-xs" href="./login.html">Entrar</a>
-        </li>
-        <li class="nav-item">
-          <a class="signUp_button font-2-xs color-0" href="./pagina_registro.html">Cadastrar</a>
-        </li>
-      </ul>
-    </div>
-  </header>
+  <%- include("components/header.ejs") %>
 
   <main class="catalog_products_main">
     <div class="title-bg">
