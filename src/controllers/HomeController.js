@@ -4,6 +4,9 @@ const homeController = {
     },
     showLojas: (req,res) =>{
         res.render('lojas')
+    },
+    showCatalogo: (req,res) =>{
+        res.render('catalogo')
     }
 }
 module.exports = homeController
