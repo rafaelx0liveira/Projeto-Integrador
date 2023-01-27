@@ -4,8 +4,7 @@
 
 main.registration-page{
     width: 90%;
-    height: 100vh;
-    margin: 0 auto;
+    margin: 0 auto 3rem auto;
     padding: 20px;    
 }
 
@@ -35,7 +34,6 @@ form{
     align-items:flex-start;
     width: 100%;
     gap: 40px;
-    margin-top: 32px;
 }
 
 form fieldset{
