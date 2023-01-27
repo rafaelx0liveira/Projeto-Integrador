@@ -7,6 +7,9 @@ const homeController = {
     },
     showCatalogo: (req,res) =>{
         res.render('catalogo')
+    },
+    showContato: (req,res) =>{
+        res.render('contato')
     }
 }
 module.exports = homeController
