@@ -5,37 +5,51 @@
 /****************************
           IMPORTS
 ****************************/
-@import "./global/global.css";
-@import "./global/footer.css";
-@import "./global/header.css";
-@import "./utils/components.css";
-@import "./utils/colors.css";
-@import "./utils/typography.css";
-@import "./utils/form.css";
-@import "./utils/user_page_info.css";
-@import "./home/banners.css";
-@import "./home/products_list.css";
-@import "./home/commemorative_events.css";
-@import "./home/partners.css";
 
+/* Cadastro */
+@import "./cadastro/cadastro.css";
 
-@import "./checkout-page.css";
-
-@import "./home/checking-age-user.css";
-
-
-
-
-@import "./user-page/user-page.css";
-@import "./global/logged_user_header.css";
-@import "./utils/userpage_form.css";
-@import "./registration-page/registration-page.css";
-@import "./login/login.css";
-@import "./product-page/product-page.css";
-@import "./home/home.css";
-@import "./contato/contato.css";
-@import "./lojas/lojas.css";
+/* catalogo-produtos */
 @import "./catalogo-produtos/catalogo-produtos.css";
-@import "./utils/animacao.css";
+
+/* contato */
+@import "./contato/contato.css";
+
+/* global */
+@import "./global/footer.css";
+@import "./global/global.css";
+@import "./global/header.css";
+@import "./global/menu-usuario_logado.css";
+
+/* home */
+@import "./home/banners.css";
+@import "./home/checagem_idade.css";
+@import "./home/eventos_comemorativos.css";
+@import "./home/home.css";
+@import "./home/parceiros.css";
+@import "./home/lista_produtos.css";
+
+/* login */
 @import "./login/pagina_login.css";
+
+/* lojas */
+@import "./lojas/lojas.css";
+
+/* pagina_produto */
+@import "./pagina_produto/pagina_produto.css";
+
+/* pagina_usuario */
+@import "./pagina_usuario/pagina_usuario.css";
+
+/* termos */
+@import "./termos/termos.css";
+
+/* utils */
+@import "./utils/animacao.css";
+@import "./utils/componentes.css";
+@import "./utils/cores.css";
+@import "./utils/form.css";
+@import "./utils/tipografia.css";
+@import "./utils/usuario_form.css";
+@import "./utils/usuario_info.css";
 
