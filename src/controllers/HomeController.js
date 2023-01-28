@@ -1,3 +1,5 @@
+const catalogo = require('../model/catalogo-produtos');
+
 const homeController = {
     showHome: (req,res) =>{
         res.render('index')
@@ -6,7 +8,11 @@ const homeController = {
         res.render('lojas')
     },
     showCatalogo: (req,res) =>{
-        res.render('catalogo')
+        //Buscando os produtos no model
+        const produtos = catalogo.findAll();
+
+        //Renderizando a view catalogo e passando os produtos
+        res.render('catalogo', {produtos});
     },
     showContato: (req,res) =>{
         res.render('contato')
