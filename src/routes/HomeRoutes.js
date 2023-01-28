@@ -14,6 +14,9 @@ router.get('/catalogo', HomeController.showCatalogo);
 // GET /contato
 router.get('/contato', HomeController.showContato);
 
+// GET /termos
+router.get('/termos', HomeController.showTermos);
+
 
 module.exports = router
 

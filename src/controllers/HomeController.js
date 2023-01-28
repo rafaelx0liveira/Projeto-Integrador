@@ -10,6 +10,9 @@ const homeController = {
     },
     showContato: (req,res) =>{
         res.render('contato')
+    },
+    showTermos: (req,res) =>{
+        res.render('termos')
     }
 }
-module.exports = homeController
+module.exports = homeController;
