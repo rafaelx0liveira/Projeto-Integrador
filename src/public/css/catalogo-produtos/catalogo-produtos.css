@@ -1,5 +1,5 @@
 /***********************
-          catalog_products
+    catalog_products
 ***********************/
 
 .catalog_products-bg {
@@ -24,8 +24,10 @@
 }
 
 .catalog_products-image img {
+  height: 500px;
   grid-area: 1/1;
   border-radius: 4px;
+  object-fit: cover; 
 }
 
 .catalog_products-image span {
