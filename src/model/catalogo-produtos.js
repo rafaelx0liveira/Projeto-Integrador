@@ -12,9 +12,11 @@ const catalogo = {
       produtos.push({
         id: produto.id,
         nome: produto.name,
-        preco: `R$ ${produto.price.toLocaleString("pt-BR", { currency: "BRL", minimumFractionDigits: 2 })}`,
         descricao: produto.description,
-        imagem: produto.image
+        preco: `R$ ${produto.price.toLocaleString("pt-BR", { currency: "BRL", minimumFractionDigits: 2 })}`,
+        imagem: produto.image,
+        estoque: produto.stock,
+        alcoolico: produto.alcoholic
         });
     });
 
