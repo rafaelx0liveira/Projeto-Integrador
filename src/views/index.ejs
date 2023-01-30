@@ -58,48 +58,18 @@
     <section class="products_list fadeInRight" data-anime="800">
       <h2 class="font-1-xxl color-0 container fadeInLeft" data-anime="700">escolha a sua bebida<span class="color-p1">.</span></h2>
       <ul>
-        <li>
-          <a href="">
-            <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
-            <h3 class="font-1-xl color-5">Gin Tônica</h3>
-            <span class="font-2-m color-5">R$ 10</span>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
-            <h3 class="font-1-xl color-5">Gin Tônica</h3>
-            <span class="font-2-m color-5">R$ 10</span>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
-            <h3 class="font-1-xl color-5">Gin Tônica</h3>
-            <span class="font-2-m color-5">R$ 10</span>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
-            <h3 class="font-1-xl color-5">Gin Tônica</h3>
-            <span class="font-2-m color-5">R$ 10</span>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
-            <h3 class="font-1-xl color-5">Gin Tônica</h3>
-            <span class="font-2-m color-5">R$ 10</span>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
-            <h3 class="font-1-xl color-5">Gin Tônica</h3>
-            <span class="font-2-m color-5">R$ 10</span>
-          </a>
-        </li>
+        <% for(let i= 0; i < produtos.length; i++) { %>
+          <% if(produtos[i].alcoolico){ %>
+          <li>
+            <a href="">
+              <img src="<%= produtos[i].imagem %>" width="920" height="1040" alt="<%= produtos[i].nome %>">
+              <h3 class="font-1-xl color-5">Gin Tônica</h3>
+              <span class="font-2-m color-5"><%= produtos[i].preco %></span>
+            </a>
+          </li>
+          <% } else{ %>
+            <% } %>
+          <% } %>
       </ul>
     </section>
 
@@ -178,6 +148,7 @@
   </main>
 
   <%- include("components/footer.ejs") %>
+  <script src="./scripts/glider.js"></script>
   <script src="./scripts/plugins/simple-anime.js"></script>
   <script src="./scripts/script.js"></script>
 </body>

@@ -38,8 +38,8 @@
 
                 <% if(produtos[i].alcoolico){ %>
                   <li><img src="./images/icones/graduacao_alcoolica.svg" width="32" height="32" alt="">Contém 37,5% de teor alcoólico.</li>
-                <% } else{ %>
-                <% } %>
+                  <% } else{ %>
+                    <% } %>
               </ul>
               <a class="button arrow" href="">Mais Sobre</a>
             </div>
@@ -56,35 +56,39 @@
                   <p class="font-2-s color-5">O que faz deste licor uma bebida tão especial é a combinação de 43 ingredientes, entre especiarias e frutas cítricas, e o fato de poder ser saboreado tanto puro como em drinks.</p>
 
                   <ul class="font-1-m color-5">
-                      <li><img src="./images/icones/ingredientes.svg" width="32" height="32" alt="">50 ml de Smirnoff Infusion Passion Fruit & Jasmin</li>
-      
-                      <li><img src="./images/icones/preparo.svg" width="32" height="32" alt="">Gelo + Smirnoff + Água tônica</li>
-      
-                      <li><img src="./images/icones/volume.svg" width="64" height="64" alt="">Contém 1,75 Litros.</li>
-      
-                      <% if(produtos[i].alcoolico){ %>
-                        <li><img src="./images/icones/graduacao_alcoolica.svg" width="32" height="32" alt="">Contém 37,5% de teor alcoólico.</li>
+                    <li><img src="./images/icones/ingredientes.svg" width="32" height="32" alt="">50 ml de Smirnoff Infusion Passion Fruit & Jasmin</li>
+
+                    <li><img src="./images/icones/preparo.svg" width="32" height="32" alt="">Gelo + Smirnoff + Água tônica</li>
+
+                    <li><img src="./images/icones/volume.svg" width="64" height="64" alt="">Contém 1,75 Litros.</li>
+
+                    <% if(produtos[i].alcoolico){ %>
+                      <li><img src="./images/icones/graduacao_alcoolica.svg" width="32" height="32" alt="">Contém 37,5% de teor alcoólico.</li>
                       <% } else{ %>
-                      <% } %>
-                    </ul>
+                        <% } %>
+                  </ul>
                   <a class="button arrow" href="">Mais Sobre</a>
                 </div>
               </div>
             </div>
-        <% } %>
-      <% } %>
+            <% } %>
+              <% } %>
 
                 <section class="products_list">
                   <ul>
-                    <% for(let i= 11; i < produtos.length; i++) { %>
-                    <li>
-                      <a href="">
-                        <img src="<%= produtos[i].imagem %>" width="920" height="1040" alt="<%= produtos[i].nome %>">
-                        <h3 class="font-1-xl color-5"><%= produtos[i].nome %></h3>
-                        <span class="font-2-m color-5"><%= produtos[i].preco %></span>
-                      </a>
-                    </li>
-                    <% } %>
+                    <% for(let i=11; i < produtos.length; i++) { %>
+                      <li>
+                        <a href="">
+                          <img src="<%= produtos[i].imagem %>" width="920" height="1040" alt="<%= produtos[i].nome %>">
+                          <h3 class="font-1-xl color-5">
+                            <%= produtos[i].nome %>
+                          </h3>
+                          <span class="font-2-m color-5">
+                            <%= produtos[i].preco %>
+                          </span>
+                        </a>
+                      </li>
+                      <% } %>
                 </section>
     </main>
 
