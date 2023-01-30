@@ -76,91 +76,15 @@
 
                 <section class="products_list">
                   <ul>
+                    <% for(let i= 11; i < produtos.length; i++) { %>
                     <li>
                       <a href="">
-                        <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
-                        <h3 class="font-1-xl color-5">Gin Tônica</h3>
-                        <span class="font-2-m color-5">R$ 10</span>
+                        <img src="<%= produtos[i].imagem %>" width="920" height="1040" alt="<%= produtos[i].nome %>">
+                        <h3 class="font-1-xl color-5"><%= produtos[i].nome %></h3>
+                        <span class="font-2-m color-5"><%= produtos[i].preco %></span>
                       </a>
                     </li>
-                    <li>
-                      <a href="">
-                        <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
-                        <h3 class="font-1-xl color-5">Gin Tônica</h3>
-                        <span class="font-2-m color-5">R$ 10</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="">
-                        <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
-                        <h3 class="font-1-xl color-5">Gin Tônica</h3>
-                        <span class="font-2-m color-5">R$ 10</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="">
-                        <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
-                        <h3 class="font-1-xl color-5">Gin Tônica</h3>
-                        <span class="font-2-m color-5">R$ 10</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="">
-                        <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
-                        <h3 class="font-1-xl color-5">Gin Tônica</h3>
-                        <span class="font-2-m color-5">R$ 10</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="">
-                        <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
-                        <h3 class="font-1-xl color-5">Gin Tônica</h3>
-                        <span class="font-2-m color-5">R$ 10</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="">
-                        <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
-                        <h3 class="font-1-xl color-5">Gin Tônica</h3>
-                        <span class="font-2-m color-5">R$ 10</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="">
-                        <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
-                        <h3 class="font-1-xl color-5">Gin Tônica</h3>
-                        <span class="font-2-m color-5">R$ 10</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="">
-                        <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
-                        <h3 class="font-1-xl color-5">Gin Tônica</h3>
-                        <span class="font-2-m color-5">R$ 10</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="">
-                        <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
-                        <h3 class="font-1-xl color-5">Gin Tônica</h3>
-                        <span class="font-2-m color-5">R$ 10</span>
-                      </a>s
-                    </li>
-                    <li>
-                      <a href="">
-                        <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
-                        <h3 class="font-1-xl color-5">Gin Tônica</h3>
-                        <span class="font-2-m color-5">R$ 10</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="">
-                        <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
-                        <h3 class="font-1-xl color-5">Gin Tônica</h3>
-                        <span class="font-2-m color-5">R$ 10</span>
-                      </a>
-                    </li>
-                  </ul>
+                    <% } %>
                 </section>
     </main>
 

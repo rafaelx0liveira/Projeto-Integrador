@@ -58,7 +58,7 @@
       "image": "https://docs.google.com/uc?id=11WrK-qdgfLz_xeKIvxQcD3SXF9aMHZ9f",
       "active": true,
       "stock": true,
-      "alcoholic": true
+      "alcoholic": false
     },
     {
       "id": "50056d2a-402b-4bd9-8f54-f85363f9f2c4",
@@ -98,7 +98,7 @@
       "image": "https://docs.google.com/uc?id=1Ha5x5l9ZUSDIVD3X5eouQNQFRHrpHwtS",
       "active": true,
       "stock": true,
-      "alcoholic": true
+      "alcoholic": false
     },
     {
       "id": "bde58f47-421c-45e2-95aa-d20a850dec72",
@@ -138,7 +138,7 @@
       "image": "https://docs.google.com/uc?id=1oUD01hUXe1hN4N_cehAU5Mlx8_TOFymt",
       "active": true,
       "stock": true,
-      "alcoholic": true
+      "alcoholic": false
     },
     {
       "id": "1ac65049-1e33-4055-8a39-dda77726e826",
@@ -168,7 +168,7 @@
       "image": "https://docs.google.com/uc?id=19MJBllsC3f89AfgbiLVeYj6bt68hBYOp",
       "active": true,
       "stock": true,
-      "alcoholic": true
+      "alcoholic": false
     },
     {
       "id": "89d4d13a-d0cd-4971-ba10-74e7ab13d5b2",
@@ -198,7 +198,7 @@
       "image": "https://docs.google.com/uc?id=1i1laJO9eGdHG8Cb3MjLyggIkOy_CISb4",
       "active": true,
       "stock": true,
-      "alcoholic": true
+      "alcoholic": false
     },
     {
       "id": "89d4d13a-d0cd-4971-ba10-74e7ab13d5b2",
@@ -278,7 +278,7 @@
       "image": "https://docs.google.com/uc?id=1n7ftLnd1v4W5FEZdJoJDmkbaK8QH64Ey",
       "active": true,
       "stock": true,
-      "alcoholic": true
+      "alcoholic": false
     },
     {
       "id": "89d4d13a-d0cd-4971-ba10-74e7ab13d5b2",
@@ -308,7 +308,7 @@
       "image": "https://docs.google.com/uc?id=1eD5EPdR8AyyKJUYd1x8409lg1noqoC4_",
       "active": true,
       "stock": true,
-      "alcoholic": true
+      "alcoholic": false
     },
     {
       "id": "89d4d13a-d0cd-4971-ba10-74e7ab13d5b2",
@@ -358,7 +358,7 @@
       "image": "https://docs.google.com/uc?id=1tkpS57l0oMJbRc-TFCR_ri-SGeLlgacd",
       "active": true,
       "stock": true,
-      "alcoholic": true
+      "alcoholic": false
     },
     {
       "id": "89d4d13a-d0cd-4971-ba10-74e7ab13d5b2",

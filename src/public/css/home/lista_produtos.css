@@ -44,8 +44,10 @@
 }
 
 .products_list img{
+  height: 450px;
   margin-bottom: 16px;
   border-radius: 4px;
+  object-fit: cover;
 }
 
 .products_list h3{
