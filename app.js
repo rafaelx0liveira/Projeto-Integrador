@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const homeRouter = require('./src/routes/HomeRoutes');
 const usersRouter = require ('./src/routes/UsersRoutes')
+const productsRouter = require ('./src/routes/ProductsRoutes')
 //const AdminRouter = require('./routes/admin');
 
 
@@ -23,6 +24,7 @@ app.use(express.static(path.resolve("src", "public")));
 // Rotas
 app.use(homeRouter);
 app.use(usersRouter)
+app.use (productsRouter)
 //app.use("/admin", AdminRouter);
 
 
