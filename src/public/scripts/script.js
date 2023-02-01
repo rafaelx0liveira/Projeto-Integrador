@@ -1,4 +1,3 @@
-
 /***********************
         ANIMAÇÃO
 ***********************/
@@ -97,4 +96,11 @@ function plusSlides(n) {
 // Thumbnail image controls
 function currentSlide(n) {
   showSlides((slideIndex = n));
+}
+
+//Checagem de idade
+function newText() {
+  const text = document.getElementsByClassName("checking-text");
+  const paragrafo = "<p class='font-1-l-b'>Agradecemos a visita!</p>";
+  text.innerHTML = paragrafo;
 }

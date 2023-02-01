@@ -6,6 +6,7 @@
           IMPORTS
 ****************************/
 
+
 /* Cadastro */
 @import "./cadastro/cadastro.css";
 
@@ -31,7 +32,7 @@
 
 /* login */
 @import "./login/pagina_login.css";
-
+@import "./login/login.css";
 /* lojas */
 @import "./lojas/lojas.css";
 
