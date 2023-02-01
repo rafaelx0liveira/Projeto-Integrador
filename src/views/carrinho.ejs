@@ -61,20 +61,17 @@
           <%-include('./components/input_group.ejs', {style:"w-100",type:"text",id_name:"destinatario",label:"Destinatário"}) %>
         </div>        
         <h3>Escolha seu frete</h3>
-        <div class="radio-wrapper">
-          <label for="tipo-frete">Entrega Economica R$20,00</label>
-          <input type="radio" name="tipo-frete" id="frete-economico">
-        </div>
-        <div class="radio-wrapper">
-          <label for="tipo-frete">Entrega rápida R$40,00 </label>
-          <input type="radio" name="tipo-frete" id="frete-rapido">
-        </div>
-        <div class="radio-wrapper">
-          <label for="tipo-frete">Frete Grátis </label>
-          <input type="radio" name="tipo-frete" id="frete-gratis">
+        <div class="row">
+          <%-include('./components/radio_group.ejs', {style:"w-100",id:"frete-economico",name:"tipo-frete",value:"frete economico",label:"Entrega econômica R$20,00"}) %>
         </div>
         <div class="row">
-          <%-include('./components/input_group.ejs', {style:"w-100",type:"submit",label:"Ir Para Pagamento"}) %>
+          <%-include('./components/radio_group.ejs', {style:"w-100",id:"frete-rapido",name:"tipo-frete",value:"frete rapido",label:"Entrega rápida R$40,00"}) %>
+        </div>
+        <div class="row">
+          <%-include('./components/radio_group.ejs', {style:"w-100",id:"frete-gratis",name:"tipo-frete",value:"frete gratis",label:"Frete grátis"}) %>
+        </div>        
+        <div class="row">
+          <%-include('./components/input_group.ejs', {style:"w-100",type:"submit",label:"Ir para pagamento"}) %>
         </div>  
       </form>
       <div class="pagamento">
@@ -92,28 +89,26 @@
         
         <form>
           <div class="row">
-            <%-include('./components/input_group.ejs', {style:"w-100",type:"text",id_name:"cupom",label:"Insira Seu Cupom"}) %>
+            <%-include('./components/input_group.ejs', {style:"w-100",type:"text",id_name:"cupom",label:"Insira seu cupom"}) %>
             <%-include('./components/input_group.ejs', {style:"w-100",type:"submit",id_name:"",label:"Validar"}) %>
           </div> 
         </form>
         
         <article>
           <form class="forma-de-pagamento">
-            <h3>Forma de Pagamento</h3>
-            <div class="checkbox-wrapper">
-              <label for="pix"> Pix 2%OFF</label>
-              <input type="checkbox" name="pix" id="pix">
-            </div>
-            <div class="checkbox-wrapper">
-              <label for="cartao"> Até 4x s/juros</label>
-              <input type="checkbox" name="cartao" id="cartao">
-            </div>
-            <div class="checkbox-wrapper">
-              <label for="boleto"> Boleto 5%off </label>
-              <input type="checkbox" name="boleto" id="boleto">
+            <h3>Forma de pagamento</h3>
+            <div class="row">
+              <%-include('./components/radio_group.ejs', {style:"w-100",id:"pix",name:"tipo-pagamento",value:"pix",label:"Pix 2% OFF"}) %>
             </div>
             <div class="row">
-              <%-include('./components/input_group.ejs', {style:"w-100",type:"submit",id_name:"",label:"Finalizar Pagamento"}) %>
+              <%-include('./components/radio_group.ejs', {style:"w-100",id:"cartao",name:"tipo-pagamento",value:"cartao",label:"Até 4x s/juros"}) %>
+            </div>
+            <div class="row">
+              <%-include('./components/radio_group.ejs', {style:"w-100",id:"boleto",name:"tipo-pagamento",value:"boleto",label:"Boleto 5% OFF"}) %>
+            </div>
+            
+            <div class="row">
+              <%-include('./components/input_group.ejs', {style:"w-100",type:"submit",label:"Finalizar pagamento"}) %>
             </div> 
           </form>
         </article>
