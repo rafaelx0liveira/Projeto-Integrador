@@ -4,8 +4,7 @@
 
 main.registration-page{
     width: 90%;
-    height: 100vh;
-    margin: 0 auto;
+    margin: 0 auto 3rem auto;
     padding: 20px;    
 }
 
@@ -28,24 +27,23 @@ form fieldset legend{
     color: #111111
     
 }
-
+/* utilizar para form */
 form{
     display: flex;
     justify-content:left;
     align-items:flex-start;
     width: 100%;
     gap: 40px;
-    margin-top: 32px;
 }
 
 form fieldset{
     border: none;
-}
+} 
 
 form fieldset legend{
     font-weight: bold;
 }
-
+/* fim utilizar para form */
 form .personal-data{
     width: 50%;
 }
