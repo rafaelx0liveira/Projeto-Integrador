@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+
+    <%- include("components/head.ejs") %>
+
+    <link rel="stylesheet" href="../css/admin/login/login.css" />
+    <title>Administrador - Login</title>
+  </head>
+  <body class="text-center bg-dark">
+    <main class="form-signin">
+      <form>
+        
+        <h1 class="h3 mb-3 fw-normal text-white">Login</h1>
+
+        <div class="form-floating">
+          <input
+            type="email"
+            class="form-control"
+            id="floatingInput"
+            placeholder="name@example.com"
+          />
+          <label for="floatingInput">E-mail</label>
+        </div>
+        <div class="form-floating">
+          <input
+            type="password"
+            class="form-control"
+            id="floatingPassword"
+            placeholder="Password"
+          />
+          <label for="floatingPassword">Senha</label>
+        </div>
+
+        <div class="checkbox mb-3 text-white">
+          <label>
+            <input type="checkbox" value="remember-me" /> Manter conectado
+          </label>
+        </div>
+        <button class="w-100 btn btn-lg btn-warning" type="submit">
+          Login
+        </button>
+      </form>
+    </main>
+  </body>
+</html>

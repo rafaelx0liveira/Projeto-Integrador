@@ -1,13 +1,10 @@
 const express = require('express');
 const path = require('path');
 const homeRouter = require('./src/routes/HomeRoutes');
-
 const usersRouter = require ('./src/routes/UsersRoutes')
 const productsRouter = require ('./src/routes/ProductsRoutes')
-
 const authRouter = require('./src/routes/AuthRouter');
-
-//const AdminRouter = require('./routes/admin');
+const AdminRouter = require('./src/routes/AdminRouter');
 
 
 // Variáveis
@@ -32,8 +29,7 @@ app.use(usersRouter)
 app.use (productsRouter)
 
 app.use(authRouter);
-
-//app.use("/admin", AdminRouter);
+app.use("/admin", AdminRouter);
 
 
 app.listen(port, () => {

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <%- include("components/head.ejs") %>
+    <link rel="stylesheet" href="../css/admin/dashboard/dashboard.css" />
+    <title>Administrador - Dashboard</title>
+  </head>
+  <body>
+    <header
+    class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap py-2 shadow"
+  >
+    <h2>
+      <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#"
+      >Logo</a
+    >
+    </h2>
+    <button
+      class="navbar-toggler position-absolute d-md-none collapsed"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#sidebarMenu"
+      aria-controls="sidebarMenu"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="dropdown me-4">
+      <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+        <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+        <strong>Olá, Fulano</strong>
+      </a>
+      <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1" style="">
+        
+        <li><a class="dropdown-item" href="#">Perfil</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="#">Sair</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <div class="container-fluid">
+    <div class="row">
+      <nav
+        id="sidebarMenu"
+        class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse"
+      >
+        <div class="position-sticky pt-3">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">               
+                Dashboard
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">                
+                Pedidos
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <span data-feather="shopping-cart"></span>
+                Produtos
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <span data-feather="users"></span>
+                Clientes
+              </a>
+            </li>            
+          </ul>
+        </div>
+      </nav>
+
+      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <div
+          class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
+        >
+          <h1 class="h2">Dashboard</h1>
+          
+        </div>
+
+        <div class="row justify-content-between">
+          <div class="col-4"><h3 class="card-title">Pedidos</h3></div>
+          <div class="col-4 text-end"><a href="#" class="btn btn-primary">Ver mais</a></div> 
+        </div> 
+        <div class="row mt-3 pb-2 border-bottom">                       
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-body">                 
+                <h6 class="card-subtitle mb-2 text-muted">Hoje</h6>
+                <h3 class="card-text">7</h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-body">
+                <h6 class="card-subtitle mb-2 text-muted">Ontem</h6>
+                <h3 class="card-text">4</h3>                  
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-body">
+                <h6 class="card-subtitle mb-2 text-muted">Últimos 7 dias</h6>
+                <h3 class="card-text">32</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-between mt-3">
+          <div class="col-4"><h3 class="card-title">Produtos</h3></div>
+          <div class="col-4 text-end"><a href="#" class="btn btn-primary">Ver mais</a></div> 
+        </div> 
+        <div class="row mt-3 pb-2 border-bottom">                       
+          <div class="col-md-3">
+            <div class="card bg-success">
+              <div class="card-body">                 
+                <h6 class="card-subtitle mb-2 text-white">Ativo</h6>
+                <h3 class="card-text text-white">17</h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card">
+              <div class="card-body bg-light">
+                <h6 class="card-subtitle mb-2 text-muted">Inativo</h6>
+                <h3 class="card-text">4</h3>                  
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card bg-warning">
+              <div class="card-body">
+                <h6 class="card-subtitle mb-2 text-white">Em estoque</h6>
+                <h3 class="card-text text-white">15</h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card">
+              <div class="card-body bg-danger">
+                <h6 class="card-subtitle mb-2 text-white">Fora de estoque</h6>
+                <h3 class="card-text text-white">2</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-between mt-3">
+          <div class="col-4"><h3 class="card-title">Clientes</h3></div>
+          <div class="col-4 text-end"><a href="#" class="btn btn-primary">Ver mais</a></div> 
+        </div> 
+        <div class="row mt-3 pb-2 border-bottom">                       
+          <div class="col-md-6">
+            <div class="card bg-success">
+              <div class="card-body">                 
+                <h6 class="card-subtitle mb-2 text-white">Ativo</h6>
+                <h3 class="card-text text-white">31</h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-body bg-danger">
+                <h6 class="card-subtitle mb-2 text-white">Inativo</h6>
+                <h3 class="card-text text-white">8</h3>                  
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js"
+    integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE"
+    crossorigin="anonymous"
+  ></script>
+
+  </body>
+</html>
