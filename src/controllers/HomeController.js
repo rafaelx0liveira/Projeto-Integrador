@@ -20,5 +20,8 @@ const homeController = {
   showTermos: (req, res) => {
     res.render("termos");
   },
+      showCarrinho: (req,res) =>{
+        res.render ('carrinho')
+    }
 };
 module.exports = homeController;
