@@ -15,7 +15,7 @@ const links = document.querySelectorAll(".userpage_options a");
 function ativarLink(link) {
   const url = location.href;
   const href = link.href;
-
+  
   if (url.includes(href)) {
     link.classList.add("ativo");
   }
@@ -98,9 +98,3 @@ function currentSlide(n) {
   showSlides((slideIndex = n));
 }
 
-//Checagem de idade
-function newText() {
-  const text = document.getElementsByClassName("checking-text");
-  const paragrafo = "<p class='font-1-l-b'>Agradecemos a visita!</p>";
-  text.innerHTML = paragrafo;
-}

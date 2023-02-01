@@ -31,7 +31,6 @@
 @import "./home/lista_produtos.css";
 
 /* login */
-@import "./login/pagina_login.css";
 @import "./login/login.css";
 /* lojas */
 @import "./lojas/lojas.css";
