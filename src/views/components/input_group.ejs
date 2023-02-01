@@ -1,0 +1,12 @@
+<% if (type !== "submit") { %>
+  <div class="input-group <%=style%>">
+    <label for="<%=id_name%>"><%=label%></label>
+    <input type="<%=type%>" id="<%=id_name%>" name="<%=id_name%>" />
+  </div>
+<% } else { %>
+  <div class="input-group <%=style%>" data-anime="800">
+    <input type="<%=type%>" value="<%=label%>"/>
+  </div>     
+<% } %>
+
+

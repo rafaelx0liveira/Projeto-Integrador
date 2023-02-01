@@ -77,12 +77,12 @@ form .row .w-15{
     width: 15%;
 }
 
-form .row .w-80{
-    width: 80%;
-}
-
 form .row .w-47{
     width: 47.5%;
+}
+
+form .row .w-80{
+    width: 80%;
 }
 
 form .row .w-100{
