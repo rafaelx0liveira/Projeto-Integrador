@@ -1,12 +1,7 @@
+//Importando as dependências
 const express = require('express');
 const path = require('path');
 const homeRouter = require('./src/routes/HomeRoutes');
-
-const usersRouter = require ('./src/routes/UsersRoutes')
-const productsRouter = require ('./src/routes/ProductsRoutes')
-
-const authRouter = require('./src/routes/AuthRouter');
-
 //const AdminRouter = require('./routes/admin');
 
 
@@ -27,13 +22,12 @@ app.use(express.static(path.resolve("src", "public")));
 
 // Rotas
 app.use(homeRouter);
-
-app.use(usersRouter)
-app.use (productsRouter)
-
-app.use(authRouter);
-
 //app.use("/admin", AdminRouter);
+
+
+app.use((req, res, next) => {
+    res.status(404).render('404');
+});
 
 
 app.listen(port, () => {

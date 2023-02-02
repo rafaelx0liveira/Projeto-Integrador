@@ -28,6 +28,16 @@
   cursor: pointer;
 }
 
+.productUnavailable{
+  background: linear-gradient(#fafafa, #bbb6ad);
+  color: var(--color-11);
+  cursor: not-allowed;
+}
+
+.button.productUnavailable:hover{
+  background: linear-gradient(#fafafa, #bbb6ad);
+}
+
 .button:hover {
   background: linear-gradient(#ffb60d, #b16c04);
 }
