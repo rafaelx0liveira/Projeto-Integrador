@@ -15,6 +15,15 @@ const homeController = {
     },
     showTermos: (req,res) =>{
         res.render('termos')
+    },
+    showCarrinho: (req,res) =>{
+        res.render('carrinho')
+    },
+    showCheckAge: (req,res) =>{
+        res.render('checagem_idade')
+    },
+    showAgeDeclined: (req,res) =>{
+        res.render('idade_recusada')
     }
 };
 module.exports = homeController;
