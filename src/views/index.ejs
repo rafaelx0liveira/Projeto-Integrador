@@ -61,7 +61,7 @@
         <% for(let i= 0; i < produtos.length; i++) { %>
           <% if(produtos[i].alcoolico){ %>
           <li>
-            <a href="">
+            <a href="/produto/<%=produtos[i].id%>">
               <img src="<%= produtos[i].imagem %>" width="920" height="1040" alt="<%= produtos[i].nome %>">
               <h3 class="font-1-xl color-5">Gin Tônica</h3>
               <span class="font-2-m color-5"><%= produtos[i].preco %></span>
@@ -148,7 +148,6 @@
   </main>
 
   <%- include("components/footer.ejs") %>
-  <script src="./scripts/glider.js"></script>
   <script src="./scripts/plugins/simple-anime.js"></script>
   <script src="./scripts/script.js"></script>
 </body>

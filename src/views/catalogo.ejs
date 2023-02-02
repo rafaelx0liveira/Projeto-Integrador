@@ -30,18 +30,18 @@
               <p class="font-2-s color-8">O que faz deste licor uma bebida tão especial é a combinação de 43 ingredientes, entre especiarias e frutas cítricas, e o fato de poder ser saboreado tanto puro como em drinks.</p>
 
               <ul class="font-1-m color-8">
-                <li><img src="./images/icones/ingredientes.svg" width="32" height="32" alt="">50 ml de Smirnoff Infusion Passion Fruit & Jasmin</li>
+                <li><img src="/images/icones/ingredientes.svg" width="32" height="32" alt="">50 ml de Smirnoff Infusion Passion Fruit & Jasmin</li>
 
-                <li><img src="./images/icones/preparo.svg" width="32" height="32" alt="">Gelo + Smirnoff + Água tônica</li>
+                <li><img src="/images/icones/preparo.svg" width="32" height="32" alt="">Gelo + Smirnoff + Água tônica</li>
 
-                <li><img src="./images/icones/volume.svg" width="32" height="32" alt="">Contém 1,75 Litros.</li>
+                <li><img src="/images/icones/volume.svg" width="32" height="32" alt="">Contém 1,75 Litros.</li>
 
                 <% if(produtos[i].alcoolico){ %>
-                  <li><img src="./images/icones/graduacao_alcoolica.svg" width="32" height="32" alt="">Contém 37,5% de teor alcoólico.</li>
+                  <li><img src="/images/icones/graduacao_alcoolica.svg" width="32" height="32" alt="">Contém 37,5% de teor alcoólico.</li>
                   <% } else{ %>
                     <% } %>
               </ul>
-              <a class="button arrow" href="">Mais Sobre</a>
+              <a class="button arrow" href="/produto/<%=produtos[i].id%>">Mais Sobre</a>
             </div>
           </div>
           <% } else{ %>
@@ -56,18 +56,18 @@
                   <p class="font-2-s color-5">O que faz deste licor uma bebida tão especial é a combinação de 43 ingredientes, entre especiarias e frutas cítricas, e o fato de poder ser saboreado tanto puro como em drinks.</p>
 
                   <ul class="font-1-m color-5">
-                    <li><img src="./images/icones/ingredientes.svg" width="32" height="32" alt="">50 ml de Smirnoff Infusion Passion Fruit & Jasmin</li>
+                    <li><img src="/images/icones/ingredientes.svg" width="32" height="32" alt="">50 ml de Smirnoff Infusion Passion Fruit & Jasmin</li>
 
-                    <li><img src="./images/icones/preparo.svg" width="32" height="32" alt="">Gelo + Smirnoff + Água tônica</li>
+                    <li><img src="/images/icones/preparo.svg" width="32" height="32" alt="">Gelo + Smirnoff + Água tônica</li>
 
-                    <li><img src="./images/icones/volume.svg" width="64" height="64" alt="">Contém 1,75 Litros.</li>
+                    <li><img src="/images/icones/volume.svg" width="64" height="64" alt="">Contém 1,75 Litros.</li>
 
                     <% if(produtos[i].alcoolico){ %>
-                      <li><img src="./images/icones/graduacao_alcoolica.svg" width="32" height="32" alt="">Contém 37,5% de teor alcoólico.</li>
+                      <li><img src="/images/icones/graduacao_alcoolica.svg" width="32" height="32" alt="">Contém 37,5% de teor alcoólico.</li>
                       <% } else{ %>
                         <% } %>
                   </ul>
-                  <a class="button arrow" href="">Mais Sobre</a>
+                  <a class="button arrow" href="/produto/<%=produtos[i].id%>">Mais Sobre</a>
                 </div>
               </div>
             </div>
@@ -89,13 +89,14 @@
                         </a>
                       </li>
                       <% } %>
+                  </ul>
                 </section>
     </main>
 
     <%- include("components/footer.ejs") %>
 
+    <script src="./scripts/plugins/simple-anime.js"></script>
+    <script src="./scripts/script.js"></script>
 </body>
-<script src="./scripts/plugins/simple-anime.js"></script>
-<script src="./scripts/script.js"></script>
 
 </html>

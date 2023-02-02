@@ -11,12 +11,12 @@
   "products": [
     {
       "id": "92a202f8-998f-4257-aacf-796019bf0166",
-      "name": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      "name": "White Horse",
       "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
       "price": "109,95",
       "image": "https://docs.google.com/uc?id=1T3kWu-xY-bCBnPaHQ_xshYjmIzuGWH9W",
       "active": true,
-      "stock": true,
+      "stock": false,
       "ingredients": "",
       "alcoholic": false
     },
