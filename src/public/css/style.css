@@ -6,6 +6,7 @@
           IMPORTS
 ****************************/
 
+
 /* Cadastro */
 @import "./cadastro/cadastro.css";
 
@@ -30,8 +31,7 @@
 @import "./home/lista_produtos.css";
 
 /* login */
-@import "./login/pagina_login.css";
-
+@import "./login/login.css";
 /* lojas */
 @import "./lojas/lojas.css";
 
@@ -52,4 +52,5 @@
 @import "./utils/tipografia.css";
 @import "./utils/usuario_form.css";
 @import "./utils/usuario_info.css";
+@import "./checkout-page.css";
 
