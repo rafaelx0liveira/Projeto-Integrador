@@ -3,6 +3,7 @@ const express = require('express');
 const path = require('path');
 const homeRouter = require('./src/routes/HomeRoutes');
 const productRouter = require('./src/routes/ProductRoutes');
+const authRouter = require('./src/routes/AuthRouter');
 //const AdminRouter = require('./routes/admin');
 
 
@@ -24,6 +25,7 @@ app.use(express.static(path.resolve("src", "public")));
 // Rotas
 app.use(homeRouter);
 app.use(productRouter);
+app.use(authRouter);
 //app.use("/admin", AdminRouter);
 
 
@@ -33,5 +35,5 @@ app.use((req, res, next) => {
 
 
 app.listen(port, () => {
-    console.log('Listening on port 3000');
+    console.log(`http://localhost:${port}`);
 });
