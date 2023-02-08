@@ -11,20 +11,42 @@ const AuthController = {
     
     // Criando o método de cadastro
     store: (req, res) => {
-        const { name, email, password } = req.body;
+        const {email, cpf, nome, telefone, dtNascimento, senha, senhaConfirmada, cep, rua, numero, bairro, cidade, complemento, noticias} = req.body;
+
+        console.log("\n\n\n\n\n" + 
+        "email: "+ email + "\n" +
+        "cpf: "+ cpf +  "\n" +
+        "nome: "+ nome + "\n" +
+        "tel: "+ telefone + "\n" +
+        "nasci: "+ dtNascimento + "\n" +
+        "senha: "+ senha + "\n" +
+        "senha Confirm: "+ senhaConfirmada + "\n" +
+        "cep: "+ cep + "\n" +
+        "rua: "+ rua + "\n" +
+        "numero: "+ numero + "\n" +
+        "bairro: "+ bairro + "\n" +
+        "cidade: "+ cidade + "\n" +
+        "compleme: "+ complemento + "\n" +
+        "noticias: "+ noticias + "\n" +
+        + "\n\n\n\n\n");
+
         const verifyUser = Users.findUser(email);
 
         if (verifyUser) {
             return res.render("cadastro", {
-                error: "Usuário já cadastrado"
+                userError: "Usuário já cadastrado"
+            });
+        } else if(senha != senhaConfirmada) {
+            return res.render("cadastro", {
+                confirmed_PasswordError: "As senhas não conferem"
             });
         }
 
         // Criptografando a senha
-        const hash = bcrypt.hashSync(password, 12);
+        const hash = bcrypt.hashSync(senha, 12);
 
         // Criando o usuário
-        const newUser = {name, email, hash};
+        const newUser = {email, cpf, nome, telefone, dtNascimento, hash, cep, rua, numero, bairro, cidade, complemento, noticias};
 
         // Salvando o usuário
         Users.create(newUser);
@@ -35,7 +57,7 @@ const AuthController = {
 
     // Criando o método de login
     login: (req, res) => {
-        const {email, password} = req.body;
+        const {email, senha} = req.body;
 
         const user = Users.findUser(email);
 
@@ -47,7 +69,7 @@ const AuthController = {
         }
 
 
-        const verifyPassword = bcrypt.compareSync(password, user.password);
+        const verifyPassword = bcrypt.compareSync(senha, user.password);
 
         // Verificando se o usuário existe
         if (!user || !verifyPassword) {
