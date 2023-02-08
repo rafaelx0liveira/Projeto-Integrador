@@ -4,7 +4,7 @@
       "id": "2cd9b5db-386b-4ed5-a77c-0aa612312714ac",
       "name": "Lucas",
       "email": "lucas@gmail.com",
-      "password": "123456",
+      "password": "$2a$10$JMrJQAshS1GV/Qiuf6IxsOxLiIysU50FXzOCPiA5UnSpX4MCuFCGe",
       "isAdmin": false
     }
   ],

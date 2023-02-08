@@ -2,6 +2,7 @@
 <html lang="pt-br">
   <head>
     <%- include("components/head.ejs") %>
+    
     <title>Login</title>
   </head>
 
@@ -19,18 +20,23 @@
           </h1>
         </div>
       </div>
-      <form class="login_page container">
+      <% if (typeof emailError !="undefined" ){ %>
+
+        <%- include("modals/emailError.ejs"); %>
+
+        <% } %>
+      <form class="login_page container" action="/login" method="POST">
         <fieldset class="personal-data fadeInLeft" data-anime="600">
           <div class="row">
             <div class="input-group w-100">
               <label for="email">E-mail*</label>
-              <input type="email" id="email" name="email" />
+              <input type="email" id="email" name="email"/>
             </div>
           </div>
           <div class="row">
             <div class="input-group w-100">
-              <label for="senha">Senha*</label>
-              <input type="password" id="senha" name="senha" />
+              <label for="password">Senha*</label>
+              <input type="password" id="password" name="password"/>
             </div>
             <div class="row">
               <div class="input-group w-100 fadeInUp" data-anime="800">
@@ -45,5 +51,6 @@
     <%- include("components/footer.ejs") %>
     <script src="./scripts/plugins/simple-anime.js"></script>
     <script src="./scripts/script.js"></script>
+    <script src="./scripts/emailError.js"></script>
   </body>
 </html>

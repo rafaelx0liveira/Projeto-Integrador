@@ -4,6 +4,7 @@ const path = require('path');
 const homeRouter = require('./src/routes/HomeRoutes');
 const productRouter = require('./src/routes/ProductRoutes');
 const authRouter = require('./src/routes/AuthRouter');
+const session = require('express-session');
 //const AdminRouter = require('./routes/admin');
 
 
@@ -18,6 +19,12 @@ app.set('view engine', 'ejs');
 app.set('views', path.resolve("src", 'views'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
+app.use(session({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: true,
+}));
 
 // Arquivos estáticos
 app.use(express.static(path.resolve("src", "public")));

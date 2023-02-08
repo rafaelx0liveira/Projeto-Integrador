@@ -54,3 +54,6 @@
 @import "./utils/usuario_info.css";
 @import "./checkout-page.css";
 
+/* modals */
+@import "./modals/emailError.css";
+
