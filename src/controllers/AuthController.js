@@ -13,23 +13,6 @@ const AuthController = {
     store: (req, res) => {
         const {email, cpf, nome, telefone, dtNascimento, senha, senhaConfirmada, cep, rua, numero, bairro, cidade, complemento, noticias} = req.body;
 
-        console.log("\n\n\n\n\n" + 
-        "email: "+ email + "\n" +
-        "cpf: "+ cpf +  "\n" +
-        "nome: "+ nome + "\n" +
-        "tel: "+ telefone + "\n" +
-        "nasci: "+ dtNascimento + "\n" +
-        "senha: "+ senha + "\n" +
-        "senha Confirm: "+ senhaConfirmada + "\n" +
-        "cep: "+ cep + "\n" +
-        "rua: "+ rua + "\n" +
-        "numero: "+ numero + "\n" +
-        "bairro: "+ bairro + "\n" +
-        "cidade: "+ cidade + "\n" +
-        "compleme: "+ complemento + "\n" +
-        "noticias: "+ noticias + "\n" +
-        + "\n\n\n\n\n");
-
         const verifyUser = Users.findUser(email);
 
         if (verifyUser) {
@@ -68,8 +51,7 @@ const AuthController = {
             });
         }
 
-
-        const verifyPassword = bcrypt.compareSync(senha, user.password);
+        const verifyPassword = bcrypt.compareSync(senha, user.senha);
 
         // Verificando se o usuário existe
         if (!user || !verifyPassword) {
@@ -82,7 +64,7 @@ const AuthController = {
         req.session.user = user;
 
         // Redirecionando para a página de produtos
-        return res.redirect("/produtos");
+        return res.redirect("/catalogo");
     }
 };
 
