@@ -7,7 +7,6 @@ const authRouter = require('./src/routes/AuthRouter');
 const session = require('express-session');
 //const AdminRouter = require('./routes/admin');
 
-
 // Variáveis
 const app = express();
 const port = 3000;
