@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("components/head.ejs") %>
+    <link rel="stylesheet" href="../css/admin/dashboard/dashboard.css" />
+    <title>Administrador - Produtos</title>
+  </head>
+  <body>
+    <%- include("components/header.ejs") %>
+    <div class="container-fluid">
+      <div class="row">
+        <%-include("components/sidebar.ejs")%>
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+          <div
+            class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
+          >
+            <h1 class="h2">Produtos(5)</h1>
+          </div>
+          <div class="d-flex justify-content-between">
+            <button class="btn btn-primary" type="button">
+                <i class="bi bi-sliders"></i> Filtros
+            </button >
+            
+            <a href="#" class="btn btn-warning">
+                <i class="bi bi-cart-plus"></i> Novo produto
+            </a>
+          </div>
+          <!-- <div class="row mt-3">
+            <div class="col-md-4">
+              <div class="card" style="width: 18rem">
+                <img
+                  src="../images/bebidas/bebidas-para-demonstracao.jpg"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Licor 43</h5>
+                  <h6 class="card-title">R$ 119,99</h6>
+                  <p class="card-text text-truncate">
+                    O que faz deste licor uma bebida tão especial é a combinação
+                    de 43 ingredientes, entre especiarias e frutas cítricas, e o
+                    fato de poder ser saboreado tanto puro como em drinks.
+                  </p>
+                  <a href="#" class="btn btn-primary"
+                    ><i class="bi bi-pencil-square"></i
+                  ></a>
+                  <a href="#" class="btn btn-danger"
+                    ><i class="bi bi-cart-x"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card" style="width: 18rem">
+                <img
+                  src="../images/bebidas/bebidas-para-demonstracao_3.jpeg"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Licor 43</h5>
+                  <h6 class="card-title">R$ 119,99</h6>
+                  <p class="card-text text-truncate">
+                    O que faz deste licor uma bebida tão especial é a combinação
+                    de 43 ingredientes, entre especiarias e frutas cítricas, e o
+                    fato de poder ser saboreado tanto puro como em drinks.
+                  </p>
+                  <a href="#" class="btn btn-primary"
+                    ><i class="bi bi-pencil-square"></i
+                  ></a>
+                  <a href="#" class="btn btn-danger"
+                    ><i class="bi bi-cart-x"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card" style="width: 18rem">
+                <img
+                  src="../images/bebidas/bebidas-para-demonstracao_2.jpg"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Licor 43</h5>
+                  <h6 class="card-title">R$ 119,99</h6>
+                  <p class="card-text text-truncate">
+                    O que faz deste licor uma bebida tão especial é a combinação
+                    de 43 ingredientes, entre especiarias e frutas cítricas, e o
+                    fato de poder ser saboreado tanto puro como em drinks.
+                  </p>
+                  <a href="#" class="btn btn-primary"
+                    ><i class="bi bi-pencil-square"></i
+                  ></a>
+                  <a href="#" class="btn btn-danger"
+                    ><i class="bi bi-cart-x"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div> -->
+          <div class="table-responsive mt-3">
+            <table class="table table-hover" id="table-products">
+                <thead>
+                    <tr>
+                      <th scope="col">ID</th>
+                      <th scope="col">Imagem</th>
+                      <th scope="col">Titulo</th>
+                      <th scope="col">Descrição</th>
+                      <th scope="col">Valor</th>
+                      <th scope="col">Status</th>
+                      <th scope="col">Ações</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td><img src="../images/bebidas/bebidas-para-demonstracao.jpg" width="1120" height="680" alt="Bebida Alcoólica"></td>
+                      <td class="w-25 flex-wrap">Licor 43</td>
+                      <td class="flex-wrap">O que faz deste licor uma bebida tão especial é a combinação de 43 ingredientes, entre especiarias e frutas cítricas, e o fato de poder ser saboreado tanto puro como em drinks.</td>
+                      <td>R$ 119,99</td>
+                      <td><span class="badge bg-success">Ativo</span></td>
+                      <td>
+                        <a href="#" class="btn btn-primary"
+                            ><i class="bi bi-pencil-square"></i
+                        ></a>
+                        <a href="#" class="btn btn-danger"
+                            ><i class="bi bi-cart-x"></i
+                        ></a>
+                      </td>
+                    </tr>   
+                    <tr>
+                        <th scope="row">2</th>
+                        <td class="w-25"><img src="../images/bebidas/white-horse.png" width="1120" height="680" alt="Bebida Alcoólica"></td>
+                        <td class="w-25 flex-wrap">Licor 43</td>
+                        <td class="w-25 flex-wrap">O que faz deste licor uma bebida tão especial é a combinação de 43 ingredientes, entre especiarias e frutas cítricas, e o fato de poder ser saboreado tanto puro como em drinks.</td>
+                        <td class="w-25 flex-nowrap">R$ 119,99</td>
+                        <td><span class="badge bg-success">Ativo</span></td>
+                        <td>
+                          <a href="#" class="btn btn-primary"
+                              ><i class="bi bi-pencil-square"></i
+                          ></a>
+                          <a href="#" class="btn btn-danger"
+                              ><i class="bi bi-cart-x"></i
+                          ></a>
+                        </td>
+                      </tr> 
+                      <tr>
+                        <th scope="row">3</th>
+                        <td class="w-25"><img src="../images/bebidas/bebidas-para-demonstracao_3.jpeg" width="1120" height="680" alt="Bebida Alcoólica"></td>
+                        <td class="w-25 flex-wrap">Licor 43</td>
+                        <td class="w-25 flex-wrap">O que faz deste licor uma bebida tão especial é a combinação de 43 ingredientes, entre especiarias e frutas cítricas, e o fato de poder ser saboreado tanto puro como em drinks.</td>
+                        <td class="flex-nowrap">R$ 119,99</td>
+                        <td><span class="badge bg-success">Ativo</span></td>
+                        <td>
+                          <a href="#" class="btn btn-primary"
+                              ><i class="bi bi-pencil-square"></i
+                          ></a>
+                          <a href="#" class="btn btn-danger"
+                              ><i class="bi bi-cart-x"></i
+                          ></a>
+                        </td>
+                      </tr> 
+                      <tr>
+                        <th scope="row">4</th>
+                        <td class="w-25"><img src="../images/bebidas/bebidas-para-demonstracao_2.jpg" width="1120" height="680" alt="Bebida Alcoólica"></td>
+                        <td class="w-25 flex-wrap">Licor 43</td>
+                        <td class="w-25 flex-wrap">O que faz deste licor uma bebida tão especial é a combinação de 43 ingredientes, entre especiarias e frutas cítricas, e o fato de poder ser saboreado tanto puro como em drinks.</td>
+                        <td class="flex-nowrap">R$ 119,99</td>
+                        <td><span class="badge bg-success">Ativo</span></td>
+                        <td>
+                          <a href="#" class="btn btn-primary"
+                              ><i class="bi bi-pencil-square"></i
+                          ></a>
+                          <a href="#" class="btn btn-danger"
+                              ><i class="bi bi-cart-x"></i
+                          ></a>
+                        </td>
+                      </tr> 
+                      <tr>
+                        <th scope="row">5</th>
+                        <td class="w-25"><img src="../images/bebidas/bebidas-para-demonstracao.jpg" width="1120" height="680" alt="Bebida Alcoólica"></td>
+                        <td class="w-25 flex-wrap">Licor 43</td>
+                        <td class="w-25 flex-wrap">O que faz deste licor uma bebida tão especial é a combinação de 43 ingredientes, entre especiarias e frutas cítricas, e o fato de poder ser saboreado tanto puro como em drinks.</td>
+                        <td class="flex-nowrap">R$ 119,99</td>
+                        <td><span class="badge bg-danger">Inativo</span></td>
+                        <td class="w-25 flex-nowrap">
+                          <a href="#" class="btn btn-primary"
+                              ><i class="bi bi-pencil-square"></i
+                          ></a>
+                          <a href="#" class="btn btn-danger"
+                              ><i class="bi bi-cart-x"></i
+                          ></a>
+                        </td>
+                      </tr> 
+                  </tbody>
+            </table>
+          </div>
+        </main>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
+</html>
