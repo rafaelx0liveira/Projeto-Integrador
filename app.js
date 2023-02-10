@@ -1,10 +1,13 @@
 //Importando as dependências
 const express = require('express');
 const path = require('path');
+const session = require('express-session');
+
+// Importando as rotas
 const homeRouter = require('./src/routes/HomeRoutes');
 const productRouter = require('./src/routes/ProductRoutes');
 const authRouter = require('./src/routes/AuthRouter');
-const session = require('express-session');
+const userRoutes = require('./src/routes/UsersRoutes');
 //const AdminRouter = require('./routes/admin');
 
 // Variáveis
@@ -32,6 +35,7 @@ app.use(express.static(path.resolve("src", "public")));
 app.use(homeRouter);
 app.use(productRouter);
 app.use(authRouter);
+app.use(userRoutes);
 //app.use("/admin", AdminRouter);
 
 

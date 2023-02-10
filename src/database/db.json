@@ -40,6 +40,23 @@
             "complemento": "Casa",
             "noticias": "true",
             "isAdmin": false
+        },
+        {
+            "id": "5e1202fc-fddc-4342-bc3f-2bd46f614ba0",
+            "email": "henrique@gmail.com",
+            "cpf": "25874136987",
+            "nome": "Henrique Fornazeiro",
+            "telefone": "11962807125",
+            "dtNascimento": "1999-12-15",
+            "senha": "$2a$12$F5tV5foGBURrUVSvhJXNUehKOti9HC6p7E4vLTPicNhK1wgVpcGz6",
+            "cep": "08859785",
+            "rua": "Rua Paulo Sergio",
+            "numero": "201",
+            "bairro": "Souza Campos",
+            "cidade": "Itaqua",
+            "complemento": "Casa",
+            "noticias": "true",
+            "isAdmin": false
         }
     ],
     "products": [

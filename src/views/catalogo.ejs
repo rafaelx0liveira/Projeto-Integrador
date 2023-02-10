@@ -2,14 +2,18 @@
 <html lang="en">
 
 <head>
-  <%- include("components/head.ejs") %>
+
+  <%- include("components/head.ejs") %> 
 
     <title>Projeto Integrador</title>
 </head>
 
 <body>
-
-  <%- include("components/header.ejs") %>
+  <% if(locals.user && user) {%>
+    <%- include("components/header_logado.ejs") %>
+  <% } else { %>
+    <%- include("components/header.ejs") %>
+  <% } %>
 
     <main class="catalog_products_main">
       <div class="title-bg">
@@ -101,6 +105,4 @@
     <script src="./scripts/plugins/simple-anime.js"></script>
     <script src="./scripts/script.js"></script>
 </body>
-<script src="./scripts/plugins/simple-anime.js"></script>
-<script src="./scripts/script.js"></script>
 </html>
