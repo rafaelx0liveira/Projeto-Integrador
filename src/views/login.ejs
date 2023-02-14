@@ -24,7 +24,10 @@
 
         <%- include("modals/emailError.ejs"); %>
 
-        <% } %>
+        <% } else if(typeof loginError !="undefined" ) {%>
+          <%- include("modals/loginError.ejs"); %> 
+        <% }  %>
+
       <form class="login_page container" action="/login" method="POST">
         <fieldset class="personal-data fadeInLeft" data-anime="600">
           <div class="row">

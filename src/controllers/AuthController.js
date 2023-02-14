@@ -42,21 +42,23 @@ const AuthController = {
     login: (req, res) => {
         const {email, senha} = req.body;
 
-        const user = Users.findUser(email);
+        //console.log(email, senha);
 
+        const user = Users.findUser(email);
+        
         if(user == undefined) {
             console.log("Email não cadastrado!");
             return res.render("login", {
                 emailError: "Email não cadastrado!"
             });
         }
-
+        
         const verifyPassword = bcrypt.compareSync(senha, user.senha);
 
         // Verificando se o usuário existe
         if (!user || !verifyPassword) {
             return res.render("login", {
-                error: "Usuário ou senha inválidos"
+                loginError: "Usuário ou senha inválidos"
             });
         }
 
