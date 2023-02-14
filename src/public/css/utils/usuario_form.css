@@ -15,6 +15,7 @@
   grid-column: span 2;
 }
 
+.userpage_form input[type="date"],
 .userpage_form input[type="text"],
 .userpage_form input[type="email"]{
   font: 400 1rem/1.5 var(--font-roboto);
@@ -26,6 +27,7 @@
   box-sizing: border-box;
 }
 
+.userpage_form input[type="date"]:focus,
 .userpage_form input[type="text"]:focus,
 .userpage_form input[type="email"]:focus{
   outline: none;

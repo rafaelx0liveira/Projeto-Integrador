@@ -4,19 +4,22 @@
 <head>
   <%- include("components/head.ejs") %>
 
-
   <title>Página do usuário</title>
 </head>
 
 <body id="userpage">
-  <%- include("components/header.ejs") %>
+  <% if(locals.user && user) {%>
+    <%- include("components/header_logado.ejs") %>
+  <% } else { %>
+    <%- include("components/header.ejs") %>
+  <% } %>
 
 
   <main class="userpage_main">
     <div class="title-bg">
       <div class="container">
         <p class="font-2-l-b color-5 fadeInLeft" data-anime="200">Página de Usuário</p>
-        <h1 class="font-1-xxl color-0 fadeInLeft" data-anime="400">Nome do usuário</h1>
+        <h1 class="font-1-xxl color-0 fadeInLeft" data-anime="400"><%= user.nome %></h1>
       </div>
     </div>
 
@@ -46,39 +49,60 @@
       <section class="userpage_info fadeInUp" data-anime="800" aria-label="Dados Pessoais">
         <h2 class="color-0">Dados Pessoais</h2>
         <form class="userpage_form" action="./contato.html">
-          <div>
-            <label for="nome">Nome</label>
-            <input type="text" id="nome" name="nome" placeholder="Seu nome">
-          </div>
 
           <div>
-            <label for="sobrenome">Sobrenome</label>
-            <input type="text" id="sobrenome" name="sobrenome" placeholder="Seu sobrenome">
-          </div>
-
-          <div class="col-2">
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="contato@email.com">
+            <input type="email" id="email" name="email" placeholder="<%= user.email %>">
           </div>
 
           <div>
             <label for="cpf">CPF</label>
-            <input type="text" id="cpf" name="cpf" placeholder="xxx.xxx.xxx-xx">
+            <input type="text" id="cpf" name="cpf" placeholder="<%= user.cpf %>">
           </div>
 
-          <div>
-            <label for="genero">Gênero</label>
-            <input type="text" id="genero" name="genero" placeholder="Seu gênero">
-          </div>
-
-          <div>
-            <label for="nascimento">Data de Nascimento</label>
-            <input type="text" id="nascimento" name="nascimento" placeholder="dd/mm/aa">
+          <div class="col-2">
+            <label for="nome">Nome Completo</label>
+            <input type="text" id="nome" name="nome" placeholder="<%= user.nome %>">
           </div>
 
           <div>
             <label for="telefone">Telefone</label>
-            <input type="text" id="telefone" name="telefone" placeholder="(99) 99999-9999">
+            <input type="text" id="telefone" name="telefone" placeholder="<%= user.telefone %>">
+          </div>
+
+          <div>
+            <label for="nascimento">Data de Nascimento</label>
+            <input placeholder="<%= user.dtNascimento %>" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="dtNascimento" name="dtNascimento">
+          </div>
+
+          <div>
+            <label for="cep">CEP</label>
+            <input type="text" id="cep" name="cep" placeholder="<%= user.cep %>">
+          </div>
+
+          <div>
+            <label for="rua">Rua</label>
+            <input type="text" id="rua" name="rua" placeholder="<%= user.rua %>">
+          </div>
+
+          <div>
+            <label for="numero">Número</label>
+            <input type="text" id="numero" name="numero" placeholder="<%= user.numero %>">
+          </div>
+
+          <div>
+            <label for="bairro">Bairro</label>
+            <input type="text" id="bairro" name="bairro" placeholder="<%= user.bairro %>">
+          </div>
+
+          <div>
+            <label for="cidade">Cidade</label>
+            <input type="text" id="cidade" name="cidade" placeholder="<%= user.cidade %>">
+          </div>
+
+          <div>
+            <label for="complemento">Complemento</label>
+            <input type="text" id="complemento" name="complemento" placeholder="<%= user.complemento %>">
           </div>
 
           <button class="update_userpage_button col-2">Atualizar perfil</button>
