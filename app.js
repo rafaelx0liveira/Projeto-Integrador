@@ -7,7 +7,7 @@ const session = require('express-session');
 const homeRouter = require('./src/routes/HomeRoutes');
 const productRouter = require('./src/routes/ProductRoutes');
 const authRouter = require('./src/routes/AuthRouter');
-const userRoutes = require('./src/routes/UsersRoutes');
+const userRouter = require('./src/routes/UsersRoutes');
 //const AdminRouter = require('./routes/admin');
 
 // Variáveis
@@ -35,7 +35,7 @@ app.use(express.static(path.resolve("src", "public")));
 app.use(homeRouter);
 app.use(productRouter);
 app.use(authRouter);
-app.use(userRoutes);
+app.use(userRouter);
 //app.use("/admin", AdminRouter);
 
 

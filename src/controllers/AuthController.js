@@ -1,5 +1,6 @@
 const Users = require("../model/Users");
 const bcrypt = require("bcryptjs");
+const format = require('date-fns');
 
 const AuthController = {
     showCadastro: (req, res) => {
