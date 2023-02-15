@@ -5,8 +5,8 @@ const userController = {
     showPedidos: (req,res) =>{
         res.render ('usuario_pedidos')
     },
-    showEnderecos: (req,res) =>{
-        res.render ('usuario_enderecos')
+    showEndereco: (req,res) =>{
+        res.render ('usuario_endereço')
     },
     showPagamentos: (req,res) =>{
         res.render ('usuario_pagamentos')

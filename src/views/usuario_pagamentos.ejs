@@ -24,27 +24,8 @@
     </div>
 
     <div class="userpage_content container fadeInDown" data-anime="400">
-      <section class="userpage_menu">
-        <div class="userpage_picture">
-          <img src="./images/usuario/foto de perfil.svg" alt="Foto de perfil">
-        </div>
-        <div class="userpage_options font-1-l color-12">
-          <ul>
-            <li>
-              <a href="./usuario_perfil.html">Perfil</a>
-            </li>
-            <li>
-              <a href="./usuario_pedidos.html">Pedidos</a>
-            </li>
-            <li>
-              <a href="./usuario_endereço.html">Endereço</a>
-            </li>
-            <li>
-              <a href="./usuario_pagamentos.html">Pagamentos</a>
-            </li>
-          </ul>
-        </div>
-      </section>
+      
+      <%- include("components/section_Usuario.ejs") %>
 
       <section class="userpage_info fadeInUp" data-anime="800" aria-label="Dados Pessoais">
         <h2 class="color-0">Pagamentos</h2>
