@@ -13,14 +13,14 @@ const Users = {
 
   // Método para criar um novo usuário
   create: function (user) {
-    // Criando um id para o usuário
+    // Criando um id para o usuário    
     const newUser = {
       id: (user.id = crypto.randomUUID()),
       email: user.email.toString(),
       cpf: user.cpf.toString(),
       nome: user.nome.toString(),
       telefone: user.telefone.toString(),
-      dtNascimento: user.dtNascimento,
+      dtNascimento: user.dataBR,
       senha: user.hash,
       cep: user.cep.toString(),
       rua: user.rua.toString(),

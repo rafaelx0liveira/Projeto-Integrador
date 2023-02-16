@@ -1,14 +1,14 @@
 {
     "users": [
         {
-            "id": "068a1fa2-5cc6-40ad-9b5e-41c3dcfc7279",
+            "id": "3c3f4aa2-c43b-4665-a4e3-2b6c1de6e9ac",
             "email": "rafaelaparecido.oliveirasilva@gmail.com",
-            "cpf": "25874136987",
+            "cpf": "123123123",
             "nome": "Rafael Aparecido Silva de Oliveira",
-            "telefone": "11962807125",
-            "dtNascimento": "1999-12-15",
-            "senha": "$2a$12$q2RgGwRsw0wzTUvvAKU1uO/x2MSgnWF.EkW543MH.zR79YqBvHusq",
-            "cep": "08859785",
+            "telefone": "11983315141",
+            "dtNascimento": "15/12/1999",
+            "senha": "$2a$12$7e6lbx.I9EhzYcY8.Bki4OVOH3NaxBug5fkp.8Tq/Wkdq7h4YxOaq",
+            "cep": "07128596",
             "rua": "Rua Paulo Sergio",
             "numero": "201",
             "bairro": "Souza Campos",

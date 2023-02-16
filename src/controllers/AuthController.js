@@ -14,6 +14,14 @@ const AuthController = {
     store: (req, res) => {
         const {email, cpf, nome, telefone, dtNascimento, senha, senhaConfirmada, cep, rua, numero, bairro, cidade, complemento, noticias} = req.body;
 
+        /* Separa os valores */
+        let dataSplitada = dtNascimento.split("-");
+
+        /* Define a data com os valores separados */
+        let data = new Date(dataSplitada);
+
+        let dataBR = format.format(data, "dd/MM/yyyy");
+
         const verifyUser = Users.findUser(email);
 
         if (verifyUser) {
@@ -30,7 +38,7 @@ const AuthController = {
         const hash = bcrypt.hashSync(senha, 12);
 
         // Criando o usuário
-        const newUser = {email, cpf, nome, telefone, dtNascimento, hash, cep, rua, numero, bairro, cidade, complemento, noticias};
+        const newUser = {email, cpf, nome, telefone, dataBR, hash, cep, rua, numero, bairro, cidade, complemento, noticias};
 
         // Salvando o usuário
         Users.create(newUser);
