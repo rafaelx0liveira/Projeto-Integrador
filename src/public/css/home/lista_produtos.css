@@ -48,6 +48,12 @@
   margin-bottom: 16px;
   border-radius: 4px;
   object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.products_list img:hover{
+  transform: scale(1.03);
+  transition: transform 0.3s;
 }
 
 .products_list h3{
