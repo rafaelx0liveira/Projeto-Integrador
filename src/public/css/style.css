@@ -57,3 +57,6 @@
 /* modals */
 @import "./modals/emailError.css";
 
+/* cartao-credito */
+@import "./cartao-credito/cartao_credito.css";
+

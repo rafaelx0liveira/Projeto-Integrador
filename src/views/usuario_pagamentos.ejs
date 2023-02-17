@@ -19,7 +19,7 @@
     <div class="title-bg">
       <div class="container">
         <p class="font-2-l-b color-5 fadeInLeft" data-anime="200">Página de Usuário</p>
-        <h1 class="font-1-xxl color-0 fadeInLeft" data-anime="400">Nome do usuário</h1>
+        <h1 class="font-1-xxl color-0 fadeInLeft" data-anime="400"><%= user.nome %></h1>
       </div>
     </div>
 
@@ -29,10 +29,7 @@
 
       <section class="userpage_info fadeInUp" data-anime="800" aria-label="Dados Pessoais">
         <h2 class="color-0">Pagamentos</h2>
-        <div class="orders">
-
-        </div>
-
+        <%- include("components/credit_card.ejs") %>
       </section>
 
     </div>
@@ -115,6 +112,7 @@
   </footer>
   <script src="./scripts/plugins/simple-anime.js"></script>
   <script src="./scripts/script.js"></script>
+  <script src="./scripts/credit-card.js"></script>
 </body>
 
 </html>
