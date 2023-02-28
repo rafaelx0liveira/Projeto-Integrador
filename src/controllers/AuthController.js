@@ -1,5 +1,6 @@
 const Users = require("../model/Users");
 const bcrypt = require("bcryptjs");
+const format = require('date-fns');
 
 const AuthController = {
     showCadastro: (req, res) => {
@@ -12,6 +13,14 @@ const AuthController = {
     // Criando o método de cadastro
     store: (req, res) => {
         const {email, cpf, nome, telefone, dtNascimento, senha, senhaConfirmada, cep, rua, numero, bairro, cidade, complemento, noticias} = req.body;
+
+        /* Separa os valores */
+        let dataSplitada = dtNascimento.split("-");
+
+        /* Define a data com os valores separados */
+        let data = new Date(dataSplitada);
+
+        let dataBR = format.format(data, "dd/MM/yyyy");
 
         const verifyUser = Users.findUser(email);
 
@@ -29,7 +38,7 @@ const AuthController = {
         const hash = bcrypt.hashSync(senha, 12);
 
         // Criando o usuário
-        const newUser = {email, cpf, nome, telefone, dtNascimento, hash, cep, rua, numero, bairro, cidade, complemento, noticias};
+        const newUser = {email, cpf, nome, telefone, dataBR, hash, cep, rua, numero, bairro, cidade, complemento, noticias};
 
         // Salvando o usuário
         Users.create(newUser);
@@ -67,7 +76,34 @@ const AuthController = {
 
         // Redirecionando para a página de produtos
         return res.redirect("/catalogo");
+    },
+
+    // Criando o método de atualizar perfil
+    atualizarPerfil: (req, res) => {
+        const {email, cpf, nome, telefone, dtNascimento} = req.body;
+
+        const userFound = Users.findUser(email);
+
+        // Criando o usuário
+        const editedUser = {email, cpf, nome, telefone, dtNascimento};
+        
+        // atualizando os dados do usuário
+        Users.updatePerfil(editedUser, userFound);
+
+        return res.render("usuario_perfil", {
+            ok: "Perfil atualizado com sucesso!"
+        });
+    },
+
+    // Criando o método de logout
+    logout: (req,res) =>{
+        // Destrói a sessão e desativa a propriedade req.session. Depois de concluído, o retorno de chamada será invocado.
+        req.session.destroy((err) => {
+            res.redirect('/index') // sempre disparará após a sessão ser destruída
+        })
     }
+
+
 };
 
 module.exports = AuthController;

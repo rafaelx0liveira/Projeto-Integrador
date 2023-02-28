@@ -18,38 +18,51 @@
     <div class="title-bg">
       <div class="container">
         <p class="font-2-l-b color-5 fadeInLeft" data-anime="200">Página de Usuário</p>
-        <h1 class="font-1-xxl color-0 fadeInLeft" data-anime="400">Nome do usuário</h1>
+        <h1 class="font-1-xxl color-0 fadeInLeft" data-anime="400"><%= user.nome %></h1>
       </div>
     </div>
 
     <div class="userpage_content container fadeInDown" data-anime="400">
-      <section class="userpage_menu">
-        <div class="userpage_picture">
-          <img src="./images/usuario/foto de perfil.svg" alt="Foto de perfil">
-        </div>
-        <div class="userpage_options font-1-l color-12">
-          <ul>
-            <li>
-              <a href="./usuario_perfil.html">Perfil</a>
-            </li>
-            <li>
-              <a href="./usuario_pedidos.html">Pedidos</a>
-            </li>
-            <li>
-              <a href="./usuario_endereço.html">Endereço</a>
-            </li>
-            <li>
-              <a href="./usuario_pagamentos.html">Pagamentos</a>
-            </li>
-          </ul>
-        </div>
-      </section>
+
+      <%- include("components/section_Usuario.ejs") %>
 
       <section class="userpage_info fadeInUp" data-anime="800" aria-label="Dados Pessoais">
-        <h2 class="color-0">Endereço</h2>
-        <div class="orders">
-
-        </div>
+          <h2 class="color-0">Endereço</h2>
+          <form class="userpage_form" action="./contato.html">
+            <div>
+              <label for="rua">Rua</label>
+              <input type="text" id="rua" name="rua" value="<%= user.rua %>">
+            </div>
+  
+            <div>
+              <label for="cep">CEP</label>
+              <input type="text" id="cep" name="cep" value="<%= user.cep %>">
+            </div>
+  
+  
+            <div>
+              <label for="numero">Número</label>
+              <input type="text" id="numero" name="numero" value="<%= user.numero %>">
+            </div>
+  
+            <div>
+              <label for="bairro">Bairro</label>
+              <input type="text" id="bairro" name="bairro" value="<%= user.bairro %>">
+            </div>
+  
+            <div>
+              <label for="cidade">Cidade</label>
+              <input type="text" id="cidade" name="cidade" value="<%= user.cidade %>">
+            </div>
+  
+            <div>
+              <label for="complemento">Complemento</label>
+              <input type="text" id="complemento" name="complemento" value="<%= user.complemento %>">
+            </div>
+  
+            <button class="update_userpage_button col-2">Atualizar endereço</button>
+  
+          </form>
 
       </section>
 

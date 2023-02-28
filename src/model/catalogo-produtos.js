@@ -18,7 +18,8 @@ const catalogo = {
         preco: `R$ ${produto.price.toLocaleString("pt-BR", { currency: "BRL", minimumFractionDigits: 2 })}`,
         imagem: produto.image,
         estoque: produto.stock,
-        alcoolico: produto.alcoholic
+        alcoolico: produto.alcoholic,
+        tipo: produto.type
         });
     });
 
@@ -36,7 +37,8 @@ const catalogo = {
       preco: `R$ ${produto.price.toLocaleString("pt-BR", { currency: "BRL", minimumFractionDigits: 2 })}`,
       imagem: produto.image,
       estoque: produto.stock,
-      alcoolico: produto.alcoholic
+      alcoolico: produto.alcoholic,
+      tipo: produto.type
     };
 
     return produtoFormatado;

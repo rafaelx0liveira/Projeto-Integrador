@@ -19,39 +19,17 @@
     <div class="title-bg">
       <div class="container">
         <p class="font-2-l-b color-5 fadeInLeft" data-anime="200">Página de Usuário</p>
-        <h1 class="font-1-xxl color-0 fadeInLeft" data-anime="400">Nome do usuário</h1>
+        <h1 class="font-1-xxl color-0 fadeInLeft" data-anime="400"><%= user.nome %></h1>
       </div>
     </div>
 
     <div class="userpage_content container fadeInDown" data-anime="400">
-      <section class="userpage_menu">
-        <div class="userpage_picture">
-          <img src="./images/usuario/foto de perfil.svg" alt="Foto de perfil">
-        </div>
-        <div class="userpage_options font-1-l color-12">
-          <ul>
-            <li>
-              <a href="./usuario_perfil.html">Perfil</a>
-            </li>
-            <li>
-              <a href="./usuario_pedidos.html">Pedidos</a>
-            </li>
-            <li>
-              <a href="./usuario_endereço.html">Endereço</a>
-            </li>
-            <li>
-              <a href="./usuario_pagamentos.html">Pagamentos</a>
-            </li>
-          </ul>
-        </div>
-      </section>
+      
+      <%- include("components/section_Usuario.ejs") %>
 
       <section class="userpage_info fadeInUp" data-anime="800" aria-label="Dados Pessoais">
         <h2 class="color-0">Pagamentos</h2>
-        <div class="orders">
-
-        </div>
-
+        <%- include("components/credit_card.ejs") %>
       </section>
 
     </div>
@@ -134,6 +112,7 @@
   </footer>
   <script src="./scripts/plugins/simple-anime.js"></script>
   <script src="./scripts/script.js"></script>
+  <script src="./scripts/credit-card.js"></script>
 </body>
 
 </html>

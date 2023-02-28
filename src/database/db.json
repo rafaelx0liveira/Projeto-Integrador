@@ -1,55 +1,14 @@
 {
     "users": [
         {
-            "id": "2cd9b5db-386b-4ed5-a77c-0aa612312714ac",
-            "name": "Lucas",
-            "email": "lucas@gmail.com",
-            "password": "$2a$10$JMrJQAshS1GV/Qiuf6IxsOxLiIysU50FXzOCPiA5UnSpX4MCuFCGe",
-            "isAdmin": false
-        },
-        {
-            "id": "e2aaed70-0b0d-4814-a1cf-ece19cf3b958",
+            "id": "3c3f4aa2-c43b-4665-a4e3-2b6c1de6e9ac",
             "email": "rafaelaparecido.oliveirasilva@gmail.com",
-            "cpf": "25874136987",
+            "cpf": "123123123",
             "nome": "Rafael Aparecido Silva de Oliveira",
-            "telefone": "11962807125",
-            "dtNascimento": "1999-12-15",
-            "senha": "$2a$12$G9G4H2YqD9Iok.1CijnkB.7mk3ocwYE2xwjbchlyBfBL69WUKrNra",
-            "cep": "08859785",
-            "rua": "Rua Paulo Sergio",
-            "numero": "201",
-            "bairro": "Souza Campos",
-            "cidade": "Itaqua",
-            "complemento": "Casa",
-            "noticias": "true",
-            "isAdmin": false
-        },
-        {
-            "id": "3acb7d97-289b-411e-929d-ef41c3d571a5",
-            "email": "vitoria@gmail.com",
-            "cpf": "25874136987",
-            "nome": "Vitoria Lins de Miranda",
             "telefone": "11983315141",
-            "dtNascimento": "1999-12-15",
-            "senha": "$2a$12$a9qK5RP6BflAqwloccJgSOLVPFOMF.bWhaQUCjPIB4Lb9ztQwkHb2",
-            "cep": "08859785",
-            "rua": "Rua Paulo Sergio",
-            "numero": "201",
-            "bairro": "Souza Campos",
-            "cidade": "Itaqua",
-            "complemento": "Casa",
-            "noticias": "true",
-            "isAdmin": false
-        },
-        {
-            "id": "5e1202fc-fddc-4342-bc3f-2bd46f614ba0",
-            "email": "henrique@gmail.com",
-            "cpf": "25874136987",
-            "nome": "Henrique Fornazeiro",
-            "telefone": "11962807125",
-            "dtNascimento": "1999-12-15",
-            "senha": "$2a$12$F5tV5foGBURrUVSvhJXNUehKOti9HC6p7E4vLTPicNhK1wgVpcGz6",
-            "cep": "08859785",
+            "dtNascimento": "15/12/1999",
+            "senha": "$2a$12$7e6lbx.I9EhzYcY8.Bki4OVOH3NaxBug5fkp.8Tq/Wkdq7h4YxOaq",
+            "cep": "07128596",
             "rua": "Rua Paulo Sergio",
             "numero": "201",
             "bairro": "Souza Campos",
@@ -69,7 +28,8 @@
             "active": true,
             "stock": false,
             "ingredients": "",
-            "alcoholic": false
+            "alcoholic": true,
+            "type": "licor"
         },
         {
             "id": "15aef958-dbe2-4f05-9e1f-67ed2bb724f9",
@@ -79,7 +39,8 @@
             "image": "https://docs.google.com/uc?id=19TOU0MDJHBLTV1oOVI_SVIdW3S3g471I",
             "active": true,
             "stock": true,
-            "alcoholic": true
+            "alcoholic": true,
+            "type": "whisky"
         },
         {
             "id": "136f5d61-ad14-4535-8977-a3a6f8dbeb08",
@@ -89,7 +50,8 @@
             "image": "https://docs.google.com/uc?id=1b-OuoHFcI9vzEHTGeNto6Hh8AFNvnT_B",
             "active": true,
             "stock": true,
-            "alcoholic": true
+            "alcoholic": true,
+            "type": "whisky"
         },
         {
             "id": "e78c9a38-cd03-47fd-b679-ebf90072de7c",
@@ -99,7 +61,8 @@
             "image": "https://docs.google.com/uc?id=1fbxJToWezeisvcusLEz4te3ed_1cLhJn",
             "active": true,
             "stock": true,
-            "alcoholic": true
+            "alcoholic": true,
+            "type": "cerveja"
         },
         {
             "id": "0bde22e2-796b-404e-ba55-bdfd50fa5304",
@@ -109,7 +72,8 @@
             "image": "https://docs.google.com/uc?id=11WrK-qdgfLz_xeKIvxQcD3SXF9aMHZ9f",
             "active": true,
             "stock": true,
-            "alcoholic": false
+            "alcoholic": true,
+            "type": "refrigerante"
         },
         {
             "id": "50056d2a-402b-4bd9-8f54-f85363f9f2c4",
@@ -119,7 +83,8 @@
             "image": "https://docs.google.com/uc?id=1fVGOWDEtoF7nyhGYXjBI3ZiqSAuLMUCi",
             "active": true,
             "stock": true,
-            "alcoholic": true
+            "alcoholic": true,
+            "type": "whisky"
         },
         {
             "id": "00e87921-afb0-4e71-aa32-86acf2f68903",
@@ -129,7 +94,8 @@
             "image": "https://docs.google.com/uc?id=1SkqFw7wrMx8hEZuSO42Nnw3EFTJj24JO",
             "active": true,
             "stock": true,
-            "alcoholic": true
+            "alcoholic": true,
+            "type": "vodca"
         },
         {
             "id": "7582011a-faa1-452e-885a-6aeee4eb807a",
@@ -139,7 +105,8 @@
             "image": "https://docs.google.com/uc?id=1swOX6WWMJYUvEwpmrIPXypKs-24W8dSb",
             "active": true,
             "stock": true,
-            "alcoholic": true
+            "alcoholic": true,
+            "type": "cerveja"
         },
         {
             "id": "23da4a13-6b39-413c-adbc-fe2cf4f75e28",
@@ -149,7 +116,8 @@
             "image": "https://docs.google.com/uc?id=1Ha5x5l9ZUSDIVD3X5eouQNQFRHrpHwtS",
             "active": true,
             "stock": true,
-            "alcoholic": false
+            "alcoholic": true,
+            "type": "refrigerante"
         },
         {
             "id": "bde58f47-421c-45e2-95aa-d20a850dec72",
@@ -159,7 +127,8 @@
             "image": "https://docs.google.com/uc?id=1263KmIshstF4mVelWAXRA8M9o9Je1B8h",
             "active": true,
             "stock": true,
-            "alcoholic": true
+            "alcoholic": true,
+            "type": "cerveja"
         },
         {
             "id": "4b2d1d2d-bea0-4c4e-9fdf-9157fa376c3d",
@@ -169,7 +138,8 @@
             "image": "https://docs.google.com/uc?id=1s0qkPIAo_CFJ54DBfrj8v_K0hlpBBouA",
             "active": true,
             "stock": true,
-            "alcoholic": true
+            "alcoholic": true,
+            "type": "whisky"
         },
         {
             "id": "bbd19b3b-353c-4951-8902-d6815e885fdf",
@@ -179,7 +149,8 @@
             "image": "https://docs.google.com/uc?id=1eai4vOU8ZIac_JR7tOBE1s7Wo9EG87No",
             "active": true,
             "stock": true,
-            "alcoholic": true
+            "alcoholic": true,
+            "type": "whisky"
         },
         {
             "id": "b0dd9739-ca3d-43f5-b7f7-020b795cefed",
@@ -189,7 +160,8 @@
             "image": "https://docs.google.com/uc?id=1oUD01hUXe1hN4N_cehAU5Mlx8_TOFymt",
             "active": true,
             "stock": true,
-            "alcoholic": false
+            "alcoholic": true,
+            "type": "energético"
         },
         {
             "id": "1ac65049-1e33-4055-8a39-dda77726e826",
@@ -199,7 +171,8 @@
             "image": "https://docs.google.com/uc?id=1W9JfFggrJJ2c7zLLiljkKkeC7r3V7WDV",
             "active": true,
             "stock": true,
-            "alcoholic": true
+            "alcoholic": true,
+            "type": "whisky"
         },
         {
             "id": "10f8402f-f611-4e2e-b465-696e29633ee5",
@@ -209,7 +182,8 @@
             "image": "https://docs.google.com/uc?id=1V_cjBWEVFZo3lAoi7rTNOVjisZARc98j",
             "active": true,
             "stock": true,
-            "alcoholic": true
+            "alcoholic": true,
+            "type": "cerveja"
         },
         {
             "id": "89d4d13a-d0cd-4971-ba10-74e7ab13d5b2",
@@ -219,7 +193,8 @@
             "image": "https://docs.google.com/uc?id=19MJBllsC3f89AfgbiLVeYj6bt68hBYOp",
             "active": true,
             "stock": true,
-            "alcoholic": false
+            "alcoholic": true,
+            "type": "refrigerante"
         },
         {
             "id": "89d4d13a-d0cd-4971-ba10-74e7ab13d5b2",
@@ -229,7 +204,8 @@
             "image": "https://docs.google.com/uc?id=161Z9yEoIQKh6MydpD6D3-WDCi70zjfyY",
             "active": true,
             "stock": true,
-            "alcoholic": true
+            "alcoholic": true,
+            "type": "whisky"
         },
         {
             "id": "89d4d13a-d0cd-4971-ba10-74e7ab13d5b2",
@@ -239,7 +215,8 @@
             "image": "https://docs.google.com/uc?id=1SniLYUFohrnXHlOU0xgcdQ0XnC0shdYo",
             "active": true,
             "stock": true,
-            "alcoholic": true
+            "alcoholic": true,
+            "type": "whisky"
         },
         {
             "id": "89d4d13a-d0cd-4971-ba10-74e7ab13d5b2",
@@ -249,7 +226,8 @@
             "image": "https://docs.google.com/uc?id=1i1laJO9eGdHG8Cb3MjLyggIkOy_CISb4",
             "active": true,
             "stock": true,
-            "alcoholic": false
+            "alcoholic": true,
+            "type": "energético"
         },
         {
             "id": "89d4d13a-d0cd-4971-ba10-74e7ab13d5b2",
@@ -259,7 +237,8 @@
             "image": "https://docs.google.com/uc?id=1xhl-sCzDITca0_OnzqchI6Sq7WgJcECW",
             "active": true,
             "stock": true,
-            "alcoholic": true
+            "alcoholic": true,
+            "type": "whisky"
         },
         {
             "id": "89d4d13a-d0cd-4971-ba10-74e7ab13d5b2",
@@ -269,7 +248,8 @@
             "image": "https://docs.google.com/uc?id=1FSpTtkm_iHVuFTKLojbQcSlQNFZFZsMM",
             "active": true,
             "stock": true,
-            "alcoholic": true
+            "alcoholic": true,
+            "type": "whisky"
         },
         {
             "id": "89d4d13a-d0cd-4971-ba10-74e7ab13d5b2",
@@ -279,7 +259,8 @@
             "image": "https://docs.google.com/uc?id=16lq9R06brwa8lz1MsaTwCN3bqsXST_eb",
             "active": true,
             "stock": true,
-            "alcoholic": true
+            "alcoholic": true,
+            "type": "whisky"
         },
         {
             "id": "89d4d13a-d0cd-4971-ba10-74e7ab13d5b2",
@@ -289,7 +270,8 @@
             "image": "https://docs.google.com/uc?id=1NLqOKCP2j_zQ2ccR0cvgLRb_IdhsGiW8",
             "active": true,
             "stock": true,
-            "alcoholic": true
+            "alcoholic": true,
+            "type": "cerveja"
         },
         {
             "id": "89d4d13a-d0cd-4971-ba10-74e7ab13d5b2",
@@ -299,7 +281,8 @@
             "image": "https://docs.google.com/uc?id=1nb8_Q80es363QGBVq2CGRt2amPNgB7_K",
             "active": true,
             "stock": true,
-            "alcoholic": true
+            "alcoholic": true,
+            "type": "whisky"
         },
         {
             "id": "89d4d13a-d0cd-4971-ba10-74e7ab13d5b2",
@@ -309,7 +292,8 @@
             "image": "https://docs.google.com/uc?id=1SbH7jsxay0Fsdz6isYvo0lOOBsjXOBqC",
             "active": true,
             "stock": true,
-            "alcoholic": true
+            "alcoholic": true,
+            "type": "cerveja"
         },
         {
             "id": "89d4d13a-d0cd-4971-ba10-74e7ab13d5b2",
@@ -319,7 +303,8 @@
             "image": "https://docs.google.com/uc?id=17DC4kKD6wHjTTXwkbh93MHnXDcDpjA87",
             "active": true,
             "stock": true,
-            "alcoholic": true
+            "alcoholic": true,
+            "type": "cerveja"
         },
         {
             "id": "89d4d13a-d0cd-4971-ba10-74e7ab13d5b2",
@@ -329,7 +314,8 @@
             "image": "https://docs.google.com/uc?id=1n7ftLnd1v4W5FEZdJoJDmkbaK8QH64Ey",
             "active": true,
             "stock": true,
-            "alcoholic": false
+            "alcoholic": true,
+            "type": "refrigerante"
         },
         {
             "id": "89d4d13a-d0cd-4971-ba10-74e7ab13d5b2",
@@ -339,7 +325,8 @@
             "image": "https://docs.google.com/uc?id=1a8_xYgjqodQo8sXPKMM8Kye8ft59pnr-",
             "active": true,
             "stock": true,
-            "alcoholic": true
+            "alcoholic": true,
+            "type": "whisky"
         },
         {
             "id": "89d4d13a-d0cd-4971-ba10-74e7ab13d5b2",
@@ -349,7 +336,8 @@
             "image": "https://docs.google.com/uc?id=1t4iG1ZtJI8Ka0abqFbm-CPN2OqQcmrbu",
             "active": true,
             "stock": true,
-            "alcoholic": true
+            "alcoholic": true,
+            "type": "whisky"
         },
         {
             "id": "89d4d13a-d0cd-4971-ba10-74e7ab13d5b2",
@@ -359,7 +347,8 @@
             "image": "https://docs.google.com/uc?id=1eD5EPdR8AyyKJUYd1x8409lg1noqoC4_",
             "active": true,
             "stock": true,
-            "alcoholic": false
+            "alcoholic": true,
+            "type": "refrigerante"
         },
         {
             "id": "89d4d13a-d0cd-4971-ba10-74e7ab13d5b2",
@@ -369,7 +358,8 @@
             "image": "https://docs.google.com/uc?id=1_FHkJJixUPHjK22GCOatNPwstXZauLZ7",
             "active": true,
             "stock": true,
-            "alcoholic": true
+            "alcoholic": true,
+            "type": "whisky"
         },
         {
             "id": "89d4d13a-d0cd-4971-ba10-74e7ab13d5b2",
@@ -379,7 +369,8 @@
             "image": "https://docs.google.com/uc?id=1_D1zcEnZAsD3teMVgp3xTMgJ5nq4TPYn",
             "active": true,
             "stock": true,
-            "alcoholic": true
+            "alcoholic": true,
+            "type": "whisky"
         },
         {
             "id": "89d4d13a-d0cd-4971-ba10-74e7ab13d5b2",
@@ -389,7 +380,8 @@
             "image": "https://docs.google.com/uc?id=1XCdrbIIRSxEepTcNPqNnrjHEyuw99ocp",
             "active": true,
             "stock": true,
-            "alcoholic": true
+            "alcoholic": true,
+            "type": "cerveja"
         },
         {
             "id": "89d4d13a-d0cd-4971-ba10-74e7ab13d5b2",
@@ -399,7 +391,8 @@
             "image": "https://docs.google.com/uc?id=1xXciQZR312unGGbU0S0S51wmvr_KCPsR",
             "active": true,
             "stock": true,
-            "alcoholic": true
+            "alcoholic": true,
+            "type": "cerveja"
         },
         {
             "id": "89d4d13a-d0cd-4971-ba10-74e7ab13d5b2",
@@ -409,7 +402,8 @@
             "image": "https://docs.google.com/uc?id=1tkpS57l0oMJbRc-TFCR_ri-SGeLlgacd",
             "active": true,
             "stock": true,
-            "alcoholic": false
+            "alcoholic": true,
+            "type": "refrigerante"
         },
         {
             "id": "89d4d13a-d0cd-4971-ba10-74e7ab13d5b2",
@@ -419,7 +413,8 @@
             "image": "https://docs.google.com/uc?id=1qSfJ1x0nlKpWW7PYpsGw3i0l2YL8Tx7r",
             "active": true,
             "stock": true,
-            "alcoholic": true
+            "alcoholic": true,
+            "type": "whisky"
         },
         {
             "id": "89d4d13a-d0cd-4971-ba10-74e7ab13d5b2",
@@ -429,7 +424,8 @@
             "image": "https://docs.google.com/uc?id=1Cm1ovoqEox-tHN55fFqbedf_WfqUBCQo",
             "active": true,
             "stock": true,
-            "alcoholic": true
+            "alcoholic": true,
+            "type": "whisky"
         },
         {
             "id": "89d4d13a-d0cd-4971-ba10-74e7ab13d5b2",
@@ -439,7 +435,8 @@
             "image": "https://docs.google.com/uc?id=16JLdqeSSSrPE9Tk8Tv-zNRfnwyWjyF7v",
             "active": true,
             "stock": true,
-            "alcoholic": true
+            "alcoholic": true,
+            "type": "cerveja"
         },
         {
             "id": "89d4d13a-d0cd-4971-ba10-74e7ab13d5b2",
@@ -449,7 +446,8 @@
             "image": "https://docs.google.com/uc?id=1WSA4ZEbRsHJWjbHDs2h9PRL4UYNR6pDt",
             "active": true,
             "stock": true,
-            "alcoholic": true
+            "alcoholic": true,
+            "type": "cerveja"
         },
         {
             "id": "89d4d13a-d0cd-4971-ba10-74e7ab13d5b2",
@@ -459,7 +457,8 @@
             "image": "https://docs.google.com/uc?id=1BjgfUm-PrwQawS74aDJEGiHTCZpvAQNl",
             "active": true,
             "stock": true,
-            "alcoholic": true
+            "alcoholic": true,
+            "type": "cerveja"
         },
         {
             "id": "89d4d13a-d0cd-4971-ba10-74e7ab13d5b2",
@@ -469,7 +468,8 @@
             "image": "https://docs.google.com/uc?id=13ZLmMDHPRCH-NCBKLmKEdlWEQ5dSpS3i",
             "active": true,
             "stock": true,
-            "alcoholic": true
+            "alcoholic": true,
+            "type": "whisky"
         },
         {
             "id": "89d4d13a-d0cd-4971-ba10-74e7ab13d5b2",
@@ -479,7 +479,8 @@
             "image": "https://docs.google.com/uc?id=1P_BjBl1kQLvmcgZzWpdDoZ3Pdf_ruNOY",
             "active": true,
             "stock": true,
-            "alcoholic": true
+            "alcoholic": true,
+            "type": "whisky"
         },
         {
             "id": "89d4d13a-d0cd-4971-ba10-74e7ab13d5b2",
@@ -489,7 +490,8 @@
             "image": "https://docs.google.com/uc?id=10l_ER_DHkjx1_oIE_dPZemcBmeojzVP2",
             "active": true,
             "stock": true,
-            "alcoholic": true
+            "alcoholic": true,
+            "type": "whisky"
         },
         {
             "id": "89d4d13a-d0cd-4971-ba10-74e7ab13d5b2",
@@ -499,7 +501,8 @@
             "image": "https://docs.google.com/uc?id=1H-nSgFwdvhKaFLT4yi6fY2gcTIBvUQrv",
             "active": true,
             "stock": true,
-            "alcoholic": true
+            "alcoholic": true,
+            "type": "whisky"
         },
         {
             "id": "89d4d13a-d0cd-4971-ba10-74e7ab13d5b2",
@@ -509,7 +512,8 @@
             "image": "https://docs.google.com/uc?id=1JmaiJaT9EbUIR2aGV4Zq42D5m6jjiBOQ",
             "active": true,
             "stock": true,
-            "alcoholic": true
+            "alcoholic": true,
+            "type": "whisky"
         },
         {
             "id": "89d4d13a-d0cd-4971-ba10-74e7ab13d5b2",
@@ -519,7 +523,8 @@
             "image": "https://docs.google.com/uc?id=11Gf9naqNQ4uPCd-XV-e00FGsQEeLIRPP",
             "active": true,
             "stock": true,
-            "alcoholic": true
+            "alcoholic": true,
+            "type": "whisky"
         },
         {
             "id": "89d4d13a-d0cd-4971-ba10-74e7ab13d5b2",
@@ -529,7 +534,8 @@
             "image": "https://docs.google.com/uc?id=1s70RFgOCPIw0ybphmSqqMwYYyxqb_-Kn",
             "active": true,
             "stock": true,
-            "alcoholic": true
+            "alcoholic": true,
+            "type": "whisky"
         },
         {
             "id": "89d4d13a-d0cd-4971-ba10-74e7ab13d5b2",
@@ -539,7 +545,8 @@
             "image": "https://docs.google.com/uc?id=1pErvR87ut8iDetOZGdCT0aW5kLtcHLE3",
             "active": true,
             "stock": true,
-            "alcoholic": true
+            "alcoholic": true,
+            "type": "whisky"
         },
         {
             "id": "89d4d13a-d0cd-4971-ba10-74e7ab13d5b2",
@@ -549,7 +556,8 @@
             "image": "https://docs.google.com/uc?id=1EKTOTTFQw_hqDGUqO0mGU0X-iVn_fYAR",
             "active": true,
             "stock": true,
-            "alcoholic": true
+            "alcoholic": true,
+            "type": "cerveja"
         },
         {
             "id": "89d4d13a-d0cd-4971-ba10-74e7ab13d5b2",
@@ -559,7 +567,8 @@
             "image": "https://docs.google.com/uc?id=1T40-6ojCLz1r9aq4LkeAwRRmYhSB6L3B",
             "active": true,
             "stock": true,
-            "alcoholic": true
+            "alcoholic": true,
+            "type": "whisky"
         },
         {
             "id": "89d4d13a-d0cd-4971-ba10-74e7ab13d5b2",
@@ -569,7 +578,8 @@
             "image": "https://docs.google.com/uc?id=1u65e5Bhttk70i8sInX_pHXxnbXRXw8ss",
             "active": true,
             "stock": true,
-            "alcoholic": true
+            "alcoholic": true,
+            "type": "cerveja"
         },
         {
             "id": "89d4d13a-d0cd-4971-ba10-74e7ab13d5b2",
@@ -579,7 +589,8 @@
             "image": "https://docs.google.com/uc?id=10HUdQ4WFVdfb4N3dJpcXoyONRVMRFZjJ",
             "active": true,
             "stock": true,
-            "alcoholic": true
+            "alcoholic": true,
+            "type": "whisky"
         },
         {
             "id": "89d4d13a-d0cd-4971-ba10-74e7ab13d5b2",
@@ -589,7 +600,8 @@
             "image": "https://docs.google.com/uc?id=1QA3-RjhC7exRh3dOW0DXewyuJnvUT_zx",
             "active": true,
             "stock": true,
-            "alcoholic": true
+            "alcoholic": true,
+            "type": "whisky"
         },
         {
             "id": "89d4d13a-d0cd-4971-ba10-74e7ab13d5b2",
@@ -599,7 +611,8 @@
             "image": "https://docs.google.com/uc?id=1AnNnQCjRcY6bhzfAB4YYxS9IkDYpzBrJ",
             "active": true,
             "stock": true,
-            "alcoholic": true
+            "alcoholic": true,
+            "type": "whisky"
         },
         {
             "id": "89d4d13a-d0cd-4971-ba10-74e7ab13d5b2",
@@ -609,7 +622,8 @@
             "image": "https://docs.google.com/uc?id=1Qq_bv_hCpj24T5jmNSkrYNEP5H-k6mtP",
             "active": true,
             "stock": true,
-            "alcoholic": true
+            "alcoholic": true,
+            "type": "whisky"
         },
         {
             "id": "89d4d13a-d0cd-4971-ba10-74e7ab13d5b2",
@@ -619,7 +633,8 @@
             "image": "https://docs.google.com/uc?id=1r3EpURXhG269qEmKVZKIa8FLfWggCrt0",
             "active": true,
             "stock": true,
-            "alcoholic": true
+            "alcoholic": true,
+            "type": "vodca"
         },
         {
             "id": "89d4d13a-d0cd-4971-ba10-74e7ab13d5b2",
@@ -629,7 +644,8 @@
             "image": "https://docs.google.com/uc?id=1AAWiMV1iVV9k-oxk8kvk_8WjPwiT0d-o",
             "active": true,
             "stock": true,
-            "alcoholic": true
+            "alcoholic": true,
+            "type": "vodca"
         },
         {
             "id": "89d4d13a-d0cd-4971-ba10-74e7ab13d5b2",
@@ -639,7 +655,8 @@
             "image": "https://docs.google.com/uc?id=1KfaXgqX-ptNjsGMBaGSLfWBb6UAVZTf0",
             "active": true,
             "stock": true,
-            "alcoholic": true
+            "alcoholic": true,
+            "type": "vodca"
         }
     ]
 }

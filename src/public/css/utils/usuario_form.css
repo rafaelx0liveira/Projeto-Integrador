@@ -16,6 +16,7 @@
 }
 
 .userpage_form input[type="date"],
+.userpage_form input[type="month"],
 .userpage_form input[type="text"],
 .userpage_form input[type="email"]{
   font: 400 1rem/1.5 var(--font-roboto);
@@ -29,7 +30,8 @@
 
 .userpage_form input[type="date"]:focus,
 .userpage_form input[type="text"]:focus,
-.userpage_form input[type="email"]:focus{
+.userpage_form input[type="email"]:focus,
+.credit_card-form input:focus{
   outline: none;
   border-color: var(--color-p1);
   background-color: var(--color-0);
