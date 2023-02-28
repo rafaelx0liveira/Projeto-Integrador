@@ -35,6 +35,11 @@ const Users = {
     const data = JSON.stringify(db, null, 4);
     fs.writeFileSync(path.resolve("src", "database", "db.json"), data, "utf-8");
   },
+
+  // Método para atualizar o usuário
+  updatePerfil: function (editedUser, userFound) {
+    
+  }
 };
 
 module.exports = Users;

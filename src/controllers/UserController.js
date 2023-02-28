@@ -10,12 +10,6 @@ const userController = {
     },
     showPagamentos: (req,res) =>{
         res.render ('usuario_pagamentos')
-    },
-    sair: (req,res) =>{
-        // Destrói a sessão e desativa a propriedade req.session. Depois de concluído, o retorno de chamada será invocado.
-        req.session.destroy((err) => {
-            res.redirect('/index') // sempre disparará após a sessão ser destruída
-        })
     }
 }
 

@@ -23,12 +23,18 @@
       </div>
     </div>
 
+    <% if (typeof ok !="undefined" ){ %>
+
+      <%- include("modals/perfilAtualizado.ejs"); %>
+
+    <% }  %>
+
     <div class="userpage_content container fadeInDown" data-anime="400">
       <%- include("components/section_Usuario.ejs") %>
 
       <section class="userpage_info fadeInUp" data-anime="800" aria-label="Dados Pessoais">
         <h2 class="color-0">Dados Pessoais</h2>
-        <form class="userpage_form" action="./contato.html">
+        <form class="userpage_form" action="/cadastro?_method=PUT" method="POST">
 
           <div>
             <label for="email">Email</label>
@@ -52,7 +58,7 @@
 
           <div>
             <label for="nascimento">Data de Nascimento</label>
-            <input value="<%= user.dtNascimento%>" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="dtNascimento" name="dtNascimento">
+            <input value="<%= user.dtNascimento%>" type="date" onfocus="(this.type='date')" onblur="(this.type='date')" id="dtNascimento" name="dtNascimento">
           </div>
 
           <button class="update_userpage_button col-2">Atualizar perfil</button>
@@ -68,6 +74,7 @@
   
   <script src="./scripts/plugins/simple-anime.js"></script>
   <script src="./scripts/script.js"></script>
+  <script src="./scripts/modalErrors.js"></script>
 </body>
 
 </html>

@@ -76,7 +76,34 @@ const AuthController = {
 
         // Redirecionando para a página de produtos
         return res.redirect("/catalogo");
+    },
+
+    // Criando o método de atualizar perfil
+    atualizarPerfil: (req, res) => {
+        const {email, cpf, nome, telefone, dtNascimento} = req.body;
+
+        const userFound = Users.findUser(email);
+
+        // Criando o usuário
+        const editedUser = {email, cpf, nome, telefone, dtNascimento};
+        
+        // atualizando os dados do usuário
+        Users.updatePerfil(editedUser, userFound);
+
+        return res.render("usuario_perfil", {
+            ok: "Perfil atualizado com sucesso!"
+        });
+    },
+
+    // Criando o método de logout
+    logout: (req,res) =>{
+        // Destrói a sessão e desativa a propriedade req.session. Depois de concluído, o retorno de chamada será invocado.
+        req.session.destroy((err) => {
+            res.redirect('/index') // sempre disparará após a sessão ser destruída
+        })
     }
+
+
 };
 
 module.exports = AuthController;

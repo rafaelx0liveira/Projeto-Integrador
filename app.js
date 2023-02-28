@@ -2,6 +2,7 @@
 const express = require('express');
 const path = require('path');
 const session = require('express-session');
+const methodOverride = require('method-override');
 
 // Importando as rotas
 const homeRouter = require('./src/routes/HomeRoutes');
@@ -27,6 +28,8 @@ app.use(session({
     resave: false,
     saveUninitialized: true,
 }));
+
+app.use(methodOverride('_method'));
 
 // Arquivos estáticos
 app.use(express.static(path.resolve("src", "public")));
