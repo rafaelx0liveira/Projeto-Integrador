@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <%- include("../components/head.ejs") %>
+    <title>Editar Produto</title>
+</head>
+<body>
+    <%- include("../components/header.ejs") %>
+    <%- include("../components/nav.ejs") %>
+    <main class="container mb-4">
+        <h1>Editar Produto</h1>
+        <form class="row g-3 mt-2">
+          <div class="form-check form-switch col-md-2 offset-md-8 d-flex justify-content-end">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="estoque"
+              name="estoque"
+              checked
+            />
+            <label class="form-check-label ms-2" for="estoque"
+              >Em estoque</label
+            >
+          </div>
+          <div class="form-check form-switch col-md-2 d-flex justify-content-end">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="ativo"
+              name="ativo"
+              checked
+            />
+            <label class="form-check-label ms-2" for="ativo"
+              >Ativo</label
+            >
+          </div>
+          <div class="form-floating col-md-6">
+            <input
+              type="text"
+              class="form-control"
+              id="id"
+              placeholder="12345"
+              name="id"
+              value="12345"
+              disabled
+            />
+            <label for="floatingInput">ID</label>
+          </div>
+          <div class="form-floating col-md-6">
+            <input
+              type="text"
+              class="form-control"
+              id="nome"
+              placeholder="Nome do produto"
+              name="nome"
+            />
+            <label for="floatingInput">Nome</label>
+          </div>
+  
+          <div class="form-floating col-md-4">
+            <select
+              class="form-select"
+              id="alcolico"
+              aria-label="Alcoólico"
+              name="alcolico"
+            >
+              <option selected>Selecione</option>
+              <option value="1">Sim</option>
+              <option value="0">Não</option>
+            </select>
+            <label for="floatingSelect">Alcoólico</label>
+          </div>
+          <div class="form-floating col-md-4">
+            <input
+              type="text"
+              class="form-control"
+              id="graduacao_alcoolica"
+              placeholder="Graduação Alcoólica"
+              name="graduacao_alcoolica"
+            />
+            <label for="graduacao_alcoolica">Graduação Alcoólica</label>
+          </div>
+          <div class="form-floating col-md-4">
+            <input
+              type="text"
+              class="form-control"
+              id="volume"
+              placeholder="Volume"
+              name="volume"
+            />
+            <label for="volume">Volume</label>
+          </div>
+          <!-- <div class="col-md-6">
+              <img src="https://www.imigrantesbebidas.com.br/img/bebida/images/products/full/6405-whisky-white-horse-1l.jpg?s=7ea7f829ff73c3f6d21b84707cbc9b8b" class="rounded float-start" alt="..." width="50">
+          </div> -->
+          <div class="col-md-6">
+            <input
+              class="form-control form-control-lg mt-1"
+              type="file"
+              id="imagem"
+              name="imagem"
+            />
+          </div>
+  
+          <div class="form-floating col-md-3">
+            <input
+              type="price"
+              class="form-control"
+              id="preco"
+              placeholder="preco"
+              name="preco"
+            />
+            <label for="preco">Preço</label>
+          </div>
+          <div class="form-floating col-md-3">
+              <input
+                type="number"
+                class="form-control"
+                id="estoque"
+                placeholder="Estoque"
+                name="estoque"
+              />
+              <label for="estoque">Qtde. Estoque</label>
+            </div>
+          <div class="form-floating col-md-12">
+            <textarea
+              class="form-control"
+              placeholder="Descrição"
+              id="descricao"
+              style="height: 100px"
+              name="descricao"
+            ></textarea>
+            <label for="descricao">Descrição</label>
+          </div>
+          <div class="form-floating col-md-12">
+            <textarea
+              class="form-control"
+              placeholder="Ingredientes"
+              id="ingredientes"
+              style="height: 100px"
+              name="ingredientes"
+            ></textarea>
+            <label for="ingredientes">Ingredientes</label>
+          </div>
+          <div class="form-floating col-md-12">
+            <textarea
+              class="form-control"
+              placeholder="Harmonização"
+              id="harmonizacao"
+              style="height: 100px"
+              name="harmonizacao"
+            ></textarea>
+            <label for="harmonizacao">Harmonização</label>
+          </div>
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary w-100">Salvar</button>
+          </div>
+        </form>
+      </main>
+</body>
+</html>
