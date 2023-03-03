@@ -1,0 +1,18 @@
+Inicio 02/03 até 10/03
+
+A fazer:
+- Criar as models: Produto, Usuario, Endereco, Pagamentos, Pedido, Pedido_has_Produto
+- (1) - Criar métodos no controller para mostrar produtos, cadastro de produto, edição de produto e excluir produto na pagina de admin
+- (2) - Criar métodos no controller para mostrar produtos na página de catálogo
+- (3) -Criar métodos no controller para mostrar clientes, e detalhes dos clientes 
+- (4) -Criar métodos no controller para cadastro de clientes 
+
+Henrique:
+Model produto
+(1)
+(2)
+
+Rafael:
+Model Usuario, Endereco, Pagamentos
+(3)
+(4)
