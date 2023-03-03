@@ -2,7 +2,7 @@
 const express = require('express');
 const path = require('path');
 const homeRouter = require('./src/routes/HomeRoutes');
-const productsRouter = require ('./src/routes/ProductsRoutes')
+const productRouter = require ('./src/routes/ProductRoutes')
 const authRouter = require('./src/routes/AuthRouter');
 const AdminRouter = require('./src/routes/AdminRouter');
 const userRouter = require('./src/routes/UsersRoutes');
