@@ -1,18 +1,22 @@
+const catalogo = require("../model/catalogo-produtos");
+
 const homeController = {
-  showCheckAge: (req, res) => {
-    res.render("checagem_idade");
-  },
-  showAgeDeclined: (req, res) => {
-    res.render("idade_recusada");
-  },
   showHome: (req, res) => {
-    res.render("index");
+    //Buscando os produtos no model
+    const produtos = catalogo.findAll();
+
+    //Renderizando a view catalogo e passando os produtos
+    res.render("index", { produtos });
   },
   showLojas: (req, res) => {
     res.render("lojas");
   },
   showCatalogo: (req, res) => {
-    res.render("catalogo");
+    //Buscando os produtos no model
+    const produtos = catalogo.findAll();
+
+    //Renderizando a view catalogo e passando os produtos
+    res.render("catalogo", { produtos });
   },
   showContato: (req, res) => {
     res.render("contato");
@@ -20,8 +24,14 @@ const homeController = {
   showTermos: (req, res) => {
     res.render("termos");
   },
-      showCarrinho: (req,res) =>{
-        res.render ('carrinho')
-    }
+  showCarrinho: (req, res) => {
+    res.render("carrinho");
+  },
+  showCheckAge: (req, res) => {
+    res.render("checagem_idade");
+  },
+  showAgeDeclined: (req, res) => {
+    res.render("idade_recusada");
+  },
 };
 module.exports = homeController;

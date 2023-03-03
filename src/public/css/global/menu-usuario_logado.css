@@ -61,13 +61,15 @@
 
 .logged_user_user-icon,
 .logged_user_favorite-icon,
-.logged_user_order-icon{
+.logged_user_order-icon,
+.logged_user_exit-icon{
   color: var(--color-0);
 }
 
 .logged_user_user-icon:hover,
 .logged_user_favorite-icon:hover,
-.logged_user_order-icon:hover{
+.logged_user_order-icon:hover,
+.logged_user_exit-icon:hover{
   color: var(--color-p1);
 }
 

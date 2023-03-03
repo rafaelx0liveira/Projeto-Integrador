@@ -17,6 +17,8 @@
   flex: 1;
   min-width: 200px;
   border-radius: 4px;
+  height: 753px;
+  object-fit: cover;
 }
 
 .product-images img:hover{

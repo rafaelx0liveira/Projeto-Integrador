@@ -9,7 +9,11 @@
 
 <body>
 
-  <%- include("components/header.ejs") %>
+  <% if(locals.user && user) {%>
+    <%- include("components/header_logado.ejs") %>
+  <% } else { %>
+    <%- include("components/header.ejs") %>
+  <% } %>
 
   <main class="main">
     <section class="banner fadeInDown" data-anime="600">
@@ -58,48 +62,18 @@
     <section class="products_list fadeInRight" data-anime="800">
       <h2 class="font-1-xxl color-0 container fadeInLeft" data-anime="700">escolha a sua bebida<span class="color-p1">.</span></h2>
       <ul>
-        <li>
-          <a href="">
-            <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
-            <h3 class="font-1-xl color-5">Gin Tônica</h3>
-            <span class="font-2-m color-5">R$ 10</span>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
-            <h3 class="font-1-xl color-5">Gin Tônica</h3>
-            <span class="font-2-m color-5">R$ 10</span>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
-            <h3 class="font-1-xl color-5">Gin Tônica</h3>
-            <span class="font-2-m color-5">R$ 10</span>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
-            <h3 class="font-1-xl color-5">Gin Tônica</h3>
-            <span class="font-2-m color-5">R$ 10</span>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
-            <h3 class="font-1-xl color-5">Gin Tônica</h3>
-            <span class="font-2-m color-5">R$ 10</span>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <img src="./images/bebidas/gin tonica.svg" width="920" height="1040" alt="Bebida Gin Tônica">
-            <h3 class="font-1-xl color-5">Gin Tônica</h3>
-            <span class="font-2-m color-5">R$ 10</span>
-          </a>
-        </li>
+        <% for(let i= 0; i < produtos.length; i++) { %>
+          <% if(produtos[i].alcoolico){ %>
+          <li>
+            <a href="/produto/<%=produtos[i].id%>">
+              <img src="<%= produtos[i].imagem %>" width="920" height="1040" alt="<%= produtos[i].nome %>">
+              <h3 class="font-1-xl color-5">Gin Tônica</h3>
+              <span class="font-2-m color-5"><%= produtos[i].preco %></span>
+            </a>
+          </li>
+          <% } else{ %>
+            <% } %>
+          <% } %>
       </ul>
     </section>
 
@@ -123,6 +97,24 @@
           <a href="./" class="link">Reserve seu evento</a>
         </div>
       </div>
+    </section>
+
+    <section class="products_list fadeInRight" data-anime="800">
+      <h2 class="font-1-xxl color-0 container fadeInLeft" data-anime="700">melhores cervejas<span class="color-p1">.</span></h2>
+      <ul>
+        <% for(let i= 0; i < produtos.length; i++) { %>
+          <% if(produtos[i].tipo == "cerveja"){ %>
+          <li>
+            <a href="/produto/<%=produtos[i].id%>">
+              <img src="<%= produtos[i].imagem %>" width="920" height="1040" alt="<%= produtos[i].nome %>">
+              <h3 class="font-1-xl color-5">Gin Tônica</h3>
+              <span class="font-2-m color-5"><%= produtos[i].preco %></span>
+            </a>
+          </li>
+          <% } else{ %>
+            <% } %>
+          <% } %>
+      </ul>
     </section>
 
     <section class="partners" aria-label="Quem já brindou com a gente">
@@ -171,8 +163,24 @@
             <img src="./images/parceiros/daikin-logo 1.svg" width="140" height="50" alt="Daikin">
           </a>
         </li>
+      </ul>
+    </section>
 
-
+    <section class="products_list fadeInRight" data-anime="800">
+      <h2 class="font-1-xxl color-0 container fadeInLeft" data-anime="700">melhores uísques<span class="color-p1">.</span></h2>
+      <ul>
+        <% for(let i= 0; i < produtos.length; i++) { %>
+          <% if(produtos[i].tipo == "whisky"){ %>
+          <li>
+            <a href="/produto/<%=produtos[i].id%>">
+              <img src="<%= produtos[i].imagem %>" width="920" height="1040" alt="<%= produtos[i].nome %>">
+              <h3 class="font-1-xl color-5">Gin Tônica</h3>
+              <span class="font-2-m color-5"><%= produtos[i].preco %></span>
+            </a>
+          </li>
+          <% } else{ %>
+            <% } %>
+          <% } %>
       </ul>
     </section>
   </main>

@@ -1,0 +1,66 @@
+<div class="card">
+
+  <div class="card-container">
+    <div class="front">
+      <div class="image">
+        <img src="/images/icones/chip.png" alt="">
+        <img src="/images/icones/visa.png" alt="">
+      </div>
+      <div class="font-1-m-b color-11 card-number-box">################</div>
+      <div class="flexbox">
+        <div class="box">
+          <div class="expiration">
+            <div>
+              <span class="font-1-m-b color-11">validade</span>
+            </div>
+            <span class="font-1-m color-11 exp-month">mm</span>
+            <span>/</span>
+            <span class="font-1-m color-11 exp-year">aa</span>
+          </div>
+          <div class="font-1-m-b color-11 card-holder-name">Nome completo</div>
+        </div>
+        <div>
+          <img src="/images/icones/maestro.svg" alt="">
+        </div>
+      </div>
+    </div>
+
+    <div class="back">
+      <div class="stripe"></div>
+      <div class="box">
+        <span class="font-1-m-b color-11">cvv</span>
+        <div class="font-1-m-b color-11 cvv-box"></div>
+        <div class="flexbox">
+          <div class="back-visaImage">
+            <div>
+              <img src="/images/icones/visa.png" alt="">
+            </div>
+            <div>
+              <img src="/images/icones/maestro_black.svg" alt="" >
+            </div>
+          </div>        
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <form class="userpage_form credit_card-form" action="">
+      <div class="col-2 inputBox">
+        <label for="numeroCartao">Número do cartão</label>
+        <input type="text"  id="numeroCartao" name="numeroCartao" maxlength="16" class="card-number-input" required>
+      </div>
+      <div class="col-2 inputBox">
+        <label for="titular">Titular do cartão</label>
+        <input type="text" id="titular" name="titular" class="card-holder-input" required>
+      </div>
+        <div class="inputBox">
+          <label for="mes">Mês</label>
+          <input type="month" id="mes" name="mes" class="month-input" required>
+        </div>
+        <div class="inputBox">
+          <label for="cvv">CVV</label>
+          <input type="text" id="cvv" name="cvv" maxlength="4" class="cvv-input" required>
+        </div>
+          <input type="submit" value="enviar" class="update_userpage_button col-2">
+  </form>
+</div>
