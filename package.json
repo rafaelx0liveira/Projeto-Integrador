@@ -1,0 +1,30 @@
+{
+  "name": "projeto-integrador",
+  "version": "1.0.0",
+  "description": "Projeto Integrador Ecommerce de Bebidas em HTML, CSS e Javascript desenvolvido no curso \"Desenvolvedor Web Fullstack\", administrado pela instituição de ensino Digital House.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon ./app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rafaelx0liveira/Projeto-Integrador.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rafaelx0liveira/Projeto-Integrador/issues"
+  },
+  "homepage": "https://github.com/rafaelx0liveira/Projeto-Integrador#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "bcryptjs": "^2.4.3",
+    "date-fns": "^2.29.3",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "method-override": "^3.0.0",
+    "nodemon": "^2.0.20",
+    "sweetalert2": "^11.4.8"
+  }
+}

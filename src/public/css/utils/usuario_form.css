@@ -1,0 +1,39 @@
+.userpage_form{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.userpage_form label{
+  display: block;
+  color: var(--color-0);
+  font: 400 1rem/1.5 var(--font-roboto);
+  margin-bottom: 4px;
+}
+
+.userpage_form .col-2{
+  grid-column: span 2;
+}
+
+.userpage_form input[type="date"],
+.userpage_form input[type="month"],
+.userpage_form input[type="text"],
+.userpage_form input[type="email"]{
+  font: 400 1rem/1.5 var(--font-roboto);
+  background-color: var(--color-1);
+  border: 1px solid var(--color-2);
+  padding: 12px;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.userpage_form input[type="date"]:focus,
+.userpage_form input[type="text"]:focus,
+.userpage_form input[type="email"]:focus,
+.credit_card-form input:focus{
+  outline: none;
+  border-color: var(--color-p1);
+  background-color: var(--color-0);
+  box-shadow: 0 0 0 2px var(--color-p1);
+}

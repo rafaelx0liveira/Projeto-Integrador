@@ -1,0 +1,65 @@
+/****************************
+          STYLE CSS
+****************************/
+
+/****************************
+          IMPORTS
+****************************/
+
+
+/* Cadastro */
+@import "./cadastro/cadastro.css";
+
+/* catalogo-produtos */
+@import "./catalogo-produtos/catalogo-produtos.css";
+
+/* contato */
+@import "./contato/contato.css";
+
+/* global */
+@import "./global/footer.css";
+@import "./global/global.css";
+@import "./global/header.css";
+@import "./global/menu-usuario_logado.css";
+
+/* home */
+@import "./home/banners.css";
+@import "./home/checagem_idade.css";
+@import "./home/eventos_comemorativos.css";
+@import "./home/home.css";
+@import "./home/parceiros.css";
+@import "./home/lista_produtos.css";
+
+/* login */
+@import "./login/login.css";
+/* lojas */
+@import "./lojas/lojas.css";
+
+/* pagina_produto */
+@import "./pagina_produto/pagina_produto.css";
+
+/* pagina_usuario */
+@import "./pagina_usuario/pagina_usuario.css";
+
+/* termos */
+@import "./termos/termos.css";
+
+/* formularios */
+@import "./formulario/form.css";
+
+/* utils */
+@import "./utils/animacao.css";
+@import "./utils/componentes.css";
+@import "./utils/cores.css";
+@import "./utils/form.css";
+@import "./utils/tipografia.css";
+@import "./utils/usuario_form.css";
+@import "./utils/usuario_info.css";
+@import "./checkout-page.css";
+
+/* modals */
+@import "./modals/emailError.css";
+
+/* cartao-credito */
+@import "./cartao-credito/cartao_credito.css";
+

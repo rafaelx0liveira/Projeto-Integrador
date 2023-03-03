@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <%- include("components/head.ejs") %>
+    
+    <title>Login</title>
+  </head>
+
+  <body id="pagina_login">
+    <%- include("components/header.ejs") %>
+
+    <main class="main">
+      <div class="title-bg">
+        <div class="title container">
+          <p class="font-2-l-b color-5 fadeInLeft" data-anime="200">
+            insira seus dados
+          </p>
+          <h1 class="font-1-xxl color-0 fadeInLeft" data-anime="400">
+            Página de login<span class="color-p1">.</span>
+          </h1>
+        </div>
+      </div>
+      <% if (typeof emailError !="undefined" ){ %>
+
+        <%- include("modals/emailError.ejs"); %>
+
+        <% } else if(typeof loginError !="undefined" ) {%>
+          <%- include("modals/loginError.ejs"); %> 
+        <% }  %>
+
+      <form class="login_page container" action="/login" method="POST">
+        <fieldset class="personal-data fadeInLeft" data-anime="600">
+          <div class="row">
+            <%-include('./components/input_group.ejs',
+            {style:"w-100",type:"email",id_name:"email",label:"E-mail*"}) %>
+          </div>
+          <div class="row">
+            <%-include('./components/input_group.ejs',
+            {style:"w-100",type:"password",id_name:"senha",label:"Senha*"}) %>
+          </div>
+          <div class="row">
+            <%-include('./components/input_group.ejs',
+            {style:"w-100",type:"submit",label:"Entrar"}) %>
+
+          </div>
+        </fieldset>
+      </form>
+    </main>
+
+    <%- include("components/footer.ejs") %>
+    <script src="./scripts/plugins/simple-anime.js"></script>
+    <script src="./scripts/script.js"></script>
+    <script src="./scripts/modalErrors.js"></script>
+  </body>
+</html>

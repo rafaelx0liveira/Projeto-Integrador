@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include("components/head.ejs") %>
+
+
+  <title>Página do usuário</title>
+</head>
+
+<body id="userpage">
+  <% if(locals.user && user) {%>
+    <%- include("components/header_logado.ejs") %>
+  <% } else { %>
+    <%- include("components/header.ejs") %>
+  <% } %>
+
+  <main class="userpage_main">
+    <div class="title-bg">
+      <div class="container">
+        <p class="font-2-l-b color-5 fadeInLeft" data-anime="200">Página de Usuário</p>
+        <h1 class="font-1-xxl color-0 fadeInLeft" data-anime="400"><%= user.nome %></h1>
+      </div>
+    </div>
+
+    <div class="userpage_content container fadeInDown" data-anime="400">
+      
+      <%- include("components/section_Usuario.ejs") %>
+
+      <section class="userpage_info fadeInUp" data-anime="800" aria-label="Dados Pessoais">
+        <h2 class="color-0">Pagamentos</h2>
+        <%- include("components/credit_card.ejs") %>
+      </section>
+
+    </div>
+
+  </main>
+
+  <footer class="footer-bg">
+    <div class="footer container">
+      <a href="" class="font-2-l-b color-12">
+        LOGO
+      </a>
+      <div class="footer-contact">
+        <h3 class="font-2-l-b color-12">Contato</h3>
+        <ul class="font-2-m color-10">
+          <li><a href="tel:+5511999999999">+55 11999999999</a></li>
+          <li><a href="mailto:emailcontato@gmail.com">emailcontato@gmail.com</a></li>
+          <li>Rua Ali Perto, 42 - Paulista</li>
+          <li>São Paulo - SP</li>
+        </ul>
+        <div class="footer-socia_media">
+          <a href="./">
+            <img src="./images/redes/instagram-p.svg" width="32" height="32" alt="Instagram">
+          </a>
+          <a href="./">
+            <img src="./images/redes/facebook-p.svg" width="32" height="32" alt="Facebook">
+          </a>
+          <a href="./">
+            <img src="./images/redes/youtube-p.svg" width="32" height="32" alt="Youtube">
+          </a>
+        </div>
+      </div>
+      <div class="footer-info">
+        <h3 class="font-2-l-b color-12">Informações</h3>
+        <nav>
+          <ul class="font-1-m color-10">
+            <li><a href="">Bebidas</a></li>
+            <li><a href="">Sobre a empresa</a></li>
+            <li><a href=" ">Termos e condições</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-payment">
+        <h3 class="font-2-l-b color-12">Pagamento</h3>
+
+        <ul>
+          <li>
+            <a href="./">
+              <img src="./images/forma-de-pagamento/mastercard.svg" width="64" height="64" alt="Instagram">
+            </a>
+          </li>
+          <li>
+            <a href="./">
+              <img src="./images/forma-de-pagamento/visa.svg" width="64" height="64" alt="Facebook">
+            </a>
+          </li>
+          <li>
+            <a href="./">
+              <img src="./images/forma-de-pagamento/discover.svg" width="64" height="64" alt="Youtube">
+            </a>
+          </li>
+          <li>
+            <a href="./">
+              <img src="./images/forma-de-pagamento/pix.svg" width="64" height="64" alt="Instagram">
+            </a>
+          </li>
+          <li>
+            <a href="./">
+              <img src="./images/forma-de-pagamento/elo.svg" width="64" height="64" alt="Facebook">
+            </a>
+          </li>
+          <li>
+            <a href="./">
+              <img src="./images/forma-de-pagamento/boleto.svg" width="64" height="64" alt="Youtube">
+            </a>
+          </li>
+        </ul>
+      </div>
+      <p class="footer-copy font-2-m color-12">Bebidas © Alguns direitos reservados.</p>
+    </div>
+  </footer>
+  <script src="./scripts/plugins/simple-anime.js"></script>
+  <script src="./scripts/script.js"></script>
+  <script src="./scripts/credit-card.js"></script>
+</body>
+
+</html>
