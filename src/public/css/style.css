@@ -44,6 +44,9 @@
 /* termos */
 @import "./termos/termos.css";
 
+/* formularios */
+@import "./formulario/form.css";
+
 /* utils */
 @import "./utils/animacao.css";
 @import "./utils/componentes.css";

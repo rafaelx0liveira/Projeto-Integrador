@@ -6,7 +6,6 @@
     width: 100%;
     background-color: #f7f7f7
 
-
   }
 
   .input-wrapper {
@@ -58,77 +57,6 @@
     flex-direction: column;
     gap:20px
   }
-
-  
-  
- /*INPUT RADIO E CHECKBOX CUSTOMIZADOS */
-  .radio-wrapper {
-    display: flex;
-    align-items: center;
-  }
- 
-  .radio-wrapper input {
-    appearance: none;
-    width:15px;
-    height:15px;
-    border: 2px solid #e4a30b;
-    margin-left: 5px;
-    position:relative;
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-
-  }
-  
-  .radio-wrapper input::before{
-    content: "";
-    position:absolute;
-    width:7px;
-    height:7px;
-    background-color: #ffbb00;
-    border-radius: 50%;
-    opacity: 0; 
-    transition: all .3s;
-    
-  }
-
-  .radio-wrapper input:checked::before {
-    opacity:1
-  }
-
-  .checkbox-wrapper {
-    display: flex;
-    align-items: center;
-  }  
-  .checkbox-wrapper input {
-    appearance: none;
-    width:17px;
-    height:17px;
-    border: 2px solid #e4a30b;
-    margin-left: 5px;
-    position:relative;
-    display:flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .checkbox-wrapper input::before {
-    content: "";
-    position:absolute;
-    width: 9px;
-    height: 6px;
-    border-left: 2.8px solid #ffbb00;
-    border-bottom: 2.8px solid #ffbb00;
-    transform: rotate(310deg);
-    top:0.8px;
-    opacity:0;
-    transition: all .1s
-}
-.checkbox-wrapper input:checked::before{
-  opacity:1
-}
- 
-
 
 /* Carrinho de Compras */
 .img-do-produto {
