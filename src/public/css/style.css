@@ -54,3 +54,9 @@
 @import "./utils/usuario_info.css";
 @import "./checkout-page.css";
 
+/* modals */
+@import "./modals/emailError.css";
+
+/* cartao-credito */
+@import "./cartao-credito/cartao_credito.css";
+

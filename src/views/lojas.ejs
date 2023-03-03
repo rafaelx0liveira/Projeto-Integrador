@@ -9,7 +9,11 @@
 
 <body>
 
-  <%- include("components/header.ejs") %>
+  <% if(locals.user && user) {%>
+    <%- include("components/header_logado.ejs") %>
+  <% } else { %>
+    <%- include("components/header.ejs") %>
+  <% } %>
 
   <main>
     <div class="title-bg">

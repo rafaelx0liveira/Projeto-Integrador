@@ -4,81 +4,61 @@
 <head>
   <%- include("components/head.ejs") %>
 
-
   <title>Página do usuário</title>
 </head>
 
 <body id="userpage">
-  <%- include("components/header.ejs") %>
+  <% if(locals.user && user) {%>
+    <%- include("components/header_logado.ejs") %>
+  <% } else { %>
+    <%- include("components/header.ejs") %>
+  <% } %>
 
 
   <main class="userpage_main">
     <div class="title-bg">
       <div class="container">
         <p class="font-2-l-b color-5 fadeInLeft" data-anime="200">Página de Usuário</p>
-        <h1 class="font-1-xxl color-0 fadeInLeft" data-anime="400">Nome do usuário</h1>
+        <h1 class="font-1-xxl color-0 fadeInLeft" data-anime="400"><%= user.nome %></h1>
       </div>
     </div>
 
+    <% if (typeof ok !="undefined" ){ %>
+
+      <%- include("modals/perfilAtualizado.ejs"); %>
+
+    <% }  %>
+
     <div class="userpage_content container fadeInDown" data-anime="400">
-      <section class="userpage_menu">
-        <div class="userpage_picture">
-          <img src="./images/usuario/foto de perfil.svg" alt="Foto de perfil">
-        </div>
-        <div class="userpage_options font-1-l color-12">
-          <ul>
-            <li>
-              <a href="./usuario_perfil.html">Perfil</a>
-            </li>
-            <li>
-              <a href="./usuario_pedidos.html">Pedidos</a>
-            </li>
-            <li>
-              <a href="./usuario_endereço.html">Endereço</a>
-            </li>
-            <li>
-              <a href="./usuario_pagamentos.html">Pagamentos</a>
-            </li>
-          </ul>
-        </div>
-      </section>
+      <%- include("components/section_Usuario.ejs") %>
 
       <section class="userpage_info fadeInUp" data-anime="800" aria-label="Dados Pessoais">
         <h2 class="color-0">Dados Pessoais</h2>
-        <form class="userpage_form" action="./contato.html">
-          <div>
-            <label for="nome">Nome</label>
-            <input type="text" id="nome" name="nome" placeholder="Seu nome">
-          </div>
+        <form class="userpage_form" action="/cadastro?_method=PUT" method="POST">
 
           <div>
-            <label for="sobrenome">Sobrenome</label>
-            <input type="text" id="sobrenome" name="sobrenome" placeholder="Seu sobrenome">
-          </div>
-
-          <div class="col-2">
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="contato@email.com">
+            <input type="email" id="email" name="email" value="<%= user.email %>">
           </div>
 
           <div>
             <label for="cpf">CPF</label>
-            <input type="text" id="cpf" name="cpf" placeholder="xxx.xxx.xxx-xx">
+            <input type="text" id="cpf" name="cpf" value="<%= user.cpf %>">
           </div>
 
-          <div>
-            <label for="genero">Gênero</label>
-            <input type="text" id="genero" name="genero" placeholder="Seu gênero">
-          </div>
-
-          <div>
-            <label for="nascimento">Data de Nascimento</label>
-            <input type="text" id="nascimento" name="nascimento" placeholder="dd/mm/aa">
+          <div class="col-2">
+            <label for="nome">Nome Completo</label>
+            <input type="text" id="nome" name="nome" value="<%= user.nome %>">
           </div>
 
           <div>
             <label for="telefone">Telefone</label>
-            <input type="text" id="telefone" name="telefone" placeholder="(99) 99999-9999">
+            <input type="text" id="telefone" name="telefone" value="<%= user.telefone %>">
+          </div>
+
+          <div>
+            <label for="nascimento">Data de Nascimento</label>
+            <input value="<%= user.dtNascimento%>" type="date" onfocus="(this.type='date')" onblur="(this.type='date')" id="dtNascimento" name="dtNascimento">
           </div>
 
           <button class="update_userpage_button col-2">Atualizar perfil</button>
@@ -94,6 +74,7 @@
   
   <script src="./scripts/plugins/simple-anime.js"></script>
   <script src="./scripts/script.js"></script>
+  <script src="./scripts/modalErrors.js"></script>
 </body>
 
 </html>
