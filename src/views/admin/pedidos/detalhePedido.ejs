@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <%- include("../components/head.ejs") %>
+    <title>Pedidos</title>
+</head>
+<body>
+    <%- include("../components/header.ejs") %>
+    <%- include("../components/nav.ejs") %>
+    <main class="container">
+        <h1>    
+            Pedido: #1
+        </h1>        
+        <div class="row g-2">
+            <h4>
+                Detalhes Gerais
+            </h4>
+            <div class="col-md-6">
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="data_pedido" placeholder="01/01/2023" value="01/01/2023" name="data_pedido">
+                    <label for="data_pedido">Data do pedido</label>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="status" placeholder="" value="Em andamento" name="status">
+                    <label for="status">Status</label>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="nome" placeholder="" value="Henrique" name="nome">
+                    <label for="nome">Cliente</label>
+                </div>
+            </div>
+            
+        </div>
+        <div class="row g-2 mt-3">
+            <h4>
+                Produtos
+            </h4>
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Quantidade itens</th>
+                    <th scope="col">Valor</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Jim Beam White Bourbon Whisky Americano 1000ml</td>
+                    <td>2</td>
+                    <td>R$249,80</td>
+                  </tr>
+                  <tr>
+                    <th colspan="2">Total</th>
+                    <th>2</th>
+                    <th>R$249,80</th>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+        <div class="row g-2 mt-3">
+            <div class="col-md-6">
+                <h4>
+                    Detalhes do Cliente
+                </h4>
+                <div class="col-md-11">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="cpf" placeholder="" value="123.456.789-00" name="cpf">
+                        <label for="cpf">CPF do Cliente</label>
+                    </div>
+                </div>
+                <div class="col-md-11 mt-2">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="telefone" placeholder="01/01/2023" value="(11)91234-5678" name="telefone">
+                        <label for="telefone">Telefone</label>
+                    </div>
+                </div>
+                <div class="col-md-11 mt-2">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="email" placeholder="" value="henrique@email.com" name="email">
+                        <label for="email">E-mail</label>
+                    </div>
+                </div>                
+            </div>     
+            <div class="col-md-6">
+                <h4>
+                    Detalhes da Entrega
+                </h4>
+                <div class="col-md-12">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="rua" placeholder="" value="Rua X, 12" name="rua">
+                        <label for="rua">Endereço</label>
+                    </div>
+                </div>
+                <div class="col-md-12 mt-2">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="bairro" placeholder="" value="Xyz" name="bairro">
+                        <label for="bairro">Bairro</label>
+                    </div>
+                </div>
+                <div class="col-md-12 mt-2">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="cidade" placeholder="" value="São Paulo" name="cidade">
+                        <label for="cidade">Cidade</label>
+                    </div>
+                </div> 
+                <div class="col-md-12 mt-2">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="uf" placeholder="" value="São Paulo" name="uf">
+                        <label for="uf">Estado</label>
+                    </div>
+                </div>  
+                <div class="col-md-12 mt-2">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="cep" placeholder="" value="12345-123" name="cep">
+                        <label for="cep">CEP</label>
+                    </div>
+                </div>                
+            </div>             
+        </div>
+        <div class="text-center mt-4">
+            <a href="/admin/pedidos" class="btn btn-primary w-100">Voltar</a>
+        </div>
+        
+    </main>
+</body>
+</html>

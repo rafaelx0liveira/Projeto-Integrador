@@ -7,7 +7,11 @@
 </head>
 
 <body id="cadastro">
-  <%- include("components/header.ejs") %>
+  <% if(locals.user && user) {%>
+    <%- include("components/header_logado.ejs") %>
+  <% } else { %>
+    <%- include("components/header.ejs") %>
+  <% } %>
 
   <main class="registration-page main">
     <div class="title-bg">
@@ -16,7 +20,17 @@
         <h1 class="font-1-xxl color-0 fadeInLeft" data-anime="400">Página de Cadastro<span class="color-p1">.</span></h1>
       </div>
     </div>
-    <form class="container">
+
+    <% if (typeof userError !="undefined" ){ %>
+
+      <%- include("modals/userError.ejs"); %>
+
+      <% } else if(typeof confirmed_PasswordError != "undefined") {%>
+      <%- include("modals/confirmed_PasswordError.ejs"); %>
+
+      <% }  %>
+
+    <form class="container" action="/cadastro" method="POST">
       <fieldset class="personal-data fadeInLeft" data-anime="600">
         <legend>Dados pessoais</legend>
         <div class="row">
@@ -25,14 +39,17 @@
         </div>
         <div class="row">
           <%-include('./components/input_group.ejs', {style:"w-100",type:"text",id_name:"name",label:"Nome completo*"}) %>
+
         </div>
         <div class="row">
           <%-include('./components/input_group.ejs', {style:"w-47",type:"text",id_name:"telefone",label:"Telefone"}) %>
           <%-include('./components/input_group.ejs', {style:"w-47",type:"date",id_name:"dtNascimento",label:"Data de nascimento*"}) %>
         </div>
         <div class="row">
+
           <%-include('./components/input_group.ejs', {style:"w-47",type:"password",id_name:"senha",label:"Senha*"}) %>
           <%-include('./components/input_group.ejs', {style:"w-47",type:"password",id_name:"senhaConfirma",label:"Confirme a senha*"}) %>
+
         </div>
       </fieldset>
       <fieldset class="address-data fadeInRight" data-anime="800">
@@ -58,12 +75,14 @@
           <%-include('./components/input_group.ejs', {style:"w-100 fadeInUp",type:"submit",label:"Cadastrar"}) %>
         </div>        
 
+
       </fieldset>
     </form>
   </main>
   <%- include("components/footer.ejs") %>
   <script src="./scripts/plugins/simple-anime.js"></script>
   <script src="./scripts/script.js"></script>
+  <script src="./scripts/modalErrors.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <%- include("./components/head.ejs") %>
+    <title>Dashboard</title>
+</head>
+<body>
+    <%- include("./components/header.ejs") %>
+    <%- include("./components/nav.ejs") %>
+    <main class="container" id="dashboard">
+        <h1>    
+            Início
+        </h1>
+        <div class="card">
+            <div class="card-header">
+               <h3>
+                <a href="/admin/pedidos"> <i class="bi bi-bag-check"></i> Pedidos</a>
+               </h3>
+            </div>
+            <div class="card-body">
+                <div class="order-open">
+                   Abertos: 10
+                </div>
+                <div class="order-payed">
+                   Pagos: 15
+                </div>
+                <div class="order-cancel">
+                   Cancelados: 5
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+               <h3>
+                <a href="/admin/produtos"> <i class="bi bi-list-task"></i> Produtos</a>
+               </h3>
+            </div>
+            <div class="card-body">
+                <div class="product-total">
+                   Total: 50
+                </div>
+                <div class="product-stock">
+                   Em estoque: 40
+                </div>
+                <div class="product-outstock">
+                   Fora de estoque: 10
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+               <h3>
+                <a href="/admin/clientes"> <i class="bi bi-people"></i> Clientes</a>
+               </h3>
+            </div>
+            <div class="card-body">
+                <div class="client-total">
+                   Total: 50
+                </div>
+                <div class="client-active">
+                   Ativo: 40
+                </div>
+                <div class="client-inactive">
+                   Inativo: 10
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
