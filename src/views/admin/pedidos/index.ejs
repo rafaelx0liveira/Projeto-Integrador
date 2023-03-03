@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <%- include("../components/head.ejs") %>
+    <title>Pedidos</title>
+</head>
+<body>
+    <%- include("../components/header.ejs") %>
+    <%- include("../components/nav.ejs") %>
+    <main class="container">
+        <h1>    
+            Pedidos
+        </h1>
+        <div class="row mt-4">
+          <div class="col-md-6">
+              <form class="d-flex">
+                  <input class="form-control me-2 w-50" type="search" placeholder="Procure um pedido" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Pesquisar</button>
+                </form>
+          </div>
+          
+      </div>
+        <table class="table mt-4">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Data Pedido</th>
+                <th scope="col">Cliente</th>
+                <th scope="col">CPF do Cliente</th>
+                <th scope="col">Status</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>01/01/2023</td>
+                <td>Henrique</td>
+                <td>123.456.789-00</td>
+                <td><span class="badge bg-primary">Em andamento</span></td>
+                <td><a href="/admin/detalhePedido" class="btn btn-outline-primary">Ver detalhes</a></td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>01/01/2023</td>
+                <td>Henrique</td>
+                <td>123.456.789-00</td>
+                <td><span class="badge bg-success">Pago</span></td>
+                <td><a href="/admin/detalhePedido" class="btn btn-outline-primary">Ver detalhes</a></td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>01/01/2023</td>
+                <td>Henrique</td>
+                <td>123.456.789-00</td>
+                <td><span class="badge bg-danger">Cancelado</span></td>
+                <td><a href="/admin/detalhePedido" class="btn btn-outline-primary">Ver detalhes</a></td>
+              </tr>
+              <tr>
+                <th scope="row">4</th>
+                <td>01/01/2023</td>
+                <td>Henrique</td>
+                <td>123.456.789-00</td>
+                <td><span class="badge bg-warning">Expirado</span></td>
+                <td><a href="/admin/detalhePedido" class="btn btn-outline-primary">Ver detalhes</a></td>
+              </tr>
+            </tbody>
+          </table>
+    </main>
+</body>
+</html>

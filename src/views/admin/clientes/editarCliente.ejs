@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <%- include("../components/head.ejs") %>
+    <title>Editar Cliente</title>
+</head>
+<body>
+    <%- include("../components/header.ejs") %>
+    <%- include("../components/nav.ejs") %>
+    <main class="container">
+        <h1>Editar Cliente</h1>
+        <form class="row g-3 mt-2">
+          
+          <div class="form-check form-switch col-md-2 offset-md-10 d-flex justify-content-end">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="ativo"
+              name="ativo"
+              checked
+            />
+            <label class="form-check-label ms-2" for="ativo"
+              >Ativo</label
+            >
+          </div>
+          <div class="form-floating col-md-6 ">
+            <input
+              type="text"
+              class="form-control"
+              id="id"
+              placeholder="12345"
+              name="id"
+              value="12345"
+              disabled
+            />
+            <label for="floatingInput">ID</label>
+          </div>
+          <div class="form-floating col-md-6 ">
+            <input
+              type="text"
+              class="form-control"
+              id="nome"
+              placeholder="Nome do produto"
+              name="nome"
+            />
+            <label for="floatingInput">Nome</label>
+          </div>
+          <div class="form-floating col-md-6 ">
+              <input
+                type="text"
+                class="form-control"
+                id="cpf"
+                placeholder="CPF"
+                name="cpf"
+              />
+              <label for="cpf">CPF</label>
+            </div>
+            <div class="form-floating col-md-6 ">
+              <input
+                type="text"
+                class="form-control"
+                id="email"
+                placeholder="email"
+                name="email"
+              />
+              <label for="email">E-mail</label>
+            </div>
+            <div class="form-floating col-md-6 ">
+              <input
+                type="text"
+                class="form-control"
+                id="telefone"
+                placeholder="Telefone"
+                name="telefone"
+              />
+              <label for="telefone">Telefone</label>
+            </div>
+            <div class="form-floating col-md-6 ">
+              <input
+                type="date"
+                class="form-control"
+                id="data_nascimento"
+                placeholder="Data de Nascimento"
+                name="data_nascimento"
+              />
+              <label for="data_nascimento">Data de Nascimento</label>
+            </div>
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary w-100">Salvar</button>
+          </div>
+        </form>
+      </main>
+</body>
+</html>

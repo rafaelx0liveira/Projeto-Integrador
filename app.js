@@ -1,15 +1,16 @@
 //Importando as dependências
 const express = require('express');
 const path = require('path');
+const homeRouter = require('./src/routes/HomeRoutes');
+const productsRouter = require ('./src/routes/ProductsRoutes')
+const authRouter = require('./src/routes/AuthRouter');
+const AdminRouter = require('./src/routes/AdminRouter');
+const userRouter = require('./src/routes/UsersRoutes');
+
 const session = require('express-session');
 const methodOverride = require('method-override');
 
-// Importando as rotas
-const homeRouter = require('./src/routes/HomeRoutes');
-const productRouter = require('./src/routes/ProductRoutes');
-const authRouter = require('./src/routes/AuthRouter');
-const userRouter = require('./src/routes/UsersRoutes');
-//const AdminRouter = require('./routes/admin');
+
 
 // Variáveis
 const app = express();
@@ -38,8 +39,9 @@ app.use(express.static(path.resolve("src", "public")));
 app.use(homeRouter);
 app.use(productRouter);
 app.use(authRouter);
+
+app.use("/admin", AdminRouter);
 app.use(userRouter);
-//app.use("/admin", AdminRouter);
 
 
 app.use((req, res, next) => {
