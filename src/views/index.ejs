@@ -62,13 +62,13 @@
     <section class="products_list fadeInRight" data-anime="800">
       <h2 class="font-1-xxl color-0 container fadeInLeft" data-anime="700">escolha a sua bebida<span class="color-p1">.</span></h2>
       <ul>
-        <% for(let i= 0; i < produtos.length; i++) { %>
-          <% if(produtos[i].alcoolico){ %>
+        <% for(let i= 0; i < produtosTop.length; i++) { %>
+          <% if(produtosTop[i].alcoolico){ %>
           <li>
-            <a href="/produto/<%=produtos[i].id%>">
-              <img src="<%= produtos[i].imagem %>" width="920" height="1040" alt="<%= produtos[i].nome %>">
-              <h3 class="font-1-xl color-5">Gin Tônica</h3>
-              <span class="font-2-m color-5"><%= produtos[i].preco %></span>
+            <a href="/produto/<%=produtosTop[i].id%>">
+              <img src="<%= produtosTop[i].imagem %>" width="920" height="1040" alt="<%= produtosTop[i].nome %>">
+              <h3 class="font-1-xl color-5"><%= produtosTop[i].nome %></h3>
+              <span class="font-2-m color-5"><%= produtosTop[i].preco %></span>
             </a>
           </li>
           <% } else{ %>
@@ -102,17 +102,16 @@
     <section class="products_list fadeInRight" data-anime="800">
       <h2 class="font-1-xxl color-0 container fadeInLeft" data-anime="700">melhores cervejas<span class="color-p1">.</span></h2>
       <ul>
-        <% for(let i= 0; i < produtos.length; i++) { %>
-          <% if(produtos[i].tipo == "cerveja"){ %>
+        <% for(let i= 0; i < produtosCerveja.length; i++) { %>
+          
           <li>
-            <a href="/produto/<%=produtos[i].id%>">
-              <img src="<%= produtos[i].imagem %>" width="920" height="1040" alt="<%= produtos[i].nome %>">
-              <h3 class="font-1-xl color-5">Gin Tônica</h3>
-              <span class="font-2-m color-5"><%= produtos[i].preco %></span>
+            <a href="/produto/<%=produtosCerveja[i].id%>">
+              <img src="<%= produtosCerveja[i].imagem %>" width="920" height="1040" alt="<%= produtosCerveja[i].nome %>">
+              <h3 class="font-1-xl color-5"><%= produtosCerveja[i].nome %></h3>
+              <span class="font-2-m color-5"><%= produtosCerveja[i].preco %></span>
             </a>
           </li>
-          <% } else{ %>
-            <% } %>
+
           <% } %>
       </ul>
     </section>
@@ -169,17 +168,15 @@
     <section class="products_list fadeInRight" data-anime="800">
       <h2 class="font-1-xxl color-0 container fadeInLeft" data-anime="700">melhores uísques<span class="color-p1">.</span></h2>
       <ul>
-        <% for(let i= 0; i < produtos.length; i++) { %>
-          <% if(produtos[i].tipo == "whisky"){ %>
+        <% for(let i= 0; i < produtosUisque.length; i++) { %>
+          
           <li>
-            <a href="/produto/<%=produtos[i].id%>">
-              <img src="<%= produtos[i].imagem %>" width="920" height="1040" alt="<%= produtos[i].nome %>">
-              <h3 class="font-1-xl color-5">Gin Tônica</h3>
-              <span class="font-2-m color-5"><%= produtos[i].preco %></span>
+            <a href="/produto/<%=produtosUisque[i].id%>">
+              <img src="<%= produtosUisque[i].imagem %>" width="920" height="1040" alt="<%= produtosUisque[i].nome %>">
+              <h3 class="font-1-xl color-5"><%= produtosUisque[i].nome %></h3>
+              <span class="font-2-m color-5"><%= produtosUisque[i].preco %></span>
             </a>
           </li>
-          <% } else{ %>
-            <% } %>
           <% } %>
       </ul>
     </section>
