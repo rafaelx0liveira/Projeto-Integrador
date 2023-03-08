@@ -1,19 +1,25 @@
-const catalogo = require("../model/catalogo-produtos");
+// const catalogo = require("../database/old/catalogo-produtos");
+const {Produto} = require("../model")
 
 const homeController = {
-  showHome: (req, res) => {
+  showHome: async (req, res) => {
     //Buscando os produtos no model
-    const produtos = catalogo.findAll();
-
+    const produtosTop = await Produto.findAll({ limit: 15 });
+    const produtosCerveja = await Produto.findAll({ where: {
+      tipo: "cerveja"
+    }, limit: 10})
+    const produtosUisque = await Produto.findAll({ where: {
+      tipo: "uisque"
+    }, limit: 10 })
     //Renderizando a view catalogo e passando os produtos
-    res.render("index", { produtos });
+    res.render("index", { produtosTop,produtosCerveja,produtosUisque });
   },
   showLojas: (req, res) => {
     res.render("lojas");
   },
-  showCatalogo: (req, res) => {
+  showCatalogo: async(req, res) => {
     //Buscando os produtos no model
-    const produtos = catalogo.findAll();
+    const produtos = await Produto.findAll();
 
     //Renderizando a view catalogo e passando os produtos
     res.render("catalogo", { produtos });

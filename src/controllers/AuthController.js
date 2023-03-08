@@ -1,4 +1,4 @@
-const Users = require("../model/Users");
+const Users = require("../database/old/Users");
 const bcrypt = require("bcryptjs");
 const format = require('date-fns');
 
