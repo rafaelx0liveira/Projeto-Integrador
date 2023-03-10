@@ -3,16 +3,22 @@ const {Produto} = require("../model")
 
 const homeController = {
   showHome: async (req, res) => {
-    //Buscando os produtos no model
-    const produtosTop = await Produto.findAll({ limit: 15 });
-    const produtosCerveja = await Produto.findAll({ where: {
+
+    //Buscando as bebidas no model
+    const bebidas_carrossel = await Produto.findAll({ limit: 15 });
+
+    // Buscando as bebidas do tipo 'cerveja' no model
+    const cervejas = await Produto.findAll({ where: {
       tipo: "cerveja"
     }, limit: 10})
-    const produtosUisque = await Produto.findAll({ where: {
+
+    // Buscando as bebidas do tipo 'uisque' no model
+    const uisques = await Produto.findAll({ where: {
       tipo: "uisque"
     }, limit: 10 })
+
     //Renderizando a view catalogo e passando os produtos
-    res.render("index", { produtosTop,produtosCerveja,produtosUisque });
+    res.render("index", { bebidas_carrossel, cervejas, uisques });
   },
   showLojas: (req, res) => {
     res.render("lojas");
