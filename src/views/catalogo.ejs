@@ -30,7 +30,7 @@
           <div class="catalog_products container">
             <div class="catalog_products-image fadeInUp" data-anime="600">
               <img src="<%= produtos[i].imagem %>" width="1120" height="680" alt="Bebida Alcoólica">
-              <span class="font-2-m color-0"><%= produtos[i].preco %></span>
+              <span class="font-2-m color-0">R$ <%= produtos[i].preco %></span>
             </div>
             <div class="catalog_products-content fadeInDown" data-anime="800">
               <h2 class="font-1-xl"><%= produtos[i].nome %></h2>
@@ -56,7 +56,7 @@
               <div class="catalog_products container">
                 <div class="catalog_products-image fadeInUp" data-anime="600">
                   <img src="<%= produtos[i].imagem %>" width="920" height="1040" alt="Bebida Alcoólica">
-                  <span class="font-2-m color-0"><%= produtos[i].preco %></span>
+                  <span class="font-2-m color-0">R$ <%= produtos[i].preco %></span>
                 </div>
                 <div class="catalog_products-content fadeInDown" data-anime="800">
                   <h2 class="font-1-xl color-0"><%= produtos[i].nome %></h2>
@@ -91,7 +91,7 @@
                             <%= produtos[i].nome %>
                           </h3>
                           <span class="font-2-m color-5">
-                            <%= produtos[i].preco %>
+                            R$ <%= produtos[i].preco %>
                           </span>
                         </a>
                       </li>

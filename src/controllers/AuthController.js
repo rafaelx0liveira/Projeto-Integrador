@@ -2,6 +2,8 @@ const Users = require("../database/old/Users");
 const bcrypt = require("bcryptjs");
 const format = require('date-fns');
 
+const {Usuario} = require("../model");
+
 const AuthController = {
     showCadastro: (req, res) => {
         res.render("cadastro");
@@ -22,7 +24,9 @@ const AuthController = {
 
         let dataBR = format.format(data, "dd/MM/yyyy");
 
-        const verifyUser = Users.findUser(email);
+        // const verifyUser = Users.findUser(email);
+
+        const verifyUser = User.findUser(email);
 
         if (verifyUser) {
             return res.render("cadastro", {
@@ -48,34 +52,34 @@ const AuthController = {
     },
 
     // Criando o método de login
-    login: (req, res) => {
+    login: async (req, res) => {
         const {email, senha} = req.body;
 
-        //console.log(email, senha);
-
-        const user = Users.findUser(email);
+        //const user = User.findUser(email);
+        const auth_usuario = await Usuario.findOne({ where: { email } });
         
-        if(user == undefined) {
+        if(auth_usuario == undefined) {
             console.log("Email não cadastrado!");
             return res.render("login", {
                 emailError: "Email não cadastrado!"
             });
         }
         
-        const verifyPassword = bcrypt.compareSync(senha, user.senha);
+        const senhaVerificada = bcrypt.compareSync(senha, auth_usuario.senha);
 
-        // Verificando se o usuário existe
-        if (!user || !verifyPassword) {
+        //Verificando se o usuário existe
+        if (!auth_usuario || !senhaVerificada) {
             return res.render("login", {
                 loginError: "Usuário ou senha inválidos"
             });
         }
 
         // Salvando o usuário na sessão
-        req.session.user = user;
+        req.session.user = auth_usuario;
 
         // Redirecionando para a página de produtos
         return res.redirect("/catalogo");
+
     },
 
     // Criando o método de atualizar perfil

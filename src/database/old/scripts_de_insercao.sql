@@ -16,7 +16,7 @@ SELECT `produto`.`idProduto`,
     `produto`.`ativo`,
     `produto`.`estoque`,
     `produto`.`qtde_estoque`,
-    `produto`.`ingredientes`,
+    `produto`.`ingredientes`,usuario
     `produto`.`harmonizacao`,
     `produto`.`graduacao_alcoolica`,
     `produto`.`volume`
@@ -1167,15 +1167,21 @@ INSERT INTO `pi_dh`.`usuario`
 `email`,
 `cpf`,
 `telefone`,
-`dtNascimento`)
+`dtNascimento`,
+`senha`)
 VALUES
 (1,
 'Rafael Aparecido Silva de Oliveira',
 'rafaelaparecido.oliveirasilva@gmail.com',
 '45978945645',
 '5511962807125',
-'1999-12-15'
+'1999-12-15',
+'$2a$12$7e6lbx.I9EhzYcY8.Bki4OVOH3NaxBug5fkp.8Tq/Wkdq7h4YxOaq'
 );
+
+DELETE FROM `pi_dh`.`usuario`
+WHERE idUsuario = 1;
+
 
 SELECT `usuario`.`idUsuario`,
     `usuario`.`nome`,
