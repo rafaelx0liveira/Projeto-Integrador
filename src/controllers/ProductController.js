@@ -1,12 +1,11 @@
-// const catalogo = require('../model/catalogo-produtos');
+const {Produto} = require("../model")
 
 const productRouter = {
-    showProduct: (req,res) =>{
+    showProduct: async (req,res) =>{
         const id = req.params.id;
-        // const produto = catalogo.findByPk(id);
-        // const produtos = catalogo.findAll();
-
-        res.render('produto');
+        const produto = await Produto.findByPk(id);
+        console.log(produto)
+        res.render('produto', {produto});
     }
 }
 
