@@ -2,6 +2,8 @@
 ALTER TABLE `pi_dh`.`produto` ADD tipo varchar(100) AFTER `descricao`;
 ALTER TABLE `pi_dh`.`usuario` ADD senha varchar(200) AFTER `dtNascimento`;
 ALTER TABLE `pi_dh`.`produto` ADD qtde_estoque int AFTER `estoque`;
+ALTER TABLE `pi_dh`.`usuario` ADD is_admin boolean AFTER `senha`;
+
 
 /*********************
 	  PRODUTOS
@@ -16,7 +18,7 @@ SELECT `produto`.`idProduto`,
     `produto`.`ativo`,
     `produto`.`estoque`,
     `produto`.`qtde_estoque`,
-    `produto`.`ingredientes`,usuario
+    `produto`.`ingredientes`,
     `produto`.`harmonizacao`,
     `produto`.`graduacao_alcoolica`,
     `produto`.`volume`
@@ -1168,7 +1170,8 @@ INSERT INTO `pi_dh`.`usuario`
 `cpf`,
 `telefone`,
 `dtNascimento`,
-`senha`)
+`senha`,
+`is_admin`)
 VALUES
 (1,
 'Rafael Aparecido Silva de Oliveira',
@@ -1176,21 +1179,30 @@ VALUES
 '45978945645',
 '5511962807125',
 '1999-12-15',
-'$2a$12$7e6lbx.I9EhzYcY8.Bki4OVOH3NaxBug5fkp.8Tq/Wkdq7h4YxOaq'
+'$2a$12$7e6lbx.I9EhzYcY8.Bki4OVOH3NaxBug5fkp.8Tq/Wkdq7h4YxOaq',
+false
 );
 
 DELETE FROM `pi_dh`.`usuario`
 WHERE idUsuario = 1;
 
+SELECT `endereco`.`idEndereco`,
+    `endereco`.`rua`,
+    `endereco`.`cep`,
+    `endereco`.`numero`,
+    `endereco`.`bairro`,
+    `endereco`.`cidade`,
+    `endereco`.`complemento`,
+    `endereco`.`Usuario_idUsuario`
+FROM `pi_dh`.`endereco`;
 
-SELECT `usuario`.`idUsuario`,
-    `usuario`.`nome`,
-    `usuario`.`email`,
-    `usuario`.`cpf`,
-    `usuario`.`telefone`,
-    `usuario`.`dtNascimento`,
-    `usuario`.`senha`
-FROM `pi_dh`.`usuario`;
+
+SELECT nome,
+endereco.rua,
+endereco.bairro
+FROM usuario
+inner join endereco on endereco.Usuario_idUsuario = usuario.idUsuario 
+where usuario.idUsuario = 1;
 
 
 /*********************
@@ -1211,6 +1223,27 @@ VALUES
 999,
 'Itau',
 1);
+
+INSERT INTO `pi_dh`.`endereco`
+(`idEndereco`,
+`rua`,
+`cep`,
+`numero`,
+`bairro`,
+`cidade`,
+`complemento`,
+`Usuario_idUsuario`)
+VALUES
+(1,
+'Rua Paulo Sergio',
+'08596540',
+201,
+'Parque Residencial Souza Campos',
+'Itaquaquecetuba',
+'Casa',
+1);
+
+
 
 select 
 usuario.nome,

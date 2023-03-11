@@ -83,17 +83,25 @@ const AuthController = {
     },
 
     // Criando o método de atualizar perfil
-    atualizarPerfil: (req, res) => {
+    atualizarPerfil: async (req, res) => {
         const {email, cpf, nome, telefone, dtNascimento} = req.body;
 
-        const userFound = Users.findUser(email);
+        // Atualizando os dados do usuário no banco de dados
+        const usuarioAtualizado = await Usuario.update({
+            email: email,
+            nome: nome,
+            telefone: telefone,
+            dtNascimento: dtNascimento
+        }, {
+            where: {
+                cpf: cpf
+            }
+        });
 
-        // Criando o usuário
-        const editedUser = {email, cpf, nome, telefone, dtNascimento};
-        
-        // atualizando os dados do usuário
-        Users.updatePerfil(editedUser, userFound);
+        // Atualizando os dados do usuário na sessão
+        req.session.user = usuarioAtualizado;
 
+        // Redirecionando para a página de perfil
         return res.render("usuario_perfil", {
             ok: "Perfil atualizado com sucesso!"
         });
