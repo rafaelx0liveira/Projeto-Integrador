@@ -38,7 +38,7 @@
           <%-include('./components/input_group.ejs', {style:"w-47",type:"text",id_name:"cpf",label:"CPF*"}) %>
         </div>
         <div class="row">
-          <%-include('./components/input_group.ejs', {style:"w-100",type:"text",id_name:"name",label:"Nome completo*"}) %>
+          <%-include('./components/input_group.ejs', {style:"w-100",type:"text",id_name:"nome",label:"Nome completo*"}) %>
 
         </div>
         <div class="row">
@@ -48,7 +48,7 @@
         <div class="row">
 
           <%-include('./components/input_group.ejs', {style:"w-47",type:"password",id_name:"senha",label:"Senha*"}) %>
-          <%-include('./components/input_group.ejs', {style:"w-47",type:"password",id_name:"senhaConfirma",label:"Confirme a senha*"}) %>
+          <%-include('./components/input_group.ejs', {style:"w-47",type:"password",id_name:"senhaConfirmada",label:"Confirme a senha*"}) %>
 
         </div>
       </fieldset>
@@ -69,7 +69,7 @@
           <%-include('./components/input_group.ejs', {style:"w-100",type:"text",id_name:"complemento",label:"Complemento"}) %>
         </div>        
         <div class="row cadastro-check">
-          <%-include('./components/checkbox_group.ejs', {style:"w-100 fadeInUp",value:"",id_name:"checkNews",label:"Quero receber novidades"}) %>
+          <%-include('./components/checkbox_group.ejs', {style:"w-100 fadeInUp",value:"true",id_name:"novidades",label:"Quero receber novidades"}) %>
         </div>
         <div class="row">
           <%-include('./components/input_group.ejs', {style:"w-100 fadeInUp",type:"submit",label:"Cadastrar"}) %>

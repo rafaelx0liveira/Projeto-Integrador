@@ -3,6 +3,7 @@ const bcrypt = require("bcryptjs");
 const format = require('date-fns');
 
 const {Usuario} = require("../model");
+const {Endereco} = require("../model");
 
 const AuthController = {
     showCadastro: (req, res) => {
@@ -13,22 +14,32 @@ const AuthController = {
     },
     
     // Criando o método de cadastro
-    store: (req, res) => {
-        const {email, cpf, nome, telefone, dtNascimento, senha, senhaConfirmada, cep, rua, numero, bairro, cidade, complemento, noticias} = req.body;
+    store: async (req, res) => {
+        const {email, cpf, nome, telefone, dtNascimento, senha, senhaConfirmada, cep, rua, numero, bairro, cidade, complemento, novidades} = req.body;
 
-        /* Separa os valores */
-        let dataSplitada = dtNascimento.split("-");
+        console.log("\n\n\n\n\n INÍCIO DO MÉTODO STORE \n\n\n\n\n");
 
-        /* Define a data com os valores separados */
-        let data = new Date(dataSplitada);
+        console.log("\n\n\n\n\n email: " + email 
+        + "\n\n\n\n\n cpf: " + cpf
+        + "\n\n\n\n\n nome: " + nome
+        + "\n\n\n\n\n telefone: " + telefone
+        + "\n\n\n\n\n dtNascimento: " + dtNascimento
+        + "\n\n\n\n\n senha: " + senha
+        + "\n\n\n\n\n senhaConfirmada: " + senhaConfirmada
+        + "\n\n\n\n\n cep: " + cep
+        + "\n\n\n\n\n rua: " + rua
+        + "\n\n\n\n\n numero: " + numero
+        + "\n\n\n\n\n bairro: " + bairro
+        + "\n\n\n\n\n cidade: " + cidade
+        + "\n\n\n\n\n complemento: " + complemento
+        + "\n\n\n\n\n novidades: " + novidades
+        );
 
-        let dataBR = format.format(data, "dd/MM/yyyy");
+        const is_admin = false;
 
-        // const verifyUser = Users.findUser(email);
+        const verificandoUsuario = await Usuario.findOne({ where: { email } });
 
-        const verifyUser = User.findUser(email);
-
-        if (verifyUser) {
+        if (verificandoUsuario) {
             return res.render("cadastro", {
                 userError: "Usuário já cadastrado"
             });
@@ -39,13 +50,41 @@ const AuthController = {
         }
 
         // Criptografando a senha
-        const hash = bcrypt.hashSync(senha, 12);
+        const senha_cripto = bcrypt.hashSync(senha, 12);
 
         // Criando o usuário
-        const newUser = {email, cpf, nome, telefone, dataBR, hash, cep, rua, numero, bairro, cidade, complemento, noticias};
+        const novoUsuario = {email, cpf, nome, telefone, dtNascimento, senha_cripto, is_admin, novidades};
+
+        // Criando o endereço
+        const novoEndereco = {cep, rua, numero, bairro, cidade, complemento};
 
         // Salvando o usuário
-        Users.create(newUser);
+        await Usuario.create({
+            id: Usuario.increment('id', {by: 1}),
+            nome: novoUsuario.nome,
+            email: novoUsuario.email,
+            cpf: novoUsuario.cpf,
+            telefone: novoUsuario.telefone,
+            dtNascimento: novoUsuario.dtNascimento,
+            senha: novoUsuario.senha_cripto,
+            is_admin: novoUsuario.is_admin === 'true' ? true : false,
+            novidades: novoUsuario.novidades === 'true' ? true : false
+        });
+
+        // Depois de criado o usuario, pegar o id do usuario e salvar no endereço
+        const usuario = await Usuario.findOne({ where: { email } });
+        console.log("\n\n ID DO USUARIO: " + usuario.idUsuario + "\n\n");
+
+        // Salvando o endereço
+        await Endereco.create({
+            rua: novoEndereco.rua,
+            cep: novoEndereco.cep,
+            numero: novoEndereco.numero,
+            bairro: novoEndereco.bairro,
+            cidade: novoEndereco.cidade,
+            complemento: novoEndereco.complemento,
+            Usuario_idUsuario: usuario.idUsuario
+        });
 
         // Redirecionando para a página de login
         return res.redirect("/login");
@@ -55,7 +94,6 @@ const AuthController = {
     login: async (req, res) => {
         const {email, senha} = req.body;
 
-        //const user = User.findUser(email);
         const auth_usuario = await Usuario.findOne({ where: { email } });
         
         if(auth_usuario == undefined) {

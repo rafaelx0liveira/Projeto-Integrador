@@ -3,7 +3,10 @@ ALTER TABLE `pi_dh`.`produto` ADD tipo varchar(100) AFTER `descricao`;
 ALTER TABLE `pi_dh`.`usuario` ADD senha varchar(200) AFTER `dtNascimento`;
 ALTER TABLE `pi_dh`.`produto` ADD qtde_estoque int AFTER `estoque`;
 ALTER TABLE `pi_dh`.`usuario` ADD is_admin boolean AFTER `senha`;
-
+ALTER TABLE `pi_dh`.`usuario` ADD novidades boolean AFTER `is_admin`;
+ALTER TABLE `pi_dh`.`pagamentos` CHANGE cartao numero varchar(20);
+ALTER TABLE `pi_dh`.`pagamentos` CHANGE nome banco varchar(20);
+ALTER TABLE `pi_dh`.`pagamentos` ADD nome varchar(100) AFTER `idPagamentos`;
 
 /*********************
 	  PRODUTOS
@@ -1268,7 +1271,40 @@ WHERE idProduto in (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 1
 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 
 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57);
 
+SELECT `endereco`.`idEndereco`,
+    `endereco`.`rua`,
+    `endereco`.`cep`,
+    `endereco`.`numero`,
+    `endereco`.`bairro`,
+    `endereco`.`cidade`,
+    `endereco`.`complemento`,
+    `endereco`.`Usuario_idUsuario`
+FROM `pi_dh`.`endereco`;
 
 
+UPDATE `pi_dh`.`usuario`
+SET
+`novidades` = true
+WHERE `idUsuario` = 1;
+
+SELECT `usuario`.`idUsuario`,
+    `usuario`.`nome`,
+    `usuario`.`email`,
+    `usuario`.`cpf`,
+    `usuario`.`telefone`,
+    `usuario`.`dtNascimento`,
+    `usuario`.`senha`,
+    `usuario`.`is_admin`,
+    `usuario`.`novidades`
+FROM `pi_dh`.`usuario`;
+
+DELETE FROM `pi_dh`.`usuario`
+WHERE idUsuario = 0;
+
+
+UPDATE `pi_dh`.`usuario`
+SET
+`nome` = 'Rafael Aparecido Silva de Oliveira'
+WHERE `idUsuario` = 1;
 
 
