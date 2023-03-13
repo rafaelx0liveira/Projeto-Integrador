@@ -54,19 +54,19 @@
   <form class="userpage_form credit_card-form" action="">
       <div class="col-2 inputBox">
         <label for="numeroCartao">Número do cartão</label>
-        <input type="text"  id="numeroCartao" name="numeroCartao" maxlength="16" class="card-number-input" value="<%= pagamentos.numero %>" required>
+        <input type="text"  id="numeroCartao" name="numeroCartao" maxlength="16" class="card-number-input" placeholder="<%= pagamentos.numero %>" required>
       </div>
       <div class="col-2 inputBox">
         <label for="titular">Titular do cartão</label>
-        <input type="text" id="titular" name="titular" class="card-holder-input" value="<%= pagamentos.nome %>" required>
+        <input type="text" id="titular" name="titular" class="card-holder-input" placeholder="<%= pagamentos.nome %>" required>
       </div>
         <div class="inputBox">
           <label for="mes">Mês</label>
-          <input type="text" id="mes" name="mes" class="month-input" value="<%= mes + " de " + ano %>" onfocus="(this.type='month')" onblur="(this.type='text')" required>
+          <input type="text" id="mes" name="mes" class="month-input" placeholder="<%= mes + " DE " + ano %>" onfocus="(this.type='month')" onblur="(this.type='text')" required>
         </div>
         <div class="inputBox">
           <label for="cvv">CVV</label>
-          <input type="text" id="cvv" name="cvv" maxlength="4" class="cvv-input" value="<%= pagamentos.cvv %>" required>
+          <input type="text" id="cvv" name="cvv" maxlength="4" class="cvv-input" placeholder="<%= pagamentos.cvv %>" required>
         </div>
           <input type="submit" value="enviar" class="update_userpage_button col-2">
   </form>
