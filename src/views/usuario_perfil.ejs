@@ -34,7 +34,7 @@
 
       <section class="userpage_info fadeInUp" data-anime="800" aria-label="Dados Pessoais">
         <h2 class="color-0">Dados Pessoais</h2>
-        <form class="userpage_form" action="/cadastro?_method=PUT" method="POST">
+        <form class="userpage_form" action="/perfil?_method=PUT" method="POST">
 
           <div>
             <label for="email">Email</label>
@@ -46,6 +46,8 @@
             <input style="pointer-events:none; background-color: #BDBDBD;" type="text" id="cpf" name="cpf" placeholder="<%= user.cpf %>">
           </div>
 
+          <input style="pointer-events:none; background-color: #BDBDBD;" type="hidden" name="cpf" value="<%= user.cpf %>">
+
           <div class="col-2">
             <label for="nome">Nome Completo</label>
             <input type="text" id="nome" name="nome" placeholder="<%= user.nome %>">
@@ -56,9 +58,15 @@
             <input type="text" id="telefone" name="telefone" placeholder="<%= user.telefone %>">
           </div>
 
+          <% const data = new Date(user.dtNascimento);
+              const dia = data.getUTCDate();
+              const mes = data.getUTCMonth() + 1;
+              const ano = data.getUTCFullYear();
+          %>
+
           <div>
             <label for="nascimento">Data de Nascimento</label>
-            <input placeholder="<%= user.dtNascimento%>" type="date" onfocus="(this.type='date')" onblur="(this.type='date')" id="dtNascimento" name="dtNascimento">
+            <input placeholder="<%= dia + "/" + mes + "/" + ano %>" type="text" onfocus="(this.type='date')" onblur="(this.type='date')" id="dtNascimento" name="dtNascimento">
           </div>
 
           <button class="update_userpage_button col-2" type="submit">Atualizar perfil</button>

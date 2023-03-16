@@ -6,7 +6,10 @@ ALTER TABLE `pi_dh`.`usuario` ADD is_admin boolean AFTER `senha`;
 ALTER TABLE `pi_dh`.`usuario` ADD novidades boolean AFTER `is_admin`;
 ALTER TABLE `pi_dh`.`pagamentos` CHANGE cartao numero varchar(20);
 ALTER TABLE `pi_dh`.`pagamentos` CHANGE nome banco varchar(20);
+ALTER TABLE `pi_dh`.`pagamentos` CHANGE cv cvv int;
 ALTER TABLE `pi_dh`.`pagamentos` ADD nome varchar(100) AFTER `idPagamentos`;
+ALTER TABLE `pi_dh`.`usuario` drop column idUsuario;
+ALTER TABLE `pi_dh`.`usuario` ADD idUsuario int primary key auto_increment not null;
 
 /*********************
 	  PRODUTOS

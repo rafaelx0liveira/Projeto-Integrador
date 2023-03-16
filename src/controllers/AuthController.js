@@ -60,7 +60,6 @@ const AuthController = {
 
         // Salvando o usuário
         await Usuario.create({
-            id: Usuario.increment('id', {by: 1}),
             nome: novoUsuario.nome,
             email: novoUsuario.email,
             cpf: novoUsuario.cpf,
@@ -117,32 +116,6 @@ const AuthController = {
 
         // Redirecionando para a página de produtos
         return res.redirect("/catalogo");
-
-    },
-
-    // Criando o método de atualizar perfil
-    atualizarPerfil: async (req, res) => {
-        const {email, cpf, nome, telefone, dtNascimento} = req.body;
-
-        // Atualizando os dados do usuário no banco de dados
-        const usuarioAtualizado = await Usuario.update({
-            email: email,
-            nome: nome,
-            telefone: telefone,
-            dtNascimento: dtNascimento
-        }, {
-            where: {
-                cpf: cpf
-            }
-        });
-
-        // Atualizando os dados do usuário na sessão
-        req.session.user = usuarioAtualizado;
-
-        // Redirecionando para a página de perfil
-        return res.render("usuario_perfil", {
-            ok: "Perfil atualizado com sucesso!"
-        });
     },
 
     // Criando o método de logout

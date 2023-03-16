@@ -7,6 +7,46 @@ const userController = {
     showPerfil: (req,res) =>{
         res.render ('usuario_perfil')
     },
+
+    // Criando o método de atualizar perfil
+    atualizarPerfil: async (req, res) => {
+        const {email, cpf, nome, telefone, dtNascimento} = req.body;
+
+        console.log(req.body)
+
+        // Atualizando os dados do usuário no banco de dados
+        const usuarioAtualizado = await Usuario.update({
+            email: email,
+            nome: nome,
+            telefone: telefone,
+            dtNascimento: dtNascimento
+        },{
+            where: {
+                cpf: cpf
+            }
+        });
+
+        console.log("\n\n\n\nUSUARIO ATUAL.: " + usuarioAtualizado);
+
+        // Atualizando os dados do usuário na sessão
+
+        const usuario = await Usuario.findOne({ where: { cpf } });
+
+        req.session.user = usuario;
+
+        req.session.reload(err => {
+        });
+
+        console.log(req.session.user);
+
+        // Redirecionando para a página de perfil
+        // return res.render("usuario_perfil", {
+        //     ok: "Perfil atualizado com sucesso!"
+        // });
+
+        return res.redirect("/perfil");
+    },
+    
     showPedidos: (req,res) =>{
         res.render ('usuario_pedidos')
     },
