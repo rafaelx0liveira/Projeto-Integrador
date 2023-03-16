@@ -21,6 +21,12 @@
         <h1 class="font-1-xxl color-0 fadeInLeft" data-anime="400"><%= user.nome %></h1>
       </div>
     </div>
+    
+    <% if (typeof ok != "undefined" ){ %>
+
+      <%- include("modals/EnderecoAtualizado.ejs"); %>
+
+    <% }  %>
 
     <div class="userpage_content container fadeInDown" data-anime="400">
 
@@ -28,7 +34,7 @@
 
       <section class="userpage_info fadeInUp" data-anime="800" aria-label="Dados Pessoais">
           <h2 class="color-0">Endereço</h2>
-          <form class="userpage_form" action="./contato.html">
+          <form class="userpage_form" action="/endereco?_method=PUT" method="POST">
             <div>
               <label for="rua">Rua</label>
               <input type="text" id="rua" name="rua" placeholder="<%= endereco.rua %>">
@@ -146,6 +152,7 @@
   </footer>
   <script src="./scripts/plugins/simple-anime.js"></script>
   <script src="./scripts/script.js"></script>
+  <script src="./scripts/modalErrors.js"></script>
 </body>
 
 </html>
