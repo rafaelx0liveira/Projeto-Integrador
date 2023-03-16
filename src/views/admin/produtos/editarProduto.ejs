@@ -3,6 +3,7 @@
 <head>
     <%- include("../components/head.ejs") %>
     <link rel="stylesheet" href="/css/admin/style.css">
+    <link rel="stylesheet" href="/css/admin/produto/style.css">
     <title>Editar Produto</title>
 </head>
 <body>
@@ -10,14 +11,21 @@
     <%- include("../components/nav.ejs") %>
     <main class="container mb-4">
         <h1>Editar Produto</h1>
-        <form class="row g-3 mt-2">
+        <% if (message != "") { %>
+          <div id="alert-update" class="alert alert-<%=type%> d-flex justify-content-between align-items-center" role="alert">
+            <%=message%>
+            <span id="close-message"><i class="bi bi-x align-self-center"></i></span>
+          </div>
+        <% } %>
+        
+        <form class="row g-3 mt-2" action="/admin/produto/editar/<%=produto.id%>?_method=PUT" method="POST" >
           <div class="form-check form-switch col-md-2 offset-md-8 d-flex justify-content-end">
             <input
               class="form-check-input"
               type="checkbox"
               id="estoque"
               name="estoque"
-              checked
+              <%=produto.estoque == 1? 'checked' : ''%> 
             />
             <label class="form-check-label ms-2" for="estoque"
               >Em estoque</label
@@ -29,7 +37,7 @@
               type="checkbox"
               id="ativo"
               name="ativo"
-              checked
+              <%=produto.ativo == 1? 'checked' : ''%> 
             />
             <label class="form-check-label ms-2" for="ativo"
               >Ativo</label
@@ -42,7 +50,7 @@
               id="id"
               placeholder="12345"
               name="id"
-              value="12345"
+              value=<%=produto.id%>
               disabled
             />
             <label for="floatingInput">ID</label>
@@ -54,10 +62,11 @@
               id="nome"
               placeholder="Nome do produto"
               name="nome"
+              value="<%=produto.nome%>"
             />
             <label for="floatingInput">Nome</label>
           </div>
-  
+          
           <div class="form-floating col-md-4">
             <select
               class="form-select"
@@ -65,12 +74,15 @@
               aria-label="Alcoólico"
               name="alcolico"
             >
-              <option selected>Selecione</option>
-              <option value="1">Sim</option>
-              <option value="0">Não</option>
+            <% optionsAlcoolico.map(option => { %>
+
+              <option value=<%=produto.alcoolico%>  <%=produto.alcoolico === option.alcoolico ? "selected" : ""%> ><%=option.alcoolico ? "Sim" : "Não"%></option>
+            
+            <% }) %>
             </select>
             <label for="floatingSelect">Alcoólico</label>
           </div>
+          
           <div class="form-floating col-md-4">
             <input
               type="text"
@@ -78,6 +90,7 @@
               id="graduacao_alcoolica"
               placeholder="Graduação Alcoólica"
               name="graduacao_alcoolica"
+              value=<%=produto.graduacao_alcoolica%>
             />
             <label for="graduacao_alcoolica">Graduação Alcoólica</label>
           </div>
@@ -88,41 +101,50 @@
               id="volume"
               placeholder="Volume"
               name="volume"
+              value=<%=produto.volume%>
             />
             <label for="volume">Volume</label>
           </div>
-          <!-- <div class="col-md-6">
-              <img src="https://www.imigrantesbebidas.com.br/img/bebida/images/products/full/6405-whisky-white-horse-1l.jpg?s=7ea7f829ff73c3f6d21b84707cbc9b8b" class="rounded float-start" alt="..." width="50">
-          </div> -->
-          <div class="col-md-6">
-            <input
-              class="form-control form-control-lg mt-1"
-              type="file"
-              id="imagem"
-              name="imagem"
-            />
-          </div>
+
+          <div class="form-floating col-md-4">
+            <select
+              class="form-select"
+              id="tipo"
+              aria-label="tipo"
+              name="tipo"
+            >
+            <% optionsTipo.map(option => { %>
+
+              <option value=<%=option.tipo%>  <%=produto.tipo === option.tipo ? "selected" : ""%> ><%=option.tipo%></option>
+            
+            <% }) %>
+            </select>
+            <label for="tipo">Tipo</label>
+          </div>          
   
-          <div class="form-floating col-md-3">
+          <div class="form-floating col-md-4">
             <input
               type="price"
               class="form-control"
               id="preco"
               placeholder="preco"
               name="preco"
+              value=<%=produto.preco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })%>
             />
-            <label for="preco">Preço</label>
+            <label for="preco">Preço (R$)</label>
           </div>
-          <div class="form-floating col-md-3">
-              <input
-                type="number"
-                class="form-control"
-                id="estoque"
-                placeholder="Estoque"
-                name="estoque"
-              />
-              <label for="estoque">Qtde. Estoque</label>
-            </div>
+          
+          <div class="form-floating col-md-4">
+            <input
+              type="text"
+              class="form-control"
+              id="imagem"
+              placeholder="imagem"
+              name="imagem"
+              value=<%=produto.imagem%>
+            />
+            <label for="imagem">Imagem</label>
+          </div>
           <div class="form-floating col-md-12">
             <textarea
               class="form-control"
@@ -130,7 +152,7 @@
               id="descricao"
               style="height: 100px"
               name="descricao"
-            ></textarea>
+            ><%=produto.descricao%></textarea>
             <label for="descricao">Descrição</label>
           </div>
           <div class="form-floating col-md-12">
@@ -140,7 +162,8 @@
               id="ingredientes"
               style="height: 100px"
               name="ingredientes"
-            ></textarea>
+              
+            ><%=produto.ingredientes%></textarea>
             <label for="ingredientes">Ingredientes</label>
           </div>
           <div class="form-floating col-md-12">
@@ -150,7 +173,8 @@
               id="harmonizacao"
               style="height: 100px"
               name="harmonizacao"
-            ></textarea>
+              
+            ><%=produto.harmonizacao%></textarea>
             <label for="harmonizacao">Harmonização</label>
           </div>
           <div class="col-12">
@@ -158,5 +182,6 @@
           </div>
         </form>
       </main>
+      <script src="/scripts/produto.js"></script>
 </body>
 </html>

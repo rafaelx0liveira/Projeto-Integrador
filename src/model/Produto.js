@@ -52,11 +52,11 @@ module.exports = (sequelize, DataTypes) =>{
           allowNull: false
         },
         graduacao_alcoolica:{
-          type: DataTypes.FLOAT,
+          type: DataTypes.STRING,
           allowNull: false
         },
         volume:{
-          type: DataTypes.FLOAT,
+          type: DataTypes.STRING,
           allowNull: false
         }
     },{

@@ -10,7 +10,7 @@
     <%- include("../components/nav.ejs") %>
     <main class="container mb-4">
         <h1>Cadastrar Produto</h1>
-        <form class="row g-3 mt-2">
+        <form class="row g-3 mt-2" action="/admin/produto/cadastro" method="POST">
           <div class="form-check form-switch col-md-2 offset-md-8 d-flex justify-content-end">
             <input
               class="form-check-input"
@@ -54,9 +54,11 @@
               aria-label="Alcoólico"
               name="alcolico"
             >
-              <option selected>Selecione</option>
-              <option value="1">Sim</option>
-              <option value="0">Não</option>
+            <% optionsAlcoolico.map(option => { %>
+
+              <option value=<%=option.alcoolico%> ><%=option.alcoolico ? "Sim" : "Não"%></option>
+            
+            <% }) %>
             </select>
             <label for="floatingSelect">Alcoólico</label>
           </div>
@@ -80,38 +82,43 @@
             />
             <label for="volume">Volume</label>
           </div>
-          <!-- <div class="col-md-6">
-              <img src="https://www.imigrantesbebidas.com.br/img/bebida/images/products/full/6405-whisky-white-horse-1l.jpg?s=7ea7f829ff73c3f6d21b84707cbc9b8b" class="rounded float-start" alt="..." width="50">
-          </div> -->
-          <div class="col-md-6">
-            <input
-              class="form-control form-control-lg mt-1"
-              type="file"
-              id="imagem"
-              name="imagem"
-            />
-          </div>
+          <div class="form-floating col-md-4">
+            <select
+              class="form-select"
+              id="tipo"
+              aria-label="tipo"
+              name="tipo"
+            >
+            <% optionsTipo.map(option => { %>
+
+              <option value=<%=option.tipo%>><%=option.tipo%></option>
+            
+            <% }) %>
+            </select>
+            <label for="tipo">Tipo</label>
+          </div>          
   
-          <div class="form-floating col-md-3">
+          <div class="form-floating col-md-4">
             <input
               type="price"
               class="form-control"
               id="preco"
               placeholder="preco"
               name="preco"
-            />
-            <label for="preco">Preço</label>
-          </div>
-          <div class="form-floating col-md-3">
-              <input
-                type="number"
-                class="form-control"
-                id="estoque"
-                placeholder="Estoque"
-                name="estoque"
               />
-              <label for="estoque">Qtde. Estoque</label>
-            </div>
+            <label for="preco">Preço (R$)</label>
+          </div>
+          
+          <div class="form-floating col-md-4">
+            <input
+              type="text"
+              class="form-control"
+              id="imagem"
+              placeholder="imagem"
+              name="imagem"
+              />
+            <label for="imagem">Imagem</label>
+          </div>
           <div class="form-floating col-md-12">
             <textarea
               class="form-control"

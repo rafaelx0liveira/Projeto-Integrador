@@ -26,6 +26,7 @@ router.get('/lojas', HomeController.showLojas);
 
 // GET /catalogo
 router.get('/catalogo', HomeController.showCatalogo);
+router.get('/catalogo/search', HomeController.search);
 
 // GET /contato
 router.get('/contato', HomeController.showContato);
