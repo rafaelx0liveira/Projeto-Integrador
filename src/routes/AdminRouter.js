@@ -15,9 +15,9 @@ router.get("/detalhePedido", AdminController.showDetalhePedido);
 //PRODUTOS
 router.get("/produtos", AdminController.showProdutos);
 router.get("/produtos/editar/:id", AdminController.showEditarProduto);
-router.put("/produto/editar/:id", AdminController.update);
+router.put("/produto/editar/:id", AdminController.updateProduct);
 router.get("/produtos/cadastro", AdminController.showCadastrarProduto);
-router.post("/produto/cadastro", AdminController.create);
+router.post("/produto/cadastro", AdminController.createProduct);
 
 //CLIENTES
 router.get("/clientes", AdminController.showClientes);

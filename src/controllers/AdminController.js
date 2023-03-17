@@ -32,6 +32,9 @@ const AdminController = {
     res.render("admin/pedidos/detalhePedido");
   },
   showProdutos: async (req, res) => {
+    setTimeout(() => {
+      message = "";
+    }, 1000);
     let { page = 1 } = req.query;
     let totalPorPagina = 15;
 
@@ -56,10 +59,11 @@ const AdminController = {
       totalPagina,
       prevPage,
       nextPage,
+      message,
+      type,
     });
   },
   showEditarProduto: async (req, res) => {
-    
     setTimeout(() => {
       message = "";
     }, 1000);
@@ -84,28 +88,41 @@ const AdminController = {
       optionsTipo,
       optionsAlcoolico,
       message,
-      type
+      type,
     });
   },
-  update: async (req, res) => {
+  updateProduct: async (req, res) => {
     const { id } = req.params;
-    
-    const { estoque, ativo, nome, alcolico, graduacao_alcoolica,volume,tipo,preco,imagem, descricao,ingredientes,harmonizacao} = req.body;
-    
+
+    const {
+      estoque,
+      ativo,
+      nome,
+      alcolico,
+      graduacao_alcoolica,
+      volume,
+      tipo,
+      preco,
+      imagem,
+      descricao,
+      ingredientes,
+      harmonizacao,
+    } = req.body;
+
     await Produto.update(
       {
-        estoque: estoque == 'on' ? true : false, 
-        ativo: ativo == 'on' ? true : false, 
+        estoque: estoque == "on" ? true : false,
+        ativo: ativo == "on" ? true : false,
         nome,
-        alcolico: alcolico == 1 ? true : false, 
+        alcolico: alcolico == 1 ? true : false,
         graduacao_alcoolica,
         volume,
         tipo,
-        preco: preco.slice(3, preco.length).replace(',','.'),
-        imagem, 
+        preco: preco.slice(3, preco.length).replace(",", "."),
+        imagem,
         descricao,
         ingredientes,
-        harmonizacao
+        harmonizacao,
       },
       {
         where: {
@@ -116,7 +133,7 @@ const AdminController = {
 
     message = "Produto atualizado com sucesso!";
     type = "success";
-    
+
     res.redirect(`/admin/produtos/editar/${id}`);
   },
   showCadastrarProduto: async (req, res) => {
@@ -132,12 +149,49 @@ const AdminController = {
       order: [["alcoolico"]],
     });
 
-    res.render("admin/produtos/cadastroProduto", {optionsTipo, optionsAlcoolico});
+    res.render("admin/produtos/cadastroProduto", {
+      optionsTipo,
+      optionsAlcoolico,
+    });
   },
-  create: async(req, res)=>{
-    const { estoque, ativo, nome, alcolico, graduacao_alcoolica, volume, tipo, preco, imagem,descricao, ingredientes, harmonizacao} = req.body
+  createProduct: async (req, res) => {
+    const {
+      estoque,
+      ativo,
+      nome,
+      alcoolico,
+      graduacao_alcoolica,
+      volume,
+      tipo,
+      preco,
+      imagem,
+      descricao,
+      ingredientes,
+      harmonizacao,
+    } = req.body;
 
-    console.log(req.body)
+    const hasEstoque = estoque == "on" ? true : false;
+    const isAtivo = ativo == "on" ? true : false;
+    const isAlcoolico = alcoolico == 1 ? true : false;
+
+    await Produto.create({
+      estoque: hasEstoque,
+      ativo: isAtivo,
+      nome,
+      alcoolico: isAlcoolico,
+      graduacao_alcoolica,
+      volume,
+      tipo,
+      preco,
+      qtde_estoque:10,
+      imagem,
+      descricao,
+      ingredientes,
+      harmonizacao,
+    });
+
+    message = "Produto cadastrado com sucesso!";
+    type = "success";
 
     res.redirect("/admin/produtos");
   },

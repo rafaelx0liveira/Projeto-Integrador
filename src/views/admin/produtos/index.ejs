@@ -9,6 +9,12 @@
     include("../components/nav.ejs") %>
     <main class="container mb-4">
       <h1>Produtos</h1>
+      <% if (message != "") { %>
+        <div id="alert-update" class="alert alert-<%=type%> d-flex justify-content-between align-items-center" role="alert">
+          <%=message%>
+          <span id="close-message"><i class="bi bi-x align-self-center"></i></span>
+        </div>
+      <% } %>
       <div class="row mt-4">
         <div class="col-md-6">
           <form class="d-flex">
@@ -99,5 +105,6 @@
         </div>
       </div>
     </main>
+    <script src="/scripts/produto.js"></script>
   </body>
 </html>
