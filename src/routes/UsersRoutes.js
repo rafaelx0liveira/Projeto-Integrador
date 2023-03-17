@@ -17,7 +17,7 @@ router.put ('/endereco', userController.atualizarEndereco);
 
 // Rota para a página de pagamentos
 router.get ('/pagamentos', userController.showPagamentos);
-//router.put ('/pagamentos', userController.atualizarPagamentos);
+router.put ('/pagamentos', userController.atualizarPagamentos);
 
 
 module.exports = router;

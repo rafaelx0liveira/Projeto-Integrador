@@ -23,6 +23,12 @@
       </div>
     </div>
 
+    <% if (typeof ok != "undefined" ){ %>
+
+      <%- include("modals/atualizacao/perfilAtualizado.ejs"); %>
+
+    <% }  %>
+
     <div class="userpage_content container fadeInDown" data-anime="400">
       
       <%- include("components/section_Usuario.ejs") %>
@@ -113,6 +119,7 @@
   <script src="./scripts/plugins/simple-anime.js"></script>
   <script src="./scripts/script.js"></script>
   <script src="./scripts/credit-card.js"></script>
+  <script src="./scripts/modalErrors.js"></script>
 </body>
 
 </html>

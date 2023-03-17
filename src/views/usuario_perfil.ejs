@@ -23,9 +23,9 @@
       </div>
     </div>
 
-    <% if (typeof ok != "undefined" ){ %>
+    <% if (ok != "" ){ %>
 
-      <%- include("modals/perfilAtualizado.ejs"); %>
+      <%- include("modals/atualizacao/perfilAtualizado.ejs"); %>
 
     <% }  %>
 
@@ -43,7 +43,7 @@
 
           <div>
             <label for="cpf">CPF</label>
-            <input style="pointer-events:none; background-color: #BDBDBD;" type="text" id="cpf" name="cpf" placeholder="<%= user.cpf %>" required>
+            <input style="pointer-events:none; background-color: #BDBDBD;" type="text" id="cpf" name="cpf" placeholder="<%= user.cpf %>">
           </div>
 
           <input style="pointer-events:none; background-color: #BDBDBD;" type="hidden" name="cpf" value="<%= user.cpf %>">

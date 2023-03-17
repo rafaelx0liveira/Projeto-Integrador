@@ -3,10 +3,18 @@ const {Endereco} = require("../model");
 const {Usuario} = require("../model");
 const {Pagamento} = require("../model");
 
+let ok = '';
+
 const userController = {
     // Mostrar a página de perfil
     showPerfil: (req,res) =>{
-        res.render ('usuario_perfil')
+        setTimeout(() => {
+            ok = "";
+        }, 1000);
+
+        res.render ('usuario_perfil', {
+            ok
+        })
     },
 
     // Criando o método de atualizar perfil
@@ -26,6 +34,7 @@ const userController = {
             }
         });
 
+
         // Buscando usuário no banco de dados
         const usuario = await Usuario.findOne({ where: { cpf } });
 
@@ -36,13 +45,9 @@ const userController = {
         req.session.reload(err => {});
 
         // Redirecionando para a página de perfil
-        return res.render("usuario_perfil", {
-            ok: "Perfil atualizado com sucesso!"
-        });
+        ok = "Perfil atualizado com sucesso!";
 
-        //var string = encodeURIComponent('Perfil atualizado com sucesso!');
-
-        //return res.redirect('/perfil');
+        return res.redirect('/perfil');
     },
 
     // Criando o método de mostrar pedidos
@@ -53,14 +58,20 @@ const userController = {
     // Criando o método de mostrar endereço
     showEndereco: async (req,res) =>{
 
+        setTimeout(() => {
+            ok = "";
+        }, 1000);
+
         const {email} = req.session.user;
 
         const usuario = await findByEmail(email);
 
         const endereco = await Endereco.findOne({ where: { Usuario_idUsuario: usuario.idUsuario } });
         
-        res.render ('usuario_endereço', {endereco: endereco})
-
+        res.render('usuario_endereço', {
+            ok, 
+            endereco: endereco
+        })
     },
 
     // Criando o método de atualizar endereço
@@ -68,17 +79,11 @@ const userController = {
         // Pegando os dados do formulário
         const {rua, cep, numero, bairro, cidade, complemento} = req.body;
 
-        console.log("\n\n\n\n\n\n\nFORMULARIO: " + rua, cep, numero, bairro, cidade, complemento + "\n\n\n\n\n\n\n");
-
         // Buscando o usuário na sessão
         const {email} = req.session.user;
 
-        console.log("\n\n\n\n\n\n\nEMAIL DA SESSÃO: " + email + "\n\n\n\n\n\n\n");
-
         // Buscando o usuário no banco de dados
         const usuario = await findByEmail(email);
-
-        console.log("\n\n\n\n\n\n\nUSUARIO BY EMAIL: " + usuario + "\n\n\n\n\n\n\n");
 
         // Atualizando os dados do endereço no banco de dados
         const enderecoAtualizado = await Endereco.update({
@@ -104,13 +109,14 @@ const userController = {
         req.session.reload(err => {});
 
         // Redirecionando para a página de endereço
-        return res.render("usuario_endereço", {
-            ok: "Endereço atualizado com sucesso!",
-            endereco: endereco
-        });
+        // return res.render("usuario_endereço", {
+        //     ok: "Endereço atualizado com sucesso!",
+        //     endereco: endereco
+        // });
         
-        //return res.redirect("/endereco");
-        
+        ok = "Endereço atualizado com sucesso!";
+
+        return res.redirect("/endereco");
     },
 
     showPagamentos: async (req,res) =>{
@@ -121,6 +127,37 @@ const userController = {
         const pagamentos = await Pagamento.findOne({ where: { Usuario_idUsuario: usuario.idUsuario } });
 
         res.render ('usuario_pagamentos', {pagamentos: pagamentos})
+    },
+
+    atualizarPagamentos: async (req, res) => {
+        // Pegando os dados do formulário
+        const {numero, nome, validade, cvv} = req.body;
+
+        // Tratando a data de validade
+        const validadeAtualizada = new Date(validade);
+
+        console.log("\n\n\n\n\n VALIDADE ATUALIZADA: " + validadeAtualizada + "\n\n\n\n\n");
+
+        return res.redirect("/pagamentos");
+
+        // Buscando o usuário na sessão
+        const {email} = req.session.user;
+
+        // Buscando o usuário no banco de dados
+        const usuario = await findByEmail(email);
+
+        // Atualizando os dados do endereço no banco de dados
+        const pagamentoAtualizado = await Pagamento.update({
+            numero: numero,
+            nome: nome,
+            validade: validade,
+            cvv: cvv
+        },{
+            where: {
+                Usuario_idUsuario: usuario.idUsuario
+            }
+        });
+
     }
 }
 
