@@ -28,11 +28,6 @@ module.exports = (sequelize, DataTypes) =>{
         allowNull: false
       },
 
-      banco:{
-        type: DataTypes.STRING,
-        allowNull: false
-      },
-
       usuario_idUsuario: {
           type: DataTypes.INTEGER,
           allowNull: false,

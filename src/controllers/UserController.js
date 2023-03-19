@@ -131,16 +131,12 @@ const userController = {
     },
 
     atualizarPagamentos: async (req, res) => {
-        console.log("\n\n\n\n\n ENTROU NO ATUALIZAR PAGAMENTOS \n\n\n\n\n");
 
         // Pegando os dados do formulário
         const {numero, titular, validade, cvv} = req.body;
 
         // Tratando a data de validade
         const validadeAtualizada = new Date(validade);
-
-        console.log("\n\n\n\n\n VALIDADE ATUALIZADA: " + validadeAtualizada + "\n\n\n\n\n");
-
         
         // Buscando o usuário na sessão
         const {email} = req.session.user;
@@ -163,7 +159,37 @@ const userController = {
         ok = "Pagamento atualizado com sucesso!";
 
         return res.redirect("/pagamentos");
-    }
+    },
+
+    cadastrarPagamentos: async (req, res) => {
+            
+            // Pegando os dados do formulário
+            const {numero, titular, validade, cvv} = req.body;
+    
+            // Tratando a data de validade
+            const validadeAtualizada = new Date(validade);
+            
+            // Buscando o usuário na sessão
+            const {email} = req.session.user;
+            
+            // Buscando o usuário no banco de dados
+            const usuario = await findByEmail(email);
+
+            console.log("\n\n\n\n\n ID USUARIO:" + usuario.idUsuario + "\n\n\n\n\n");
+            
+            // Criando o pagamento no banco de dados
+            await Pagamento.create({
+                numero: numero,
+                nome: titular,
+                validade: validade,
+                cvv: cvv,
+                usuario_idUsuario: usuario.idUsuario
+            });
+    
+            ok = "Pagamento cadastrado com sucesso!";
+    
+            return res.redirect("/pagamentos");
+        }
 }
 
 // Função para achar usuario

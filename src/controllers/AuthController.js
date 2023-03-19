@@ -14,26 +14,8 @@ const AuthController = {
     },
     
     // Criando o método de cadastro
-    store: async (req, res) => {
+    cadastro: async (req, res) => {
         const {email, cpf, nome, telefone, dtNascimento, senha, senhaConfirmada, cep, rua, numero, bairro, cidade, complemento, novidades} = req.body;
-
-        console.log("\n\n\n\n\n INÍCIO DO MÉTODO STORE \n\n\n\n\n");
-
-        console.log("\n\n\n\n\n email: " + email 
-        + "\n\n\n\n\n cpf: " + cpf
-        + "\n\n\n\n\n nome: " + nome
-        + "\n\n\n\n\n telefone: " + telefone
-        + "\n\n\n\n\n dtNascimento: " + dtNascimento
-        + "\n\n\n\n\n senha: " + senha
-        + "\n\n\n\n\n senhaConfirmada: " + senhaConfirmada
-        + "\n\n\n\n\n cep: " + cep
-        + "\n\n\n\n\n rua: " + rua
-        + "\n\n\n\n\n numero: " + numero
-        + "\n\n\n\n\n bairro: " + bairro
-        + "\n\n\n\n\n cidade: " + cidade
-        + "\n\n\n\n\n complemento: " + complemento
-        + "\n\n\n\n\n novidades: " + novidades
-        );
 
         const is_admin = false;
 
@@ -72,7 +54,6 @@ const AuthController = {
 
         // Depois de criado o usuario, pegar o id do usuario e salvar no endereço
         const usuario = await Usuario.findOne({ where: { email } });
-        console.log("\n\n ID DO USUARIO: " + usuario.idUsuario + "\n\n");
 
         // Salvando o endereço
         await Endereco.create({
@@ -82,7 +63,7 @@ const AuthController = {
             bairro: novoEndereco.bairro,
             cidade: novoEndereco.cidade,
             complemento: novoEndereco.complemento,
-            Usuario_idUsuario: usuario.idUsuario
+            usuario_idUsuario: usuario.idUsuario
         });
 
         // Redirecionando para a página de login

@@ -10,6 +10,47 @@ ALTER TABLE `pi_dh`.`pagamentos` CHANGE cv cvv int;
 ALTER TABLE `pi_dh`.`pagamentos` ADD nome varchar(100) AFTER `idPagamentos`;
 ALTER TABLE `pi_dh`.`usuario` drop column idUsuario;
 ALTER TABLE `pi_dh`.`usuario` ADD idUsuario int primary key auto_increment not null;
+ALTER TABLE `pi_dh`.`endereco` drop column idEndereco;
+ALTER TABLE `pi_dh`.`endereco` drop column Usuario_idUsuario;
+ALTER TABLE `pi_dh`.`endereco` ADD idEndereco int primary key auto_increment not null;
+
+USE `pi_dh` ;
+
+CREATE TABLE IF NOT EXISTS `pi_dh`.`endereco` (
+  `rua` VARCHAR(100) NOT NULL,
+  `cep` VARCHAR(8) NOT NULL,
+  `numero` INT NOT NULL,
+  `bairro` VARCHAR(50) NOT NULL,
+  `cidade` VARCHAR(50) NOT NULL,
+  `complemento` VARCHAR(50) NOT NULL,
+  `idEndereco` INT NOT NULL AUTO_INCREMENT,
+  `usuario_idUsuario` INT NOT NULL,
+  PRIMARY KEY (`idEndereco`, `usuario_idUsuario`),
+  INDEX `fk_endereco_usuario_idx` (`usuario_idUsuario` ASC) VISIBLE,
+  CONSTRAINT `fk_endereco_usuario`
+    FOREIGN KEY (`usuario_idUsuario`)
+    REFERENCES `pi_dh`.`usuario` (`idUsuario`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+AUTO_INCREMENT = 2
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+CREATE TABLE IF NOT EXISTS `pi_dh`.`pagamentos` (
+  `idPagamentos` INT NOT NULL AUTO_INCREMENT,
+  `nome` VARCHAR(100) NULL DEFAULT NULL,
+  `numero` VARCHAR(20) NULL DEFAULT NULL,
+  `validade` DATE NOT NULL,
+  `cvv` INT NULL DEFAULT NULL,
+  `Usuario_idUsuario` INT NOT NULL,
+  PRIMARY KEY (`idPagamentos`, `Usuario_idUsuario`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
+
 
 /*********************
 	  PRODUTOS
