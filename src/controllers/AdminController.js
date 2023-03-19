@@ -3,6 +3,7 @@ const Sequelize = require("sequelize");
 
 let message = "";
 let type = "";
+let listErros = [];
 
 const AdminController = {
   showLoginAdmin: (req, res) => {
@@ -33,8 +34,9 @@ const AdminController = {
   },
   showProdutos: async (req, res) => {
     setTimeout(() => {
-      message = "";
+      message = "";      
     }, 1000);
+
     let { page = 1 } = req.query;
     let totalPorPagina = 15;
 
@@ -66,6 +68,7 @@ const AdminController = {
   showEditarProduto: async (req, res) => {
     setTimeout(() => {
       message = "";
+      listErros = [];
     }, 1000);
 
     let { id } = req.params;
@@ -89,16 +92,17 @@ const AdminController = {
       optionsAlcoolico,
       message,
       type,
+      listErros,
     });
   },
   updateProduct: async (req, res) => {
     const { id } = req.params;
-
+   
     const {
       estoque,
       ativo,
       nome,
-      alcolico,
+      alcoolico,
       graduacao_alcoolica,
       volume,
       tipo,
@@ -108,14 +112,50 @@ const AdminController = {
       ingredientes,
       harmonizacao,
     } = req.body;
+    
+    if (nome == "") {
+      listErros.push("nome");
+    }
 
+    if (alcoolico == "1" && (graduacao_alcoolica == "" || graduacao_alcoolica == "/")) {
+      listErros.push("graduacao_alcoolica");
+    }
+
+    if (volume == "") {
+      listErros.push("volume");
+    }
+
+    if (preco == "") {
+      listErros.push("preco");
+    }
+
+    if (imagem == "") {
+      listErros.push("imagem");
+    }
+
+    if (descricao == "") {
+      listErros.push("descricao");
+    }
+
+    if (ingredientes == "") {
+      listErros.push("ingredientes");
+    }
+
+    if (harmonizacao == "") {
+      listErros.push("harmonizacao");
+    }
+
+    if(listErros.length !== 0){
+      return res.redirect(`/admin/produtos/editar/${id}`);
+    }
+    console.log(graduacao_alcoolica)
     await Produto.update(
       {
         estoque: estoque == "on" ? true : false,
         ativo: ativo == "on" ? true : false,
         nome,
-        alcolico: alcolico == 1 ? true : false,
-        graduacao_alcoolica,
+        alcoolico: alcoolico == "1" ? true : false,
+        graduacao_alcoolica: alcoolico == "0" ? "" : graduacao_alcoolica,
         volume,
         tipo,
         preco: preco.slice(3, preco.length).replace(",", "."),
@@ -183,7 +223,7 @@ const AdminController = {
       volume,
       tipo,
       preco,
-      qtde_estoque:10,
+      qtde_estoque: 10,
       imagem,
       descricao,
       ingredientes,

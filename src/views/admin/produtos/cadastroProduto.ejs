@@ -10,149 +10,159 @@
     <%- include("../components/nav.ejs") %>
     <main class="container mb-4">
         <h1>Cadastrar Produto</h1>
-        <form class="row g-3 mt-2" action="/admin/produto/cadastro" method="POST">
-          <div class="form-check form-switch col-md-2 offset-md-8 d-flex justify-content-end">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              id="estoque"
-              name="estoque"
-              checked
-            />
-            <label class="form-check-label ms-2" for="estoque"
-              >Em estoque</label
-            >
+        <div class="row">
+          <div class="col-md-4 mt-3">
+            <img id="imagem-produto" src="/images/banners/produto-sem-imagem.webp" alt="adicione uma imagem" class="rounded mt-5 w-100 h-50">
           </div>
-          <div class="form-check form-switch col-md-2 d-flex justify-content-end">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              id="ativo"
-              name="ativo"
-              checked
-            />
-            <label class="form-check-label ms-2" for="ativo"
-              >Ativo</label
-            >
+          <div class="col-md-8">
+            <form class="row g-3 mt-2" action="/admin/produto/cadastro" method="POST">
+              <div class="form-check form-switch col-md-4 offset-md-4 d-flex justify-content-end">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="estoque"
+                  name="estoque"
+                  checked
+                />
+                <label class="form-check-label ms-2" for="estoque"
+                  >Em estoque</label
+                >
+              </div>
+              <div class="form-check form-switch col-md-4 d-flex justify-content-end">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="ativo"
+                  name="ativo"
+                  checked
+                />
+                <label class="form-check-label ms-2" for="ativo"
+                  >Ativo</label
+                >
+              </div>
+              
+              <div class="form-floating col-md-12">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nome"
+                  placeholder="Nome do produto"
+                  name="nome"
+                />
+                <label for="floatingInput">Nome</label>
+              </div>
+      
+              <div class="form-floating col-md-4">
+                <select
+                  class="form-select"
+                  id="alcoolico"
+                  aria-label="Alcoólico"
+                  name="alcoolico"
+                >
+                <% optionsAlcoolico.map(option => { %>
+    
+                  <option value=<%=option.alcoolico%> ><%=option.alcoolico ? "Sim" : "Não"%></option>
+                
+                <% }) %>
+                </select>
+                <label for="floatingSelect">Alcoólico</label>
+              </div>
+              <div class="form-floating col-md-4">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="graduacao_alcoolica"
+                  placeholder="Graduação Alcoólica"
+                  name="graduacao_alcoolica"
+                />
+                <label for="graduacao_alcoolica">Graduação Alcoólica</label>
+              </div>
+              <div class="form-floating col-md-4">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="volume"
+                  placeholder="Volume"
+                  name="volume"
+                />
+                <label for="volume">Volume</label>
+              </div>
+              <div class="form-floating col-md-4">
+                <select
+                  class="form-select"
+                  id="tipo"
+                  aria-label="tipo"
+                  name="tipo"
+                >
+                <% optionsTipo.map(option => { %>
+    
+                  <option value=<%=option.tipo%>><%=option.tipo%></option>
+                
+                <% }) %>
+                </select>
+                <label for="tipo">Tipo</label>
+              </div>          
+      
+              <div class="form-floating col-md-4">
+                <input
+                  type="price"
+                  class="form-control"
+                  id="preco"
+                  placeholder="preco"
+                  name="preco"
+                  />
+                <label for="preco">Preço (R$)</label>
+              </div>
+              
+              <div class="form-floating col-md-4">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="imagem"
+                  placeholder="imagem"
+                  name="imagem"
+                  onblur="modifyImage()"
+                  />
+                <label for="imagem">Imagem</label>
+              </div>
+              <div class="form-floating col-md-12">
+                <textarea
+                  class="form-control"
+                  placeholder="Descrição"
+                  id="descricao"
+                  style="height: 100px"
+                  name="descricao"
+                ></textarea>
+                <label for="descricao">Descrição</label>
+              </div>
+              <div class="form-floating col-md-12">
+                <textarea
+                  class="form-control"
+                  placeholder="Ingredientes"
+                  id="ingredientes"
+                  style="height: 100px"
+                  name="ingredientes"
+                ></textarea>
+                <label for="ingredientes">Ingredientes</label>
+              </div>
+              <div class="form-floating col-md-12">
+                <textarea
+                  class="form-control"
+                  placeholder="Harmonização"
+                  id="harmonizacao"
+                  style="height: 100px"
+                  name="harmonizacao"
+                ></textarea>
+                <label for="harmonizacao">Harmonização</label>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary w-100">Salvar</button>
+              </div>
+            </form>
           </div>
-          
-          <div class="form-floating col-md-12">
-            <input
-              type="text"
-              class="form-control"
-              id="nome"
-              placeholder="Nome do produto"
-              name="nome"
-            />
-            <label for="floatingInput">Nome</label>
-          </div>
-  
-          <div class="form-floating col-md-4">
-            <select
-              class="form-select"
-              id="alcoolico"
-              aria-label="Alcoólico"
-              name="alcoolico"
-            >
-            <% optionsAlcoolico.map(option => { %>
-
-              <option value=<%=option.alcoolico%> ><%=option.alcoolico ? "Sim" : "Não"%></option>
-            
-            <% }) %>
-            </select>
-            <label for="floatingSelect">Alcoólico</label>
-          </div>
-          <div class="form-floating col-md-4">
-            <input
-              type="text"
-              class="form-control"
-              id="graduacao_alcoolica"
-              placeholder="Graduação Alcoólica"
-              name="graduacao_alcoolica"
-            />
-            <label for="graduacao_alcoolica">Graduação Alcoólica</label>
-          </div>
-          <div class="form-floating col-md-4">
-            <input
-              type="text"
-              class="form-control"
-              id="volume"
-              placeholder="Volume"
-              name="volume"
-            />
-            <label for="volume">Volume</label>
-          </div>
-          <div class="form-floating col-md-4">
-            <select
-              class="form-select"
-              id="tipo"
-              aria-label="tipo"
-              name="tipo"
-            >
-            <% optionsTipo.map(option => { %>
-
-              <option value=<%=option.tipo%>><%=option.tipo%></option>
-            
-            <% }) %>
-            </select>
-            <label for="tipo">Tipo</label>
-          </div>          
-  
-          <div class="form-floating col-md-4">
-            <input
-              type="price"
-              class="form-control"
-              id="preco"
-              placeholder="preco"
-              name="preco"
-              />
-            <label for="preco">Preço (R$)</label>
-          </div>
-          
-          <div class="form-floating col-md-4">
-            <input
-              type="text"
-              class="form-control"
-              id="imagem"
-              placeholder="imagem"
-              name="imagem"
-              />
-            <label for="imagem">Imagem</label>
-          </div>
-          <div class="form-floating col-md-12">
-            <textarea
-              class="form-control"
-              placeholder="Descrição"
-              id="descricao"
-              style="height: 100px"
-              name="descricao"
-            ></textarea>
-            <label for="descricao">Descrição</label>
-          </div>
-          <div class="form-floating col-md-12">
-            <textarea
-              class="form-control"
-              placeholder="Ingredientes"
-              id="ingredientes"
-              style="height: 100px"
-              name="ingredientes"
-            ></textarea>
-            <label for="ingredientes">Ingredientes</label>
-          </div>
-          <div class="form-floating col-md-12">
-            <textarea
-              class="form-control"
-              placeholder="Harmonização"
-              id="harmonizacao"
-              style="height: 100px"
-              name="harmonizacao"
-            ></textarea>
-            <label for="harmonizacao">Harmonização</label>
-          </div>
-          <div class="col-12">
-            <button type="submit" class="btn btn-primary w-100">Salvar</button>
-          </div>
-        </form>
+        </div>
+        
       </main>
+      <script src="/scripts/produto.js"></script>
 </body>
 </html>
