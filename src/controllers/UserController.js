@@ -69,7 +69,7 @@ const userController = {
         const endereco = await Endereco.findOne({ where: { Usuario_idUsuario: usuario.idUsuario } });
         
         res.render('usuario_endereço', {
-            ok, 
+            ok,
             endereco: endereco
         })
     },
@@ -108,48 +108,50 @@ const userController = {
         // Recarregando a sessão
         req.session.reload(err => {});
 
-        // Redirecionando para a página de endereço
-        // return res.render("usuario_endereço", {
-        //     ok: "Endereço atualizado com sucesso!",
-        //     endereco: endereco
-        // });
-        
         ok = "Endereço atualizado com sucesso!";
 
         return res.redirect("/endereco");
     },
 
     showPagamentos: async (req,res) =>{
+        setTimeout(() => {
+            ok = "";
+        }, 1000);
+
         const {email} = req.session.user;
 
         const usuario = await findByEmail(email);
 
         const pagamentos = await Pagamento.findOne({ where: { Usuario_idUsuario: usuario.idUsuario } });
 
-        res.render ('usuario_pagamentos', {pagamentos: pagamentos})
+        res.render('usuario_pagamentos', {
+            ok,
+            pagamentos: pagamentos
+        })
     },
 
     atualizarPagamentos: async (req, res) => {
+        console.log("\n\n\n\n\n ENTROU NO ATUALIZAR PAGAMENTOS \n\n\n\n\n");
+
         // Pegando os dados do formulário
-        const {numero, nome, validade, cvv} = req.body;
+        const {numero, titular, validade, cvv} = req.body;
 
         // Tratando a data de validade
         const validadeAtualizada = new Date(validade);
 
         console.log("\n\n\n\n\n VALIDADE ATUALIZADA: " + validadeAtualizada + "\n\n\n\n\n");
 
-        return res.redirect("/pagamentos");
-
+        
         // Buscando o usuário na sessão
         const {email} = req.session.user;
-
+        
         // Buscando o usuário no banco de dados
         const usuario = await findByEmail(email);
-
+        
         // Atualizando os dados do endereço no banco de dados
         const pagamentoAtualizado = await Pagamento.update({
             numero: numero,
-            nome: nome,
+            nome: titular,
             validade: validade,
             cvv: cvv
         },{
@@ -158,6 +160,9 @@ const userController = {
             }
         });
 
+        ok = "Pagamento atualizado com sucesso!";
+
+        return res.redirect("/pagamentos");
     }
 }
 

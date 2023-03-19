@@ -51,18 +51,18 @@
     </div>
   </div>
 
-  <form class="userpage_form credit_card-form" action="/pagamentos?_method=PUT">
+  <form class="userpage_form credit_card-form" action="/pagamentos?_method=PUT" method="POST">
       <div class="col-2 inputBox">
-        <label for="numeroCartao">Número do cartão</label>
-        <input type="text"  id="numeroCartao" name="numeroCartao" maxlength="16" class="card-number-input" placeholder="<%= pagamentos.numero %>" required>
+        <label for="numero">Número do cartão</label>
+        <input type="text"  id="numero" name="numero" maxlength="16" class="card-number-input" placeholder="<%= pagamentos.numero %>" required>
       </div>
       <div class="col-2 inputBox">
         <label for="titular">Titular do cartão</label>
         <input type="text" id="titular" name="titular" class="card-holder-input" placeholder="<%= pagamentos.nome %>" required>
       </div>
         <div class="inputBox">
-          <label for="mes">Mês</label>
-          <input type="text" id="mes" name="mes" class="month-input" placeholder="<%= mes + " DE " + ano %>" onfocus="(this.type='month')" onblur="(this.type='text')" required>
+          <label for="validade">Mês</label>
+          <input type="month" id="validade" name="validade" class="month-input" placeholder="<%= mes + " DE " + ano %>" onfocus="(this.type='month')" onblur="(this.type='text')" required>
         </div>
         <div class="inputBox">
           <label for="cvv">CVV</label>
