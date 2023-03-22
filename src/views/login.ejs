@@ -22,10 +22,10 @@
       </div>
       <% if (typeof emailError !="undefined" ){ %>
 
-        <%- include("modals/emailError.ejs"); %>
+        <%- include("modals/erros/emailError.ejs"); %>
 
         <% } else if(typeof loginError !="undefined" ) {%>
-          <%- include("modals/loginError.ejs"); %> 
+          <%- include("modals/erros/loginError.ejs"); %> 
         <% }  %>
 
       <form class="login_page container" action="/login" method="POST">

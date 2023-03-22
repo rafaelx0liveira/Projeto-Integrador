@@ -23,13 +23,19 @@
       </div>
     </div>
 
+    <% if (ok != "" ){ %>
+
+      <%- include("modals/atualizacao/pagamentoAtualizado.ejs"); %>
+
+    <% } %>
+
     <div class="userpage_content container fadeInDown" data-anime="400">
       
       <%- include("components/section_Usuario.ejs") %>
 
       <section class="userpage_info fadeInUp" data-anime="800" aria-label="Dados Pessoais">
         <h2 class="color-0">Pagamentos</h2>
-        <%- include("components/credit_card.ejs") %>
+        <%- include("components/credit_card.ejs", pagamentos) %>
       </section>
 
     </div>
@@ -113,6 +119,7 @@
   <script src="./scripts/plugins/simple-anime.js"></script>
   <script src="./scripts/script.js"></script>
   <script src="./scripts/credit-card.js"></script>
+  <script src="./scripts/modalErrors.js"></script>
 </body>
 
 </html>

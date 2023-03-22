@@ -2,6 +2,55 @@
 ALTER TABLE `pi_dh`.`produto` ADD tipo varchar(100) AFTER `descricao`;
 ALTER TABLE `pi_dh`.`usuario` ADD senha varchar(200) AFTER `dtNascimento`;
 ALTER TABLE `pi_dh`.`produto` ADD qtde_estoque int AFTER `estoque`;
+ALTER TABLE `pi_dh`.`usuario` ADD is_admin boolean AFTER `senha`;
+ALTER TABLE `pi_dh`.`usuario` ADD novidades boolean AFTER `is_admin`;
+ALTER TABLE `pi_dh`.`pagamentos` CHANGE cartao numero varchar(20);
+ALTER TABLE `pi_dh`.`pagamentos` CHANGE nome banco varchar(20);
+ALTER TABLE `pi_dh`.`pagamentos` CHANGE cv cvv int;
+ALTER TABLE `pi_dh`.`pagamentos` ADD nome varchar(100) AFTER `idPagamentos`;
+ALTER TABLE `pi_dh`.`usuario` drop column idUsuario;
+ALTER TABLE `pi_dh`.`usuario` ADD idUsuario int primary key auto_increment not null;
+ALTER TABLE `pi_dh`.`endereco` drop column idEndereco;
+ALTER TABLE `pi_dh`.`endereco` drop column Usuario_idUsuario;
+ALTER TABLE `pi_dh`.`endereco` ADD idEndereco int primary key auto_increment not null;
+
+USE `pi_dh` ;
+
+CREATE TABLE IF NOT EXISTS `pi_dh`.`endereco` (
+  `rua` VARCHAR(100) NOT NULL,
+  `cep` VARCHAR(8) NOT NULL,
+  `numero` INT NOT NULL,
+  `bairro` VARCHAR(50) NOT NULL,
+  `cidade` VARCHAR(50) NOT NULL,
+  `complemento` VARCHAR(50) NOT NULL,
+  `idEndereco` INT NOT NULL AUTO_INCREMENT,
+  `usuario_idUsuario` INT NOT NULL,
+  PRIMARY KEY (`idEndereco`, `usuario_idUsuario`),
+  INDEX `fk_endereco_usuario_idx` (`usuario_idUsuario` ASC) VISIBLE,
+  CONSTRAINT `fk_endereco_usuario`
+    FOREIGN KEY (`usuario_idUsuario`)
+    REFERENCES `pi_dh`.`usuario` (`idUsuario`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+AUTO_INCREMENT = 2
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+CREATE TABLE IF NOT EXISTS `pi_dh`.`pagamentos` (
+  `idPagamentos` INT NOT NULL AUTO_INCREMENT,
+  `nome` VARCHAR(100) NULL DEFAULT NULL,
+  `numero` VARCHAR(20) NULL DEFAULT NULL,
+  `validade` DATE NOT NULL,
+  `cvv` INT NULL DEFAULT NULL,
+  `Usuario_idUsuario` INT NOT NULL,
+  PRIMARY KEY (`idPagamentos`, `Usuario_idUsuario`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
+
 
 /*********************
 	  PRODUTOS
@@ -1167,24 +1216,40 @@ INSERT INTO `pi_dh`.`usuario`
 `email`,
 `cpf`,
 `telefone`,
-`dtNascimento`)
+`dtNascimento`,
+`senha`,
+`is_admin`)
 VALUES
 (1,
 'Rafael Aparecido Silva de Oliveira',
 'rafaelaparecido.oliveirasilva@gmail.com',
 '45978945645',
 '5511962807125',
-'1999-12-15'
+'1999-12-15',
+'$2a$12$7e6lbx.I9EhzYcY8.Bki4OVOH3NaxBug5fkp.8Tq/Wkdq7h4YxOaq',
+false
 );
 
-SELECT `usuario`.`idUsuario`,
-    `usuario`.`nome`,
-    `usuario`.`email`,
-    `usuario`.`cpf`,
-    `usuario`.`telefone`,
-    `usuario`.`dtNascimento`,
-    `usuario`.`senha`
-FROM `pi_dh`.`usuario`;
+DELETE FROM `pi_dh`.`usuario`
+WHERE idUsuario = 1;
+
+SELECT `endereco`.`idEndereco`,
+    `endereco`.`rua`,
+    `endereco`.`cep`,
+    `endereco`.`numero`,
+    `endereco`.`bairro`,
+    `endereco`.`cidade`,
+    `endereco`.`complemento`,
+    `endereco`.`Usuario_idUsuario`
+FROM `pi_dh`.`endereco`;
+
+
+SELECT nome,
+endereco.rua,
+endereco.bairro
+FROM usuario
+inner join endereco on endereco.Usuario_idUsuario = usuario.idUsuario 
+where usuario.idUsuario = 1;
 
 
 /*********************
@@ -1205,6 +1270,27 @@ VALUES
 999,
 'Itau',
 1);
+
+INSERT INTO `pi_dh`.`endereco`
+(`idEndereco`,
+`rua`,
+`cep`,
+`numero`,
+`bairro`,
+`cidade`,
+`complemento`,
+`Usuario_idUsuario`)
+VALUES
+(1,
+'Rua Paulo Sergio',
+'08596540',
+201,
+'Parque Residencial Souza Campos',
+'Itaquaquecetuba',
+'Casa',
+1);
+
+
 
 select 
 usuario.nome,
@@ -1229,7 +1315,40 @@ WHERE idProduto in (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 1
 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 
 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57);
 
+SELECT `endereco`.`idEndereco`,
+    `endereco`.`rua`,
+    `endereco`.`cep`,
+    `endereco`.`numero`,
+    `endereco`.`bairro`,
+    `endereco`.`cidade`,
+    `endereco`.`complemento`,
+    `endereco`.`Usuario_idUsuario`
+FROM `pi_dh`.`endereco`;
 
 
+UPDATE `pi_dh`.`usuario`
+SET
+`novidades` = true
+WHERE `idUsuario` = 1;
+
+SELECT `usuario`.`idUsuario`,
+    `usuario`.`nome`,
+    `usuario`.`email`,
+    `usuario`.`cpf`,
+    `usuario`.`telefone`,
+    `usuario`.`dtNascimento`,
+    `usuario`.`senha`,
+    `usuario`.`is_admin`,
+    `usuario`.`novidades`
+FROM `pi_dh`.`usuario`;
+
+DELETE FROM `pi_dh`.`usuario`
+WHERE idUsuario = 0;
+
+
+UPDATE `pi_dh`.`usuario`
+SET
+`nome` = 'Rafael Aparecido Silva de Oliveira'
+WHERE `idUsuario` = 1;
 
 

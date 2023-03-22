@@ -1,53 +1,49 @@
 // Representação da tabela Usuario no banco de dados
 
 module.exports = (sequelize, DataTypes) => {
-    const Usuario = sequelize.define(
-    "Usuario",
+    const Endereco = sequelize.define(
+    "Endereco",
     {
-        idUsuario: {
+        idEndereco: {
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
             allowNull: false,
         },
-        nome: {
+        rua: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        email: {
+        cep: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        cpf: {
+        numero: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+        },
+        bairro: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        telefone: {
+        cidade: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        dtNascimento: {
-            type: DataTypes.DATE,
-            allowNull: false,
-        },
-        senha: {
+        complemento: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        is_admin: {
-            type: DataTypes.BOOLEAN,
-            allowNull: false,
-        },
-        novidades: {
-            type: DataTypes.BOOLEAN,
+        usuario_idUsuario: {
+            type: DataTypes.INTEGER,
             allowNull: false,
         }
     },
-    {
-        tableName: "usuario",
+    {   
+        tableName: "endereco",
         timestamps: false,
         freezeTableName: true
     });
 
-    return Usuario;
+    return Endereco;
 };
