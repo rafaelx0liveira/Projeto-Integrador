@@ -67,12 +67,12 @@
               height="300"
               width="300"
               class="card-img-top"
-              alt="Imagem    "
+              alt="Imagem"
             />
             <div class="card-body">
-              <h5 class="card-title text-truncate">#<%=produtos[i].id%> - <%=produtos[i].nome%></h5>
+              <h5 class="card-title text-truncate">#<%=produtos[i].idProduto%> - <%=produtos[i].nome%></h5>
               <p class="card-text"><%=produtos[i].preco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })%></p>              
-              <a href="/admin/produtos/editar/<%=produtos[i].id%>" class="btn btn-primary"
+              <a href="/admin/produtos/editar/<%=produtos[i].idProduto%>" class="btn btn-primary"
                 >Editar</a
               >
             </div>

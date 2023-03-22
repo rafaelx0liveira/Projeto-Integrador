@@ -13,3 +13,8 @@
     display: none;
   }
 
+  img#imagem-produto,
+  .card .card-img-top img {
+    object-fit: cover;
+  }
+

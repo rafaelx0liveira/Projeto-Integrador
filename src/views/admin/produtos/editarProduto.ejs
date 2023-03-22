@@ -23,7 +23,7 @@
             <img id="imagem-produto" src="<%=produto.imagem%>" alt="<%=produto.descricao%>" class="rounded mt-5 w-100 h-50">
           </div>
           <div class="col-md-8">
-            <form class="row g-3 mt-2" action="/admin/produto/editar/<%=produto.id%>?_method=PUT" method="POST" >
+            <form class="row g-3 mt-2" action="/admin/produto/editar/<%=produto.idProduto%>?_method=PUT" method="POST" >
               <div class="form-check form-switch col-md-4 offset-md-4 d-flex justify-content-end">
                 <input
                   class="form-check-input"
@@ -55,7 +55,7 @@
                   id="id"
                   placeholder="12345"
                   name="id"
-                  value=<%=produto.id%>
+                  value=<%=produto.idProduto%>
                   disabled
                 />
                 <label for="floatingInput">ID</label>

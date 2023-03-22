@@ -166,7 +166,7 @@ const AdminController = {
       },
       {
         where: {
-          id: id,
+          idProduto: id,
         },
       }
     );
