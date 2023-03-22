@@ -1,0 +1,11 @@
+//Na raiz do projeto criar o arquivo .sequelizerc e dentro dele configurar o objeto:
+const path = require('path');
+
+module.exports = {
+
+    "config": path.resolve("src","database", "config.js"),
+    "migrations-path": path.resolve("src","database", "migrations"),
+    "seeders-path": path.resolve("src","database", "seeders"),
+    "models-path": path.resolve("src","model")
+
+}

@@ -1,64 +1,110 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
+  <head>
     <%- include("../components/head.ejs") %>
     <title>Produtos</title>
-</head>
-<body>
-    <%- include("../components/header.ejs") %>
-    <%- include("../components/nav.ejs") %>
+  </head>
+  <body>
+    <%- include("../components/header.ejs") %> <%-
+    include("../components/nav.ejs") %>
     <main class="container mb-4">
-        <h1>
-            Produtos
-        </h1>
-        <div class="row mt-4">
-            <div class="col-md-6">
-                <form class="d-flex">
-                    <input class="form-control me-2 w-50" type="search" placeholder="Procure um produto" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Pesquisar</button>
-                  </form>
-            </div>
-            <div class="col-md-6 text-end">
-                <a href="/admin/produtos/cadastro" class="btn btn-outline-primary"><i class="bi bi-plus-square"></i> Novo produto</a>
-            </div>
+      <h1>Produtos</h1>
+      <% if (message != "") { %>
+        <div id="alert-update" class="alert alert-<%=type%> d-flex justify-content-between align-items-center" role="alert">
+          <%=message%>
+          <span id="close-message"><i class="bi bi-x align-self-center"></i></span>
         </div>
-        
-        <div class="row mt-4 justify-content-center">
-            <div class="col-4 mt-1">
-                <div class="card" style="width: 18rem;">
-                    <img src="https://www.imigrantesbebidas.com.br/img/bebida/images/products/full/6405-whisky-white-horse-1l.jpg?s=7ea7f829ff73c3f6d21b84707cbc9b8b" height="300" width="300" class="card-img-top" alt="Imagem    ">
-                    <div class="card-body">
-                      <h5 class="card-title">#123 - Whisky White Horse 1L</h5>
-                      <p class="card-text">R$79,99</p>
-                      <p class="card-text text-truncate">Whisky escocês. White Horse é composto por mais de 35 maltes, uma das mais elevadas proporções de maltes nos scotch whiskies. Assim como Logan, também desenvolvido por Peter Mackie, seus principais maltes são Lagavulin, Glen Elgin e Craigellachie. White Horse foi um dos primeiros scotch whiskies a serem introduzidos no Brasil, e traz até hoje o mesmo sabor, rico e úmido, e a mesma qualidade, aqui e no mundo inteiro.</p>
-                      <a href="/admin/produtos/editar" class="btn btn-primary">Editar</a>
-                    </div>
-                  </div>
-            </div>
-            <div class="col-4 mt-1">
-                <div class="card" style="width: 18rem;">
-                    <img src="https://static.paodeacucar.com/img/uploads/1/725/653725.jpg" height="300" width="300" class="card-img-top" alt="Imagem    ">
-                    <div class="card-body">
-                      <h5 class="card-title">#456 - Whisky Americano JACK DANIEL'S Garrafa 1 Litro</h5>
-                      <p class="card-text">R$159,99</p>
-                      <p class="card-text text-truncate">Jack Daniel¿s Tennessee Whiskey é destilado e engarrafado na Jack Daniel Distillery, a mais antiga destilaria registrada dos EUA, fundada em 1866. Cada garrafa de Jack Daniel¿s Tennessee Whiskey vendida ao redor do mundo ainda é produzida aqui em Lynchburg, TN.</p>
-                      <a href="/admin/produtos/editar" class="btn btn-primary">Editar</a>
-                    </div>
-                  </div>
-            </div>
-            <div class="col-4 mt-1">
-                <div class="card" style="width: 18rem;">
-                    <img src="https://winecom.vteximg.com.br/arquivos/ids/156751-1000-1000/JIM-BEAM_WHITE.png?v=637865760097430000" height="300" width="300" class="card-img-top" alt="Imagem    ">
-                    <div class="card-body">
-                      <h5 class="card-title">#789 - Jim Beam White Bourbon Whisky Americano 1000ml</h5>
-                      <p class="card-text">R$124,90</p>
-                      <p class="card-text text-truncate">Jim Beam é envelhecido quatro anos, o dobro do tempo exigido por lei para o Straight Bourbon Whiskey, resultado em um sabor mais completo e suave.</p>
-                      <a href="/admin/produtos/editar" class="btn btn-primary">Editar</a>
-                    </div>
-                  </div>
+      <% } %>
+      <div class="row mt-4">
+        <div class="col-md-6">
+          <form class="d-flex">
+            <input
+              class="form-control me-2 w-50"
+              type="search"
+              placeholder="Procure um produto"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Pesquisar
+            </button>
+          </form>
+        </div>
+        <div class="col-md-6 text-end">
+          <a href="/admin/produtos/cadastro" class="btn btn-outline-primary"
+            ><i class="bi bi-plus-square"></i> Novo produto</a
+          >
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-md-6">
+          <nav aria-label="Page navigation" class="bg-transparent text-start">
+            <ul class="pagination justify-content-start">
+              <li class="page-item <%= page <= 1 ? 'disabled' : '' %>">
+                <a class="page-link" href="?page=<%=prevPage%>" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                </a>
+              </li>
+              <% for(let nrPagina = 1; nrPagina <= totalPagina; nrPagina ++) {%>
+                <li class="page-item <%= nrPagina == page ? 'current' : '' %>">
+                  <a class="page-link" href="?page=<%=nrPagina%>"><%=nrPagina%></a>
+                </li>
+              <%}%>
+              <li class="page-item <%= page >= totalPagina ? 'disabled' : '' %>">
+                <a class="page-link" href="?page=<%=nextPage%>" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <% for (let i = 0; i < produtos.length; i++) {%>          
+        <div class="col-4 mt-3">
+          <div class="card">
+            <img
+              src="<%=produtos[i].imagem%>"
+              height="300"
+              width="300"
+              class="card-img-top"
+              alt="Imagem"
+            />
+            <div class="card-body">
+              <h5 class="card-title text-truncate">#<%=produtos[i].idProduto%> - <%=produtos[i].nome%></h5>
+              <p class="card-text"><%=produtos[i].preco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })%></p>              
+              <a href="/admin/produtos/editar/<%=produtos[i].idProduto%>" class="btn btn-primary"
+                >Editar</a
+              >
             </div>
           </div>
+        </div>
+        <%} %>
         
+      </div>
+      <div class="row mt-4">
+        <div class="col-md-6">
+          <nav aria-label="Page navigation" class="bg-transparent text-start">
+            <ul class="pagination justify-content-start">
+              <li class="page-item <%= page <= 1 ? 'disabled' : '' %>">
+                <a class="page-link" href="?page=<%=prevPage%>" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                </a>
+              </li>
+              <% for(let nrPagina = 1; nrPagina <= totalPagina; nrPagina ++) {%>
+                <li class="page-item <%= nrPagina == page ? 'current' : '' %>">
+                  <a class="page-link" href="?page=<%=nrPagina%>"><%=nrPagina%></a>
+                </li>
+              <%}%>
+              <li class="page-item <%= page >= totalPagina ? 'disabled' : '' %>">
+                <a class="page-link" href="?page=<%=nextPage%>" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
     </main>
-</body>
+    <script src="/scripts/produto.js"></script>
+  </body>
 </html>

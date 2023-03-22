@@ -2,12 +2,56 @@
     catalog_products
 ***********************/
 
+.catalog_products_main nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;  
+  padding-top: 50px;
+}
+
+form.form-search-product:focus-within{		
+  border: 1px solid var(--color-p2);
+	box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.75);
+}
+
+form.form-search-product{	
+	background:var(--color-1);
+	border-radius: 10px;
+  border: 1px solid var(--color-10);
+	padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+}
+
+.btn-search-product{
+	color:var(--color-11);
+	float: right;
+	width: 40px;
+	height: 40px;
+	border-radius: 10px;
+	background: var(--color-p1);
+}
+
+.input-search-product{
+	border:none;
+	outline: none;
+	background: none;
+	float: left;
+	color:var(--color-11);
+	font-size: 16px;
+  font-weight: 600;
+  margin-top: 0;
+}
+
 .catalog_products-bg {
   background: linear-gradient(to right, var(--color-0) 30%, var(--color-11) 0%);
 }
 
 .catalog_products_main{
   background-color: var(--color-0);
+  margin-bottom: 100px;
 }
 
 .catalog_products {
@@ -16,8 +60,21 @@
   gap: 40px;
   padding-top: 60px;
   padding-bottom: 60px;
+  color: var(--color-8);
 }
 
+.catalog_products h2{
+  color: var(--color-11);
+}
+
+.catalog_products:nth-child(even){
+  background: linear-gradient(to right, var(--color-0) 30%, var(--color-11) 0%);
+  color: var(--color-3);
+}
+
+.catalog_products:nth-child(even) h2{
+  color: var(--color-2) !important;
+}
 
 .catalog_products-image {
   display: grid;
@@ -86,6 +143,35 @@
   width: 32px;
   height: 32px;
   margin-right: 8px;
+}
+
+.catalog_products_main .pagination{
+  display: flex;  
+  gap:0.5rem;
+}
+
+.catalog_products_main ul.pagination>li{  
+  border-radius: 100%;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 6px 10px;
+  text-decoration: none;
+  /* border: 1px solid var(--color-11); */
+}
+
+li.page-item.current {
+  background-color:  var(--color-p2);
+  border-color: var(--color-p2) !important;
+}
+
+li.page-item.disabled {
+  color:  var(--color-4);
+  background-color:  var(--color-2);
+  border-color:var(--color-4);
+}
+
+li.page-item.disabled a{
+  pointer-events: none;
 }
 
 @media (max-width: 800px) {
