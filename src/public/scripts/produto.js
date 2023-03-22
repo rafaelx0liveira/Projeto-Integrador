@@ -5,6 +5,8 @@ const inputImg = document.querySelector("#imagem");
 const selectAlcoolico = document.querySelector("#alcoolico");
 const inputGraduacao = document.querySelector("#graduacao_alcoolica");
 
+window.onload = verifyAlcoolico;
+
 closeMessage.addEventListener("click", () => {
   msg.classList.remove("d-flex");
   msg.style.display = "none";
@@ -23,15 +25,23 @@ function modifyImage(){
 }
 
 function handleSelectAlcoolico(){
-  let selected = selectAlcoolico.value;
   
+  verifyAlcoolico();
+  
+}
+
+function verifyAlcoolico(){
+
+  let selected = selectAlcoolico.value;
   if(selected === "1"){    
-    //console.log(typeof selected)
+    
     inputGraduacao.removeAttribute("disabled");
   }else{
     inputGraduacao.setAttribute("disabled", "true");
     inputGraduacao.value = "";
   }
-  
+
 }
+
+
 

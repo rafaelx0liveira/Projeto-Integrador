@@ -49,7 +49,8 @@
                   placeholder="Nome do produto"
                   name="nome"
                 />
-                <label for="floatingInput">Nome</label>
+                <label for="floatingInput">Nome<span class="text-danger">*</span></label>
+                <div class="form-text text-danger" <%=listErros.includes('nome') ? "" : "hidden" %>  >Por favor, preencha o campo com o nome do produto.</div>
               </div>
       
               <div class="form-floating col-md-4">
@@ -58,14 +59,13 @@
                   id="alcoolico"
                   aria-label="Alcoólico"
                   name="alcoolico"
+                  onchange="handleSelectAlcoolico()"
                 >
-                <% optionsAlcoolico.map(option => { %>
-    
-                  <option value=<%=option.alcoolico%> ><%=option.alcoolico ? "Sim" : "Não"%></option>
+                <option value="0" selected >Não</option>
+                <option value="1"  >Sim</option>
                 
-                <% }) %>
                 </select>
-                <label for="floatingSelect">Alcoólico</label>
+                <label for="floatingSelect">Alcoólico<span class="text-danger">*</span></label>
               </div>
               <div class="form-floating col-md-4">
                 <input
@@ -75,7 +75,8 @@
                   placeholder="Graduação Alcoólica"
                   name="graduacao_alcoolica"
                 />
-                <label for="graduacao_alcoolica">Graduação Alcoólica</label>
+                <label for="graduacao_alcoolica">Graduação Alcoólica<span class="text-danger">*</span></label>
+                <div class="form-text text-danger" <%=listErros.includes('graduacao_alcoolica') ? "" : "hidden"%> >Por favor, preencha o campo com a graduação alcoólica do produto.</div>
               </div>
               <div class="form-floating col-md-4">
                 <input
@@ -85,7 +86,8 @@
                   placeholder="Volume"
                   name="volume"
                 />
-                <label for="volume">Volume</label>
+                <label for="volume">Volume<span class="text-danger">*</span></label>
+                <div class="form-text text-danger" <%=listErros.includes('volume') ? "" : "hidden"%> >Por favor, preencha o campo com o volume do produto.</div>
               </div>
               <div class="form-floating col-md-4">
                 <select
@@ -100,7 +102,7 @@
                 
                 <% }) %>
                 </select>
-                <label for="tipo">Tipo</label>
+                <label for="tipo">Tipo<span class="text-danger">*</span></label>
               </div>          
       
               <div class="form-floating col-md-4">
@@ -111,7 +113,8 @@
                   placeholder="preco"
                   name="preco"
                   />
-                <label for="preco">Preço (R$)</label>
+                <label for="preco">Preço (R$)<span class="text-danger">*</span></label>
+                <div class="form-text text-danger" <%=listErros.includes('preco') ? "" : "hidden"%> >Por favor, preencha o campo com o preço do produto.</div>
               </div>
               
               <div class="form-floating col-md-4">
@@ -123,7 +126,8 @@
                   name="imagem"
                   onblur="modifyImage()"
                   />
-                <label for="imagem">Imagem</label>
+                <label for="imagem">Imagem<span class="text-danger">*</span></label>
+                <div class="form-text text-danger" <%=listErros.includes('imagem') ? "" : "hidden"%> >Por favor, preencha o campo com o link da imagem do produto.</div>
               </div>
               <div class="form-floating col-md-12">
                 <textarea
@@ -133,7 +137,8 @@
                   style="height: 100px"
                   name="descricao"
                 ></textarea>
-                <label for="descricao">Descrição</label>
+                <label for="descricao">Descrição<span class="text-danger">*</span></label>
+                <div class="form-text text-danger" <%=listErros.includes('descricao') ? "" : "hidden"%> >Por favor, preencha o campo com a descrição do produto.</div>
               </div>
               <div class="form-floating col-md-12">
                 <textarea
@@ -143,7 +148,8 @@
                   style="height: 100px"
                   name="ingredientes"
                 ></textarea>
-                <label for="ingredientes">Ingredientes</label>
+                <label for="ingredientes">Ingredientes<span class="text-danger">*</span></label>
+                <div class="form-text text-danger" <%=listErros.includes('ingredientes') ? "" : "hidden"%> >Por favor, preencha o campo com os ingredientes do produto.</div>
               </div>
               <div class="form-floating col-md-12">
                 <textarea
@@ -153,7 +159,8 @@
                   style="height: 100px"
                   name="harmonizacao"
                 ></textarea>
-                <label for="harmonizacao">Harmonização</label>
+                <label for="harmonizacao">Harmonização<span class="text-danger">*</span></label>
+                <div class="form-text text-danger" <%=listErros.includes('harmonizacao') ? "" : "hidden"%> >Por favor, preencha o campo de harmonização do produto.</div>
               </div>
               <div class="col-12">
                 <button type="submit" class="btn btn-primary w-100">Salvar</button>

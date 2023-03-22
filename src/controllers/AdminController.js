@@ -148,7 +148,7 @@ const AdminController = {
     if(listErros.length !== 0){
       return res.redirect(`/admin/produtos/editar/${id}`);
     }
-    console.log(graduacao_alcoolica)
+
     await Produto.update(
       {
         estoque: estoque == "on" ? true : false,
@@ -192,6 +192,7 @@ const AdminController = {
     res.render("admin/produtos/cadastroProduto", {
       optionsTipo,
       optionsAlcoolico,
+      listErros,
     });
   },
   createProduct: async (req, res) => {
@@ -209,6 +210,42 @@ const AdminController = {
       ingredientes,
       harmonizacao,
     } = req.body;
+
+    if (nome == "") {
+      listErros.push("nome");
+    }
+
+    if (alcoolico == "1" && (graduacao_alcoolica == "" || graduacao_alcoolica == "/")) {
+      listErros.push("graduacao_alcoolica");
+    }
+
+    if (volume == "") {
+      listErros.push("volume");
+    }
+
+    if (preco == "") {
+      listErros.push("preco");
+    }
+
+    if (imagem == "") {
+      listErros.push("imagem");
+    }
+
+    if (descricao == "") {
+      listErros.push("descricao");
+    }
+
+    if (ingredientes == "") {
+      listErros.push("ingredientes");
+    }
+
+    if (harmonizacao == "") {
+      listErros.push("harmonizacao");
+    }
+
+    if(listErros.length !== 0){
+      return res.redirect("/admin/produtos/cadastro");
+    }
 
     const hasEstoque = estoque == "on" ? true : false;
     const isAtivo = ativo == "on" ? true : false;
