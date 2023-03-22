@@ -1,4 +1,7 @@
-SELECT * FROM pi_dh.produto;
+/* Adicionando nova coluna */
+ALTER TABLE `pi_dh`.`produto` ADD tipo varchar(100) AFTER `descricao`;
+ALTER TABLE `pi_dh`.`usuario` ADD senha varchar(200) AFTER `dtNascimento`;
+ALTER TABLE `pi_dh`.`produto` ADD qtde_estoque int AFTER `estoque`;
 
 /*********************
 	  PRODUTOS
@@ -12,6 +15,7 @@ SELECT `produto`.`idProduto`,
     `produto`.`imagem`,
     `produto`.`ativo`,
     `produto`.`estoque`,
+    `produto`.`qtde_estoque`,
     `produto`.`ingredientes`,
     `produto`.`harmonizacao`,
     `produto`.`graduacao_alcoolica`,
@@ -30,9 +34,6 @@ ALTER TABLE `pi_dh`.`produto` MODIFY COLUMN `harmonizacao` varchar(1000);
 /* Alterando tipo das colunas */
 ALTER TABLE `pi_dh`.`produto` MODIFY COLUMN `graduacao_alcoolica` varchar(50);
 ALTER TABLE `pi_dh`.`produto` MODIFY COLUMN `volume` varchar(100);
-
-/* Adicionando nova coluna */
-ALTER TABLE `pi_dh`.`produto` ADD tipo varchar(100) AFTER `descricao`;
 
 /* Inserindo os produtos */
 
@@ -1157,12 +1158,76 @@ UPDATE `pi_dh`.`produto`
 SET `alcoolico` = false
 WHERE idProduto in (5, 9, 13, 16, 19, 27, 30, 35);
 
+/*********************
+	 USUÁRIO
+*********************/
+INSERT INTO `pi_dh`.`usuario`
+(`idUsuario`,
+`nome`,
+`email`,
+`cpf`,
+`telefone`,
+`dtNascimento`)
+VALUES
+(1,
+'Rafael Aparecido Silva de Oliveira',
+'rafaelaparecido.oliveirasilva@gmail.com',
+'45978945645',
+'5511962807125',
+'1999-12-15'
+);
+
+SELECT `usuario`.`idUsuario`,
+    `usuario`.`nome`,
+    `usuario`.`email`,
+    `usuario`.`cpf`,
+    `usuario`.`telefone`,
+    `usuario`.`dtNascimento`,
+    `usuario`.`senha`
+FROM `pi_dh`.`usuario`;
 
 
+/*********************
+	 PAGAMENTOS
+*********************/
 
+INSERT INTO `pi_dh`.`pagamentos`
+(`idPagamentos`,
+`cartao`,
+`validade`,
+`cv`,
+`nome`,
+`Usuario_idUsuario`)
+VALUES
+(1,
+5588442200889911,
+'2029-02-01',
+999,
+'Itau',
+1);
 
+select 
+usuario.nome,
+pagamentos.cartao,
+pagamentos.nome as nome_cartao
+from usuario
+inner join pagamentos
+on pagamentos.Usuario_idUsuario = usuario.idUsuario
+where pagamentos.Usuario_idUsuario = 1;
 
+SELECT `pagamentos`.`idPagamentos`,
+    `pagamentos`.`cartao`,
+    `pagamentos`.`validade`,
+    `pagamentos`.`cv`,
+    `pagamentos`.`nome`,
+    `pagamentos`.`Usuario_idUsuario`
+FROM `pi_dh`.`pagamentos`;
 
+UPDATE `pi_dh`.`produto`
+SET `qtde_estoque` = 100
+WHERE idProduto in (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 
+41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57);
 
 
 
