@@ -65,7 +65,7 @@
         <% for(let i= 0; i < bebidas_carrossel.length; i++) { %>
           <% if(bebidas_carrossel[i].alcoolico){ %>
           <li>
-            <a href="/produto/<%=bebidas_carrossel[i].id%>">
+            <a href="/produto/<%=bebidas_carrossel[i].idProduto%>">
               <img src="<%= bebidas_carrossel[i].imagem %>" width="920" height="1040" alt="<%= bebidas_carrossel[i].nome %>">
               <h3 class="font-1-xl color-5"><%= bebidas_carrossel[i].nome %></h3>
               <span class="font-2-m color-5">R$ <%= bebidas_carrossel[i].preco %></span>
@@ -105,7 +105,7 @@
         <% for(let i= 0; i < cervejas.length; i++) { %>
           
           <li>
-            <a href="/produto/<%=cervejas[i].id%>">
+            <a href="/produto/<%=cervejas[i].idProduto%>">
               <img src="<%= cervejas[i].imagem %>" width="920" height="1040" alt="<%= cervejas[i].nome %>">
               <h3 class="font-1-xl color-5"><%= cervejas[i].nome %></h3>
               <span class="font-2-m color-5">R$ <%= cervejas[i].preco %></span>
@@ -171,7 +171,7 @@
         <% for(let i= 0; i < uisques.length; i++) { %>
           
           <li>
-            <a href="/produto/<%=uisques[i].id%>">
+            <a href="/produto/<%=uisques[i].idProduto%>">
               <img src="<%= uisques[i].imagem %>" width="920" height="1040" alt="<%= uisques[i].nome %>">
               <h3 class="font-1-xl color-5"><%= uisques[i].nome %></h3>
               <span class="font-2-m color-5">R$ <%= uisques[i].preco %></span>
