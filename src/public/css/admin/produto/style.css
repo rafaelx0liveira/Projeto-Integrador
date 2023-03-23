@@ -13,8 +13,8 @@
     display: none;
   }
 
-  img#imagem-produto,
-  .card .card-img-top img {
-    object-fit: cover;
+  img.card-img-top,
+  img#imagem-produto {
+      object-fit: cover;
   }
 
