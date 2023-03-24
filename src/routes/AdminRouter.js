@@ -21,7 +21,7 @@ router.post("/produto/cadastro", AdminController.createProduct);
 
 //CLIENTES
 router.get("/clientes", AdminController.showClientes);
-router.get("/clientes/editar", AdminController.showEditarCliente);
+router.get("/clientes/editar/:id", AdminController.showEditarCliente);
 
 
 module.exports = router;

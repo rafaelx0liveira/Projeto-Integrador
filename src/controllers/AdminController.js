@@ -1,4 +1,4 @@
-const { Produto } = require("../model");
+const { Produto, Usuario, Endereco, Pagamento } = require("../model");
 const Sequelize = require("sequelize");
 
 let message = "";
@@ -24,7 +24,9 @@ const AdminController = {
       },
     });
 
-    res.render("admin/index", { total, emEstoque, foraEstoque });
+    let { count: totalUsers } = await Usuario.findAndCountAll();
+
+    res.render("admin/index", { total, emEstoque, foraEstoque, totalUsers });
   },
   showPedidos: (req, res) => {
     res.render("admin/pedidos/index");
@@ -34,7 +36,7 @@ const AdminController = {
   },
   showProdutos: async (req, res) => {
     setTimeout(() => {
-      message = "";      
+      message = "";
     }, 1000);
 
     let { page = 1 } = req.query;
@@ -97,7 +99,7 @@ const AdminController = {
   },
   updateProduct: async (req, res) => {
     const { id } = req.params;
-   
+
     const {
       estoque,
       ativo,
@@ -112,12 +114,15 @@ const AdminController = {
       ingredientes,
       harmonizacao,
     } = req.body;
-    
+
     if (nome == "") {
       listErros.push("nome");
     }
 
-    if (alcoolico == "1" && (graduacao_alcoolica == "" || graduacao_alcoolica == "/")) {
+    if (
+      alcoolico == "1" &&
+      (graduacao_alcoolica == "" || graduacao_alcoolica == "/")
+    ) {
       listErros.push("graduacao_alcoolica");
     }
 
@@ -145,7 +150,7 @@ const AdminController = {
       listErros.push("harmonizacao");
     }
 
-    if(listErros.length !== 0){
+    if (listErros.length !== 0) {
       return res.redirect(`/admin/produtos/editar/${id}`);
     }
 
@@ -215,7 +220,10 @@ const AdminController = {
       listErros.push("nome");
     }
 
-    if (alcoolico == "1" && (graduacao_alcoolica == "" || graduacao_alcoolica == "/")) {
+    if (
+      alcoolico == "1" &&
+      (graduacao_alcoolica == "" || graduacao_alcoolica == "/")
+    ) {
       listErros.push("graduacao_alcoolica");
     }
 
@@ -243,7 +251,7 @@ const AdminController = {
       listErros.push("harmonizacao");
     }
 
-    if(listErros.length !== 0){
+    if (listErros.length !== 0) {
       return res.redirect("/admin/produtos/cadastro");
     }
 
@@ -272,11 +280,30 @@ const AdminController = {
 
     res.redirect("/admin/produtos");
   },
-  showClientes: (req, res) => {
-    res.render("admin/clientes/index");
+  showClientes: async (req, res) => {
+    let users = await Usuario.findAll();
+
+    res.render("admin/clientes/index", { users });
   },
-  showEditarCliente: (req, res) => {
-    res.render("admin/clientes/editarCliente");
+  showEditarCliente: async (req, res) => {
+    const { id } = req.params;
+
+    let user = await Usuario.findByPk(id);
+
+    let enderecoUser = await Endereco.findAll({
+      where: {
+        usuario_idUsuario: id,
+      },
+    });
+
+    let pagamentoUser = await Pagamento.findAll({
+      where: {
+        usuario_idUsuario: id,
+      },
+    });
+
+
+    res.render("admin/clientes/editarCliente", { user, enderecoUser,pagamentoUser });
   },
 };
 
