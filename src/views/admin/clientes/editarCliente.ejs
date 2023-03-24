@@ -21,7 +21,7 @@
               placeholder="12345"
               name="id"
               disabled
-              value=<%=user.idUsuario %>
+              value=<%=userInfo.idUsuario %>
              
             />
             <label for="floatingInput">ID</label>
@@ -34,7 +34,7 @@
               placeholder="Nome"
               name="nome"
               disabled
-              value=<%=user.nome %>
+              value=<%=userInfo.nome %>
               
             />
             <label for="floatingInput">Nome</label>
@@ -47,7 +47,7 @@
                 placeholder="CPF"
                 name="cpf"
                 disabled
-                value=<%=user.cpf %>
+                value=<%=userInfo.cpf %>
                 
               />
               <label for="cpf">CPF</label>
@@ -60,7 +60,7 @@
                 placeholder="email"
                 name="email"
                 disabled
-                value=<%=user.email %>
+                value=<%=userInfo.email %>
                 
               />
               <label for="email">E-mail</label>
@@ -73,7 +73,7 @@
                 placeholder="Telefone"
                 name="telefone"
                 disabled
-                value=<%=user.telefone%>                
+                value=<%=userInfo.telefone%>                
               />
               <label for="telefone">Telefone</label>
             </div>
@@ -85,7 +85,7 @@
                 placeholder="Data de Nascimento"
                 name="data_nascimento"
                 disabled
-                value=<%=user.dtNascimento%>
+                value=<%=userInfo.dtNascimento%>
                 
               />
               <label for="data_nascimento">Data de Nascimento</label>
@@ -93,23 +93,33 @@
           
         </form>
 
-        <h4 class="mt-4">Endereço</h4>
-        <p class="fw-bold">Rua: <%=enderecoUser.rua %></p>
-        <p class="fw-bold">Número: <%=enderecoUser.numero %></p>
-        <p class="fw-bold">CEP: <%=enderecoUser.cep %></p>        
-        <p class="fw-bold">Bairro: <%=enderecoUser.bairro %></p>
-        <p class="fw-bold">Cidade: <%=enderecoUser.cidade %></p>
-        <p class="fw-bold">Complemento: <%=enderecoUser.complemento %></p>
-
-        <h4 class="mt-4">Pagamento</h4>        
-        <% if(pagamentoUser.length > 0) {%>
-          <p class="fw-bold">Titular: <%=pagamentoUser.nome %></p>
-          <p class="fw-bold">Número: <%=pagamentoUser.numero %></p>
-          <p class="fw-bold">Validade: <%=pagamentoUser.validade %></p>
-          <p class="fw-bold">CV: <%=pagamentoUser.cv %></p> 
-        <% }else{ %>
-            <p class="fw-bold">Não há formas de pagamento cadastrado</p>
-        <%}%> 
+        <section class="aditional-user-info">
+          <div class="address-info">
+            <h4 class="mt-4">Endereço</h4>
+            <p><span class="fw-bold">Rua: </span><%=enderecoInfo.rua %></p>
+            <p><span class="fw-bold">Número:</span> <%=enderecoInfo.numero %></p>
+            <p><span class="fw-bold">CEP: </span><%=enderecoInfo.cep %></p>        
+            <p><span class="fw-bold">Bairro:</span> <%=enderecoInfo.bairro %></p>
+            <p><span class="fw-bold">Cidade:</span> <%=enderecoInfo.cidade %></p>
+            <p><span class="fw-bold">Complemento:</span> <%=enderecoInfo.complemento %></p>
+          </div>
+          <div class="payment-info">  
+            <h4 class="mt-4">Pagamento</h4> 
+            <%# if(pagamentoUser.length > 0) {%>
+              <p class="fw-bold">Titular: <%#=pagamentoUser.nome %></p>
+              <p class="fw-bold">Número: <%#=pagamentoUser.numero %></p>
+              <p class="fw-bold">Validade: <%#=pagamentoUser.validade %></p>
+              <p class="fw-bold">CV: <%#=pagamentoUser.cv %></p> 
+            <%#}else{ %>
+                <p class="fw-bold">Não há formas de pagamento cadastrado</p>
+            <%#}%>     
+          </div>
+          
+        </section>
+         
+             
+         
+        
                
       </main>
 </body>

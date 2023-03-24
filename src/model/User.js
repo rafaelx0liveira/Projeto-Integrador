@@ -49,5 +49,12 @@ module.exports = (sequelize, DataTypes) => {
         freezeTableName: true
     });
 
+    Usuario.associate = (models) => {
+        Usuario.hasMany(models.Endereco, {
+          as: "usuarioEndereco",
+          foreignKey: "Usuario_idUsuario"
+        })
+      }
+
     return Usuario;
 };

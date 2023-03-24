@@ -288,23 +288,38 @@ const AdminController = {
   showEditarCliente: async (req, res) => {
     const { id } = req.params;
 
-    let user = await Usuario.findByPk(id);
+    // let {rows: enderecoUser} = await Endereco.findAll({
+    //   where: {
+    //     usuario_idUsuario: id,
+    //   },
+    // });
 
-    let enderecoUser = await Endereco.findAll({
-      where: {
-        usuario_idUsuario: id,
+    // let pagamentoUser = await Pagamento.findAll({
+    //   where: {
+    //     usuario_idUsuario: id,
+    //   },
+    // });
+
+    // console.log(enderecoUser);
+    // console.log(pagamentoUser);
+
+    const user = await Usuario.findAll({
+      where:{
+        idUsuario: id
       },
+      include:[{
+        association: "usuarioEndereco",
+      }]
     });
+    
+    const userInfo = user[0].dataValues;
+    const enderecoInfo = userInfo.usuarioEndereco[0].dataValues;
 
-    let pagamentoUser = await Pagamento.findAll({
-      where: {
-        usuario_idUsuario: id,
-      },
-    });
-
-
-    res.render("admin/clientes/editarCliente", { user, enderecoUser,pagamentoUser });
+    res.render("admin/clientes/editarCliente", {userInfo,enderecoInfo});
   },
+  authLoginAdmin: (req, res)=>{
+    
+  }
 };
 
 module.exports = AdminController;

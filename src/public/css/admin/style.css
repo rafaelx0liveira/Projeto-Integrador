@@ -109,5 +109,15 @@ main h1{
     text-align: left;
 }
 
+.aditional-user-info{
+    display: flex;
+    width: 100%;
+    gap: 11%;
+}
+
+.payment-info, .address-info{
+    width: 40%;
+}
+
 @import "../utils/animacao.css";
 @import "../utils/cores.css";
