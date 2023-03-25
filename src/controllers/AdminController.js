@@ -308,14 +308,25 @@ const AdminController = {
         idUsuario: id
       },
       include:[{
-        association: "usuarioEndereco",
+        association: "usuarioEndereco"
+      },{
+        association: "usuarioPagamento"
       }]
     });
     
     const userInfo = user[0].dataValues;
-    const enderecoInfo = userInfo.usuarioEndereco[0].dataValues;
+    const enderecoInfo = userInfo.usuarioEndereco[0].dataValues;;
+    const pagamentoInfo = null
 
-    res.render("admin/clientes/editarCliente", {userInfo,enderecoInfo});
+    if(userInfo.usuarioPagamento[0]){
+      pagamentoInfo = userInfo.usuarioPagamento[0].dataValues;
+    }
+
+    // if(userInfo.usuarioEndereco[0]){
+    //   enderecoInfo = 
+    // }
+
+    res.render("admin/clientes/editarCliente", {userInfo,enderecoInfo, pagamentoInfo});
   },
   authLoginAdmin: (req, res)=>{
     

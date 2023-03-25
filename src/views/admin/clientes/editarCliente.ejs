@@ -97,22 +97,22 @@
           <div class="address-info">
             <h4 class="mt-4">Endereço</h4>
             <p><span class="fw-bold">Rua: </span><%=enderecoInfo.rua %></p>
-            <p><span class="fw-bold">Número:</span> <%=enderecoInfo.numero %></p>
+            <p><span class="fw-bold">Número: </span><%=enderecoInfo.numero %></p>
             <p><span class="fw-bold">CEP: </span><%=enderecoInfo.cep %></p>        
-            <p><span class="fw-bold">Bairro:</span> <%=enderecoInfo.bairro %></p>
-            <p><span class="fw-bold">Cidade:</span> <%=enderecoInfo.cidade %></p>
-            <p><span class="fw-bold">Complemento:</span> <%=enderecoInfo.complemento %></p>
+            <p><span class="fw-bold">Bairro: </span><%=enderecoInfo.bairro %></p>
+            <p><span class="fw-bold">Cidade: </span><%=enderecoInfo.cidade %></p>
+            <p><span class="fw-bold">Complemento: </span><%=enderecoInfo.complemento %></p>
           </div>
           <div class="payment-info">  
             <h4 class="mt-4">Pagamento</h4> 
-            <%# if(pagamentoUser.length > 0) {%>
-              <p class="fw-bold">Titular: <%#=pagamentoUser.nome %></p>
-              <p class="fw-bold">Número: <%#=pagamentoUser.numero %></p>
-              <p class="fw-bold">Validade: <%#=pagamentoUser.validade %></p>
-              <p class="fw-bold">CV: <%#=pagamentoUser.cv %></p> 
-            <%#}else{ %>
-                <p class="fw-bold">Não há formas de pagamento cadastrado</p>
-            <%#}%>     
+            <% if(pagamentoInfo !== null) {%>
+              <p><span class="fw-bold">Titular: </span><%=pagamentoInfo.nome %></p>
+              <p><span class="fw-bold">Número: </span><%=pagamentoInfo.numero.replace(pagamentoInfo.numero.substring(0, pagamentoInfo.numero.length-5), '*'.repeat(pagamentoInfo.numero.length-5)) %></p>
+              <p><span class="fw-bold">Validade: </span><%=pagamentoInfo.validade %></p>
+              <p><span class="fw-bold">CV: </span><%=pagamentoInfo.cvv.toString().replace(pagamentoInfo.cvv.toString().substring(0, pagamentoInfo.cvv.toString().length-1), '*'.repeat(pagamentoInfo.cvv.toString().length-1)) %></p> 
+            <%}else{ %>
+                <p class="">Não há forma de pagamento cadastrada.</p>
+            <%}%>     
           </div>
           
         </section>
