@@ -1,12 +1,11 @@
 const isAdmin = (req, res, next) => {
-    // const { user } = req.session;
-    console.log(req.body);
-    return next()
-    // if (user) {
-    //     
-    // }
+  const { user } = req.session;
 
-    // return res.redirect("/admin/login")
+  if (user.is_admin) {
+      return next()
   }
+
+    return res.redirect("/admin/login")
+}
   
   module.exports = isAdmin;

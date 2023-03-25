@@ -3,13 +3,20 @@
   <head>
 
     <%- include("../components/head.ejs") %>
-
     <link rel="stylesheet" href="../css/admin/login/login.css" />
+
     <title>Administrador - Login</title>
   </head>
   <body class="text-center bg-dark">
+    
     <main class="form-signin">
-      <form action="/login" method="POST">        
+      <% if (message != "") { %>
+        <div id="alert-update" class="alert alert-<%=type%> d-flex justify-content-between align-items-center" role="alert">
+          <%=message%>
+          <span id="close-message"><i class="bi bi-x align-self-center"></i></span>
+        </div>
+      <% } %>
+      <form action="/admin/login" method="POST">        
         <h1 class="h3 mb-3 fw-normal text-white">Login</h1>
         <div class="form-floating">
           <input
@@ -31,15 +38,12 @@
           />
           <label for="password">Senha</label>
         </div>
-        <div class="checkbox mb-3 text-white">
-          <label>
-            <input type="checkbox" value="remember-me" /> Manter conectado
-          </label>
-        </div>
+        
         <button class="w-100 btn btn-lg btn-warning" type="submit">
           Login
         </button>
       </form>
     </main>
+    <script src="/scripts/produto.js"></script>
   </body>
 </html>

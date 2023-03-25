@@ -5,12 +5,12 @@ const AdminController = require("../controllers/AdminController");
 const isLogin = require("../middlewares/isLogin");
 const isAdmin = require("../middlewares/isAdmin");
 
-// router.use(isLogin);
-// router.use(isAdmin);
-
 //LOGIN
 router.get("/login", AdminController.showLoginAdmin);
 router.post("/login", AdminController.authLoginAdmin);
+
+router.use(isLogin);
+router.use(isAdmin);
 
 //INDEX - DASHBOARD
 router.get("/index", AdminController.showIndex);

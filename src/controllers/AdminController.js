@@ -1,5 +1,6 @@
 const { Produto, Usuario, Endereco, Pagamento } = require("../model");
 const Sequelize = require("sequelize");
+const bcrypt = require("bcryptjs");
 
 let message = "";
 let type = "";
@@ -7,7 +8,11 @@ let listErros = [];
 
 const AdminController = {
   showLoginAdmin: (req, res) => {
-    res.render("admin/login/index");
+    setTimeout(() => {
+      message = "";
+    }, 1000);
+
+    res.render("admin/login/index", { message, type });
   },
   showIndex: async (req, res) => {
     let { count: total } = await Produto.findAndCountAll();
@@ -97,6 +102,76 @@ const AdminController = {
       listErros,
     });
   },
+  showClientes: async (req, res) => {
+    let users = await Usuario.findAll();
+
+    res.render("admin/clientes/index", { users });
+  },
+  showEditarCliente: async (req, res) => {
+    const { id } = req.params;
+
+    // let {rows: enderecoUser} = await Endereco.findAll({
+    //   where: {
+    //     usuario_idUsuario: id,
+    //   },
+    // });
+
+    // let pagamentoUser = await Pagamento.findAll({
+    //   where: {
+    //     usuario_idUsuario: id,
+    //   },
+    // });
+
+    // console.log(enderecoUser);
+    // console.log(pagamentoUser);
+
+    const user = await Usuario.findAll({
+      where: {
+        idUsuario: id,
+      },
+      include: [
+        {
+          association: "usuarioEndereco",
+        },
+        {
+          association: "usuarioPagamento",
+        },
+      ],
+    });
+
+    const userInfo = user[0].dataValues;
+    const enderecoInfo = userInfo.usuarioEndereco[0].dataValues;
+    const pagamentoInfo = null;
+
+    if (userInfo.usuarioPagamento[0]) {
+      pagamentoInfo = userInfo.usuarioPagamento[0].dataValues;
+    }
+
+    res.render("admin/clientes/editarCliente", {
+      userInfo,
+      enderecoInfo,
+      pagamentoInfo,
+    });
+  },
+  showCadastrarProduto: async (req, res) => {
+    let optionsTipo = await Produto.findAll({
+      attributes: [[Sequelize.fn("DISTINCT", Sequelize.col("tipo")), "tipo"]],
+      order: [["tipo"]],
+    });
+
+    let optionsAlcoolico = await Produto.findAll({
+      attributes: [
+        [Sequelize.fn("DISTINCT", Sequelize.col("alcoolico")), "alcoolico"],
+      ],
+      order: [["alcoolico"]],
+    });
+
+    res.render("admin/produtos/cadastroProduto", {
+      optionsTipo,
+      optionsAlcoolico,
+      listErros,
+    });
+  },
   updateProduct: async (req, res) => {
     const { id } = req.params;
 
@@ -181,25 +256,6 @@ const AdminController = {
 
     res.redirect(`/admin/produtos/editar/${id}`);
   },
-  showCadastrarProduto: async (req, res) => {
-    let optionsTipo = await Produto.findAll({
-      attributes: [[Sequelize.fn("DISTINCT", Sequelize.col("tipo")), "tipo"]],
-      order: [["tipo"]],
-    });
-
-    let optionsAlcoolico = await Produto.findAll({
-      attributes: [
-        [Sequelize.fn("DISTINCT", Sequelize.col("alcoolico")), "alcoolico"],
-      ],
-      order: [["alcoolico"]],
-    });
-
-    res.render("admin/produtos/cadastroProduto", {
-      optionsTipo,
-      optionsAlcoolico,
-      listErros,
-    });
-  },
   createProduct: async (req, res) => {
     const {
       estoque,
@@ -280,57 +336,44 @@ const AdminController = {
 
     res.redirect("/admin/produtos");
   },
-  showClientes: async (req, res) => {
-    let users = await Usuario.findAll();
+  authLoginAdmin: async (req, res) => {
+    const { email, password } = req.body;
 
-    res.render("admin/clientes/index", { users });
-  },
-  showEditarCliente: async (req, res) => {
-    const { id } = req.params;
+    if (email === "" || password === "") {
+      message = "E-mail e senha devem ser preenchidos";
+      type = "danger";
 
-    // let {rows: enderecoUser} = await Endereco.findAll({
-    //   where: {
-    //     usuario_idUsuario: id,
-    //   },
-    // });
-
-    // let pagamentoUser = await Pagamento.findAll({
-    //   where: {
-    //     usuario_idUsuario: id,
-    //   },
-    // });
-
-    // console.log(enderecoUser);
-    // console.log(pagamentoUser);
-
-    const user = await Usuario.findAll({
-      where:{
-        idUsuario: id
-      },
-      include:[{
-        association: "usuarioEndereco"
-      },{
-        association: "usuarioPagamento"
-      }]
-    });
-    
-    const userInfo = user[0].dataValues;
-    const enderecoInfo = userInfo.usuarioEndereco[0].dataValues;;
-    const pagamentoInfo = null
-
-    if(userInfo.usuarioPagamento[0]){
-      pagamentoInfo = userInfo.usuarioPagamento[0].dataValues;
+      return res.redirect("/admin/login");
     }
 
-    // if(userInfo.usuarioEndereco[0]){
-    //   enderecoInfo = 
-    // }
+    const user = await Usuario.findOne({
+      where: {
+        email,
+      },
+    });
 
-    res.render("admin/clientes/editarCliente", {userInfo,enderecoInfo, pagamentoInfo});
-  },
-  authLoginAdmin: (req, res)=>{
+    if (!user) {
+      message = "E-mail ou senha inválido(a)";
     
-  }
+      type = "danger"
+
+      return res.redirect("/admin/login");
+    
+    }
+
+    const verifyPassword = bcrypt.compareSync(password, user.senha);
+
+    if (!verifyPassword) {
+      message = "E-mail ou senha inválido(a)";
+      type = "danger";
+
+      return res.redirect("/admin/login");
+    }
+
+    req.session.user = user;
+
+    return res.redirect("/admin/index");
+  },
 };
 
 module.exports = AdminController;
