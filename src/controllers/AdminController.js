@@ -110,21 +110,6 @@ const AdminController = {
   showEditarCliente: async (req, res) => {
     const { id } = req.params;
 
-    // let {rows: enderecoUser} = await Endereco.findAll({
-    //   where: {
-    //     usuario_idUsuario: id,
-    //   },
-    // });
-
-    // let pagamentoUser = await Pagamento.findAll({
-    //   where: {
-    //     usuario_idUsuario: id,
-    //   },
-    // });
-
-    // console.log(enderecoUser);
-    // console.log(pagamentoUser);
-
     const user = await Usuario.findAll({
       where: {
         idUsuario: id,
@@ -141,7 +126,7 @@ const AdminController = {
 
     const userInfo = user[0].dataValues;
     const enderecoInfo = userInfo.usuarioEndereco[0].dataValues;
-    const pagamentoInfo = null;
+    let pagamentoInfo = null;
 
     if (userInfo.usuarioPagamento[0]) {
       pagamentoInfo = userInfo.usuarioPagamento[0].dataValues;
@@ -361,6 +346,14 @@ const AdminController = {
     
     }
 
+    if(!user.is_admin){
+      message = "Acesso negado";
+    
+      type = "danger"
+
+      return res.redirect("/admin/login");
+    }
+
     const verifyPassword = bcrypt.compareSync(password, user.senha);
 
     if (!verifyPassword) {
@@ -374,6 +367,11 @@ const AdminController = {
 
     return res.redirect("/admin/index");
   },
+  logout: (req,res) =>{    
+    req.session.destroy((err) => {
+        res.redirect('/admin/login') 
+    })
+  }
 };
 
 module.exports = AdminController;

@@ -12,6 +12,8 @@ router.post("/login", AdminController.authLoginAdmin);
 router.use(isLogin);
 router.use(isAdmin);
 
+router.get ('/logout', AdminController.logout);
+
 //INDEX - DASHBOARD
 router.get("/index", AdminController.showIndex);
 
