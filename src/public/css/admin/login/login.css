@@ -37,3 +37,18 @@ body {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+
+.alert #close-message{
+  font-size: 1.5rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: .3s;
+}
+
+.alert #close-message:hover{
+  color: rgb(105, 0, 0);
+}
+
+#alert-update.hidden{
+  display: none;
+}

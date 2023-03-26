@@ -40,10 +40,13 @@
           </div>
           
         </div>
-        <div class="buy-product">
-          <a class="button fadeInLeft" data-anime="1200" href="">Comprar Agora</a>
-          <a class="freezer">Deixar gelando <img src="/images/icones/freezer.svg" alt="" class="fadeInUp" data-anime="2200"></a>
-        </div>
+        <% if(produto.estoque) {%> 
+          <div class="buy-product">
+            <a class="button fadeInLeft" data-anime="1200" href="">Comprar Agora</a>
+            <a class="freezer">Deixar gelando <img src="/images/icones/freezer.svg" alt="" class="fadeInUp" data-anime="2200"></a>
+          </div>
+        <% } %>
+        
 
         <h2 class="font-1-xs color-0 color-11 fadeInUp" data-anime="1800">Informações</h2>
         <ul class="product-info fadeInRight" data-anime="2000">

@@ -1,5 +1,6 @@
-const { Produto } = require("../model");
+const { Produto, Usuario, Endereco, Pagamento } = require("../model");
 const Sequelize = require("sequelize");
+const bcrypt = require("bcryptjs");
 
 let message = "";
 let type = "";
@@ -7,7 +8,11 @@ let listErros = [];
 
 const AdminController = {
   showLoginAdmin: (req, res) => {
-    res.render("admin/login/index");
+    setTimeout(() => {
+      message = "";
+    }, 1000);
+
+    res.render("admin/login/index", { message, type });
   },
   showIndex: async (req, res) => {
     let { count: total } = await Produto.findAndCountAll();
@@ -24,7 +29,9 @@ const AdminController = {
       },
     });
 
-    res.render("admin/index", { total, emEstoque, foraEstoque });
+    let { count: totalUsers } = await Usuario.findAndCountAll();
+
+    res.render("admin/index", { total, emEstoque, foraEstoque, totalUsers });
   },
   showPedidos: (req, res) => {
     res.render("admin/pedidos/index");
@@ -34,7 +41,7 @@ const AdminController = {
   },
   showProdutos: async (req, res) => {
     setTimeout(() => {
-      message = "";      
+      message = "";
     }, 1000);
 
     let { page = 1 } = req.query;
@@ -95,9 +102,64 @@ const AdminController = {
       listErros,
     });
   },
+  showClientes: async (req, res) => {
+    let users = await Usuario.findAll();
+
+    res.render("admin/clientes/index", { users });
+  },
+  showEditarCliente: async (req, res) => {
+    const { id } = req.params;
+
+    const user = await Usuario.findAll({
+      where: {
+        idUsuario: id,
+      },
+      include: [
+        {
+          association: "usuarioEndereco",
+        },
+        {
+          association: "usuarioPagamento",
+        },
+      ],
+    });
+
+    const userInfo = user[0].dataValues;
+    const enderecoInfo = userInfo.usuarioEndereco[0].dataValues;
+    let pagamentoInfo = null;
+
+    if (userInfo.usuarioPagamento[0]) {
+      pagamentoInfo = userInfo.usuarioPagamento[0].dataValues;
+    }
+
+    res.render("admin/clientes/editarCliente", {
+      userInfo,
+      enderecoInfo,
+      pagamentoInfo,
+    });
+  },
+  showCadastrarProduto: async (req, res) => {
+    let optionsTipo = await Produto.findAll({
+      attributes: [[Sequelize.fn("DISTINCT", Sequelize.col("tipo")), "tipo"]],
+      order: [["tipo"]],
+    });
+
+    let optionsAlcoolico = await Produto.findAll({
+      attributes: [
+        [Sequelize.fn("DISTINCT", Sequelize.col("alcoolico")), "alcoolico"],
+      ],
+      order: [["alcoolico"]],
+    });
+
+    res.render("admin/produtos/cadastroProduto", {
+      optionsTipo,
+      optionsAlcoolico,
+      listErros,
+    });
+  },
   updateProduct: async (req, res) => {
     const { id } = req.params;
-   
+
     const {
       estoque,
       ativo,
@@ -112,12 +174,15 @@ const AdminController = {
       ingredientes,
       harmonizacao,
     } = req.body;
-    
+
     if (nome == "") {
       listErros.push("nome");
     }
 
-    if (alcoolico == "1" && (graduacao_alcoolica == "" || graduacao_alcoolica == "/")) {
+    if (
+      alcoolico == "1" &&
+      (graduacao_alcoolica == "" || graduacao_alcoolica == "/")
+    ) {
       listErros.push("graduacao_alcoolica");
     }
 
@@ -145,7 +210,7 @@ const AdminController = {
       listErros.push("harmonizacao");
     }
 
-    if(listErros.length !== 0){
+    if (listErros.length !== 0) {
       return res.redirect(`/admin/produtos/editar/${id}`);
     }
 
@@ -176,25 +241,6 @@ const AdminController = {
 
     res.redirect(`/admin/produtos/editar/${id}`);
   },
-  showCadastrarProduto: async (req, res) => {
-    let optionsTipo = await Produto.findAll({
-      attributes: [[Sequelize.fn("DISTINCT", Sequelize.col("tipo")), "tipo"]],
-      order: [["tipo"]],
-    });
-
-    let optionsAlcoolico = await Produto.findAll({
-      attributes: [
-        [Sequelize.fn("DISTINCT", Sequelize.col("alcoolico")), "alcoolico"],
-      ],
-      order: [["alcoolico"]],
-    });
-
-    res.render("admin/produtos/cadastroProduto", {
-      optionsTipo,
-      optionsAlcoolico,
-      listErros,
-    });
-  },
   createProduct: async (req, res) => {
     const {
       estoque,
@@ -215,7 +261,10 @@ const AdminController = {
       listErros.push("nome");
     }
 
-    if (alcoolico == "1" && (graduacao_alcoolica == "" || graduacao_alcoolica == "/")) {
+    if (
+      alcoolico == "1" &&
+      (graduacao_alcoolica == "" || graduacao_alcoolica == "/")
+    ) {
       listErros.push("graduacao_alcoolica");
     }
 
@@ -243,7 +292,7 @@ const AdminController = {
       listErros.push("harmonizacao");
     }
 
-    if(listErros.length !== 0){
+    if (listErros.length !== 0) {
       return res.redirect("/admin/produtos/cadastro");
     }
 
@@ -272,12 +321,57 @@ const AdminController = {
 
     res.redirect("/admin/produtos");
   },
-  showClientes: (req, res) => {
-    res.render("admin/clientes/index");
+  authLoginAdmin: async (req, res) => {
+    const { email, password } = req.body;
+
+    if (email === "" || password === "") {
+      message = "E-mail e senha devem ser preenchidos";
+      type = "danger";
+
+      return res.redirect("/admin/login");
+    }
+
+    const user = await Usuario.findOne({
+      where: {
+        email,
+      },
+    });
+
+    if (!user) {
+      message = "E-mail ou senha inválido(a)";
+    
+      type = "danger"
+
+      return res.redirect("/admin/login");
+    
+    }
+
+    if(!user.is_admin){
+      message = "Acesso negado";
+    
+      type = "danger"
+
+      return res.redirect("/admin/login");
+    }
+
+    const verifyPassword = bcrypt.compareSync(password, user.senha);
+
+    if (!verifyPassword) {
+      message = "E-mail ou senha inválido(a)";
+      type = "danger";
+
+      return res.redirect("/admin/login");
+    }
+
+    req.session.user = user;
+
+    return res.redirect("/admin/index");
   },
-  showEditarCliente: (req, res) => {
-    res.render("admin/clientes/editarCliente");
-  },
+  logout: (req,res) =>{    
+    req.session.destroy((err) => {
+        res.redirect('/admin/login') 
+    })
+  }
 };
 
 module.exports = AdminController;
