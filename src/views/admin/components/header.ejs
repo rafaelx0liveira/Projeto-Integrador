@@ -1,16 +1,22 @@
 <header>
-  <div class="container">
-    <h2>Logo</h2>
-    <div class="dropdown">
-      <a
-        href="#"
-        class="user-profile"
-        id="dropdownUser1"
-        data-bs-toggle="dropdown"
-        aria-expanded="false"
-      >
-        <strong>Olá, Fulano</strong>
-      </a>
-    </div>
+  <div class="container">    
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Logo</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="" id="navbarNavDarkDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-white d-flex align-items-center" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-person-circle fs-6"></i> Olá, <%= locals.user.nome %>
+              </a>
+              <ul class="dropdown-menu text-center" aria-labelledby="navbarDarkDropdownMenuLink">
+                <li><a class="btn btn-outline-secondary w-50" href="/admin/logout">Sair</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
   </div>
 </header>
