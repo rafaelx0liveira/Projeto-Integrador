@@ -119,5 +119,10 @@ main h1{
     width: 40%;
 }
 
+a#logo{    
+    position: absolute;
+    top: -12px; 
+}
+
 @import "../utils/animacao.css";
 @import "../utils/cores.css";

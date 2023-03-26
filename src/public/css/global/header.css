@@ -7,15 +7,21 @@ header {
   justify-content: space-between;
   padding: 1.5rem 6rem;
 }
-
+ 
 .logo {
   display: flex;
   align-items: center;
 }
-
+/*
 .logo h1 {
   color: #fff;
-}
+} */
+
+a#logo {
+  /* width: 89px; */
+  position: absolute;
+  /* top: 1px; */
+} 
 
 .nav-list {
   display: flex;
