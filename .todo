@@ -1,18 +1,17 @@
-Inicio 02/03 até 10/03
+Inicio 26/03 até 26/03
+
+Problema:
+Locals não sempre undefined
 
 A fazer:
-- Criar as models: Produto, Usuario, Endereco, Pagamentos, Pedido, Pedido_has_Produto
-- (1) - Criar métodos no controller para mostrar produtos, cadastro de produto, edição de produto e excluir produto na pagina de admin
-- (2) - Criar métodos no controller para mostrar produtos na página de catálogo
-- (3) -Criar métodos no controller para mostrar clientes, e detalhes dos clientes 
-- (4) -Criar métodos no controller para cadastro de clientes 
+-Criar CarrinhoController.js (show, add, remove)
+-Criar CarrinhoRouter.js
+-Editar página do produto (levar as informações do produto para o controller)
+-Editar página do carrinho para receber as informações do produto
+- Verificar se o produto já está no carrinho (Deixar gelando ou Gelando)
 
 Henrique:
-Model produto
-(1)
-(2) - OK
+CarrinhoRouter.js
 
 Rafael:
-Model Usuario, Endereco, Pagamentos
-(3)
-(4)
+Criar CarrinhoController.js (show, add, remove)
