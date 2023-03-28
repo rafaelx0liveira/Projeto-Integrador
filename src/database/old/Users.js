@@ -2,7 +2,7 @@
 const crypto = require("crypto");
 const fs = require("fs");
 const path = require("path");
-const db = require("../database/db.json");
+const db = require("../db.json");
 
 const Users = {
   // Método para achar o usuário

@@ -3,36 +3,26 @@
 <head>
     <%- include("../components/head.ejs") %>
     <link rel="stylesheet" href="/css/admin/style.css">
-    <title>Editar Cliente</title>
+    <title>Dados Cliente</title>
 </head>
 <body>
     <%- include("../components/header.ejs") %>
     <%- include("../components/nav.ejs") %>
     <main class="container">
-        <h1>Editar Cliente</h1>
+        <h1>Dados Cliente</h1>
         <form class="row g-3 mt-2">
           
-          <div class="form-check form-switch col-md-2 offset-md-10 d-flex justify-content-end">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              id="ativo"
-              name="ativo"
-              checked
-            />
-            <label class="form-check-label ms-2" for="ativo"
-              >Ativo</label
-            >
-          </div>
           <div class="form-floating col-md-6 ">
             <input
+            
               type="text"
               class="form-control"
               id="id"
               placeholder="12345"
               name="id"
-              value="12345"
               disabled
+              value=<%=userInfo.idUsuario %>
+             
             />
             <label for="floatingInput">ID</label>
           </div>
@@ -41,8 +31,11 @@
               type="text"
               class="form-control"
               id="nome"
-              placeholder="Nome do produto"
+              placeholder="Nome"
               name="nome"
+              disabled
+              value=<%=userInfo.nome %>
+              
             />
             <label for="floatingInput">Nome</label>
           </div>
@@ -53,6 +46,9 @@
                 id="cpf"
                 placeholder="CPF"
                 name="cpf"
+                disabled
+                value=<%=userInfo.cpf %>
+                
               />
               <label for="cpf">CPF</label>
             </div>
@@ -63,6 +59,9 @@
                 id="email"
                 placeholder="email"
                 name="email"
+                disabled
+                value=<%=userInfo.email %>
+                
               />
               <label for="email">E-mail</label>
             </div>
@@ -73,6 +72,8 @@
                 id="telefone"
                 placeholder="Telefone"
                 name="telefone"
+                disabled
+                value=<%=userInfo.telefone%>                
               />
               <label for="telefone">Telefone</label>
             </div>
@@ -83,13 +84,43 @@
                 id="data_nascimento"
                 placeholder="Data de Nascimento"
                 name="data_nascimento"
+                disabled
+                value=<%=userInfo.dtNascimento%>
+                
               />
               <label for="data_nascimento">Data de Nascimento</label>
             </div>
-          <div class="col-12">
-            <button type="submit" class="btn btn-primary w-100">Salvar</button>
-          </div>
+          
         </form>
+
+        <section class="aditional-user-info">
+          <div class="address-info">
+            <h4 class="mt-4">Endereço</h4>
+            <p><span class="fw-bold">Rua: </span><%=enderecoInfo.rua %></p>
+            <p><span class="fw-bold">Número: </span><%=enderecoInfo.numero %></p>
+            <p><span class="fw-bold">CEP: </span><%=enderecoInfo.cep %></p>        
+            <p><span class="fw-bold">Bairro: </span><%=enderecoInfo.bairro %></p>
+            <p><span class="fw-bold">Cidade: </span><%=enderecoInfo.cidade %></p>
+            <p><span class="fw-bold">Complemento: </span><%=enderecoInfo.complemento %></p>
+          </div>
+          <div class="payment-info">  
+            <h4 class="mt-4">Pagamento</h4> 
+            <% if(pagamentoInfo !== null) {%>
+              <p><span class="fw-bold">Titular: </span><%=pagamentoInfo.nome %></p>
+              <p><span class="fw-bold">Número: </span><%=pagamentoInfo.numero.replace(pagamentoInfo.numero.substring(0, pagamentoInfo.numero.length-5), '*'.repeat(pagamentoInfo.numero.length-5)) %></p>
+              <p><span class="fw-bold">Validade: </span><%=pagamentoInfo.validade %></p>
+              <p><span class="fw-bold">CV: </span><%=pagamentoInfo.cvv.toString().replace(pagamentoInfo.cvv.toString().substring(0, pagamentoInfo.cvv.toString().length-1), '*'.repeat(pagamentoInfo.cvv.toString().length-1)) %></p> 
+            <%}else{ %>
+                <p class="">Não há forma de pagamento cadastrada.</p>
+            <%}%>     
+          </div>
+          
+        </section>
+         
+             
+         
+        
+               
       </main>
 </body>
 </html>

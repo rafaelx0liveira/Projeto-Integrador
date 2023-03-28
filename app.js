@@ -10,8 +10,6 @@ const userRouter = require('./src/routes/UsersRoutes');
 const session = require('express-session');
 const methodOverride = require('method-override');
 
-
-
 // Variáveis
 const app = express();
 const port = 3000;

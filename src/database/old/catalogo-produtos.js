@@ -1,5 +1,5 @@
 //Importando as dependências
-const db = require('../database/db.json');
+const db = require('../db.json');
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
