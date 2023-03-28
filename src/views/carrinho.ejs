@@ -11,88 +11,92 @@
 
 <body>
  
-  <%- include("components/header.ejs") %>
+  <% if(locals.user && user) {%> <%- include("components/header_logado.ejs")
+    %> <% } else { %> <%- include("components/header.ejs") %> <% } %>
   
   <main class="container">
-    <section class="carrinho-de-produtos">
-      <article class="produto-no-carrinho">
-        <img class="img-do-produto" src="./images/bebidas/Whisky-Jack-Daniels-Old-no7-1L.png" alt="Jack Daniels">
-        <h3 class="titulo-do-produto">Whiskey JackDaniels 1 Litro N7</h2>
-        <div class="input-wrapper-quant">
-          <label for="quantidade">Quantidade</label>
-          <input class="quantidade-input" type="number" name="quantidade" id="quantidade">
-        </div>
-        <h4 class="valor-produtos-avulso"> R$ </h4>
-        </article>
-        <article class="produto-no-carrinho">
-          <img class="img-do-produto" src="./images/bebidas/Whisky-Jack-Daniels-Old-no7-1L.png" alt="Jack Daniels">
-          <h3 class="titulo-do-produto">Whiskey JackDaniels 1 Litro N7</h2>
-            <div class="input-wrapper-quant">
-              <label for="quantidade">Quantidade</label>
-              <input class="quantidade-input" type="number" name="quantidade" id="quantidade">
-            </div>
-            <h4 class="valor-produtos-avulso"> R$ </h4>
+    <section class="carrinho-de-produtos">      
+        <% if(!carrinho.length){  %>
+          <article class="produto-no-carrinho sem-produto">
+            <h3>Geladeira vazia... ☹️ <a href="/catalogo">Veja aqui nossos produtos</a> </h3>
           </article>
-        <h4 class="soma-produtos">Subtotal: R$ </h4>
+          
+        <% }else{carrinho.forEach(produto => {%>
+            <article class="produto-no-carrinho">
+              <img class="img-do-produto" src="<%= produto.imagem %>" alt="<%= produto.nome %>">
+              <h3 class="titulo-do-produto"><%= produto.nome %></h2>
+              <div class="input-wrapper-quant">
+                <label for="quantidade">Quantidade</label>
+                <input class="quantidade-input" type="number" name="quantidade" id="quantidade" value="1" min="1">
+              </div>
+              <h4 class="valor-produtos-avulso">R$ <%= produto.preco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) %> </h4>
+              </article>
+            <%}); %>
+           <div class="footer-carrinho">
+            <a href="/catalogo">Adicionar mais produtos</a>
+            <h4 class="soma-produtos">Subtotal: R$ <%= total %></h4>
+           </div> 
+        <%} %>
     </section>
   
     <section class="frete-e-pagamento">
       <form class="calcular-frete">
         <h3>Entrega</h3>
         <div class="row">
-          <%-include('./components/input_group.ejs', {style:"w-100",type:"text",id_name:"cep",label:"CEP"}) %>
+          <div class="input-group w-100">
+            <label for="cep">CEP</label>
+            <input type="text" id="cep" name="cep" value="" disabled/>
+          </div>
         </div>        
         <div class="row">
-          <%-include('./components/input_group.ejs', {style:"w-100",type:"text",id_name:"rua",label:"Rua"}) %>
+          <div class="input-group w-100">
+            <label for="rua">Rua</label>
+            <input type="text" id="rua" name="rua" value="" disabled/>
+          </div>          
         </div>
         <div class="row">
-          <%-include('./components/input_group.ejs', {style:"w-100",type:"number",id_name:"numero",label:"Número"}) %>
+          <div class="input-group w-100">
+            <label for="numero">Número</label>
+            <input type="number" id="numero" name="numero" value="" disabled/>
+          </div>     
         </div>
         <div class="row">
-          <%-include('./components/input_group.ejs', {style:"w-100",type:"text",id_name:"bairro",label:"Bairro"}) %>
+          <div class="input-group w-100">
+            <label for="bairro">Bairro</label>
+            <input type="text" id="bairro" name="bairro" value="" disabled/>
+          </div>
         </div>
         <div class="row">
-          <%-include('./components/input_group.ejs', {style:"w-100",type:"text",id_name:"estado",label:"Estado"}) %>
+          <div class="input-group w-100">
+            <label for="estado">Estado</label>
+            <input type="text" id="estado" name="estado" value="" disabled/>
+          </div>
         </div>
         <div class="row">
-          <%-include('./components/input_group.ejs', {style:"w-100",type:"text",id_name:"cidade",label:"Cidade"}) %>
+          <div class="input-group w-100">
+            <label for="cidade">Cidade</label>
+            <input type="text" id="cidade" name="cidade" value="" disabled/>
+          </div>
         </div>
         <div class="row">
-          <%-include('./components/input_group.ejs', {style:"w-100",type:"text",id_name:"destinatario",label:"Destinatário"}) %>
-        </div>        
-        <h3>Escolha seu frete</h3>
-        <div class="row">
-          <%-include('./components/radio_group.ejs', {style:"w-100",id:"frete-economico",name:"tipo-frete",value:"frete economico",label:"Entrega econômica R$20,00"}) %>
-        </div>
-        <div class="row">
-          <%-include('./components/radio_group.ejs', {style:"w-100",id:"frete-rapido",name:"tipo-frete",value:"frete rapido",label:"Entrega rápida R$40,00"}) %>
-        </div>
-        <div class="row">
-          <%-include('./components/radio_group.ejs', {style:"w-100",id:"frete-gratis",name:"tipo-frete",value:"frete gratis",label:"Frete grátis"}) %>
-        </div>        
-        <div class="row">
-          <%-include('./components/input_group.ejs', {style:"w-100",type:"submit",label:"Ir para pagamento"}) %>
-        </div>  
+          <div class="input-group w-100">
+            <label for="destinatario">Destinatário</label>
+            <input type="text" id="destinatario" name="destinatario" value="" disabled/>
+          </div>
+        </div> 
       </form>
       <div class="pagamento">
         <h3>Pagamento</h3>
         
         <div class="frete-wrap">
           <p>Frete</p>
-          <p>R$</p>          
+          <p>Grátis</p>          
         </div>
         
         <div class="pagamento-wrap">
           <h4>Total</h4>
-          <h4>R$ </h4>
+          <h4>R$ <%= total %> </h4>
         </div>
-        
-        <form>
-          <div class="row">
-            <%-include('./components/input_group.ejs', {style:"w-100",type:"text",id_name:"cupom",label:"Insira seu cupom"}) %>
-            <%-include('./components/input_group.ejs', {style:"w-100",type:"submit",id_name:"",label:"Validar"}) %>
-          </div> 
-        </form>
         
         <article>
           <form class="forma-de-pagamento">
@@ -107,7 +111,7 @@
               <%-include('./components/radio_group.ejs', {style:"w-100",id:"boleto",name:"tipo-pagamento",value:"boleto",label:"Boleto 5% OFF"}) %>
             </div>
             
-            <div class="row">
+            <div class="row text-cemter">
               <%-include('./components/input_group.ejs', {style:"w-100",type:"submit",label:"Finalizar pagamento"}) %>
             </div> 
           </form>

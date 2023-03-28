@@ -64,9 +64,17 @@
   gap: 8px 12px;
 }
 
+.buy-product form{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+/* 
+.buy-product button,
 .buy-product a{
   grid-row: span 2;
-}
+} */
 
 .buy-product span{
   display: flex;
@@ -78,7 +86,7 @@
   margin-top: 8px;
 }
 
-.buy-product a.freezer{
+.buy-product button.freezer{
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -95,7 +103,7 @@
   cursor: pointer;
 }
 
-.buy-product a.freezer:hover{
+.buy-product button.freezer:hover{
   color: #a66f00;
   border: 1px solid #a66f00;
 }
