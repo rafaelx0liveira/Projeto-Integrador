@@ -34,9 +34,6 @@ router.get('/contato', HomeController.showContato);
 // GET /termos
 router.get('/termos', HomeController.showTermos);
 
-// GET /carrinho
-router.get ('/carrinho', HomeController.showCarrinho)
-
 
 module.exports = router
 

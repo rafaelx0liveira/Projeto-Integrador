@@ -4,8 +4,24 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
-    background-color: #f7f7f7
+    background-color: #f7f7f7;
+    margin-bottom:48px;
+    margin-top:48px;
+  }
 
+  .sem-produto a{
+    color: #e4a30b;
+  }
+
+  .footer-carrinho{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 24px;
+  }
+
+  .footer-carrinho a{
+    padding: 10px;
   }
 
   .input-wrapper {
@@ -59,10 +75,14 @@
   }
 
 /* Carrinho de Compras */
+
+
 .img-do-produto {
   width: 135px;
   height: 135px;
   padding: 10px;
+  border-radius: 10px;
+  object-fit: cover;
 }
 
 .produto-no-carrinho {
@@ -72,13 +92,13 @@
   margin-top: 15px;
   border-bottom: 1px solid black;
 }
-
+/* 
 .soma-produtos {
   align-self: flex-end;
   position: relative;
   right: 40px;
   margin: 30px
-}
+} */
 .carrinho-de-produtos {
     display: flex;
     flex-direction: column;
@@ -118,7 +138,7 @@
   width:80%
 
 }
-button {
+button, .footer-carrinho a {
     background-color: #FFBB00;
     border: none;
     border-radius: 2px;
