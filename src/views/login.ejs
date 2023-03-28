@@ -30,13 +30,17 @@
 
       <form class="login_page container" action="/login" method="POST">
         <fieldset class="personal-data fadeInLeft" data-anime="600">
-          <div class="row">
-            <%-include('./components/input_group.ejs',
-            {style:"w-100",type:"email",id_name:"email",label:"E-mail*"}) %>
+          <div class="row">            
+            <div class="input-group w-100">
+              <label for="email">E-mail*</label>
+              <input type="email" id="email" name="email" />
+            </div>
           </div>
-          <div class="row">
-            <%-include('./components/input_group.ejs',
-            {style:"w-100",type:"password",id_name:"senha",label:"Senha*"}) %>
+          <div class="row">            
+            <div class="input-group w-100">
+              <label for="password">Senha*</label>
+              <input type="password" id="empasswordail" name="senha" />
+            </div>
           </div>
           <div class="row">
             <%-include('./components/input_group.ejs',
@@ -48,8 +52,8 @@
     </main>
 
     <%- include("components/footer.ejs") %>
-    <script src="./scripts/plugins/simple-anime.js"></script>
-    <script src="./scripts/script.js"></script>
-    <script src="./scripts/modalErrors.js"></script>
+    <script src="/scripts/plugins/simple-anime.js"></script>
+    <script src="/scripts/script.js"></script>
+    <script src="/scripts/modalErrors.js"></script>
   </body>
 </html>

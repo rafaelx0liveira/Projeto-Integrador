@@ -71,7 +71,10 @@ const AuthController = {
     },
 
     // Criando o método de login
-    login: async (req, res) => {
+    login: async (req, res, next) => {      
+
+        let { shop = false } = req.query;
+        
         const {email, senha} = req.body;
 
         const auth_usuario = await Usuario.findOne({ where: { email } });
@@ -94,6 +97,10 @@ const AuthController = {
 
         // Salvando o usuário na sessão
         req.session.user = auth_usuario;
+
+        if(shop == true){
+            next()
+        }
 
         // Redirecionando para a página de produtos
         return res.redirect("/catalogo");

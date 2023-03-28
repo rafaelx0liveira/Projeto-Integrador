@@ -1,5 +1,10 @@
 const CarrinhoController = {
   showCarrinho: (req, res) => {
+
+    if(!req.session.user){
+      return res.redirect('/login')
+    }
+
     const { carrinho } = req.session.user;
 
     let total = 0;
@@ -13,16 +18,20 @@ const CarrinhoController = {
     carrinho.forEach((produto) => {
       // Construtor Number() converte o valor para um número
       total += Number(produto.preco);
-    })
+    })   
     
-
     return res.render('carrinho', {carrinho, total});
 
   },
   addProduto: (req, res) =>{
-    const {} = req.body
+    
+    const {idProduto, nome, preco, imagem} = req.body
 
-    const produto = {}
+    const produto = {idProduto, nome, preco, imagem}
+
+    if(!req.session.user){
+      return res.redirect('/login/?shop=true')
+    }    
 
     if(req.session.user.carrinho){
       req.session.user.carrinho.push(produto)
