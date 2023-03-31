@@ -19,8 +19,7 @@
         <% if(!carrinho.length){  %>
           <article class="produto-no-carrinho sem-produto">
             <h3>Geladeira vazia... ☹️ <a href="/catalogo">Veja aqui nossos produtos</a> </h3>
-          </article>
-          
+          </article>          
         <% }else{carrinho.forEach(produto => {%>
             <article class="produto-no-carrinho">
               <img class="img-do-produto" src="<%= produto.imagem %>" alt="<%= produto.nome %>">
@@ -36,38 +35,35 @@
             <a href="/catalogo">Adicionar mais produtos</a>
             <h4 class="soma-produtos">Subtotal: R$ <%= total %></h4>
            </div> 
-        <%} %>
     </section>
-  
-    <section class="frete-e-pagamento">
-      <form class="calcular-frete">
-        <h3>Entrega</h3>
-        <div class="row">
-          <div class="input-group w-100">
-            <label for="cep">CEP</label>
-            <input type="text" id="cep" name="cep" value="<%=endereco.cep%>" disabled/>
+    <section class="frete-e-pagamento">      
+        <form class="calcular-frete">
+          <h3>Entrega</h3>
+          <div class="row">
+            <div class="input-group w-100">
+              <label for="cep">CEP</label>
+              <input type="text" id="cep" name="cep" value=<%=endereco.cep%> disabled  />
+            </div>
+          </div>        
+          <div class="row">
+            <%-include('./components/input_group.ejs', {style:"w-100",type:"text",id_name:"rua",label:"Rua", value:endereco.rua }) %>
           </div>
-        </div>        
-        <div class="row">
-          <%-include('./components/input_group.ejs', {style:"w-100",type:"text",id_name:"rua",label:"Rua", value:user.cep}) %>
-        </div>
-        <div class="row">
-          <%-include('./components/input_group.ejs', {style:"w-100",type:"number",id_name:"numero",label:"Número", value:user.cep}) %>
-        </div>
-        <div class="row">
-          <%-include('./components/input_group.ejs', {style:"w-100",type:"text",id_name:"bairro",label:"Bairro", value:user.cep}) %>
-        </div>
-        <div class="row">
-          <%-include('./components/input_group.ejs', {style:"w-100",type:"text",id_name:"estado",label:"Estado", value:user.cep}) %>
-        </div>
-        <div class="row">
-          <%-include('./components/input_group.ejs', {style:"w-100",type:"text",id_name:"cidade",label:"Cidade", value:user.cep}) %>
-        </div>
-        <div class="row">
-          <%-include('./components/input_group.ejs', {style:"w-100",type:"text",id_name:"destinatario",label:"Destinatário", value:user.cep}) %>
-        </div>        
-        
-      </form>
+          <div class="row">
+            <%-include('./components/input_group.ejs', {style:"w-100",type:"number",id_name:"numero",label:"Número", value:endereco.numero}) %>
+          </div>
+          <div class="row">
+            <%-include('./components/input_group.ejs', {style:"w-100",type:"text",id_name:"bairro",label:"Bairro", value:endereco.bairro}) %>
+          </div>
+          <div class="row">
+            <%-include('./components/input_group.ejs', {style:"w-100",type:"text",id_name:"cidade",label:"Cidade", value:endereco.cidade}) %>
+          </div>
+          <div class="row">
+            <%-include('./components/input_group.ejs', {style:"w-100",type:"text",id_name:"destinatario",label:"Destinatário", value:user.nome}) %>
+          </div>        
+          
+        </form>
+       
+      
       <div class="pagamento">
         <h3>Pagamento</h3>
         
@@ -101,6 +97,7 @@
         </article>
       </div>
     </section>
+    <% } %> 
   </main>
 
   <%- include("components/footer.ejs") %>
