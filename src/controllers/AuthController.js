@@ -72,12 +72,16 @@ const AuthController = {
 
     // Criando o método de login
     login: async (req, res, next) => {      
-
-        let { shop = false } = req.query;
         
         const {email, senha} = req.body;
 
-        const auth_usuario = await Usuario.findOne({ where: { email } });
+        const auth_usuario = await Usuario.findOne({ where: { email },
+            include: [
+              {
+                association: "usuarioEndereco",
+              }
+            ],
+        });
         
         if(auth_usuario == undefined) {
             console.log("Email não cadastrado!");
@@ -98,8 +102,8 @@ const AuthController = {
         // Salvando o usuário na sessão
         req.session.user = auth_usuario;
 
-        if(shop == true){
-            next()
+        if(req.session.user.usuarioEndereco[0]){
+          req.session.user.endereco = [req.session.user.usuarioEndereco[0].dataValues]
         }
 
         // Redirecionando para a página de produtos
