@@ -5,7 +5,7 @@
   <%- include("components/head.ejs") %>
   
   <script defer src="scripts/cep-api.js"></script>
-  
+
   <title>Carrinho</title>
 </head>
 
@@ -20,21 +20,57 @@
           <article class="produto-no-carrinho sem-produto">
             <h3>Geladeira vazia... ☹️ <a href="/catalogo">Veja aqui nossos produtos</a> </h3>
           </article>          
-        <% }else{carrinho.forEach(produto => {%>
-            <article class="produto-no-carrinho">
-              <img class="img-do-produto" src="<%= produto.imagem %>" alt="<%= produto.nome %>">
-              <h3 class="titulo-do-produto"><%= produto.nome %></h2>
-              <div class="input-wrapper-quant">
-                <label for="quantidade">Quantidade</label>
-                <input class="quantidade-input" type="number" name="quantidade" id="quantidade" value="1" min="1">
-              </div>
-              <h4 class="valor-produtos-avulso">R$ <%= produto.preco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) %> </h4>
-              </article>
-            <%}); %>
-           <div class="footer-carrinho">
-            <a href="/catalogo">Adicionar mais produtos</a>
-            <h4 class="soma-produtos">Subtotal: R$ <%= total %></h4>
-           </div> 
+        <% }else{%>
+          <table class="table-carrinho">
+            <thead>
+              <tr>
+                <th>Produto</th>
+                <th></th>
+                <th>Quantidade</th>
+                <th>Preço</th>
+              </tr>
+            </thead>
+            <tbody>
+            <% carrinho.forEach(produto => {    %>
+                <tr>
+                  <td><img class="img-do-produto" src="<%= produto.imagem %>" alt="<%= produto.nome %>"></td>
+                  <td class="nome-column"><%= produto.nome %></td>
+                  <td >
+                    <div class="quantidade-column">
+                      <form action="/carrinho?id=<%= produto.idProduto %>&acao=0" method="POST" class="form-minus">
+                        <input type="hidden" name="idProduto" value="<%= produto.idProduto %>">
+                        <input type="hidden" name="nome" value="<%= produto.nome %>">
+                        <input type="hidden" name="preco" value="<%= produto.preco %>">
+                        <input type="hidden" name="imagem" value="<%= produto.imagem %>">
+                        <input type="hidden" name="quantidade" value=<%= Number(produto.quantidade)+1 %> >
+                        <button type="submit" class="btn-handle-quantidade">-</button>
+                      </form> 
+                      <%= produto.quantidade %>
+                      <form action="/carrinho?id=<%= produto.idProduto %>&acao=1incrementarProduto" method="POST" class="form-plus">
+                        <input type="hidden" name="idProduto" value="<%= produto.idProduto %>">
+                        <input type="hidden" name="nome" value="<%= produto.nome %>">
+                        <input type="hidden" name="preco" value="<%= produto.preco %>">
+                        <input type="hidden" name="imagem" value="<%= produto.imagem %>">
+                        <input type="hidden" name="quantidade" value=<%= Number(produto.quantidade)+1 %> >
+                        <button type="submit" class="btn-handle-quantidade">+</button>
+                      </form> 
+                    </div>
+                    
+                  </td>
+                  <td>R$ <%= produto.preco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) %></td>
+                </tr>                
+              <%}); %>
+              <tr class="footer-carrinho">
+                <td>
+                  <a href="/catalogo">Adicionar mais produtos</a>
+                </td>
+                <td colspan="3" class="subtotal-column">
+                  <h4 class="soma-produtos">Subtotal: R$ <%= total %></h4>
+                </td>
+              </tr>
+              </tbody>                
+            </table>
+           
     </section>
     <section class="frete-e-pagamento">      
         <form class="calcular-frete">
@@ -42,7 +78,7 @@
           <div class="row">
             <div class="input-group w-100">
               <label for="cep">CEP</label>
-              <input type="text" id="cep" name="cep" value=<%=endereco.cep%> disabled  />
+              <input type="text" id="cep" name="cep" value="<%=endereco.cep%>"/>
             </div>
           </div>        
           <div class="row">
@@ -104,7 +140,6 @@
 
   <script src="./scripts/plugins/simple-anime.js"></script>
   <script src="./scripts/script.js"></script>
-
 </body>
 
 </html>

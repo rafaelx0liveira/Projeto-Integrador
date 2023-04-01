@@ -26,9 +26,9 @@ const CarrinhoController = {
   },
   addProduto: (req, res) =>{
     
-    const {idProduto, nome, preco, imagem} = req.body
+    const {idProduto, nome, preco, imagem,quantidade} = req.body
 
-    const produto = {idProduto, nome, preco, imagem}
+    const produto = {idProduto, nome, preco, imagem,quantidade}
 
     if(!req.session.user){
       return res.redirect('/login?shop=true')
