@@ -1,17 +1,25 @@
 const CarrinhoController = {
   showCarrinho: (req, res) => {
 
+    let {compra = ""} = req.query;
+
+    if(compra == "ok"){
+      const msgFinal = "ok"
+      return res.render('carrinho', { carrinho:[],total:0, endereco:[], msgFinal});
+    }
+
     if(!req.session.user){
       return res.redirect('/login')
     }
 
-    const { carrinho } = req.session.user;
-
+    const {carrinho,usuarioEndereco} = req.session.user;
+    const endereco = usuarioEndereco[0];
+    
     let total = 0;
 
     // Verifica se o carrinho está vazio
     if(!carrinho) {
-      return res.render('carrinho', { carrinho:[], total });
+      return res.render('carrinho', { carrinho:[],total, endereco:[]});
     }
 
     // Se houver produto no carrinho, calcula o total
@@ -19,21 +27,21 @@ const CarrinhoController = {
       // Construtor Number() converte o valor para um número
       total += Number(produto.preco);
     })   
-    
-    return res.render('carrinho', {carrinho, total});
+        
+    return res.render('carrinho', {carrinho, total,endereco});
 
   },
   addProduto: (req, res) =>{
     
-    const {idProduto, nome, preco, imagem} = req.body
+    const {idProduto, nome, preco, imagem,quantidade} = req.body
 
-    const produto = {idProduto, nome, preco, imagem}
+    const produto = {idProduto, nome, preco, imagem,quantidade}
 
     if(!req.session.user){
-      return res.redirect('/login/?shop=true')
+      return res.redirect('/login?shop=true')
     }    
 
-    if(req.session.user.carrinho){
+    if(req.session.user.carrinho){ 
       req.session.user.carrinho.push(produto)
     }else{
       req.session.user.carrinho = [produto]

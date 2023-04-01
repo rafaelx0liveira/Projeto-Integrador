@@ -34,42 +34,42 @@
       <fieldset class="personal-data fadeInLeft" data-anime="600">
         <legend>Dados pessoais</legend>
         <div class="row">
-          <%-include('./components/input_group.ejs', {style:"w-47",type:"email",id_name:"email",label:"E-mail*"}) %>
-          <%-include('./components/input_group.ejs', {style:"w-47",type:"text",id_name:"cpf",label:"CPF*"}) %>
+          <%-include('./components/input_group.ejs', {style:"w-47",type:"email",id_name:"email",label:"E-mail*", value:"" }) %>
+          <%-include('./components/input_group.ejs', {style:"w-47",type:"text",id_name:"cpf",label:"CPF*", value:""}) %>
         </div>
         <div class="row">
-          <%-include('./components/input_group.ejs', {style:"w-100",type:"text",id_name:"nome",label:"Nome completo*"}) %>
+          <%-include('./components/input_group.ejs', {style:"w-100",type:"text",id_name:"nome",label:"Nome completo*", value:"" }) %>
 
         </div>
         <div class="row">
-          <%-include('./components/input_group.ejs', {style:"w-47",type:"text",id_name:"telefone",label:"Telefone"}) %>
-          <%-include('./components/input_group.ejs', {style:"w-47",type:"date",id_name:"dtNascimento",label:"Data de nascimento*"}) %>
+          <%-include('./components/input_group.ejs', {style:"w-47",type:"text",id_name:"telefone",label:"Telefone", value:""}) %>
+          <%-include('./components/input_group.ejs', {style:"w-47",type:"date",id_name:"dtNascimento",label:"Data de nascimento*", value:"" }) %>
         </div>
         <div class="row">
 
-          <%-include('./components/input_group.ejs', {style:"w-47",type:"password",id_name:"senha",label:"Senha*"}) %>
-          <%-include('./components/input_group.ejs', {style:"w-47",type:"password",id_name:"senhaConfirmada",label:"Confirme a senha*"}) %>
+          <%-include('./components/input_group.ejs', {style:"w-47",type:"password",id_name:"senha",label:"Senha*", value:""}) %>
+          <%-include('./components/input_group.ejs', {style:"w-47",type:"password",id_name:"senhaConfirmada",label:"Confirme a senha*", value:"" }) %>
 
         </div>
       </fieldset>
       <fieldset class="address-data fadeInRight" data-anime="800">
         <legend>Endereço</legend>
         <div class="row">
-          <%-include('./components/input_group.ejs', {style:"w-100",type:"text",id_name:"cep",label:"CEP*"}) %>
+          <%-include('./components/input_group.ejs', {style:"w-100",type:"text",id_name:"cep",label:"CEP*", value:"" }) %>
         </div>
         <div class="row">
-          <%-include('./components/input_group.ejs', {style:"w-80",type:"text",id_name:"rua",label:"Rua*"}) %>
-          <%-include('./components/input_group.ejs', {style:"w-15",type:"text",id_name:"numero",label:"Número*"}) %>
+          <%-include('./components/input_group.ejs', {style:"w-80",type:"text",id_name:"rua",label:"Rua*", value:"" }) %>
+          <%-include('./components/input_group.ejs', {style:"w-15",type:"text",id_name:"numero",label:"Número*", value:"" }) %>
         </div>
         <div class="row">
-          <%-include('./components/input_group.ejs', {style:"w-47",type:"text",id_name:"bairro",label:"Bairro*"}) %>
-          <%-include('./components/input_group.ejs', {style:"w-47",type:"text",id_name:"cidade",label:"Cidade*"}) %>
+          <%-include('./components/input_group.ejs', {style:"w-47",type:"text",id_name:"bairro",label:"Bairro*", value:"" }) %>
+          <%-include('./components/input_group.ejs', {style:"w-47",type:"text",id_name:"cidade",label:"Cidade*", value:"" }) %>
         </div>
         <div class="row">
-          <%-include('./components/input_group.ejs', {style:"w-100",type:"text",id_name:"complemento",label:"Complemento"}) %>
+          <%-include('./components/input_group.ejs', {style:"w-100",type:"text",id_name:"complemento",label:"Complemento", value:"" }) %>
         </div>        
         <div class="row cadastro-check">
-          <%-include('./components/checkbox_group.ejs', {style:"w-100 fadeInUp",value:"true",id_name:"novidades",label:"Quero receber novidades"}) %>
+          <%-include('./components/checkbox_group.ejs', {style:"w-100 fadeInUp",value:"true",id_name:"novidades",label:"Quero receber novidades", value:"" }) %>
         </div>
         <div class="row">
           <%-include('./components/input_group.ejs', {style:"w-100 fadeInUp",type:"submit",label:"Cadastrar"}) %>

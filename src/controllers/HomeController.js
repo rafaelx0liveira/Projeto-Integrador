@@ -30,6 +30,7 @@ const homeController = {
   },
   
   showCatalogo: async(req, res) => {
+    console.log(req.query)
     //paginação
     //valor fixo para página para inicar 
     let totalPorPagina = 15
