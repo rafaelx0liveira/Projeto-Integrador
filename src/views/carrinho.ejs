@@ -124,10 +124,11 @@
             </div>
             <div class="row">
               <%-include('./components/radio_group.ejs', {style:"w-100",id:"boleto",name:"tipo-pagamento",value:"boleto",label:"Boleto 5% OFF"}) %>
-            </div>
-            
-            <div class="row text-cemter">
-              <%-include('./components/input_group.ejs', {style:"w-100",type:"submit",label:"Finalizar pagamento"}) %>
+            </div>            
+            <div class="row">              
+              <div class="input-group w-100" data-anime="800">
+                <a href="/carrinho?compra=ok" class="btn-final">Finalizar pagamento</a>
+              </div>
             </div> 
           </form>
         </article>
@@ -136,10 +137,15 @@
     <% } %> 
   </main>
 
+  <% if(typeof msgFinal != "undefined" ) {%>
+    <%- include("modals/sucesso/compraFinalizada.ejs"); %> 
+  <% }  %>
+
   <%- include("components/footer.ejs") %>
 
   <script src="./scripts/plugins/simple-anime.js"></script>
   <script src="./scripts/script.js"></script>
+  <script src="./scripts/modalErrors.js"></script>
 </body>
 
 </html>

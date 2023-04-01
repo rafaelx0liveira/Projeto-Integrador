@@ -155,47 +155,6 @@
   margin-top: 15px;
 } 
 
-/* 
-.soma-produtos {
-  align-self: flex-end;
-  position: relative;
-  right: 40px;
-  margin: 30px
-} */
-/* .carrinho-de-produtos {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: stretch;
-    align-items: stretch;
-}
-.input-wrapper-quant {
-  display: flex;
-  flex-direction: column;
-}
-.quantidade-input {
-  width: 35px;
-  align-self: center;
-  padding: 2px;
-}
-
-.loading {
-  position:relative;
-  top: 50%;
-  right:50%;
-  z-index: 3;
-  display:none 
-}
-.loading.active {
-  display:block
-}
-.loading .spinner-border {
-  width: 1rem;
-  height: 1rem;
-  z-index: 6;
-
-}*/
-
 .frete-wrap, .pagamento-wrap{
   display:flex;
   justify-content: space-between;
@@ -208,7 +167,7 @@
   padding: 10px;
 }
 
-button, .footer-carrinho a {
+button, .footer-carrinho a, .input-group .btn-final {
     background-color: #FFBB00;
     border: none;
     border-radius: 2px;
@@ -217,3 +176,9 @@ button, .footer-carrinho a {
     font-weight: bold;
     cursor: pointer;
 }
+
+.input-group .btn-final{
+  text-align: center;
+  padding: 10px;
+}
+

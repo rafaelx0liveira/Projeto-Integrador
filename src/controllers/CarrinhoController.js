@@ -1,6 +1,13 @@
 const CarrinhoController = {
   showCarrinho: (req, res) => {
 
+    let {compra = ""} = req.query;
+
+    if(compra == "ok"){
+      const msgFinal = "ok"
+      return res.render('carrinho', { carrinho:[],total:0, endereco:[], msgFinal});
+    }
+
     if(!req.session.user){
       return res.redirect('/login')
     }
