@@ -71,15 +71,15 @@ const AuthController = {
     },
 
     // Criando o método de login
-    login: async (req, res, next) => {      
+    login: async (req, res) => {      
         
         const {email, senha} = req.body;
 
         const auth_usuario = await Usuario.findOne({ where: { email },
             include: [
-              {
-                association: "usuarioEndereco",
-              }
+                {
+                    association: "usuarioEndereco",
+                }
             ],
         });
         
@@ -101,10 +101,6 @@ const AuthController = {
 
         // Salvando o usuário na sessão
         req.session.user = auth_usuario;
-
-        if(req.session.user.usuarioEndereco[0]){
-          req.session.user.endereco = [req.session.user.usuarioEndereco[0].dataValues]
-        }
 
         // Redirecionando para a página de produtos
         return res.redirect("/catalogo");

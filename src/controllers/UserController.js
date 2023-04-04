@@ -8,12 +8,15 @@ let ok = '';
 const userController = {
     // Mostrar a página de perfil
     showPerfil: (req,res) =>{
+
+        const {user} = req.session;
+
         setTimeout(() => {
             ok = "";
         }, 1000);
 
         res.render ('usuario_perfil', {
-            ok
+            ok, user
         })
     },
 
@@ -52,25 +55,31 @@ const userController = {
 
     // Criando o método de mostrar pedidos
     showPedidos: (req,res) =>{
-        res.render ('usuario_pedidos')
+        const {user} = req.session;
+        res.render ('usuario_pedidos'
+        , {user})
     },
 
     // Criando o método de mostrar endereço
     showEndereco: async (req,res) =>{
 
+        // const {usuarioEndereco} = req.session.user;
+        // const find_endereco = usuarioEndereco[0];
+
         setTimeout(() => {
             ok = "";
         }, 1000);
 
-        const {email} = req.session.user;
+        const {user} = req.session;
 
-        const usuario = await findByEmail(email);
+        const usuario = await findByEmail(user.email);
 
         const endereco = await Endereco.findOne({ where: { Usuario_idUsuario: usuario.idUsuario } });
         
         res.render('usuario_endereço', {
             ok,
-            endereco: endereco
+            endereco: endereco,
+            user
         })
     },
 
@@ -118,15 +127,16 @@ const userController = {
             ok = "";
         }, 1000);
 
-        const {email} = req.session.user;
+        const {user} = req.session;
 
-        const usuario = await findByEmail(email);
+        const usuario = await findByEmail(user.email);
 
         const pagamentos = await Pagamento.findOne({ where: { Usuario_idUsuario: usuario.idUsuario } });
 
         res.render('usuario_pagamentos', {
             ok,
-            pagamentos: pagamentos
+            pagamentos: pagamentos,
+            user
         })
     },
 
